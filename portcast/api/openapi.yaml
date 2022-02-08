@@ -1,0 +1,3344 @@
+openapi: 3.0.1
+info:
+  description: |
+    **This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**
+
+    There are two variables used in this documentation:
+    1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io`
+    2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation
+
+    The general workflow is as below:
+
+    1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`).
+    2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response.
+    3. Wait for predictions to be generated. This could take up to 5 mins.
+    5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
+  title: Portcast API (1.1.0) - Bill of Lading Tracking
+  version: 1.0.0
+servers:
+- url: https://api.portcast.io
+tags:
+- description: Restful operations on vessel bookmarks
+  name: Booking Bookmarks
+- description: Restful operations on vessel bookmarks
+  name: Bill of Lading Bookmarks
+- description: Get tracking results for the vessel bookmarks
+  name: Tracking
+paths:
+  /api/v1/eta/booking:
+    post:
+      description: |-
+        Please send the bill of lading or booking number with the following fields:
+        ```
+        {
+            "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
+            "bl_no": <string, required, ocean carrier bill of lading number>,
+            "dock_type": <string, required, type of doc_no. Accept value: BK (booking) , BL (Bill of Lading)>
+        }
+        ```
+      parameters:
+      - example: application/json
+        explode: false
+        in: header
+        name: Accept
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: application/json
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: '{{x-api-key}}'
+        explode: false
+        in: header
+        name: x-api-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              example:
+                doc_no: YMLUN851098484
+                doc_type: BK
+                carrier_no: YMLU
+              required:
+              - carrier_no
+              - doc_no
+              - doc_type
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bookingBookmarks'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: API Quota Exceeded
+      summary: Create new bookmarks for booking
+      tags:
+      - Booking Bookmarks
+  /api/v1/eta/bill-of-lading-bookmarks:
+    get:
+      description: |-
+        This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
+
+        You could filter based the parameters listed.
+      parameters:
+      - example: application/json
+        explode: false
+        in: header
+        name: Accept
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: application/json
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: '{{x-api-key}}'
+        explode: false
+        in: header
+        name: x-api-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: start query from after this voyage bookmark id
+        explode: true
+        in: query
+        name: _start_after
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: if set to true, sort results based on creation time in ascending
+          order. false by default
+        explode: true
+        in: query
+        name: _ascending
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the carrier scac
+        explode: true
+        in: query
+        name: carrier_no
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the bill of lading number
+        explode: true
+        in: query
+        name: bl_no
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the container number
+        explode: true
+        in: query
+        name: cntr_no
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the status
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the status code
+        explode: true
+        in: query
+        name: status_code
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Invalid API key
+      summary: Get a list of bookmarked bill of ladings
+      tags:
+      - Bill of Lading Bookmarks
+    post:
+      description: |-
+        Please send the bill of lading with the following fields:
+        ```
+        {
+            "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
+            "bl_no": <string, required, ocean carrier bill of lading number>,
+            "cntr_no": <string, required, the container number you want to track from the bill of lading>
+        }
+        ```
+      parameters:
+      - example: application/json
+        explode: false
+        in: header
+        name: Accept
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: application/json
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: '{{x-api-key}}'
+        explode: false
+        in: header
+        name: x-api-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              example:
+                bl_no: YMLUN851098484
+                cntr_no: TGHU5312550
+                carrier_no: YMLU
+              required:
+              - bl_no
+              - carrier_no
+              - cntr_no
+              type: object
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bookmark'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Invalid API key
+      summary: Create a new bill of lading bookmark
+      tags:
+      - Bill of Lading Bookmarks
+  /api/v1/eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}:
+    delete:
+      parameters:
+      - example: application/json
+        explode: false
+        in: header
+        name: Accept
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: application/json
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: '{{x-api-key}}'
+        explode: false
+        in: header
+        name: x-api-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: bill_of_lading_bookmark_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Invalid API key
+      summary: Delete a particular bill of lading bookmark by ID
+      tags:
+      - Bill of Lading Bookmarks
+    get:
+      parameters:
+      - example: application/json
+        explode: false
+        in: header
+        name: Accept
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: application/json
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: '{{x-api-key}}'
+        explode: false
+        in: header
+        name: x-api-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: bill_of_lading_bookmark_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bookmarkResponse'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Invalid API key
+      summary: Get a particular bill of lading bookmark by ID
+      tags:
+      - Bill of Lading Bookmarks
+  /api/v1/eta/tracking/bill-of-lading-bookmarks:
+    get:
+      description: |-
+        This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
+
+        You could filter based the following parameters listed.
+      parameters:
+      - example: application/json
+        explode: false
+        in: header
+        name: Accept
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: application/json
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: '{{x-api-key}}'
+        explode: false
+        in: header
+        name: x-api-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: start query from after this voyage bookmark id
+        explode: true
+        in: query
+        name: _start_after
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: get last prediction result made before this timestamp, must be
+          in ISO8601 format with timezone, defaults to now
+        explode: true
+        in: query
+        name: customer_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the carrier scac code
+        explode: true
+        in: query
+        name: carrier_no
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the imo number of the vessel
+        explode: true
+        in: query
+        name: bl_no
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the target port by port code
+        explode: true
+        in: query
+        name: cntr_no
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: filter on the target port eta
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: status_code
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Invalid API key
+      summary: Get a list of bill of lading bookmark tracking results based on filters
+      tags:
+      - Tracking
+  /api/v1/eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}:
+    get:
+      description: |-
+        This will return the bill of lading bookmark, augmented bill of lading, container information and container events, sailing information, vessel ais information, vessel voyage information.
+
+        Please note that the prediction engine runs two times a day at the moment. So the prediction results would only be updated two times a day.
+
+        Sample response as below:
+        ```
+        {
+            "obj": {
+                "bill_of_lading": {
+                    "actual_delivery_time": null,
+                    "actual_receipt_time": null,
+                    "bl_no": "ONEYSJUA00018900",
+                    "carrier_no": "ONEY",
+                    "cbm": null,
+                    "cntr_no": "SZLU9529739",
+                    "created": "2020-01-17T10:42:41.089572+00:00",
+                    "id": "fdbdafe7-cf22-4896-b6d4-1fbf52488af9",
+                    "kgs": null,
+                    "place_of_delivery": "CNSHG",
+                    "place_of_delivery_name": "SHANGHAI",
+                    "place_of_receipt": "PRSJU",
+                    "place_of_receipt_name": "SAN JUAN",
+                    "pod": "CNSHG",
+                    "pod_actual_arrival_lt": null,
+                    "pod_actual_departure_lt": null,
+                    "pod_actual_discharge_lt": null,
+                    "pod_name": "SHANGHAI",
+                    "pod_predicted_arrival_lt": "2020-03-05T19:56:43.255866+08:00",
+                    "pod_predicted_departure_lt": "2020-03-06T23:42:22.730164+08:00",
+                    "pod_predicted_discharge_lt": "2020-03-05T21:56:43.255866",
+                    "pod_scheduled_arrival_lt": "2020-03-04T02:00:00+08:00",
+                    "pod_scheduled_departure_lt": "2020-03-05T04:00:00+08:00",
+                    "pod_scheduled_discharge_lt": "2020-03-04T02:30:00",
+                    "pol": "PRSJU",
+                    "pol_actual_arrival_lt": "2020-01-20T14:03:00-04:00",
+                    "pol_actual_departure_lt": "2020-01-21T13:24:00-04:00",
+                    "pol_actual_loading_lt": "2020-01-21T02:54:00",
+                    "pol_name": "SAN JUAN",
+                    "pol_predicted_arrival_lt": null,
+                    "pol_predicted_departure_lt": null,
+                    "pol_predicted_loading_lt": null,
+                    "pol_scheduled_arrival_lt": "2020-01-20T13:42:00-04:00",
+                    "pol_scheduled_departure_lt": "2020-01-21T12:54:00-04:00",
+                    "pol_scheduled_loading_lt": null,
+                    "scheduled_delivery_time": null,
+                    "scheduled_receipt_time": null,
+                    "updated": "2020-02-18T14:00:53.211860+00:00"
+                },
+                "bill_of_lading_bookmark": {
+                    "bl_no": "ONEYSJUA00018900",
+                    "carrier_no": "ONEY",
+                    "cntr_no": "SZLU9529739",
+                    "created": "2020-01-22T06:27:55.026109+00:00",
+                    "customer_id": null,
+                    "customer_no": null,
+                    "id": "45aef37d-6464-4c6e-99f9-a541c4d7dfca",
+                    "org_id": "356f1867-0426-57b9-86d6-5b1014b2e19d",
+                    "status": "CONTAINER_RETURNED_TO_CARRIER",
+                    "status_code": "8",
+                    "updated": "2020-02-18T14:00:53.385322+00:00"
+                },
+                "container_event_list": [
+                    {
+                        "created": "2020-01-17T10:42:41.097565+00:00",
+                        "event_raw": "Empty Container Release to Shipper",
+                        "event_time": "2020-01-16T08:23:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "PICKUP",
+                        "event_type_name": "Empty container pick-up",
+                        "id": "d7b61b87-fbf6-49dc-b0f7-ecf1b0eb272b",
+                        "location_raw": "SAN JUAN ,PUERTO RICO",
+                        "location_type_code": "POL",
+                        "location_type_name": "Port of loading",
+                        "port_code": "PRSJU",
+                        "port_name": "SAN JUAN",
+                        "updated": "2020-02-18T14:00:53.218737+00:00"
+                    },
+                    {
+                        "created": "2020-01-18T14:00:46.627903+00:00",
+                        "event_raw": "Gate In to Outbound Terminal",
+                        "event_time": "2020-01-17T14:48:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "GATEIN",
+                        "event_type_name": "Gate in",
+                        "id": "3ec2ad20-0fdd-468b-9eb7-77f41fdccb1a",
+                        "location_raw": "SAN JUAN ,PUERTO RICO",
+                        "location_type_code": "POL",
+                        "location_type_name": "Port of loading",
+                        "port_code": "PRSJU",
+                        "port_name": "SAN JUAN",
+                        "updated": "2020-02-18T14:00:53.224755+00:00"
+                    },
+                    {
+                        "created": "2020-01-21T14:01:47.003534+00:00",
+                        "event_raw": "Loaded on 'BOMAR JULIANA 1952N' at Port of Loading",
+                        "event_time": "2020-01-21T02:54:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "LOAD",
+                        "event_type_name": "Loaded onto vessel",
+                        "id": "ee805f2c-8865-4929-b9c0-6269043f8d5c",
+                        "location_raw": "SAN JUAN ,PUERTO RICO",
+                        "location_type_code": "POL",
+                        "location_type_name": "Port of loading",
+                        "port_code": "PRSJU",
+                        "port_name": "SAN JUAN",
+                        "updated": "2020-02-18T14:00:53.230235+00:00"
+                    },
+                    {
+                        "created": "2020-01-24T14:05:54.843262+00:00",
+                        "event_raw": "'BOMAR JULIANA 1952N' Departure from Port of Loading",
+                        "event_time": "2020-01-21T12:54:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "DEPART",
+                        "event_type_name": "Vessel departure",
+                        "id": "143e5ba4-0f62-415c-946d-1de224ef74a8",
+                        "location_raw": "SAN JUAN ,PUERTO RICO",
+                        "location_type_code": "POL",
+                        "location_type_name": "Port of loading",
+                        "port_code": "PRSJU",
+                        "port_name": "SAN JUAN",
+                        "updated": "2020-02-18T14:00:53.238866+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.251185+00:00",
+                        "event_raw": "'BOMAR JULIANA 1952N' Arrival at Transhipment Port",
+                        "event_time": "2020-01-27T08:36:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "ARRIVE",
+                        "event_type_name": "Vessel arrival",
+                        "id": "a061ece5-db0f-4497-b0aa-3ef703779244",
+                        "location_raw": "MANZANILLO ,PANAMA",
+                        "location_type_code": "POT",
+                        "location_type_name": "Port of transhipment",
+                        "port_code": "PAMIT",
+                        "port_name": "MANZANILLO",
+                        "updated": "2020-02-18T14:00:53.251202+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.263706+00:00",
+                        "event_raw": "'BOMAR JULIANA 1952N' T/S Berthing Destination",
+                        "event_time": "2020-01-27T09:42:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "UNCLASSIFIED",
+                        "event_type_name": "Unclassified",
+                        "id": "058a5a0f-1ad6-4c8e-be8f-edf0ce43c78a",
+                        "location_raw": "MANZANILLO ,PANAMA",
+                        "location_type_code": "POT",
+                        "location_type_name": "Port of transhipment",
+                        "port_code": "PAMIT",
+                        "port_name": "MANZANILLO",
+                        "updated": "2020-02-18T14:00:53.263722+00:00"
+                    },
+                    {
+                        "created": "2020-01-28T14:00:23.007605+00:00",
+                        "event_raw": "Unloaded from 'BOMAR JULIANA 1952N' at Transhipment Port",
+                        "event_time": "2020-01-27T11:43:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "UNLOAD",
+                        "event_type_name": "Unload from vessel",
+                        "id": "3f385372-6fad-41dc-aade-efd1552f1744",
+                        "location_raw": "MANZANILLO ,PANAMA",
+                        "location_type_code": "POT",
+                        "location_type_name": "Port of transhipment",
+                        "port_code": "PAMIT",
+                        "port_name": "MANZANILLO",
+                        "updated": "2020-02-18T14:00:53.268398+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.279644+00:00",
+                        "event_raw": "Loaded on 'SEASPAN BRIGHTNESS 028W' at Transhipment Port",
+                        "event_time": "2020-02-03T10:25:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "LOAD",
+                        "event_type_name": "Loaded onto vessel",
+                        "id": "c9b27a98-5a00-43e3-8976-8b9898f64308",
+                        "location_raw": "MANZANILLO ,PANAMA",
+                        "location_type_code": "POT",
+                        "location_type_name": "Port of transhipment",
+                        "port_code": "PAMIT",
+                        "port_name": "MANZANILLO",
+                        "updated": "2020-02-18T14:00:53.279659+00:00"
+                    },
+                    {
+                        "created": "2020-02-04T15:00:05.974806+00:00",
+                        "event_raw": "'SEASPAN BRIGHTNESS 028W' Depature from Transhipment Port",
+                        "event_time": "2020-02-03T20:42:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "DEPART",
+                        "event_type_name": "Vessel departure",
+                        "id": "2eae5374-b192-45a7-9c11-b1cd81c70564",
+                        "location_raw": "MANZANILLO ,PANAMA",
+                        "location_type_code": "POT",
+                        "location_type_name": "Port of transhipment",
+                        "port_code": "PAMIT",
+                        "port_name": "MANZANILLO",
+                        "updated": "2020-02-18T14:00:53.284220+00:00"
+                    },
+                    {
+                        "created": "2020-02-04T14:01:37.770180+00:00",
+                        "event_raw": "'SEASPAN BRIGHTNESS 028W' Depature from Transhipment Port",
+                        "event_time": "2020-02-03T20:54:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "DEPART",
+                        "event_type_name": "Vessel departure",
+                        "id": "f1cd2263-9467-4b80-831e-70650b7c1eec",
+                        "location_raw": "MANZANILLO ,PANAMA",
+                        "location_type_code": null,
+                        "location_type_name": null,
+                        "port_code": "PAMIT",
+                        "port_name": "MANZANILLO",
+                        "updated": "2020-02-04T14:01:37.770200+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.289210+00:00",
+                        "event_raw": "'SEASPAN BRIGHTNESS 028W' Arrival at Port of Discharging",
+                        "event_time": "2020-03-03T23:00:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "ARRIVE",
+                        "event_type_name": "Vessel arrival",
+                        "id": "02538782-7b1a-4562-bb8d-1453a3a2eeea",
+                        "location_raw": "SHANGHAI, SHANGHAI ,CHINA",
+                        "location_type_code": "POD",
+                        "location_type_name": "Port of discharge",
+                        "port_code": "CNSHG",
+                        "port_name": "SHANGHAI",
+                        "updated": "2020-02-18T14:00:53.289224+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.298783+00:00",
+                        "event_raw": "'SEASPAN BRIGHTNESS 028W' POD Berthing Destination",
+                        "event_time": "2020-03-04T01:00:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "UNCLASSIFIED",
+                        "event_type_name": "Unclassified",
+                        "id": "5ea337c7-8f68-49bd-9551-c6fe2154e754",
+                        "location_raw": "SHANGHAI, SHANGHAI ,CHINA",
+                        "location_type_code": "POD",
+                        "location_type_name": "Port of discharge",
+                        "port_code": "CNSHG",
+                        "port_name": "SHANGHAI",
+                        "updated": "2020-02-18T14:00:53.298799+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.303645+00:00",
+                        "event_raw": "Unloaded from 'SEASPAN BRIGHTNESS 028W' at Port of Discharging",
+                        "event_time": "2020-03-04T02:30:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "UNLOAD",
+                        "event_type_name": "Unload from vessel",
+                        "id": "22e2baf1-afef-4331-9f40-f9a44d5a3fa0",
+                        "location_raw": "SHANGHAI, SHANGHAI ,CHINA",
+                        "location_type_code": "POD",
+                        "location_type_name": "Port of discharge",
+                        "port_code": "CNSHG",
+                        "port_name": "SHANGHAI",
+                        "updated": "2020-02-18T14:00:53.303660+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.315930+00:00",
+                        "event_raw": "Gate Out from Inbound Terminal for Delivery to Consignee (or Port Shuttle)",
+                        "event_time": "2020-03-04T07:00:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "GATEOUT",
+                        "event_type_name": "Gate out",
+                        "id": "fa2a20be-a207-4672-bfe8-975010581a80",
+                        "location_raw": "SHANGHAI, SHANGHAI ,CHINA",
+                        "location_type_code": "POD",
+                        "location_type_name": "Port of discharge",
+                        "port_code": "CNSHG",
+                        "port_name": "SHANGHAI",
+                        "updated": "2020-02-18T14:00:53.315950+00:00"
+                    },
+                    {
+                        "created": "2020-02-18T14:00:53.325810+00:00",
+                        "event_raw": "Empty Container Returned from Customer",
+                        "event_time": "2020-03-04T13:00:00",
+                        "event_time_estimated": null,
+                        "event_type_code": "RETURN",
+                        "event_type_name": "Empty container returned",
+                        "id": "79b3c97a-1714-464f-9e1a-7d41734ca4f2",
+                        "location_raw": "SHANGHAI, SHANGHAI ,CHINA",
+                        "location_type_code": "POD",
+                        "location_type_name": "Port of discharge",
+                        "port_code": "CNSHG",
+                        "port_name": "SHANGHAI",
+                        "updated": "2020-02-18T14:00:53.325827+00:00"
+                    }
+                ],
+                "container_meta_info": {
+                    "cntr_no": "SZLU9529739",
+                    "cntr_size": 40,
+                    "cntr_type": "H.REEFER",
+                    "created": "2020-01-17T10:42:41.052834+00:00",
+                    "id": "452f5d92-2ece-45dc-a1fc-53a0ca3f1347",
+                    "updated": "2020-01-17T10:42:41.052848+00:00"
+                },
+                "id": "45aef37d-6464-4c6e-99f9-a541c4d7dfca",
+                "msg": "Obtained latest bill of lading and container tracking information",
+                "org_id": "356f1867-0426-57b9-86d6-5b1014b2e19d",
+                "sailing_info_tracking": [
+                    {
+                        "actual_arrival_lt": "2020-01-27T08:36:00-05:00",
+                        "actual_arrival_utc": "2020-01-27T13:36:00+00:00",
+                        "ais": {
+                            "course": 81.3,
+                            "draught_m": null,
+                            "imo": "9275036",
+                            "lat": 16.6923733333,
+                            "lon": -86.08515,
+                            "speed_nm": 9.6,
+                            "status": "UNDER WAY USING ENGINE",
+                            "timestamp_utc": "2020-02-18T13:43:11+00:00"
+                        },
+                        "cancelled": false,
+                        "predicted_arrival_lt": null,
+                        "predicted_arrival_utc": null,
+                        "prediction_confidence_level": null,
+                        "prediction_time_utc": null,
+                        "sailing_info": {
+                            "carrier_no": "ONEY",
+                            "created": "2020-01-17T10:42:41.108345+00:00",
+                            "id": "01681cc7-b955-4bcb-b781-a3cbb52e12d1",
+                            "imo": "9275036",
+                            "is_active": true,
+                            "pod": "PAMIT",
+                            "pod_actual_arrival_lt": "2020-01-27T08:36:00-05:00",
+                            "pod_actual_departure_lt": "2020-01-28T01:36:00-05:00",
+                            "pod_actual_discharge_lt": "2020-01-27T11:43:00",
+                            "pod_name": "MANZANILLO",
+                            "pod_predicted_arrival_lt": null,
+                            "pod_predicted_departure_lt": null,
+                            "pod_predicted_discharge_lt": null,
+                            "pod_scheduled_arrival_lt": "2020-01-27T08:36:00-05:00",
+                            "pod_scheduled_departure_lt": "2020-01-28T01:36:00-05:00",
+                            "pod_scheduled_discharge_lt": "2020-01-27T19:00:00",
+                            "pol": "PRSJU",
+                            "pol_actual_arrival_lt": "2020-01-20T14:03:00-04:00",
+                            "pol_actual_departure_lt": "2020-01-21T13:24:00-04:00",
+                            "pol_actual_loading_lt": "2020-01-21T02:54:00",
+                            "pol_name": "SAN JUAN",
+                            "pol_predicted_arrival_lt": null,
+                            "pol_predicted_departure_lt": null,
+                            "pol_predicted_loading_lt": null,
+                            "pol_scheduled_arrival_lt": "2020-01-20T13:42:00-04:00",
+                            "pol_scheduled_departure_lt": "2020-01-21T12:54:00-04:00",
+                            "pol_scheduled_loading_lt": "2020-01-20T22:00:00",
+                            "status": "DEPARTED_FROM_TARGET_PORT",
+                            "status_code": "5",
+                            "updated": "2020-01-28T14:00:45.755296+00:00",
+                            "vessel_leg": 0,
+                            "vessel_name": "BOMAR JULIANA",
+                            "voyage_no": "1952W"
+                        },
+                        "scheduled_arrival_lt": "2020-01-27T08:36:00-05:00",
+                        "scheduled_arrival_utc": "2020-01-27T13:36:00+00:00",
+                        "target_port_code": "PAMIT",
+                        "target_port_name": "MANZANILLO",
+                        "voyage_details": [
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": "2020-01-20T14:03:00-04:00",
+                                "actual_arrival_utc": "2020-01-20T18:03:00+00:00",
+                                "actual_departure_lt": "2020-01-21T13:24:00-04:00",
+                                "actual_departure_utc": "2020-01-21T17:24:00+00:00",
+                                "id": "cebe4b62-b8e3-4141-bb5e-4f0e156cfe27",
+                                "port_code": "PRSJU",
+                                "port_name": "SAN JUAN",
+                                "predicted_arrival_lt": null,
+                                "predicted_arrival_utc": null,
+                                "predicted_departure_lt": null,
+                                "predicted_departure_utc": null,
+                                "prediction_time_utc": null,
+                                "scheduled_arrival_lt": "2020-01-20T13:42:00-04:00",
+                                "scheduled_arrival_utc": "2020-01-20T17:42:00+00:00",
+                                "scheduled_departure_lt": "2020-01-21T12:54:00-04:00",
+                                "scheduled_departure_utc": "2020-01-21T16:54:00+00:00"
+                            },
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": "2020-01-24T07:15:00-05:00",
+                                "actual_arrival_utc": "2020-01-24T12:15:00+00:00",
+                                "actual_departure_lt": "2020-01-25T00:13:00-05:00",
+                                "actual_departure_utc": "2020-01-25T05:13:00+00:00",
+                                "id": "d3dbdd65-9fb0-4cb8-8166-4e6bc3dda0f4",
+                                "port_code": "COCNR",
+                                "port_name": "CONTECAR",
+                                "predicted_arrival_lt": null,
+                                "predicted_arrival_utc": null,
+                                "predicted_departure_lt": null,
+                                "predicted_departure_utc": null,
+                                "prediction_time_utc": null,
+                                "scheduled_arrival_lt": "2020-01-24T07:15:00-05:00",
+                                "scheduled_arrival_utc": "2020-01-24T12:15:00+00:00",
+                                "scheduled_departure_lt": "2020-01-25T00:13:00-05:00",
+                                "scheduled_departure_utc": "2020-01-25T05:13:00+00:00"
+                            },
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": "2020-01-27T08:36:00-05:00",
+                                "actual_arrival_utc": "2020-01-27T13:36:00+00:00",
+                                "actual_departure_lt": "2020-01-28T01:36:00-05:00",
+                                "actual_departure_utc": "2020-01-28T06:36:00+00:00",
+                                "id": "0df6c8fc-f527-4f9f-86f7-061124724e31",
+                                "port_code": "PAMIT",
+                                "port_name": "MANZANILLO",
+                                "predicted_arrival_lt": null,
+                                "predicted_arrival_utc": null,
+                                "predicted_departure_lt": null,
+                                "predicted_departure_utc": null,
+                                "prediction_time_utc": null,
+                                "scheduled_arrival_lt": "2020-01-27T08:36:00-05:00",
+                                "scheduled_arrival_utc": "2020-01-27T13:36:00+00:00",
+                                "scheduled_departure_lt": "2020-01-28T01:36:00-05:00",
+                                "scheduled_departure_utc": "2020-01-28T06:36:00+00:00"
+                            }
+                        ]
+                    },
+                    {
+                        "actual_arrival_lt": null,
+                        "actual_arrival_utc": null,
+                        "ais": {
+                            "course": 271.0,
+                            "draught_m": null,
+                            "imo": "9685346",
+                            "lat": 54.4304616667,
+                            "lon": -168.275085,
+                            "speed_nm": 13.4,
+                            "status": "UNDER WAY USING ENGINE",
+                            "timestamp_utc": "2020-02-19T13:53:47+00:00"
+                        },
+                        "cancelled": false,
+                        "predicted_arrival_lt": "2020-03-05T19:56:43.255866+08:00",
+                        "predicted_arrival_utc": "2020-03-05T11:56:43.255866+00:00",
+                        "prediction_confidence_level": 0.6815433865685422,
+                        "prediction_time_utc": "2020-02-19T18:08:24.412091+00:00",
+                        "sailing_info": {
+                            "carrier_no": "ONEY",
+                            "created": "2020-01-17T10:42:41.112845+00:00",
+                            "id": "dc626fd5-7e15-4046-ab79-eebc085f2408",
+                            "imo": "9685346",
+                            "is_active": true,
+                            "pod": "CNSHG",
+                            "pod_actual_arrival_lt": null,
+                            "pod_actual_departure_lt": null,
+                            "pod_actual_discharge_lt": null,
+                            "pod_name": "SHANGHAI",
+                            "pod_predicted_arrival_lt": "2020-03-05T19:56:43.255866+08:00",
+                            "pod_predicted_departure_lt": "2020-03-06T23:42:22.730164+08:00",
+                            "pod_predicted_discharge_lt": "2020-03-05T21:56:43.255866",
+                            "pod_scheduled_arrival_lt": "2020-03-04T02:00:00+08:00",
+                            "pod_scheduled_departure_lt": "2020-03-05T04:00:00+08:00",
+                            "pod_scheduled_discharge_lt": "2020-03-04T02:30:00",
+                            "pol": "PAMIT",
+                            "pol_actual_arrival_lt": "2020-02-02T17:39:00-05:00",
+                            "pol_actual_departure_lt": "2020-02-03T20:42:00-05:00",
+                            "pol_actual_loading_lt": "2020-02-03T10:25:00",
+                            "pol_name": "MANZANILLO",
+                            "pol_predicted_arrival_lt": null,
+                            "pol_predicted_departure_lt": null,
+                            "pol_predicted_loading_lt": null,
+                            "pol_scheduled_arrival_lt": "2020-02-02T17:39:00-05:00",
+                            "pol_scheduled_departure_lt": "2020-02-03T20:42:00-05:00",
+                            "pol_scheduled_loading_lt": "2020-02-03T02:30:00",
+                            "status": "SUCCESS",
+                            "status_code": "0",
+                            "updated": "2020-02-19T18:08:31.731399+00:00",
+                            "vessel_leg": 1,
+                            "vessel_name": "SEASPAN BRIGHTNESS",
+                            "voyage_no": "0028W"
+                        },
+                        "scheduled_arrival_lt": "2020-03-04T02:00:00+08:00",
+                        "scheduled_arrival_utc": "2020-03-03T18:00:00+00:00",
+                        "target_port_code": "CNSHG",
+                        "target_port_name": "SHANGHAI",
+                        "voyage_details": [
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": "2020-02-02T17:39:00-05:00",
+                                "actual_arrival_utc": "2020-02-02T22:39:00+00:00",
+                                "actual_departure_lt": "2020-02-03T20:42:00-05:00",
+                                "actual_departure_utc": "2020-02-04T01:42:00+00:00",
+                                "id": "077832a7-43ac-498a-94d5-3d559eb28045",
+                                "port_code": "PAMIT",
+                                "port_name": "MANZANILLO",
+                                "predicted_arrival_lt": null,
+                                "predicted_arrival_utc": null,
+                                "predicted_departure_lt": null,
+                                "predicted_departure_utc": null,
+                                "prediction_time_utc": null,
+                                "scheduled_arrival_lt": "2020-02-02T17:39:00-05:00",
+                                "scheduled_arrival_utc": "2020-02-02T22:39:00+00:00",
+                                "scheduled_departure_lt": "2020-02-03T20:42:00-05:00",
+                                "scheduled_departure_utc": "2020-02-04T01:42:00+00:00"
+                            },
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": "2020-02-04T02:59:00-05:00",
+                                "actual_arrival_utc": "2020-02-04T07:59:00+00:00",
+                                "actual_departure_lt": "2020-02-04T22:29:00-05:00",
+                                "actual_departure_utc": "2020-02-05T03:29:00+00:00",
+                                "id": "b1efa160-ee76-4ee2-bf5a-123267112db3",
+                                "port_code": "PAPCA",
+                                "port_name": "PUERTO CAIMITO",
+                                "predicted_arrival_lt": null,
+                                "predicted_arrival_utc": null,
+                                "predicted_departure_lt": null,
+                                "predicted_departure_utc": null,
+                                "prediction_time_utc": null,
+                                "scheduled_arrival_lt": "2020-02-04T02:59:00-05:00",
+                                "scheduled_arrival_utc": "2020-02-04T07:59:00+00:00",
+                                "scheduled_departure_lt": "2020-02-04T22:29:00-05:00",
+                                "scheduled_departure_utc": "2020-02-05T03:29:00+00:00"
+                            },
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": null,
+                                "actual_arrival_utc": null,
+                                "actual_departure_lt": null,
+                                "actual_departure_utc": null,
+                                "id": "ffb61338-efac-4ac2-93fc-8deb28d0a956",
+                                "port_code": "KRPUS",
+                                "port_name": "BUSAN",
+                                "predicted_arrival_lt": "2020-02-28T03:09:36.639746+09:00",
+                                "predicted_arrival_utc": "2020-02-27T18:09:36.639746+00:00",
+                                "predicted_departure_lt": "2020-02-29T00:52:09.782000+09:00",
+                                "predicted_departure_utc": "2020-02-28T15:52:09.782000+00:00",
+                                "prediction_time_utc": "2020-02-19T18:08:23.330102+00:00",
+                                "scheduled_arrival_lt": "2020-02-26T07:00:00+09:00",
+                                "scheduled_arrival_utc": "2020-02-25T22:00:00+00:00",
+                                "scheduled_departure_lt": "2020-02-27T04:00:00+09:00",
+                                "scheduled_departure_utc": "2020-02-26T19:00:00+00:00"
+                            },
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": null,
+                                "actual_arrival_utc": null,
+                                "actual_departure_lt": null,
+                                "actual_departure_utc": null,
+                                "id": "52b824c8-79f8-491d-b6d4-dbbd81ccd167",
+                                "port_code": "CNQDG",
+                                "port_name": "QINGDAO",
+                                "predicted_arrival_lt": "2020-03-01T07:47:56.382000+08:00",
+                                "predicted_arrival_utc": "2020-02-29T23:47:56.382000+00:00",
+                                "predicted_departure_lt": "2020-03-02T10:03:18.311083+08:00",
+                                "predicted_departure_utc": "2020-03-02T02:03:18.311083+00:00",
+                                "prediction_time_utc": "2020-02-19T18:08:23.758216+00:00",
+                                "scheduled_arrival_lt": "2020-02-27T16:00:00+08:00",
+                                "scheduled_arrival_utc": "2020-02-27T08:00:00+00:00",
+                                "scheduled_departure_lt": "2020-02-29T00:00:00+08:00",
+                                "scheduled_departure_utc": "2020-02-28T16:00:00+00:00"
+                            },
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": null,
+                                "actual_arrival_utc": null,
+                                "actual_departure_lt": null,
+                                "actual_departure_utc": null,
+                                "id": "c3474d6d-c116-4681-a246-c47c3698d5ca",
+                                "port_code": "CNNGB",
+                                "port_name": "NINGBO",
+                                "predicted_arrival_lt": "2020-03-03T18:02:39.896797+08:00",
+                                "predicted_arrival_utc": "2020-03-03T10:02:39.896797+00:00",
+                                "predicted_departure_lt": "2020-03-04T18:19:18.013009+08:00",
+                                "predicted_departure_utc": "2020-03-04T10:19:18.013009+00:00",
+                                "prediction_time_utc": "2020-02-19T18:08:24.211922+00:00",
+                                "scheduled_arrival_lt": "2020-03-01T04:00:00+08:00",
+                                "scheduled_arrival_utc": "2020-02-29T20:00:00+00:00",
+                                "scheduled_departure_lt": "2020-03-02T12:00:00+08:00",
+                                "scheduled_departure_utc": "2020-03-02T04:00:00+00:00"
+                            },
+                            {
+                                "active_scac": "ONEY",
+                                "actual_arrival_lt": null,
+                                "actual_arrival_utc": null,
+                                "actual_departure_lt": null,
+                                "actual_departure_utc": null,
+                                "id": "07a289ee-8438-4aae-ad25-3fd661483641",
+                                "port_code": "CNSHG",
+                                "port_name": "SHANGHAI",
+                                "predicted_arrival_lt": "2020-03-05T19:56:43.255866+08:00",
+                                "predicted_arrival_utc": "2020-03-05T11:56:43.255866+00:00",
+                                "predicted_departure_lt": "2020-03-06T23:42:22.730164+08:00",
+                                "predicted_departure_utc": "2020-03-06T15:42:22.730164+00:00",
+                                "prediction_time_utc": "2020-02-19T18:08:24.660761+00:00",
+                                "scheduled_arrival_lt": "2020-03-04T02:00:00+08:00",
+                                "scheduled_arrival_utc": "2020-03-03T18:00:00+00:00",
+                                "scheduled_departure_lt": "2020-03-05T04:00:00+08:00",
+                                "scheduled_departure_utc": "2020-03-04T20:00:00+00:00"
+                            }
+                        ]
+                    }
+                ],
+                "success": true
+            }
+        }
+        ```
+      parameters:
+      - example: application/json
+        explode: false
+        in: header
+        name: Accept
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: application/json
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - example: '{{x-api-key}}'
+        explode: false
+        in: header
+        name: x-api-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: bill_of_lading_bookmark_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Invalid API key
+      summary: Get bill of lading bookmark tracking results for a particular bill
+        of lading bookmark by ID
+      tags:
+      - Tracking
+  /healthcheck:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
+          description: Invalid API key
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404'
+          description: Invalid API key
+      summary: Health Check API
+      tags:
+      - default
+components:
+  schemas:
+    bookingBookmarks:
+      example:
+        response:
+        - container: container
+          status: status
+        - container: container
+          status: status
+        containers:
+        - containers
+        - containers
+        message: message
+        status: status
+      properties:
+        containers:
+          items:
+            type: string
+          type: array
+        status:
+          type: string
+        message:
+          type: string
+        response:
+          items:
+            $ref: '#/components/schemas/bookingBookmarkResponse'
+          type: array
+      type: object
+    bookmarkResponse:
+      example:
+        obj:
+          bl_no: bl_no
+          voyage_no: voyage_no
+          cntr_no: cntr_no
+          customer_no: customer_no
+          status_code: status_code
+          created: created
+          vessel_list:
+          - vessel_list
+          - vessel_list
+          deleted: true
+          org_id: org_id
+          carrier_no: carrier_no
+          id: id
+          customer_id: customer_id
+          system_deleted: true
+          updated: 2000-01-23T04:56:07.000+00:00
+          status: status
+      properties:
+        obj:
+          $ref: '#/components/schemas/bookmark'
+      type: object
+    bookingBookmarkResponseExisted:
+      properties:
+        message:
+          type: string
+        previous_ids:
+          items:
+            type: string
+          type: array
+      type: object
+    bookingBookmarkResponse:
+      anyOf:
+      - $ref: '#/components/schemas/bookmarkResponse'
+      - $ref: '#/components/schemas/bookingBookmarkResponseExisted'
+      - $ref: '#/components/schemas/messageModel'
+      example:
+        container: container
+        status: status
+      properties:
+        status:
+          type: string
+        container:
+          type: string
+      type: object
+    bookmark:
+      example:
+        bl_no: bl_no
+        voyage_no: voyage_no
+        cntr_no: cntr_no
+        customer_no: customer_no
+        status_code: status_code
+        created: created
+        vessel_list:
+        - vessel_list
+        - vessel_list
+        deleted: true
+        org_id: org_id
+        carrier_no: carrier_no
+        id: id
+        customer_id: customer_id
+        system_deleted: true
+        updated: 2000-01-23T04:56:07.000+00:00
+        status: status
+      properties:
+        bl_no:
+          type: string
+        carrier_no:
+          type: string
+        cntr_no:
+          type: string
+        created:
+          type: string
+        customer_id:
+          format: nullable
+          type: string
+        customer_no:
+          format: nullable
+          type: string
+        deleted:
+          type: boolean
+        id:
+          type: string
+        org_id:
+          type: string
+        status:
+          type: string
+        status_code:
+          type: string
+        system_deleted:
+          type: boolean
+        updated:
+          format: date-time
+          type: string
+        vessel_list:
+          items:
+            type: string
+          type: array
+        voyage_no:
+          format: nullable
+          type: string
+      type: object
+    trackingEvent:
+      example:
+        msg: msg
+        bill_of_lading_bookmark:
+          bl_no: bl_no
+          voyage_no: voyage_no
+          cntr_no: cntr_no
+          customer_no: customer_no
+          status_code: status_code
+          created: created
+          deleted: true
+          org_id: org_id
+          carrier_no: carrier_no
+          id: id
+          customer_id: customer_id
+          system_deleted: true
+          updated: updated
+          status: status
+        container_event_list:
+        - created: created
+          event_raw: event_raw
+          event_time_estimated: event_time_estimated
+          event_type_code: event_type_code
+          event_type_name: event_type_name
+          port_name: port_name
+          location_raw: location_raw
+          id: id
+          location_type_name: location_type_name
+          location_type_code: location_type_code
+          updated: updated
+          event_time: event_time
+          port_code: port_code
+        - created: created
+          event_raw: event_raw
+          event_time_estimated: event_time_estimated
+          event_type_code: event_type_code
+          event_type_name: event_type_name
+          port_name: port_name
+          location_raw: location_raw
+          id: id
+          location_type_name: location_type_name
+          location_type_code: location_type_code
+          updated: updated
+          event_time: event_time
+          port_code: port_code
+        sailing_info_tracking:
+        - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          ais:
+            timestamp_utc: 2000-01-23T04:56:07.000+00:00
+            course: 0.8008281904610115
+            imo: imo
+            lon: 1.4658129805029452
+            draught_m: draught_m
+            lat: 6.027456183070403
+            speed_nm: 5
+            status: status
+          predicted_arrival_lt: predicted_arrival_lt
+          scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          prediction_time_utc: prediction_time_utc
+          target_port_name: target_port_name
+          actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          predicted_arrival_utc: predicted_arrival_utc
+          scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          prediction_confidence_level: prediction_confidence_level
+          voyage_no_list:
+          - voyage_no_list
+          - voyage_no_list
+          sailing_info:
+            voyage_no: voyage_no
+            status_code: status_code
+            pod: pod
+            pod_predicted_discharge_lt: pod_predicted_discharge_lt
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            imo: imo
+            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol: pol
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            id: id
+            pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
+            vessel_leg: 5
+            is_active: true
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt: pod_scheduled_departure_lt
+            created: created
+            pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure: pol_actual_departure
+            vessel_name: vessel_name
+            pol_name: pol_name
+            pol_predicted_loading_lt: pol_predicted_loading_lt
+            pod_name: pod_name
+            pod_predicted_departure_lt: pod_predicted_departure_lt
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            carrier_no: carrier_no
+            updated: updated
+            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
+            status: status
+          cancelled: true
+          target_port_code: target_port_code
+          voyage_details:
+          - original_voyage_no: original_voyage_no
+            timezone: timezone
+            predicted_departure_lt: predicted_departure_lt
+            lon: 9.301444243932576
+            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+            id: id
+            active_scac: active_scac
+            lat: 7.061401241503109
+            predicted_departure_utc: predicted_departure_utc
+            port_code: port_code
+            actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            index: 2
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            port_name: port_name
+            prediction_time_utc: prediction_time_utc
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+          - original_voyage_no: original_voyage_no
+            timezone: timezone
+            predicted_departure_lt: predicted_departure_lt
+            lon: 9.301444243932576
+            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+            id: id
+            active_scac: active_scac
+            lat: 7.061401241503109
+            predicted_departure_utc: predicted_departure_utc
+            port_code: port_code
+            actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            index: 2
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            port_name: port_name
+            prediction_time_utc: prediction_time_utc
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+        - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          ais:
+            timestamp_utc: 2000-01-23T04:56:07.000+00:00
+            course: 0.8008281904610115
+            imo: imo
+            lon: 1.4658129805029452
+            draught_m: draught_m
+            lat: 6.027456183070403
+            speed_nm: 5
+            status: status
+          predicted_arrival_lt: predicted_arrival_lt
+          scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          prediction_time_utc: prediction_time_utc
+          target_port_name: target_port_name
+          actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          predicted_arrival_utc: predicted_arrival_utc
+          scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          prediction_confidence_level: prediction_confidence_level
+          voyage_no_list:
+          - voyage_no_list
+          - voyage_no_list
+          sailing_info:
+            voyage_no: voyage_no
+            status_code: status_code
+            pod: pod
+            pod_predicted_discharge_lt: pod_predicted_discharge_lt
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            imo: imo
+            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol: pol
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            id: id
+            pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
+            vessel_leg: 5
+            is_active: true
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt: pod_scheduled_departure_lt
+            created: created
+            pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure: pol_actual_departure
+            vessel_name: vessel_name
+            pol_name: pol_name
+            pol_predicted_loading_lt: pol_predicted_loading_lt
+            pod_name: pod_name
+            pod_predicted_departure_lt: pod_predicted_departure_lt
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            carrier_no: carrier_no
+            updated: updated
+            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
+            status: status
+          cancelled: true
+          target_port_code: target_port_code
+          voyage_details:
+          - original_voyage_no: original_voyage_no
+            timezone: timezone
+            predicted_departure_lt: predicted_departure_lt
+            lon: 9.301444243932576
+            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+            id: id
+            active_scac: active_scac
+            lat: 7.061401241503109
+            predicted_departure_utc: predicted_departure_utc
+            port_code: port_code
+            actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            index: 2
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            port_name: port_name
+            prediction_time_utc: prediction_time_utc
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+          - original_voyage_no: original_voyage_no
+            timezone: timezone
+            predicted_departure_lt: predicted_departure_lt
+            lon: 9.301444243932576
+            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+            id: id
+            active_scac: active_scac
+            lat: 7.061401241503109
+            predicted_departure_utc: predicted_departure_utc
+            port_code: port_code
+            actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            index: 2
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            port_name: port_name
+            prediction_time_utc: prediction_time_utc
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+        org_id: org_id
+        success: true
+        container_meta_info: '{}'
+        bill_of_lading:
+          bl_no: bl_no
+          cntr_no: cntr_no
+          pod: pod
+          pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_delivery_time: scheduled_delivery_time
+          place_of_delivery_name: place_of_delivery_name
+          place_of_receipt_name: place_of_receipt_name
+          pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+          pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol: pol
+          actual_delivery_time: actual_delivery_time
+          pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_departure_lt: pol_scheduled_departure_lt
+          pod_actual_arrival_lt: pod_actual_arrival_lt
+          pod_actual_discharge_lt: pod_actual_discharge_lt
+          kgs: kgs
+          id: id
+          pod_actual_departure_lt: pod_actual_departure_lt
+          pol_predicted_arrival_lt: pol_predicted_arrival_lt
+          actual_receipt_time: actual_receipt_time
+          pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          place_of_delivery: place_of_delivery
+          pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_receipt_time: scheduled_receipt_time
+          pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+          created: created
+          pod_actual_arrival_utc: pod_actual_arrival_utc
+          pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pol_name: pol_name
+          pol_predicted_loading_lt: pol_predicted_loading_lt
+          cbm: cbm
+          pod_name: pod_name
+          place_of_receipt: place_of_receipt
+          pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_loading_lt: pol_scheduled_loading_lt
+          carrier_no: carrier_no
+          updated: updated
+          pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+          pol_predicted_departure_lt: pol_predicted_departure_lt
+        id: id
+      properties:
+        bill_of_lading:
+          $ref: '#/components/schemas/trackingEvent_bill_of_lading'
+        bill_of_lading_bookmark:
+          $ref: '#/components/schemas/trackingEvent_bill_of_lading_bookmark'
+        container_event_list:
+          items:
+            $ref: '#/components/schemas/trackingEvent_container_event_list'
+          type: array
+        container_meta_info:
+          properties: {}
+          type: object
+        id:
+          type: string
+        msg:
+          type: string
+        org_id:
+          type: string
+        sailing_info_tracking:
+          items:
+            $ref: '#/components/schemas/trackingEvent_sailing_info_tracking'
+          type: array
+        success:
+          type: boolean
+      type: object
+    authError:
+      properties:
+        Error:
+          example: API Key is Invalid
+          type: string
+      type: object
+    messageModel:
+      example:
+        message: API Quota Exceeded
+      properties:
+        message:
+          example: API Quota Exceeded
+          type: string
+      type: object
+    inline_response_200:
+      example:
+        obj_list:
+        - bl_no: bl_no
+          voyage_no: voyage_no
+          cntr_no: cntr_no
+          customer_no: customer_no
+          status_code: status_code
+          created: created
+          vessel_list:
+          - vessel_list
+          - vessel_list
+          deleted: true
+          org_id: org_id
+          carrier_no: carrier_no
+          id: id
+          customer_id: customer_id
+          system_deleted: true
+          updated: 2000-01-23T04:56:07.000+00:00
+          status: status
+        - bl_no: bl_no
+          voyage_no: voyage_no
+          cntr_no: cntr_no
+          customer_no: customer_no
+          status_code: status_code
+          created: created
+          vessel_list:
+          - vessel_list
+          - vessel_list
+          deleted: true
+          org_id: org_id
+          carrier_no: carrier_no
+          id: id
+          customer_id: customer_id
+          system_deleted: true
+          updated: 2000-01-23T04:56:07.000+00:00
+          status: status
+        _ended_at: _ended_at
+      properties:
+        _ended_at:
+          type: string
+        obj_list:
+          items:
+            $ref: '#/components/schemas/bookmark'
+          type: array
+      type: object
+    inline_response_200_1:
+      example:
+        obj_list:
+        - msg: msg
+          bill_of_lading_bookmark:
+            bl_no: bl_no
+            voyage_no: voyage_no
+            cntr_no: cntr_no
+            customer_no: customer_no
+            status_code: status_code
+            created: created
+            deleted: true
+            org_id: org_id
+            carrier_no: carrier_no
+            id: id
+            customer_id: customer_id
+            system_deleted: true
+            updated: updated
+            status: status
+          container_event_list:
+          - created: created
+            event_raw: event_raw
+            event_time_estimated: event_time_estimated
+            event_type_code: event_type_code
+            event_type_name: event_type_name
+            port_name: port_name
+            location_raw: location_raw
+            id: id
+            location_type_name: location_type_name
+            location_type_code: location_type_code
+            updated: updated
+            event_time: event_time
+            port_code: port_code
+          - created: created
+            event_raw: event_raw
+            event_time_estimated: event_time_estimated
+            event_type_code: event_type_code
+            event_type_name: event_type_name
+            port_name: port_name
+            location_raw: location_raw
+            id: id
+            location_type_name: location_type_name
+            location_type_code: location_type_code
+            updated: updated
+            event_time: event_time
+            port_code: port_code
+          sailing_info_tracking:
+          - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 0.8008281904610115
+              imo: imo
+              lon: 1.4658129805029452
+              draught_m: draught_m
+              lat: 6.027456183070403
+              speed_nm: 5
+              status: status
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            prediction_time_utc: prediction_time_utc
+            target_port_name: target_port_name
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            prediction_confidence_level: prediction_confidence_level
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+            sailing_info:
+              voyage_no: voyage_no
+              status_code: status_code
+              pod: pod
+              pod_predicted_discharge_lt: pod_predicted_discharge_lt
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              imo: imo
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: pol
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              id: id
+              pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              vessel_leg: 5
+              is_active: true
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt: pod_scheduled_departure_lt
+              created: created
+              pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure: pol_actual_departure
+              vessel_name: vessel_name
+              pol_name: pol_name
+              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pod_name: pod_name
+              pod_predicted_departure_lt: pod_predicted_departure_lt
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              carrier_no: carrier_no
+              updated: updated
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
+              status: status
+            cancelled: true
+            target_port_code: target_port_code
+            voyage_details:
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+          - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 0.8008281904610115
+              imo: imo
+              lon: 1.4658129805029452
+              draught_m: draught_m
+              lat: 6.027456183070403
+              speed_nm: 5
+              status: status
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            prediction_time_utc: prediction_time_utc
+            target_port_name: target_port_name
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            prediction_confidence_level: prediction_confidence_level
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+            sailing_info:
+              voyage_no: voyage_no
+              status_code: status_code
+              pod: pod
+              pod_predicted_discharge_lt: pod_predicted_discharge_lt
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              imo: imo
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: pol
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              id: id
+              pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              vessel_leg: 5
+              is_active: true
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt: pod_scheduled_departure_lt
+              created: created
+              pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure: pol_actual_departure
+              vessel_name: vessel_name
+              pol_name: pol_name
+              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pod_name: pod_name
+              pod_predicted_departure_lt: pod_predicted_departure_lt
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              carrier_no: carrier_no
+              updated: updated
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
+              status: status
+            cancelled: true
+            target_port_code: target_port_code
+            voyage_details:
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+          org_id: org_id
+          success: true
+          container_meta_info: '{}'
+          bill_of_lading:
+            bl_no: bl_no
+            cntr_no: cntr_no
+            pod: pod
+            pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_delivery_time: scheduled_delivery_time
+            place_of_delivery_name: place_of_delivery_name
+            place_of_receipt_name: place_of_receipt_name
+            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol: pol
+            actual_delivery_time: actual_delivery_time
+            pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            kgs: kgs
+            id: id
+            pod_actual_departure_lt: pod_actual_departure_lt
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            actual_receipt_time: actual_receipt_time
+            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            place_of_delivery: place_of_delivery
+            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_receipt_time: scheduled_receipt_time
+            pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            created: created
+            pod_actual_arrival_utc: pod_actual_arrival_utc
+            pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_name: pol_name
+            pol_predicted_loading_lt: pol_predicted_loading_lt
+            cbm: cbm
+            pod_name: pod_name
+            place_of_receipt: place_of_receipt
+            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            carrier_no: carrier_no
+            updated: updated
+            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
+          id: id
+        - msg: msg
+          bill_of_lading_bookmark:
+            bl_no: bl_no
+            voyage_no: voyage_no
+            cntr_no: cntr_no
+            customer_no: customer_no
+            status_code: status_code
+            created: created
+            deleted: true
+            org_id: org_id
+            carrier_no: carrier_no
+            id: id
+            customer_id: customer_id
+            system_deleted: true
+            updated: updated
+            status: status
+          container_event_list:
+          - created: created
+            event_raw: event_raw
+            event_time_estimated: event_time_estimated
+            event_type_code: event_type_code
+            event_type_name: event_type_name
+            port_name: port_name
+            location_raw: location_raw
+            id: id
+            location_type_name: location_type_name
+            location_type_code: location_type_code
+            updated: updated
+            event_time: event_time
+            port_code: port_code
+          - created: created
+            event_raw: event_raw
+            event_time_estimated: event_time_estimated
+            event_type_code: event_type_code
+            event_type_name: event_type_name
+            port_name: port_name
+            location_raw: location_raw
+            id: id
+            location_type_name: location_type_name
+            location_type_code: location_type_code
+            updated: updated
+            event_time: event_time
+            port_code: port_code
+          sailing_info_tracking:
+          - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 0.8008281904610115
+              imo: imo
+              lon: 1.4658129805029452
+              draught_m: draught_m
+              lat: 6.027456183070403
+              speed_nm: 5
+              status: status
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            prediction_time_utc: prediction_time_utc
+            target_port_name: target_port_name
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            prediction_confidence_level: prediction_confidence_level
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+            sailing_info:
+              voyage_no: voyage_no
+              status_code: status_code
+              pod: pod
+              pod_predicted_discharge_lt: pod_predicted_discharge_lt
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              imo: imo
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: pol
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              id: id
+              pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              vessel_leg: 5
+              is_active: true
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt: pod_scheduled_departure_lt
+              created: created
+              pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure: pol_actual_departure
+              vessel_name: vessel_name
+              pol_name: pol_name
+              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pod_name: pod_name
+              pod_predicted_departure_lt: pod_predicted_departure_lt
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              carrier_no: carrier_no
+              updated: updated
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
+              status: status
+            cancelled: true
+            target_port_code: target_port_code
+            voyage_details:
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+          - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 0.8008281904610115
+              imo: imo
+              lon: 1.4658129805029452
+              draught_m: draught_m
+              lat: 6.027456183070403
+              speed_nm: 5
+              status: status
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            prediction_time_utc: prediction_time_utc
+            target_port_name: target_port_name
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            prediction_confidence_level: prediction_confidence_level
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+            sailing_info:
+              voyage_no: voyage_no
+              status_code: status_code
+              pod: pod
+              pod_predicted_discharge_lt: pod_predicted_discharge_lt
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              imo: imo
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: pol
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              id: id
+              pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              vessel_leg: 5
+              is_active: true
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt: pod_scheduled_departure_lt
+              created: created
+              pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure: pol_actual_departure
+              vessel_name: vessel_name
+              pol_name: pol_name
+              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pod_name: pod_name
+              pod_predicted_departure_lt: pod_predicted_departure_lt
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              carrier_no: carrier_no
+              updated: updated
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
+              status: status
+            cancelled: true
+            target_port_code: target_port_code
+            voyage_details:
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+          org_id: org_id
+          success: true
+          container_meta_info: '{}'
+          bill_of_lading:
+            bl_no: bl_no
+            cntr_no: cntr_no
+            pod: pod
+            pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_delivery_time: scheduled_delivery_time
+            place_of_delivery_name: place_of_delivery_name
+            place_of_receipt_name: place_of_receipt_name
+            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol: pol
+            actual_delivery_time: actual_delivery_time
+            pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            kgs: kgs
+            id: id
+            pod_actual_departure_lt: pod_actual_departure_lt
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            actual_receipt_time: actual_receipt_time
+            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            place_of_delivery: place_of_delivery
+            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_receipt_time: scheduled_receipt_time
+            pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            created: created
+            pod_actual_arrival_utc: pod_actual_arrival_utc
+            pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_name: pol_name
+            pol_predicted_loading_lt: pol_predicted_loading_lt
+            cbm: cbm
+            pod_name: pod_name
+            place_of_receipt: place_of_receipt
+            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            carrier_no: carrier_no
+            updated: updated
+            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
+          id: id
+        _ended_at: _ended_at
+      properties:
+        _ended_at:
+          type: string
+        obj_list:
+          items:
+            $ref: '#/components/schemas/trackingEvent'
+          type: array
+      type: object
+    inline_response_200_2:
+      example:
+        obj:
+          msg: msg
+          bill_of_lading_bookmark:
+            bl_no: bl_no
+            voyage_no: voyage_no
+            cntr_no: cntr_no
+            customer_no: customer_no
+            status_code: status_code
+            created: created
+            deleted: true
+            org_id: org_id
+            carrier_no: carrier_no
+            id: id
+            customer_id: customer_id
+            system_deleted: true
+            updated: updated
+            status: status
+          container_event_list:
+          - created: created
+            event_raw: event_raw
+            event_time_estimated: event_time_estimated
+            event_type_code: event_type_code
+            event_type_name: event_type_name
+            port_name: port_name
+            location_raw: location_raw
+            id: id
+            location_type_name: location_type_name
+            location_type_code: location_type_code
+            updated: updated
+            event_time: event_time
+            port_code: port_code
+          - created: created
+            event_raw: event_raw
+            event_time_estimated: event_time_estimated
+            event_type_code: event_type_code
+            event_type_name: event_type_name
+            port_name: port_name
+            location_raw: location_raw
+            id: id
+            location_type_name: location_type_name
+            location_type_code: location_type_code
+            updated: updated
+            event_time: event_time
+            port_code: port_code
+          sailing_info_tracking:
+          - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 0.8008281904610115
+              imo: imo
+              lon: 1.4658129805029452
+              draught_m: draught_m
+              lat: 6.027456183070403
+              speed_nm: 5
+              status: status
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            prediction_time_utc: prediction_time_utc
+            target_port_name: target_port_name
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            prediction_confidence_level: prediction_confidence_level
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+            sailing_info:
+              voyage_no: voyage_no
+              status_code: status_code
+              pod: pod
+              pod_predicted_discharge_lt: pod_predicted_discharge_lt
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              imo: imo
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: pol
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              id: id
+              pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              vessel_leg: 5
+              is_active: true
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt: pod_scheduled_departure_lt
+              created: created
+              pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure: pol_actual_departure
+              vessel_name: vessel_name
+              pol_name: pol_name
+              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pod_name: pod_name
+              pod_predicted_departure_lt: pod_predicted_departure_lt
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              carrier_no: carrier_no
+              updated: updated
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
+              status: status
+            cancelled: true
+            target_port_code: target_port_code
+            voyage_details:
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+          - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 0.8008281904610115
+              imo: imo
+              lon: 1.4658129805029452
+              draught_m: draught_m
+              lat: 6.027456183070403
+              speed_nm: 5
+              status: status
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            prediction_time_utc: prediction_time_utc
+            target_port_name: target_port_name
+            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_utc: predicted_arrival_utc
+            scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            prediction_confidence_level: prediction_confidence_level
+            voyage_no_list:
+            - voyage_no_list
+            - voyage_no_list
+            sailing_info:
+              voyage_no: voyage_no
+              status_code: status_code
+              pod: pod
+              pod_predicted_discharge_lt: pod_predicted_discharge_lt
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              imo: imo
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: pol
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              id: id
+              pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              vessel_leg: 5
+              is_active: true
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt: pod_scheduled_departure_lt
+              created: created
+              pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure: pol_actual_departure
+              vessel_name: vessel_name
+              pol_name: pol_name
+              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pod_name: pod_name
+              pod_predicted_departure_lt: pod_predicted_departure_lt
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              carrier_no: carrier_no
+              updated: updated
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
+              status: status
+            cancelled: true
+            target_port_code: target_port_code
+            voyage_details:
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+            - original_voyage_no: original_voyage_no
+              timezone: timezone
+              predicted_departure_lt: predicted_departure_lt
+              lon: 9.301444243932576
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: predicted_arrival_utc
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              id: id
+              active_scac: active_scac
+              lat: 7.061401241503109
+              predicted_departure_utc: predicted_departure_utc
+              port_code: port_code
+              actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              index: 2
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: port_name
+              prediction_time_utc: prediction_time_utc
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+              voyage_no_list:
+              - voyage_no_list
+              - voyage_no_list
+          org_id: org_id
+          success: true
+          container_meta_info: '{}'
+          bill_of_lading:
+            bl_no: bl_no
+            cntr_no: cntr_no
+            pod: pod
+            pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_delivery_time: scheduled_delivery_time
+            place_of_delivery_name: place_of_delivery_name
+            place_of_receipt_name: place_of_receipt_name
+            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol: pol
+            actual_delivery_time: actual_delivery_time
+            pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            kgs: kgs
+            id: id
+            pod_actual_departure_lt: pod_actual_departure_lt
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            actual_receipt_time: actual_receipt_time
+            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            place_of_delivery: place_of_delivery
+            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_receipt_time: scheduled_receipt_time
+            pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            created: created
+            pod_actual_arrival_utc: pod_actual_arrival_utc
+            pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_name: pol_name
+            pol_predicted_loading_lt: pol_predicted_loading_lt
+            cbm: cbm
+            pod_name: pod_name
+            place_of_receipt: place_of_receipt
+            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            carrier_no: carrier_no
+            updated: updated
+            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
+          id: id
+      properties:
+        obj:
+          $ref: '#/components/schemas/trackingEvent'
+      type: object
+    inline_response_401:
+      properties:
+        Error:
+          example: API Key is Invalid
+          type: string
+      type: object
+    inline_response_404:
+      properties:
+        messageModel:
+          example: invalid_request
+          type: string
+      type: object
+    trackingEvent_bill_of_lading:
+      example:
+        bl_no: bl_no
+        cntr_no: cntr_no
+        pod: pod
+        pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+        scheduled_delivery_time: scheduled_delivery_time
+        place_of_delivery_name: place_of_delivery_name
+        place_of_receipt_name: place_of_receipt_name
+        pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+        pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol: pol
+        actual_delivery_time: actual_delivery_time
+        pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_departure_lt: pol_scheduled_departure_lt
+        pod_actual_arrival_lt: pod_actual_arrival_lt
+        pod_actual_discharge_lt: pod_actual_discharge_lt
+        kgs: kgs
+        id: id
+        pod_actual_departure_lt: pod_actual_departure_lt
+        pol_predicted_arrival_lt: pol_predicted_arrival_lt
+        actual_receipt_time: actual_receipt_time
+        pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        place_of_delivery: place_of_delivery
+        pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        scheduled_receipt_time: scheduled_receipt_time
+        pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+        created: created
+        pod_actual_arrival_utc: pod_actual_arrival_utc
+        pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pol_name: pol_name
+        pol_predicted_loading_lt: pol_predicted_loading_lt
+        cbm: cbm
+        pod_name: pod_name
+        place_of_receipt: place_of_receipt
+        pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_loading_lt: pol_scheduled_loading_lt
+        carrier_no: carrier_no
+        updated: updated
+        pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+        pol_predicted_departure_lt: pol_predicted_departure_lt
+      properties:
+        actual_delivery_time:
+          format: nullable
+          type: string
+        actual_receipt_time:
+          format: nullable
+          type: string
+        bl_no:
+          type: string
+        carrier_no:
+          type: string
+        cbm:
+          format: nullable
+          type: string
+        cntr_no:
+          type: string
+        created:
+          type: string
+        id:
+          type: string
+        kgs:
+          format: nullable
+          type: string
+        place_of_delivery:
+          type: string
+        place_of_delivery_name:
+          type: string
+        place_of_receipt:
+          type: string
+        place_of_receipt_name:
+          type: string
+        pod:
+          type: string
+        pod_actual_arrival_lt:
+          format: nullable
+          type: string
+        pod_actual_arrival_utc:
+          format: nullable
+          type: string
+        pod_actual_departure_lt:
+          format: nullable
+          type: string
+        pod_actual_discharge_lt:
+          format: nullable
+          type: string
+        pod_name:
+          type: string
+        pod_predicted_arrival_lt:
+          format: date-time
+          type: string
+        pod_predicted_arrival_utc:
+          format: date-time
+          type: string
+        pod_predicted_departure_lt:
+          format: date-time
+          type: string
+        pod_predicted_discharge_lt:
+          format: date-time
+          type: string
+        pod_scheduled_arrival_lt:
+          format: date-time
+          type: string
+        pod_scheduled_departure_lt:
+          format: date-time
+          type: string
+        pod_scheduled_discharge_lt:
+          format: date-time
+          type: string
+        pol:
+          type: string
+        pol_actual_arrival_lt:
+          format: date-time
+          type: string
+        pol_actual_departure_lt:
+          format: date-time
+          type: string
+        pol_actual_loading_lt:
+          format: date-time
+          type: string
+        pol_name:
+          type: string
+        pol_predicted_arrival_lt:
+          format: nullable
+          type: string
+        pol_predicted_departure_lt:
+          format: nullable
+          type: string
+        pol_predicted_loading_lt:
+          format: nullable
+          type: string
+        pol_scheduled_arrival_lt:
+          format: nullable
+          type: string
+        pol_scheduled_departure_lt:
+          format: nullable
+          type: string
+        pol_scheduled_loading_lt:
+          format: nullable
+          type: string
+        scheduled_delivery_time:
+          format: nullable
+          type: string
+        scheduled_receipt_time:
+          format: nullable
+          type: string
+        updated:
+          type: string
+      type: object
+    trackingEvent_bill_of_lading_bookmark:
+      example:
+        bl_no: bl_no
+        voyage_no: voyage_no
+        cntr_no: cntr_no
+        customer_no: customer_no
+        status_code: status_code
+        created: created
+        deleted: true
+        org_id: org_id
+        carrier_no: carrier_no
+        id: id
+        customer_id: customer_id
+        system_deleted: true
+        updated: updated
+        status: status
+      properties:
+        bl_no:
+          type: string
+        carrier_no:
+          type: string
+        cntr_no:
+          type: string
+        created:
+          type: string
+        customer_id:
+          format: nullable
+          type: string
+        customer_no:
+          format: nullable
+          type: string
+        deleted:
+          type: boolean
+        id:
+          type: string
+        org_id:
+          type: string
+        status:
+          type: string
+        status_code:
+          type: string
+        system_deleted:
+          type: boolean
+        updated:
+          type: string
+        voyage_no:
+          format: nullable
+          type: string
+      type: object
+    trackingEvent_container_event_list:
+      example:
+        created: created
+        event_raw: event_raw
+        event_time_estimated: event_time_estimated
+        event_type_code: event_type_code
+        event_type_name: event_type_name
+        port_name: port_name
+        location_raw: location_raw
+        id: id
+        location_type_name: location_type_name
+        location_type_code: location_type_code
+        updated: updated
+        event_time: event_time
+        port_code: port_code
+      properties:
+        created:
+          type: string
+        event_raw:
+          type: string
+        event_time:
+          type: string
+        event_time_estimated:
+          format: nullable
+          type: string
+        event_type_code:
+          type: string
+        event_type_name:
+          type: string
+        id:
+          type: string
+        location_raw:
+          type: string
+        location_type_code:
+          type: string
+        location_type_name:
+          type: string
+        port_code:
+          type: string
+        port_name:
+          type: string
+        updated:
+          type: string
+      type: object
+    trackingEvent_ais:
+      example:
+        timestamp_utc: 2000-01-23T04:56:07.000+00:00
+        course: 0.8008281904610115
+        imo: imo
+        lon: 1.4658129805029452
+        draught_m: draught_m
+        lat: 6.027456183070403
+        speed_nm: 5
+        status: status
+      properties:
+        course:
+          type: number
+        draught_m:
+          format: nullable
+          type: string
+        imo:
+          type: string
+        lat:
+          type: number
+        lon:
+          type: number
+        speed_nm:
+          format: int32
+          type: integer
+        status:
+          type: string
+        timestamp_utc:
+          format: date-time
+          type: string
+      type: object
+    trackingEvent_sailing_info:
+      example:
+        voyage_no: voyage_no
+        status_code: status_code
+        pod: pod
+        pod_predicted_discharge_lt: pod_predicted_discharge_lt
+        pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+        imo: imo
+        pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol: pol
+        pol_scheduled_departure_lt: pol_scheduled_departure_lt
+        pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+        id: id
+        pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol_predicted_arrival_lt: pol_predicted_arrival_lt
+        pod_predicted_arrival_lt: pod_predicted_arrival_lt
+        vessel_leg: 5
+        is_active: true
+        pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+        pod_scheduled_departure_lt: pod_scheduled_departure_lt
+        created: created
+        pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pol_actual_departure: pol_actual_departure
+        vessel_name: vessel_name
+        pol_name: pol_name
+        pol_predicted_loading_lt: pol_predicted_loading_lt
+        pod_name: pod_name
+        pod_predicted_departure_lt: pod_predicted_departure_lt
+        pol_scheduled_loading_lt: pol_scheduled_loading_lt
+        carrier_no: carrier_no
+        updated: updated
+        pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+        pol_predicted_departure_lt: pol_predicted_departure_lt
+        status: status
+      properties:
+        carrier_no:
+          type: string
+        created:
+          type: string
+        id:
+          type: string
+        imo:
+          type: string
+        is_active:
+          type: boolean
+        pod:
+          type: string
+        pod_actual_arrival_lt:
+          format: date-time
+          type: string
+        pod_actual_departure_lt:
+          format: date-time
+          type: string
+        pod_actual_discharge_lt:
+          format: date-time
+          type: string
+        pod_name:
+          type: string
+        pod_predicted_arrival_lt:
+          format: nullable
+          type: string
+        pod_predicted_departure_lt:
+          format: nullable
+          type: string
+        pod_predicted_discharge_lt:
+          format: nullable
+          type: string
+        pod_scheduled_arrival_lt:
+          format: nullable
+          type: string
+        pod_scheduled_departure_lt:
+          format: nullable
+          type: string
+        pod_scheduled_discharge_lt:
+          format: nullable
+          type: string
+        pol:
+          type: string
+        pol_actual_arrival_lt:
+          format: date-time
+          type: string
+        pol_actual_departure:
+          format: nullable
+          type: string
+        pol_actual_departure_lt:
+          format: date-time
+          type: string
+        pol_actual_loading_lt:
+          format: date-time
+          type: string
+        pol_name:
+          type: string
+        pol_predicted_arrival_lt:
+          format: nullable
+          type: string
+        pol_predicted_departure_lt:
+          format: nullable
+          type: string
+        pol_predicted_loading_lt:
+          format: nullable
+          type: string
+        pol_scheduled_arrival_lt:
+          format: nullable
+          type: string
+        pol_scheduled_departure_lt:
+          format: nullable
+          type: string
+        pol_scheduled_loading_lt:
+          format: nullable
+          type: string
+        status:
+          type: string
+        status_code:
+          type: string
+        updated:
+          type: string
+        vessel_leg:
+          format: int32
+          type: integer
+        vessel_name:
+          type: string
+        voyage_no:
+          type: string
+      type: object
+    trackingEvent_voyage_details:
+      example:
+        original_voyage_no: original_voyage_no
+        timezone: timezone
+        predicted_departure_lt: predicted_departure_lt
+        lon: 9.301444243932576
+        actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+        predicted_arrival_utc: predicted_arrival_utc
+        scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+        actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+        id: id
+        active_scac: active_scac
+        lat: 7.061401241503109
+        predicted_departure_utc: predicted_departure_utc
+        port_code: port_code
+        actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+        index: 2
+        predicted_arrival_lt: predicted_arrival_lt
+        scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        port_name: port_name
+        prediction_time_utc: prediction_time_utc
+        actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+        scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+        scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+        voyage_no_list:
+        - voyage_no_list
+        - voyage_no_list
+      properties:
+        active_scac:
+          type: string
+        actual_arrival_lt:
+          format: date-time
+          type: string
+        actual_arrival_utc:
+          format: date-time
+          type: string
+        actual_departure_lt:
+          format: date-time
+          type: string
+        actual_departure_utc:
+          format: date-time
+          type: string
+        id:
+          type: string
+        index:
+          format: int32
+          type: integer
+        lat:
+          type: number
+        lon:
+          type: number
+        original_voyage_no:
+          type: string
+        port_code:
+          type: string
+        port_name:
+          type: string
+        predicted_arrival_lt:
+          format: nullable
+          type: string
+        predicted_arrival_utc:
+          format: nullable
+          type: string
+        predicted_departure_lt:
+          format: nullable
+          type: string
+        predicted_departure_utc:
+          format: nullable
+          type: string
+        prediction_time_utc:
+          format: nullable
+          type: string
+        scheduled_arrival_lt:
+          format: date-time
+          type: string
+        scheduled_arrival_on_time_confidence:
+          format: nullable
+          type: string
+        scheduled_arrival_utc:
+          format: date-time
+          type: string
+        scheduled_departure_lt:
+          format: date-time
+          type: string
+        scheduled_departure_on_time_confidence:
+          format: nullable
+          type: string
+        scheduled_departure_utc:
+          format: date-time
+          type: string
+        timezone:
+          type: string
+        voyage_no_list:
+          items:
+            type: string
+          type: array
+      type: object
+    trackingEvent_sailing_info_tracking:
+      example:
+        actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+        ais:
+          timestamp_utc: 2000-01-23T04:56:07.000+00:00
+          course: 0.8008281904610115
+          imo: imo
+          lon: 1.4658129805029452
+          draught_m: draught_m
+          lat: 6.027456183070403
+          speed_nm: 5
+          status: status
+        predicted_arrival_lt: predicted_arrival_lt
+        scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        prediction_time_utc: prediction_time_utc
+        target_port_name: target_port_name
+        actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        predicted_arrival_utc: predicted_arrival_utc
+        scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+        prediction_confidence_level: prediction_confidence_level
+        voyage_no_list:
+        - voyage_no_list
+        - voyage_no_list
+        sailing_info:
+          voyage_no: voyage_no
+          status_code: status_code
+          pod: pod
+          pod_predicted_discharge_lt: pod_predicted_discharge_lt
+          pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+          imo: imo
+          pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol: pol
+          pol_scheduled_departure_lt: pol_scheduled_departure_lt
+          pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+          id: id
+          pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol_predicted_arrival_lt: pol_predicted_arrival_lt
+          pod_predicted_arrival_lt: pod_predicted_arrival_lt
+          vessel_leg: 5
+          is_active: true
+          pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+          pod_scheduled_departure_lt: pod_scheduled_departure_lt
+          created: created
+          pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pol_actual_departure: pol_actual_departure
+          vessel_name: vessel_name
+          pol_name: pol_name
+          pol_predicted_loading_lt: pol_predicted_loading_lt
+          pod_name: pod_name
+          pod_predicted_departure_lt: pod_predicted_departure_lt
+          pol_scheduled_loading_lt: pol_scheduled_loading_lt
+          carrier_no: carrier_no
+          updated: updated
+          pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
+          pol_predicted_departure_lt: pol_predicted_departure_lt
+          status: status
+        cancelled: true
+        target_port_code: target_port_code
+        voyage_details:
+        - original_voyage_no: original_voyage_no
+          timezone: timezone
+          predicted_departure_lt: predicted_departure_lt
+          lon: 9.301444243932576
+          actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+          predicted_arrival_utc: predicted_arrival_utc
+          scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+          actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+          id: id
+          active_scac: active_scac
+          lat: 7.061401241503109
+          predicted_departure_utc: predicted_departure_utc
+          port_code: port_code
+          actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          index: 2
+          predicted_arrival_lt: predicted_arrival_lt
+          scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          port_name: port_name
+          prediction_time_utc: prediction_time_utc
+          actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+          scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+          voyage_no_list:
+          - voyage_no_list
+          - voyage_no_list
+        - original_voyage_no: original_voyage_no
+          timezone: timezone
+          predicted_departure_lt: predicted_departure_lt
+          lon: 9.301444243932576
+          actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+          predicted_arrival_utc: predicted_arrival_utc
+          scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+          actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+          id: id
+          active_scac: active_scac
+          lat: 7.061401241503109
+          predicted_departure_utc: predicted_departure_utc
+          port_code: port_code
+          actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          index: 2
+          predicted_arrival_lt: predicted_arrival_lt
+          scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          port_name: port_name
+          prediction_time_utc: prediction_time_utc
+          actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
+          scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+          scheduled_departure_on_time_confidence: scheduled_departure_on_time_confidence
+          voyage_no_list:
+          - voyage_no_list
+          - voyage_no_list
+      properties:
+        actual_arrival_lt:
+          format: date-time
+          type: string
+        actual_arrival_utc:
+          format: date-time
+          type: string
+        ais:
+          $ref: '#/components/schemas/trackingEvent_ais'
+        cancelled:
+          type: boolean
+        predicted_arrival_lt:
+          format: nullable
+          type: string
+        predicted_arrival_utc:
+          format: nullable
+          type: string
+        prediction_confidence_level:
+          format: nullable
+          type: string
+        prediction_time_utc:
+          format: nullable
+          type: string
+        sailing_info:
+          $ref: '#/components/schemas/trackingEvent_sailing_info'
+        scheduled_arrival_lt:
+          format: date-time
+          type: string
+        scheduled_arrival_utc:
+          format: date-time
+          type: string
+        target_port_code:
+          type: string
+        target_port_name:
+          type: string
+        voyage_details:
+          items:
+            $ref: '#/components/schemas/trackingEvent_voyage_details'
+          type: array
+        voyage_no_list:
+          items:
+            type: string
+          type: array
+      type: object

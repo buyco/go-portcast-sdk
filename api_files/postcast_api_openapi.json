@@ -1,0 +1,1476 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Portcast API (1.1.0) - Bill of Lading Tracking",
+    "description": "**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**\n\nThere are two variables used in this documentation:\n1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io`\n2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation\n\nThe general workflow is as below:\n\n1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`).\n2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response.\n3. Wait for predictions to be generated. This could take up to 5 mins.\n5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)\n",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.portcast.io"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Booking Bookmarks",
+      "description": "Restful operations on vessel bookmarks"
+    },
+    {
+      "name": "Bill of Lading Bookmarks",
+      "description": "Restful operations on vessel bookmarks"
+    },
+    {
+      "name": "Tracking",
+      "description": "Get tracking results for the vessel bookmarks"
+    }
+  ],
+  "paths": {
+    "/api/v1/eta/booking": {
+      "post": {
+        "tags": [
+          "Booking Bookmarks"
+        ],
+        "summary": "Create new bookmarks for booking",
+        "description": "Please send the bill of lading or booking number with the following fields:\n```\n{\n    \"carrier_no\": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,\n    \"bl_no\": <string, required, ocean carrier bill of lading number>,\n    \"dock_type\": <string, required, type of doc_no. Accept value: BK (booking) , BL (Bill of Lading)>\n}\n```",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "doc_no",
+                  "doc_type",
+                  "carrier_no"
+                ],
+                "example": {
+                  "doc_no": "YMLUN851098484",
+                  "doc_type": "BK",
+                  "carrier_no": "YMLU"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{x-api-key}}"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bookingBookmarks"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "API Quota Exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/eta/bill-of-lading-bookmarks": {
+      "get": {
+        "tags": [
+          "Bill of Lading Bookmarks"
+        ],
+        "summary": "Get a list of bookmarked bill of ladings",
+        "description": "This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.\n\nYou could filter based the parameters listed.",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{x-api-key}}"
+          },
+          {
+            "name": "_start_after",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "start query from after this voyage bookmark id"
+          },
+          {
+            "name": "_ascending",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "if set to true, sort results based on creation time in ascending order. false by default"
+          },
+          {
+            "name": "carrier_no",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the carrier scac"
+          },
+          {
+            "name": "bl_no",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the bill of lading number"
+          },
+          {
+            "name": "cntr_no",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the container number"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the status"
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the status code"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_ended_at": {
+                      "type": "string"
+                    },
+                    "obj_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/bookmark"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bill of Lading Bookmarks"
+        ],
+        "summary": "Create a new bill of lading bookmark",
+        "description": "Please send the bill of lading with the following fields:\n```\n{\n    \"carrier_no\": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,\n    \"bl_no\": <string, required, ocean carrier bill of lading number>,\n    \"cntr_no\": <string, required, the container number you want to track from the bill of lading>\n}\n```",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "bl_no",
+                  "cntr_no",
+                  "carrier_no"
+                ],
+                "example": {
+                  "bl_no": "YMLUN851098484",
+                  "cntr_no": "TGHU5312550",
+                  "carrier_no": "YMLU"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{x-api-key}}"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bookmark"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}": {
+      "get": {
+        "tags": [
+          "Bill of Lading Bookmarks"
+        ],
+        "summary": "Get a particular bill of lading bookmark by ID",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{x-api-key}}"
+          },
+          {
+            "name": "bill_of_lading_bookmark_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bookmarkResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Bill of Lading Bookmarks"
+        ],
+        "summary": "Delete a particular bill of lading bookmark by ID",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{x-api-key}}"
+          },
+          {
+            "name": "bill_of_lading_bookmark_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/eta/tracking/bill-of-lading-bookmarks": {
+      "get": {
+        "tags": [
+          "Tracking"
+        ],
+        "summary": "Get a list of bill of lading bookmark tracking results based on filters",
+        "description": "This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.\n\nYou could filter based the following parameters listed.",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{x-api-key}}"
+          },
+          {
+            "name": "_start_after",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "start query from after this voyage bookmark id"
+          },
+          {
+            "name": "customer_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "get last prediction result made before this timestamp, must be in ISO8601 format with timezone, defaults to now"
+          },
+          {
+            "name": "carrier_no",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the carrier scac code"
+          },
+          {
+            "name": "bl_no",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the imo number of the vessel"
+          },
+          {
+            "name": "cntr_no",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the target port by port code"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter on the target port eta"
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_ended_at": {
+                      "type": "string"
+                    },
+                    "obj_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/trackingEvent"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}": {
+      "get": {
+        "tags": [
+          "Tracking"
+        ],
+        "summary": "Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID",
+        "description": "This will return the bill of lading bookmark, augmented bill of lading, container information and container events, sailing information, vessel ais information, vessel voyage information.\n\nPlease note that the prediction engine runs two times a day at the moment. So the prediction results would only be updated two times a day.\n\nSample response as below:\n```\n{\n    \"obj\": {\n        \"bill_of_lading\": {\n            \"actual_delivery_time\": null,\n            \"actual_receipt_time\": null,\n            \"bl_no\": \"ONEYSJUA00018900\",\n            \"carrier_no\": \"ONEY\",\n            \"cbm\": null,\n            \"cntr_no\": \"SZLU9529739\",\n            \"created\": \"2020-01-17T10:42:41.089572+00:00\",\n            \"id\": \"fdbdafe7-cf22-4896-b6d4-1fbf52488af9\",\n            \"kgs\": null,\n            \"place_of_delivery\": \"CNSHG\",\n            \"place_of_delivery_name\": \"SHANGHAI\",\n            \"place_of_receipt\": \"PRSJU\",\n            \"place_of_receipt_name\": \"SAN JUAN\",\n            \"pod\": \"CNSHG\",\n            \"pod_actual_arrival_lt\": null,\n            \"pod_actual_departure_lt\": null,\n            \"pod_actual_discharge_lt\": null,\n            \"pod_name\": \"SHANGHAI\",\n            \"pod_predicted_arrival_lt\": \"2020-03-05T19:56:43.255866+08:00\",\n            \"pod_predicted_departure_lt\": \"2020-03-06T23:42:22.730164+08:00\",\n            \"pod_predicted_discharge_lt\": \"2020-03-05T21:56:43.255866\",\n            \"pod_scheduled_arrival_lt\": \"2020-03-04T02:00:00+08:00\",\n            \"pod_scheduled_departure_lt\": \"2020-03-05T04:00:00+08:00\",\n            \"pod_scheduled_discharge_lt\": \"2020-03-04T02:30:00\",\n            \"pol\": \"PRSJU\",\n            \"pol_actual_arrival_lt\": \"2020-01-20T14:03:00-04:00\",\n            \"pol_actual_departure_lt\": \"2020-01-21T13:24:00-04:00\",\n            \"pol_actual_loading_lt\": \"2020-01-21T02:54:00\",\n            \"pol_name\": \"SAN JUAN\",\n            \"pol_predicted_arrival_lt\": null,\n            \"pol_predicted_departure_lt\": null,\n            \"pol_predicted_loading_lt\": null,\n            \"pol_scheduled_arrival_lt\": \"2020-01-20T13:42:00-04:00\",\n            \"pol_scheduled_departure_lt\": \"2020-01-21T12:54:00-04:00\",\n            \"pol_scheduled_loading_lt\": null,\n            \"scheduled_delivery_time\": null,\n            \"scheduled_receipt_time\": null,\n            \"updated\": \"2020-02-18T14:00:53.211860+00:00\"\n        },\n        \"bill_of_lading_bookmark\": {\n            \"bl_no\": \"ONEYSJUA00018900\",\n            \"carrier_no\": \"ONEY\",\n            \"cntr_no\": \"SZLU9529739\",\n            \"created\": \"2020-01-22T06:27:55.026109+00:00\",\n            \"customer_id\": null,\n            \"customer_no\": null,\n            \"id\": \"45aef37d-6464-4c6e-99f9-a541c4d7dfca\",\n            \"org_id\": \"356f1867-0426-57b9-86d6-5b1014b2e19d\",\n            \"status\": \"CONTAINER_RETURNED_TO_CARRIER\",\n            \"status_code\": \"8\",\n            \"updated\": \"2020-02-18T14:00:53.385322+00:00\"\n        },\n        \"container_event_list\": [\n            {\n                \"created\": \"2020-01-17T10:42:41.097565+00:00\",\n                \"event_raw\": \"Empty Container Release to Shipper\",\n                \"event_time\": \"2020-01-16T08:23:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"PICKUP\",\n                \"event_type_name\": \"Empty container pick-up\",\n                \"id\": \"d7b61b87-fbf6-49dc-b0f7-ecf1b0eb272b\",\n                \"location_raw\": \"SAN JUAN ,PUERTO RICO\",\n                \"location_type_code\": \"POL\",\n                \"location_type_name\": \"Port of loading\",\n                \"port_code\": \"PRSJU\",\n                \"port_name\": \"SAN JUAN\",\n                \"updated\": \"2020-02-18T14:00:53.218737+00:00\"\n            },\n            {\n                \"created\": \"2020-01-18T14:00:46.627903+00:00\",\n                \"event_raw\": \"Gate In to Outbound Terminal\",\n                \"event_time\": \"2020-01-17T14:48:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"GATEIN\",\n                \"event_type_name\": \"Gate in\",\n                \"id\": \"3ec2ad20-0fdd-468b-9eb7-77f41fdccb1a\",\n                \"location_raw\": \"SAN JUAN ,PUERTO RICO\",\n                \"location_type_code\": \"POL\",\n                \"location_type_name\": \"Port of loading\",\n                \"port_code\": \"PRSJU\",\n                \"port_name\": \"SAN JUAN\",\n                \"updated\": \"2020-02-18T14:00:53.224755+00:00\"\n            },\n            {\n                \"created\": \"2020-01-21T14:01:47.003534+00:00\",\n                \"event_raw\": \"Loaded on 'BOMAR JULIANA 1952N' at Port of Loading\",\n                \"event_time\": \"2020-01-21T02:54:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"LOAD\",\n                \"event_type_name\": \"Loaded onto vessel\",\n                \"id\": \"ee805f2c-8865-4929-b9c0-6269043f8d5c\",\n                \"location_raw\": \"SAN JUAN ,PUERTO RICO\",\n                \"location_type_code\": \"POL\",\n                \"location_type_name\": \"Port of loading\",\n                \"port_code\": \"PRSJU\",\n                \"port_name\": \"SAN JUAN\",\n                \"updated\": \"2020-02-18T14:00:53.230235+00:00\"\n            },\n            {\n                \"created\": \"2020-01-24T14:05:54.843262+00:00\",\n                \"event_raw\": \"'BOMAR JULIANA 1952N' Departure from Port of Loading\",\n                \"event_time\": \"2020-01-21T12:54:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"DEPART\",\n                \"event_type_name\": \"Vessel departure\",\n                \"id\": \"143e5ba4-0f62-415c-946d-1de224ef74a8\",\n                \"location_raw\": \"SAN JUAN ,PUERTO RICO\",\n                \"location_type_code\": \"POL\",\n                \"location_type_name\": \"Port of loading\",\n                \"port_code\": \"PRSJU\",\n                \"port_name\": \"SAN JUAN\",\n                \"updated\": \"2020-02-18T14:00:53.238866+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.251185+00:00\",\n                \"event_raw\": \"'BOMAR JULIANA 1952N' Arrival at Transhipment Port\",\n                \"event_time\": \"2020-01-27T08:36:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"ARRIVE\",\n                \"event_type_name\": \"Vessel arrival\",\n                \"id\": \"a061ece5-db0f-4497-b0aa-3ef703779244\",\n                \"location_raw\": \"MANZANILLO ,PANAMA\",\n                \"location_type_code\": \"POT\",\n                \"location_type_name\": \"Port of transhipment\",\n                \"port_code\": \"PAMIT\",\n                \"port_name\": \"MANZANILLO\",\n                \"updated\": \"2020-02-18T14:00:53.251202+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.263706+00:00\",\n                \"event_raw\": \"'BOMAR JULIANA 1952N' T/S Berthing Destination\",\n                \"event_time\": \"2020-01-27T09:42:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"UNCLASSIFIED\",\n                \"event_type_name\": \"Unclassified\",\n                \"id\": \"058a5a0f-1ad6-4c8e-be8f-edf0ce43c78a\",\n                \"location_raw\": \"MANZANILLO ,PANAMA\",\n                \"location_type_code\": \"POT\",\n                \"location_type_name\": \"Port of transhipment\",\n                \"port_code\": \"PAMIT\",\n                \"port_name\": \"MANZANILLO\",\n                \"updated\": \"2020-02-18T14:00:53.263722+00:00\"\n            },\n            {\n                \"created\": \"2020-01-28T14:00:23.007605+00:00\",\n                \"event_raw\": \"Unloaded from 'BOMAR JULIANA 1952N' at Transhipment Port\",\n                \"event_time\": \"2020-01-27T11:43:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"UNLOAD\",\n                \"event_type_name\": \"Unload from vessel\",\n                \"id\": \"3f385372-6fad-41dc-aade-efd1552f1744\",\n                \"location_raw\": \"MANZANILLO ,PANAMA\",\n                \"location_type_code\": \"POT\",\n                \"location_type_name\": \"Port of transhipment\",\n                \"port_code\": \"PAMIT\",\n                \"port_name\": \"MANZANILLO\",\n                \"updated\": \"2020-02-18T14:00:53.268398+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.279644+00:00\",\n                \"event_raw\": \"Loaded on 'SEASPAN BRIGHTNESS 028W' at Transhipment Port\",\n                \"event_time\": \"2020-02-03T10:25:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"LOAD\",\n                \"event_type_name\": \"Loaded onto vessel\",\n                \"id\": \"c9b27a98-5a00-43e3-8976-8b9898f64308\",\n                \"location_raw\": \"MANZANILLO ,PANAMA\",\n                \"location_type_code\": \"POT\",\n                \"location_type_name\": \"Port of transhipment\",\n                \"port_code\": \"PAMIT\",\n                \"port_name\": \"MANZANILLO\",\n                \"updated\": \"2020-02-18T14:00:53.279659+00:00\"\n            },\n            {\n                \"created\": \"2020-02-04T15:00:05.974806+00:00\",\n                \"event_raw\": \"'SEASPAN BRIGHTNESS 028W' Depature from Transhipment Port\",\n                \"event_time\": \"2020-02-03T20:42:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"DEPART\",\n                \"event_type_name\": \"Vessel departure\",\n                \"id\": \"2eae5374-b192-45a7-9c11-b1cd81c70564\",\n                \"location_raw\": \"MANZANILLO ,PANAMA\",\n                \"location_type_code\": \"POT\",\n                \"location_type_name\": \"Port of transhipment\",\n                \"port_code\": \"PAMIT\",\n                \"port_name\": \"MANZANILLO\",\n                \"updated\": \"2020-02-18T14:00:53.284220+00:00\"\n            },\n            {\n                \"created\": \"2020-02-04T14:01:37.770180+00:00\",\n                \"event_raw\": \"'SEASPAN BRIGHTNESS 028W' Depature from Transhipment Port\",\n                \"event_time\": \"2020-02-03T20:54:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"DEPART\",\n                \"event_type_name\": \"Vessel departure\",\n                \"id\": \"f1cd2263-9467-4b80-831e-70650b7c1eec\",\n                \"location_raw\": \"MANZANILLO ,PANAMA\",\n                \"location_type_code\": null,\n                \"location_type_name\": null,\n                \"port_code\": \"PAMIT\",\n                \"port_name\": \"MANZANILLO\",\n                \"updated\": \"2020-02-04T14:01:37.770200+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.289210+00:00\",\n                \"event_raw\": \"'SEASPAN BRIGHTNESS 028W' Arrival at Port of Discharging\",\n                \"event_time\": \"2020-03-03T23:00:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"ARRIVE\",\n                \"event_type_name\": \"Vessel arrival\",\n                \"id\": \"02538782-7b1a-4562-bb8d-1453a3a2eeea\",\n                \"location_raw\": \"SHANGHAI, SHANGHAI ,CHINA\",\n                \"location_type_code\": \"POD\",\n                \"location_type_name\": \"Port of discharge\",\n                \"port_code\": \"CNSHG\",\n                \"port_name\": \"SHANGHAI\",\n                \"updated\": \"2020-02-18T14:00:53.289224+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.298783+00:00\",\n                \"event_raw\": \"'SEASPAN BRIGHTNESS 028W' POD Berthing Destination\",\n                \"event_time\": \"2020-03-04T01:00:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"UNCLASSIFIED\",\n                \"event_type_name\": \"Unclassified\",\n                \"id\": \"5ea337c7-8f68-49bd-9551-c6fe2154e754\",\n                \"location_raw\": \"SHANGHAI, SHANGHAI ,CHINA\",\n                \"location_type_code\": \"POD\",\n                \"location_type_name\": \"Port of discharge\",\n                \"port_code\": \"CNSHG\",\n                \"port_name\": \"SHANGHAI\",\n                \"updated\": \"2020-02-18T14:00:53.298799+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.303645+00:00\",\n                \"event_raw\": \"Unloaded from 'SEASPAN BRIGHTNESS 028W' at Port of Discharging\",\n                \"event_time\": \"2020-03-04T02:30:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"UNLOAD\",\n                \"event_type_name\": \"Unload from vessel\",\n                \"id\": \"22e2baf1-afef-4331-9f40-f9a44d5a3fa0\",\n                \"location_raw\": \"SHANGHAI, SHANGHAI ,CHINA\",\n                \"location_type_code\": \"POD\",\n                \"location_type_name\": \"Port of discharge\",\n                \"port_code\": \"CNSHG\",\n                \"port_name\": \"SHANGHAI\",\n                \"updated\": \"2020-02-18T14:00:53.303660+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.315930+00:00\",\n                \"event_raw\": \"Gate Out from Inbound Terminal for Delivery to Consignee (or Port Shuttle)\",\n                \"event_time\": \"2020-03-04T07:00:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"GATEOUT\",\n                \"event_type_name\": \"Gate out\",\n                \"id\": \"fa2a20be-a207-4672-bfe8-975010581a80\",\n                \"location_raw\": \"SHANGHAI, SHANGHAI ,CHINA\",\n                \"location_type_code\": \"POD\",\n                \"location_type_name\": \"Port of discharge\",\n                \"port_code\": \"CNSHG\",\n                \"port_name\": \"SHANGHAI\",\n                \"updated\": \"2020-02-18T14:00:53.315950+00:00\"\n            },\n            {\n                \"created\": \"2020-02-18T14:00:53.325810+00:00\",\n                \"event_raw\": \"Empty Container Returned from Customer\",\n                \"event_time\": \"2020-03-04T13:00:00\",\n                \"event_time_estimated\": null,\n                \"event_type_code\": \"RETURN\",\n                \"event_type_name\": \"Empty container returned\",\n                \"id\": \"79b3c97a-1714-464f-9e1a-7d41734ca4f2\",\n                \"location_raw\": \"SHANGHAI, SHANGHAI ,CHINA\",\n                \"location_type_code\": \"POD\",\n                \"location_type_name\": \"Port of discharge\",\n                \"port_code\": \"CNSHG\",\n                \"port_name\": \"SHANGHAI\",\n                \"updated\": \"2020-02-18T14:00:53.325827+00:00\"\n            }\n        ],\n        \"container_meta_info\": {\n            \"cntr_no\": \"SZLU9529739\",\n            \"cntr_size\": 40,\n            \"cntr_type\": \"H.REEFER\",\n            \"created\": \"2020-01-17T10:42:41.052834+00:00\",\n            \"id\": \"452f5d92-2ece-45dc-a1fc-53a0ca3f1347\",\n            \"updated\": \"2020-01-17T10:42:41.052848+00:00\"\n        },\n        \"id\": \"45aef37d-6464-4c6e-99f9-a541c4d7dfca\",\n        \"msg\": \"Obtained latest bill of lading and container tracking information\",\n        \"org_id\": \"356f1867-0426-57b9-86d6-5b1014b2e19d\",\n        \"sailing_info_tracking\": [\n            {\n                \"actual_arrival_lt\": \"2020-01-27T08:36:00-05:00\",\n                \"actual_arrival_utc\": \"2020-01-27T13:36:00+00:00\",\n                \"ais\": {\n                    \"course\": 81.3,\n                    \"draught_m\": null,\n                    \"imo\": \"9275036\",\n                    \"lat\": 16.6923733333,\n                    \"lon\": -86.08515,\n                    \"speed_nm\": 9.6,\n                    \"status\": \"UNDER WAY USING ENGINE\",\n                    \"timestamp_utc\": \"2020-02-18T13:43:11+00:00\"\n                },\n                \"cancelled\": false,\n                \"predicted_arrival_lt\": null,\n                \"predicted_arrival_utc\": null,\n                \"prediction_confidence_level\": null,\n                \"prediction_time_utc\": null,\n                \"sailing_info\": {\n                    \"carrier_no\": \"ONEY\",\n                    \"created\": \"2020-01-17T10:42:41.108345+00:00\",\n                    \"id\": \"01681cc7-b955-4bcb-b781-a3cbb52e12d1\",\n                    \"imo\": \"9275036\",\n                    \"is_active\": true,\n                    \"pod\": \"PAMIT\",\n                    \"pod_actual_arrival_lt\": \"2020-01-27T08:36:00-05:00\",\n                    \"pod_actual_departure_lt\": \"2020-01-28T01:36:00-05:00\",\n                    \"pod_actual_discharge_lt\": \"2020-01-27T11:43:00\",\n                    \"pod_name\": \"MANZANILLO\",\n                    \"pod_predicted_arrival_lt\": null,\n                    \"pod_predicted_departure_lt\": null,\n                    \"pod_predicted_discharge_lt\": null,\n                    \"pod_scheduled_arrival_lt\": \"2020-01-27T08:36:00-05:00\",\n                    \"pod_scheduled_departure_lt\": \"2020-01-28T01:36:00-05:00\",\n                    \"pod_scheduled_discharge_lt\": \"2020-01-27T19:00:00\",\n                    \"pol\": \"PRSJU\",\n                    \"pol_actual_arrival_lt\": \"2020-01-20T14:03:00-04:00\",\n                    \"pol_actual_departure_lt\": \"2020-01-21T13:24:00-04:00\",\n                    \"pol_actual_loading_lt\": \"2020-01-21T02:54:00\",\n                    \"pol_name\": \"SAN JUAN\",\n                    \"pol_predicted_arrival_lt\": null,\n                    \"pol_predicted_departure_lt\": null,\n                    \"pol_predicted_loading_lt\": null,\n                    \"pol_scheduled_arrival_lt\": \"2020-01-20T13:42:00-04:00\",\n                    \"pol_scheduled_departure_lt\": \"2020-01-21T12:54:00-04:00\",\n                    \"pol_scheduled_loading_lt\": \"2020-01-20T22:00:00\",\n                    \"status\": \"DEPARTED_FROM_TARGET_PORT\",\n                    \"status_code\": \"5\",\n                    \"updated\": \"2020-01-28T14:00:45.755296+00:00\",\n                    \"vessel_leg\": 0,\n                    \"vessel_name\": \"BOMAR JULIANA\",\n                    \"voyage_no\": \"1952W\"\n                },\n                \"scheduled_arrival_lt\": \"2020-01-27T08:36:00-05:00\",\n                \"scheduled_arrival_utc\": \"2020-01-27T13:36:00+00:00\",\n                \"target_port_code\": \"PAMIT\",\n                \"target_port_name\": \"MANZANILLO\",\n                \"voyage_details\": [\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": \"2020-01-20T14:03:00-04:00\",\n                        \"actual_arrival_utc\": \"2020-01-20T18:03:00+00:00\",\n                        \"actual_departure_lt\": \"2020-01-21T13:24:00-04:00\",\n                        \"actual_departure_utc\": \"2020-01-21T17:24:00+00:00\",\n                        \"id\": \"cebe4b62-b8e3-4141-bb5e-4f0e156cfe27\",\n                        \"port_code\": \"PRSJU\",\n                        \"port_name\": \"SAN JUAN\",\n                        \"predicted_arrival_lt\": null,\n                        \"predicted_arrival_utc\": null,\n                        \"predicted_departure_lt\": null,\n                        \"predicted_departure_utc\": null,\n                        \"prediction_time_utc\": null,\n                        \"scheduled_arrival_lt\": \"2020-01-20T13:42:00-04:00\",\n                        \"scheduled_arrival_utc\": \"2020-01-20T17:42:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-01-21T12:54:00-04:00\",\n                        \"scheduled_departure_utc\": \"2020-01-21T16:54:00+00:00\"\n                    },\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": \"2020-01-24T07:15:00-05:00\",\n                        \"actual_arrival_utc\": \"2020-01-24T12:15:00+00:00\",\n                        \"actual_departure_lt\": \"2020-01-25T00:13:00-05:00\",\n                        \"actual_departure_utc\": \"2020-01-25T05:13:00+00:00\",\n                        \"id\": \"d3dbdd65-9fb0-4cb8-8166-4e6bc3dda0f4\",\n                        \"port_code\": \"COCNR\",\n                        \"port_name\": \"CONTECAR\",\n                        \"predicted_arrival_lt\": null,\n                        \"predicted_arrival_utc\": null,\n                        \"predicted_departure_lt\": null,\n                        \"predicted_departure_utc\": null,\n                        \"prediction_time_utc\": null,\n                        \"scheduled_arrival_lt\": \"2020-01-24T07:15:00-05:00\",\n                        \"scheduled_arrival_utc\": \"2020-01-24T12:15:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-01-25T00:13:00-05:00\",\n                        \"scheduled_departure_utc\": \"2020-01-25T05:13:00+00:00\"\n                    },\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": \"2020-01-27T08:36:00-05:00\",\n                        \"actual_arrival_utc\": \"2020-01-27T13:36:00+00:00\",\n                        \"actual_departure_lt\": \"2020-01-28T01:36:00-05:00\",\n                        \"actual_departure_utc\": \"2020-01-28T06:36:00+00:00\",\n                        \"id\": \"0df6c8fc-f527-4f9f-86f7-061124724e31\",\n                        \"port_code\": \"PAMIT\",\n                        \"port_name\": \"MANZANILLO\",\n                        \"predicted_arrival_lt\": null,\n                        \"predicted_arrival_utc\": null,\n                        \"predicted_departure_lt\": null,\n                        \"predicted_departure_utc\": null,\n                        \"prediction_time_utc\": null,\n                        \"scheduled_arrival_lt\": \"2020-01-27T08:36:00-05:00\",\n                        \"scheduled_arrival_utc\": \"2020-01-27T13:36:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-01-28T01:36:00-05:00\",\n                        \"scheduled_departure_utc\": \"2020-01-28T06:36:00+00:00\"\n                    }\n                ]\n            },\n            {\n                \"actual_arrival_lt\": null,\n                \"actual_arrival_utc\": null,\n                \"ais\": {\n                    \"course\": 271.0,\n                    \"draught_m\": null,\n                    \"imo\": \"9685346\",\n                    \"lat\": 54.4304616667,\n                    \"lon\": -168.275085,\n                    \"speed_nm\": 13.4,\n                    \"status\": \"UNDER WAY USING ENGINE\",\n                    \"timestamp_utc\": \"2020-02-19T13:53:47+00:00\"\n                },\n                \"cancelled\": false,\n                \"predicted_arrival_lt\": \"2020-03-05T19:56:43.255866+08:00\",\n                \"predicted_arrival_utc\": \"2020-03-05T11:56:43.255866+00:00\",\n                \"prediction_confidence_level\": 0.6815433865685422,\n                \"prediction_time_utc\": \"2020-02-19T18:08:24.412091+00:00\",\n                \"sailing_info\": {\n                    \"carrier_no\": \"ONEY\",\n                    \"created\": \"2020-01-17T10:42:41.112845+00:00\",\n                    \"id\": \"dc626fd5-7e15-4046-ab79-eebc085f2408\",\n                    \"imo\": \"9685346\",\n                    \"is_active\": true,\n                    \"pod\": \"CNSHG\",\n                    \"pod_actual_arrival_lt\": null,\n                    \"pod_actual_departure_lt\": null,\n                    \"pod_actual_discharge_lt\": null,\n                    \"pod_name\": \"SHANGHAI\",\n                    \"pod_predicted_arrival_lt\": \"2020-03-05T19:56:43.255866+08:00\",\n                    \"pod_predicted_departure_lt\": \"2020-03-06T23:42:22.730164+08:00\",\n                    \"pod_predicted_discharge_lt\": \"2020-03-05T21:56:43.255866\",\n                    \"pod_scheduled_arrival_lt\": \"2020-03-04T02:00:00+08:00\",\n                    \"pod_scheduled_departure_lt\": \"2020-03-05T04:00:00+08:00\",\n                    \"pod_scheduled_discharge_lt\": \"2020-03-04T02:30:00\",\n                    \"pol\": \"PAMIT\",\n                    \"pol_actual_arrival_lt\": \"2020-02-02T17:39:00-05:00\",\n                    \"pol_actual_departure_lt\": \"2020-02-03T20:42:00-05:00\",\n                    \"pol_actual_loading_lt\": \"2020-02-03T10:25:00\",\n                    \"pol_name\": \"MANZANILLO\",\n                    \"pol_predicted_arrival_lt\": null,\n                    \"pol_predicted_departure_lt\": null,\n                    \"pol_predicted_loading_lt\": null,\n                    \"pol_scheduled_arrival_lt\": \"2020-02-02T17:39:00-05:00\",\n                    \"pol_scheduled_departure_lt\": \"2020-02-03T20:42:00-05:00\",\n                    \"pol_scheduled_loading_lt\": \"2020-02-03T02:30:00\",\n                    \"status\": \"SUCCESS\",\n                    \"status_code\": \"0\",\n                    \"updated\": \"2020-02-19T18:08:31.731399+00:00\",\n                    \"vessel_leg\": 1,\n                    \"vessel_name\": \"SEASPAN BRIGHTNESS\",\n                    \"voyage_no\": \"0028W\"\n                },\n                \"scheduled_arrival_lt\": \"2020-03-04T02:00:00+08:00\",\n                \"scheduled_arrival_utc\": \"2020-03-03T18:00:00+00:00\",\n                \"target_port_code\": \"CNSHG\",\n                \"target_port_name\": \"SHANGHAI\",\n                \"voyage_details\": [\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": \"2020-02-02T17:39:00-05:00\",\n                        \"actual_arrival_utc\": \"2020-02-02T22:39:00+00:00\",\n                        \"actual_departure_lt\": \"2020-02-03T20:42:00-05:00\",\n                        \"actual_departure_utc\": \"2020-02-04T01:42:00+00:00\",\n                        \"id\": \"077832a7-43ac-498a-94d5-3d559eb28045\",\n                        \"port_code\": \"PAMIT\",\n                        \"port_name\": \"MANZANILLO\",\n                        \"predicted_arrival_lt\": null,\n                        \"predicted_arrival_utc\": null,\n                        \"predicted_departure_lt\": null,\n                        \"predicted_departure_utc\": null,\n                        \"prediction_time_utc\": null,\n                        \"scheduled_arrival_lt\": \"2020-02-02T17:39:00-05:00\",\n                        \"scheduled_arrival_utc\": \"2020-02-02T22:39:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-02-03T20:42:00-05:00\",\n                        \"scheduled_departure_utc\": \"2020-02-04T01:42:00+00:00\"\n                    },\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": \"2020-02-04T02:59:00-05:00\",\n                        \"actual_arrival_utc\": \"2020-02-04T07:59:00+00:00\",\n                        \"actual_departure_lt\": \"2020-02-04T22:29:00-05:00\",\n                        \"actual_departure_utc\": \"2020-02-05T03:29:00+00:00\",\n                        \"id\": \"b1efa160-ee76-4ee2-bf5a-123267112db3\",\n                        \"port_code\": \"PAPCA\",\n                        \"port_name\": \"PUERTO CAIMITO\",\n                        \"predicted_arrival_lt\": null,\n                        \"predicted_arrival_utc\": null,\n                        \"predicted_departure_lt\": null,\n                        \"predicted_departure_utc\": null,\n                        \"prediction_time_utc\": null,\n                        \"scheduled_arrival_lt\": \"2020-02-04T02:59:00-05:00\",\n                        \"scheduled_arrival_utc\": \"2020-02-04T07:59:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-02-04T22:29:00-05:00\",\n                        \"scheduled_departure_utc\": \"2020-02-05T03:29:00+00:00\"\n                    },\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": null,\n                        \"actual_arrival_utc\": null,\n                        \"actual_departure_lt\": null,\n                        \"actual_departure_utc\": null,\n                        \"id\": \"ffb61338-efac-4ac2-93fc-8deb28d0a956\",\n                        \"port_code\": \"KRPUS\",\n                        \"port_name\": \"BUSAN\",\n                        \"predicted_arrival_lt\": \"2020-02-28T03:09:36.639746+09:00\",\n                        \"predicted_arrival_utc\": \"2020-02-27T18:09:36.639746+00:00\",\n                        \"predicted_departure_lt\": \"2020-02-29T00:52:09.782000+09:00\",\n                        \"predicted_departure_utc\": \"2020-02-28T15:52:09.782000+00:00\",\n                        \"prediction_time_utc\": \"2020-02-19T18:08:23.330102+00:00\",\n                        \"scheduled_arrival_lt\": \"2020-02-26T07:00:00+09:00\",\n                        \"scheduled_arrival_utc\": \"2020-02-25T22:00:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-02-27T04:00:00+09:00\",\n                        \"scheduled_departure_utc\": \"2020-02-26T19:00:00+00:00\"\n                    },\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": null,\n                        \"actual_arrival_utc\": null,\n                        \"actual_departure_lt\": null,\n                        \"actual_departure_utc\": null,\n                        \"id\": \"52b824c8-79f8-491d-b6d4-dbbd81ccd167\",\n                        \"port_code\": \"CNQDG\",\n                        \"port_name\": \"QINGDAO\",\n                        \"predicted_arrival_lt\": \"2020-03-01T07:47:56.382000+08:00\",\n                        \"predicted_arrival_utc\": \"2020-02-29T23:47:56.382000+00:00\",\n                        \"predicted_departure_lt\": \"2020-03-02T10:03:18.311083+08:00\",\n                        \"predicted_departure_utc\": \"2020-03-02T02:03:18.311083+00:00\",\n                        \"prediction_time_utc\": \"2020-02-19T18:08:23.758216+00:00\",\n                        \"scheduled_arrival_lt\": \"2020-02-27T16:00:00+08:00\",\n                        \"scheduled_arrival_utc\": \"2020-02-27T08:00:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-02-29T00:00:00+08:00\",\n                        \"scheduled_departure_utc\": \"2020-02-28T16:00:00+00:00\"\n                    },\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": null,\n                        \"actual_arrival_utc\": null,\n                        \"actual_departure_lt\": null,\n                        \"actual_departure_utc\": null,\n                        \"id\": \"c3474d6d-c116-4681-a246-c47c3698d5ca\",\n                        \"port_code\": \"CNNGB\",\n                        \"port_name\": \"NINGBO\",\n                        \"predicted_arrival_lt\": \"2020-03-03T18:02:39.896797+08:00\",\n                        \"predicted_arrival_utc\": \"2020-03-03T10:02:39.896797+00:00\",\n                        \"predicted_departure_lt\": \"2020-03-04T18:19:18.013009+08:00\",\n                        \"predicted_departure_utc\": \"2020-03-04T10:19:18.013009+00:00\",\n                        \"prediction_time_utc\": \"2020-02-19T18:08:24.211922+00:00\",\n                        \"scheduled_arrival_lt\": \"2020-03-01T04:00:00+08:00\",\n                        \"scheduled_arrival_utc\": \"2020-02-29T20:00:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-03-02T12:00:00+08:00\",\n                        \"scheduled_departure_utc\": \"2020-03-02T04:00:00+00:00\"\n                    },\n                    {\n                        \"active_scac\": \"ONEY\",\n                        \"actual_arrival_lt\": null,\n                        \"actual_arrival_utc\": null,\n                        \"actual_departure_lt\": null,\n                        \"actual_departure_utc\": null,\n                        \"id\": \"07a289ee-8438-4aae-ad25-3fd661483641\",\n                        \"port_code\": \"CNSHG\",\n                        \"port_name\": \"SHANGHAI\",\n                        \"predicted_arrival_lt\": \"2020-03-05T19:56:43.255866+08:00\",\n                        \"predicted_arrival_utc\": \"2020-03-05T11:56:43.255866+00:00\",\n                        \"predicted_departure_lt\": \"2020-03-06T23:42:22.730164+08:00\",\n                        \"predicted_departure_utc\": \"2020-03-06T15:42:22.730164+00:00\",\n                        \"prediction_time_utc\": \"2020-02-19T18:08:24.660761+00:00\",\n                        \"scheduled_arrival_lt\": \"2020-03-04T02:00:00+08:00\",\n                        \"scheduled_arrival_utc\": \"2020-03-03T18:00:00+00:00\",\n                        \"scheduled_departure_lt\": \"2020-03-05T04:00:00+08:00\",\n                        \"scheduled_departure_utc\": \"2020-03-04T20:00:00+00:00\"\n                    }\n                ]\n            }\n        ],\n        \"success\": true\n    }\n}\n```",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{x-api-key}}"
+          },
+          {
+            "name": "bill_of_lading_bookmark_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "obj": {
+                      "$ref": "#/components/schemas/trackingEvent"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Health Check API",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messageModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Error": {
+                      "type": "string",
+                      "example": "API Key is Invalid"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messageModel": {
+                      "type": "string",
+                      "example": "invalid_request"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "bookingBookmarks": {
+        "type": "object",
+        "properties": {
+          "containers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "response": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/bookingBookmarkResponse"
+            }
+          }
+        }
+      },
+      "bookmarkResponse": {
+        "type": "object",
+        "properties": {
+          "obj": {
+            "$ref": "#/components/schemas/bookmark"
+          }
+        }
+      },
+      "bookingBookmarkResponseExisted": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "previous_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "bookingBookmarkResponse": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/bookmarkResponse"
+          },
+          {
+            "$ref": "#/components/schemas/bookingBookmarkResponseExisted"
+          },
+          {
+            "$ref": "#/components/schemas/messageModel"
+          }
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "container": {
+            "type": "string"
+          }
+        }
+      },
+      "bookmark": {
+        "type": "object",
+        "properties": {
+          "bl_no": {
+            "type": "string"
+          },
+          "carrier_no": {
+            "type": "string"
+          },
+          "cntr_no": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "customer_id": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "customer_no": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "deleted": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "org_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "status_code": {
+            "type": "string"
+          },
+          "system_deleted": {
+            "type": "boolean"
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "vessel_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "voyage_no": {
+            "type": "string",
+            "format": "nullable"
+          }
+        }
+      },
+      "trackingEvent": {
+        "type": "object",
+        "properties": {
+          "bill_of_lading": {
+            "type": "object",
+            "properties": {
+              "actual_delivery_time": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "actual_receipt_time": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "bl_no": {
+                "type": "string"
+              },
+              "carrier_no": {
+                "type": "string"
+              },
+              "cbm": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "cntr_no": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "kgs": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "place_of_delivery": {
+                "type": "string"
+              },
+              "place_of_delivery_name": {
+                "type": "string"
+              },
+              "place_of_receipt": {
+                "type": "string"
+              },
+              "place_of_receipt_name": {
+                "type": "string"
+              },
+              "pod": {
+                "type": "string"
+              },
+              "pod_actual_arrival_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pod_actual_arrival_utc": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pod_actual_departure_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pod_actual_discharge_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pod_name": {
+                "type": "string"
+              },
+              "pod_predicted_arrival_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pod_predicted_arrival_utc": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pod_predicted_departure_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pod_predicted_discharge_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pod_scheduled_arrival_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pod_scheduled_departure_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pod_scheduled_discharge_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pol": {
+                "type": "string"
+              },
+              "pol_actual_arrival_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pol_actual_departure_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pol_actual_loading_lt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "pol_name": {
+                "type": "string"
+              },
+              "pol_predicted_arrival_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pol_predicted_departure_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pol_predicted_loading_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pol_scheduled_arrival_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pol_scheduled_departure_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pol_scheduled_loading_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "scheduled_delivery_time": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "scheduled_receipt_time": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "updated": {
+                "type": "string"
+              }
+            }
+          },
+          "bill_of_lading_bookmark": {
+            "type": "object",
+            "properties": {
+              "bl_no": {
+                "type": "string"
+              },
+              "carrier_no": {
+                "type": "string"
+              },
+              "cntr_no": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "customer_id": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "customer_no": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "deleted": {
+                "type": "boolean"
+              },
+              "id": {
+                "type": "string"
+              },
+              "org_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "status_code": {
+                "type": "string"
+              },
+              "system_deleted": {
+                "type": "boolean"
+              },
+              "updated": {
+                "type": "string"
+              },
+              "voyage_no": {
+                "type": "string",
+                "format": "nullable"
+              }
+            }
+          },
+          "container_event_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "created": {
+                  "type": "string"
+                },
+                "event_raw": {
+                  "type": "string"
+                },
+                "event_time": {
+                  "type": "string"
+                },
+                "event_time_estimated": {
+                  "type": "string",
+                  "format": "nullable"
+                },
+                "event_type_code": {
+                  "type": "string"
+                },
+                "event_type_name": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "location_raw": {
+                  "type": "string"
+                },
+                "location_type_code": {
+                  "type": "string"
+                },
+                "location_type_name": {
+                  "type": "string"
+                },
+                "port_code": {
+                  "type": "string"
+                },
+                "port_name": {
+                  "type": "string"
+                },
+                "updated": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "container_meta_info": {
+            "type": "object",
+            "properties": { }
+          },
+          "id": {
+            "type": "string"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "org_id": {
+            "type": "string"
+          },
+          "sailing_info_tracking": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "actual_arrival_lt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "actual_arrival_utc": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "ais": {
+                  "type": "object",
+                  "properties": {
+                    "course": {
+                      "type": "number"
+                    },
+                    "draught_m": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "imo": {
+                      "type": "string"
+                    },
+                    "lat": {
+                      "type": "number"
+                    },
+                    "lon": {
+                      "type": "number"
+                    },
+                    "speed_nm": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "timestamp_utc": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                },
+                "cancelled": {
+                  "type": "boolean"
+                },
+                "predicted_arrival_lt": {
+                  "type": "string",
+                  "format": "nullable"
+                },
+                "predicted_arrival_utc": {
+                  "type": "string",
+                  "format": "nullable"
+                },
+                "prediction_confidence_level": {
+                  "type": "string",
+                  "format": "nullable"
+                },
+                "prediction_time_utc": {
+                  "type": "string",
+                  "format": "nullable"
+                },
+                "sailing_info": {
+                  "type": "object",
+                  "properties": {
+                    "carrier_no": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "imo": {
+                      "type": "string"
+                    },
+                    "is_active": {
+                      "type": "boolean"
+                    },
+                    "pod": {
+                      "type": "string"
+                    },
+                    "pod_actual_arrival_lt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "pod_actual_departure_lt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "pod_actual_discharge_lt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "pod_name": {
+                      "type": "string"
+                    },
+                    "pod_predicted_arrival_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pod_predicted_departure_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pod_predicted_discharge_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pod_scheduled_arrival_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pod_scheduled_departure_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pod_scheduled_discharge_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pol": {
+                      "type": "string"
+                    },
+                    "pol_actual_arrival_lt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "pol_actual_departure": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pol_actual_departure_lt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "pol_actual_loading_lt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "pol_name": {
+                      "type": "string"
+                    },
+                    "pol_predicted_arrival_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pol_predicted_departure_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pol_predicted_loading_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pol_scheduled_arrival_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pol_scheduled_departure_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pol_scheduled_loading_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "status_code": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "vessel_leg": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "vessel_name": {
+                      "type": "string"
+                    },
+                    "voyage_no": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "scheduled_arrival_lt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "scheduled_arrival_utc": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "target_port_code": {
+                  "type": "string"
+                },
+                "target_port_name": {
+                  "type": "string"
+                },
+                "voyage_details": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "active_scac": {
+                        "type": "string"
+                      },
+                      "actual_arrival_lt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "actual_arrival_utc": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "actual_departure_lt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "actual_departure_utc": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "index": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "lat": {
+                        "type": "number"
+                      },
+                      "lon": {
+                        "type": "number"
+                      },
+                      "original_voyage_no": {
+                        "type": "string"
+                      },
+                      "port_code": {
+                        "type": "string"
+                      },
+                      "port_name": {
+                        "type": "string"
+                      },
+                      "predicted_arrival_lt": {
+                        "type": "string",
+                        "format": "nullable"
+                      },
+                      "predicted_arrival_utc": {
+                        "type": "string",
+                        "format": "nullable"
+                      },
+                      "predicted_departure_lt": {
+                        "type": "string",
+                        "format": "nullable"
+                      },
+                      "predicted_departure_utc": {
+                        "type": "string",
+                        "format": "nullable"
+                      },
+                      "prediction_time_utc": {
+                        "type": "string",
+                        "format": "nullable"
+                      },
+                      "scheduled_arrival_lt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "scheduled_arrival_on_time_confidence": {
+                        "type": "string",
+                        "format": "nullable"
+                      },
+                      "scheduled_arrival_utc": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "scheduled_departure_lt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "scheduled_departure_on_time_confidence": {
+                        "type": "string",
+                        "format": "nullable"
+                      },
+                      "scheduled_departure_utc": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "timezone": {
+                        "type": "string"
+                      },
+                      "voyage_no_list": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "voyage_no_list": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "success": {
+            "type": "boolean"
+          }
+        }
+      },
+      "authError": {
+        "type": "object",
+        "properties": {
+          "Error": {
+            "type": "string",
+            "example": "API Key is Invalid"
+          }
+        }
+      },
+      "messageModel": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "API Quota Exceeded"
+          }
+        }
+      }
+    }
+  }
+}
