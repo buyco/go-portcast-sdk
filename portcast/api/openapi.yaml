@@ -16,7 +16,11 @@ info:
   title: Portcast API (1.1.0) - Bill of Lading Tracking
   version: 1.0.0
 servers:
-- url: https://api.portcast.io
+- url: https://api.portcast.io/api/v1
+security:
+- authorization: []
+- x-api-key: []
+- x-org-api-key: []
 tags:
 - description: Restful operations on vessel bookmarks
   name: Booking Bookmarks
@@ -25,7 +29,7 @@ tags:
 - description: Get tracking results for the vessel bookmarks
   name: Tracking
 paths:
-  /api/v1/eta/booking:
+  /eta/booking:
     post:
       description: |-
         Please send the bill of lading or booking number with the following fields:
@@ -36,31 +40,6 @@ paths:
             "dock_type": <string, required, type of doc_no. Accept value: BK (booking) , BL (Bill of Lading)>
         }
         ```
-      parameters:
-      - example: application/json
-        explode: false
-        in: header
-        name: Accept
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: '{{x-api-key}}'
-        explode: false
-        in: header
-        name: x-api-key
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -93,40 +72,22 @@ paths:
               schema:
                 $ref: '#/components/schemas/messageModel'
           description: API Quota Exceeded
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Create new bookmarks for booking
       tags:
       - Booking Bookmarks
-  /api/v1/eta/bill-of-lading-bookmarks:
+  /eta/bill-of-lading-bookmarks:
     get:
       description: |-
         This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
 
         You could filter based the parameters listed.
       parameters:
-      - example: application/json
-        explode: false
-        in: header
-        name: Accept
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: '{{x-api-key}}'
-        explode: false
-        in: header
-        name: x-api-key
-        required: false
-        schema:
-          type: string
-        style: simple
       - description: start query from after this voyage bookmark id
         explode: true
         in: query
@@ -203,6 +164,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/messageModel'
           description: Invalid API key
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Get a list of bookmarked bill of ladings
       tags:
       - Bill of Lading Bookmarks
@@ -216,31 +183,6 @@ paths:
             "cntr_no": <string, required, the container number you want to track from the bill of lading>
         }
         ```
-      parameters:
-      - example: application/json
-        explode: false
-        in: header
-        name: Accept
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: '{{x-api-key}}'
-        explode: false
-        in: header
-        name: x-api-key
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -273,36 +215,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/messageModel'
           description: Invalid API key
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Create a new bill of lading bookmark
       tags:
       - Bill of Lading Bookmarks
-  /api/v1/eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}:
+  /eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}:
     delete:
       parameters:
-      - example: application/json
-        explode: false
-        in: header
-        name: Accept
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: '{{x-api-key}}'
-        explode: false
-        in: header
-        name: x-api-key
-        required: false
-        schema:
-          type: string
-        style: simple
       - explode: false
         in: path
         name: bill_of_lading_bookmark_id
@@ -329,35 +253,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/messageModel'
           description: Invalid API key
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Delete a particular bill of lading bookmark by ID
       tags:
       - Bill of Lading Bookmarks
     get:
       parameters:
-      - example: application/json
-        explode: false
-        in: header
-        name: Accept
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: '{{x-api-key}}'
-        explode: false
-        in: header
-        name: x-api-key
-        required: false
-        schema:
-          type: string
-        style: simple
       - explode: false
         in: path
         name: bill_of_lading_bookmark_id
@@ -384,40 +290,22 @@ paths:
               schema:
                 $ref: '#/components/schemas/messageModel'
           description: Invalid API key
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Get a particular bill of lading bookmark by ID
       tags:
       - Bill of Lading Bookmarks
-  /api/v1/eta/tracking/bill-of-lading-bookmarks:
+  /eta/tracking/bill-of-lading-bookmarks:
     get:
       description: |-
         This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
 
         You could filter based the following parameters listed.
       parameters:
-      - example: application/json
-        explode: false
-        in: header
-        name: Accept
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: '{{x-api-key}}'
-        explode: false
-        in: header
-        name: x-api-key
-        required: false
-        schema:
-          type: string
-        style: simple
       - description: start query from after this voyage bookmark id
         explode: true
         in: query
@@ -493,10 +381,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/messageModel'
           description: Invalid API key
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Get a list of bill of lading bookmark tracking results based on filters
       tags:
       - Tracking
-  /api/v1/eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}:
+  /eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}:
     get:
       description: |-
         This will return the bill of lading bookmark, augmented bill of lading, container information and container events, sailing information, vessel ais information, vessel voyage information.
@@ -1096,30 +990,6 @@ paths:
         }
         ```
       parameters:
-      - example: application/json
-        explode: false
-        in: header
-        name: Accept
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: false
-        schema:
-          type: string
-        style: simple
-      - example: '{{x-api-key}}'
-        explode: false
-        in: header
-        name: x-api-key
-        required: false
-        schema:
-          type: string
-        style: simple
       - explode: false
         in: path
         name: bill_of_lading_bookmark_id
@@ -1146,6 +1016,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/messageModel'
           description: Invalid API key
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Get bill of lading bookmark tracking results for a particular bill
         of lading bookmark by ID
       tags:
@@ -1163,18 +1039,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_401'
+                $ref: '#/components/schemas/messageModel'
           description: Invalid API key
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_404'
+                $ref: '#/components/schemas/messageModel'
           description: Invalid API key
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
       summary: Health Check API
       tags:
       - default
 components:
+  responses:
+    MaskError:
+      content: {}
+      description: When any error occurs on mask
+    ParseError:
+      content: {}
+      description: When a mask can't be parsed
   schemas:
     bookingBookmarks:
       example:
@@ -2672,18 +2561,6 @@ components:
         obj:
           $ref: '#/components/schemas/trackingEvent'
       type: object
-    inline_response_401:
-      properties:
-        Error:
-          example: API Key is Invalid
-          type: string
-      type: object
-    inline_response_404:
-      properties:
-        messageModel:
-          example: invalid_request
-          type: string
-      type: object
     trackingEvent_bill_of_lading:
       example:
         bl_no: bl_no
@@ -3342,3 +3219,16 @@ components:
             type: string
           type: array
       type: object
+  securitySchemes:
+    authorization:
+      in: header
+      name: authorization
+      type: apiKey
+    x-api-key:
+      in: header
+      name: x-api-key
+      type: apiKey
+    x-org-api-key:
+      in: header
+      name: x-org-api-key
+      type: apiKey

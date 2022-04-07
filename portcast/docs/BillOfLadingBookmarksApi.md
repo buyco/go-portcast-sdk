@@ -1,19 +1,19 @@
 # \BillOfLadingBookmarksApi
 
-All URIs are relative to *https://api.portcast.io*
+All URIs are relative to *https://api.portcast.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete**](BillOfLadingBookmarksApi.md#ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete) | **Delete** /api/v1/eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Delete a particular bill of lading bookmark by ID
-[**ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](BillOfLadingBookmarksApi.md#ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet) | **Get** /api/v1/eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get a particular bill of lading bookmark by ID
-[**ApiV1EtaBillOfLadingBookmarksGet**](BillOfLadingBookmarksApi.md#ApiV1EtaBillOfLadingBookmarksGet) | **Get** /api/v1/eta/bill-of-lading-bookmarks | Get a list of bookmarked bill of ladings
-[**ApiV1EtaBillOfLadingBookmarksPost**](BillOfLadingBookmarksApi.md#ApiV1EtaBillOfLadingBookmarksPost) | **Post** /api/v1/eta/bill-of-lading-bookmarks | Create a new bill of lading bookmark
+[**EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete**](BillOfLadingBookmarksApi.md#EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete) | **Delete** /eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Delete a particular bill of lading bookmark by ID
+[**EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](BillOfLadingBookmarksApi.md#EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet) | **Get** /eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get a particular bill of lading bookmark by ID
+[**EtaBillOfLadingBookmarksGet**](BillOfLadingBookmarksApi.md#EtaBillOfLadingBookmarksGet) | **Get** /eta/bill-of-lading-bookmarks | Get a list of bookmarked bill of ladings
+[**EtaBillOfLadingBookmarksPost**](BillOfLadingBookmarksApi.md#EtaBillOfLadingBookmarksPost) | **Post** /eta/bill-of-lading-bookmarks | Create a new bill of lading bookmark
 
 
 
-## ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete
+## EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete
 
-> MessageModel ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete(ctx, billOfLadingBookmarkId).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Execute()
+> MessageModel EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete(ctx, billOfLadingBookmarkId).Execute()
 
 Delete a particular bill of lading bookmark by ID
 
@@ -31,19 +31,16 @@ import (
 
 func main() {
     billOfLadingBookmarkId := "billOfLadingBookmarkId_example" // string | 
-    accept := "application/json" // string |  (optional)
-    contentType := "application/json" // string |  (optional)
-    xApiKey := "{{x-api-key}}" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete(context.Background(), billOfLadingBookmarkId).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Execute()
+    resp, r, err := api_client.BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete(context.Background(), billOfLadingBookmarkId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete`: MessageModel
-    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete`: %v\n", resp)
+    // response from `EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete`: MessageModel
+    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete`: %v\n", resp)
 }
 ```
 
@@ -57,15 +54,12 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **accept** | **string** |  | 
- **contentType** | **string** |  | 
- **xApiKey** | **string** |  | 
 
 ### Return type
 
@@ -73,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 
@@ -85,9 +79,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet
+## EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet
 
-> BookmarkResponse ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx, billOfLadingBookmarkId).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Execute()
+> BookmarkResponse EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx, billOfLadingBookmarkId).Execute()
 
 Get a particular bill of lading bookmark by ID
 
@@ -105,19 +99,16 @@ import (
 
 func main() {
     billOfLadingBookmarkId := "billOfLadingBookmarkId_example" // string | 
-    accept := "application/json" // string |  (optional)
-    contentType := "application/json" // string |  (optional)
-    xApiKey := "{{x-api-key}}" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet(context.Background(), billOfLadingBookmarkId).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Execute()
+    resp, r, err := api_client.BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet(context.Background(), billOfLadingBookmarkId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: BookmarkResponse
-    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: %v\n", resp)
+    // response from `EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: BookmarkResponse
+    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: %v\n", resp)
 }
 ```
 
@@ -131,15 +122,12 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **accept** | **string** |  | 
- **contentType** | **string** |  | 
- **xApiKey** | **string** |  | 
 
 ### Return type
 
@@ -147,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 
@@ -159,9 +147,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ApiV1EtaBillOfLadingBookmarksGet
+## EtaBillOfLadingBookmarksGet
 
-> InlineResponse200 ApiV1EtaBillOfLadingBookmarksGet(ctx).Accept(accept).ContentType(contentType).XApiKey(xApiKey).StartAfter(startAfter).Ascending(ascending).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
+> InlineResponse200 EtaBillOfLadingBookmarksGet(ctx).StartAfter(startAfter).Ascending(ascending).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
 
 Get a list of bookmarked bill of ladings
 
@@ -180,9 +168,6 @@ import (
 )
 
 func main() {
-    accept := "application/json" // string |  (optional)
-    contentType := "application/json" // string |  (optional)
-    xApiKey := "{{x-api-key}}" // string |  (optional)
     startAfter := "startAfter_example" // string | start query from after this voyage bookmark id (optional)
     ascending := "ascending_example" // string | if set to true, sort results based on creation time in ascending order. false by default (optional)
     carrierNo := "carrierNo_example" // string | filter on the carrier scac (optional)
@@ -193,13 +178,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksGet(context.Background()).Accept(accept).ContentType(contentType).XApiKey(xApiKey).StartAfter(startAfter).Ascending(ascending).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
+    resp, r, err := api_client.BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksGet(context.Background()).StartAfter(startAfter).Ascending(ascending).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApiV1EtaBillOfLadingBookmarksGet`: InlineResponse200
-    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksGet`: %v\n", resp)
+    // response from `EtaBillOfLadingBookmarksGet`: InlineResponse200
+    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksGet`: %v\n", resp)
 }
 ```
 
@@ -209,14 +194,11 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiV1EtaBillOfLadingBookmarksGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEtaBillOfLadingBookmarksGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **string** |  | 
- **contentType** | **string** |  | 
- **xApiKey** | **string** |  | 
  **startAfter** | **string** | start query from after this voyage bookmark id | 
  **ascending** | **string** | if set to true, sort results based on creation time in ascending order. false by default | 
  **carrierNo** | **string** | filter on the carrier scac | 
@@ -231,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 
@@ -243,9 +225,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ApiV1EtaBillOfLadingBookmarksPost
+## EtaBillOfLadingBookmarksPost
 
-> Bookmark ApiV1EtaBillOfLadingBookmarksPost(ctx).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Body(body).Execute()
+> Bookmark EtaBillOfLadingBookmarksPost(ctx).Body(body).Execute()
 
 Create a new bill of lading bookmark
 
@@ -264,20 +246,17 @@ import (
 )
 
 func main() {
-    accept := "application/json" // string |  (optional)
-    contentType := "application/json" // string |  (optional)
-    xApiKey := "{{x-api-key}}" // string |  (optional)
     body := map[string]interface{}(Object) // map[string]interface{} |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksPost(context.Background()).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Body(body).Execute()
+    resp, r, err := api_client.BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksPost(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApiV1EtaBillOfLadingBookmarksPost`: Bookmark
-    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.ApiV1EtaBillOfLadingBookmarksPost`: %v\n", resp)
+    // response from `EtaBillOfLadingBookmarksPost`: Bookmark
+    fmt.Fprintf(os.Stdout, "Response from `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksPost`: %v\n", resp)
 }
 ```
 
@@ -287,14 +266,11 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiV1EtaBillOfLadingBookmarksPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEtaBillOfLadingBookmarksPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **string** |  | 
- **contentType** | **string** |  | 
- **xApiKey** | **string** |  | 
  **body** | **map[string]interface{}** |  | 
 
 ### Return type
@@ -303,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 

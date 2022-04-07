@@ -27,7 +27,7 @@ var (
 type TrackingApi interface {
 
 	/*
-	ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
+	EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
 
 	This will return the bill of lading bookmark, augmented bill of lading, container information and container events, sailing information, vessel ais information, vessel voyage information.
 
@@ -628,62 +628,47 @@ Sample response as below:
 
 	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param billOfLadingBookmarkId
-	 @return ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
+	 @return ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
 	*/
-	ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx _context.Context, billOfLadingBookmarkId string) ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
+	EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx _context.Context, billOfLadingBookmarkId string) ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
 
-	// ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute executes the request
+	// EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute executes the request
 	//  @return InlineResponse2002
-	ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) (InlineResponse2002, *_nethttp.Response, error)
+	EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) (InlineResponse2002, *_nethttp.Response, error)
 
 	/*
-	ApiV1EtaTrackingBillOfLadingBookmarksGet Get a list of bill of lading bookmark tracking results based on filters
+	EtaTrackingBillOfLadingBookmarksGet Get a list of bill of lading bookmark tracking results based on filters
 
 	This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
 
 You could filter based the following parameters listed.
 
 	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest
+	 @return ApiEtaTrackingBillOfLadingBookmarksGetRequest
 	*/
-	ApiV1EtaTrackingBillOfLadingBookmarksGet(ctx _context.Context) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest
+	EtaTrackingBillOfLadingBookmarksGet(ctx _context.Context) ApiEtaTrackingBillOfLadingBookmarksGetRequest
 
-	// ApiV1EtaTrackingBillOfLadingBookmarksGetExecute executes the request
+	// EtaTrackingBillOfLadingBookmarksGetExecute executes the request
 	//  @return InlineResponse2001
-	ApiV1EtaTrackingBillOfLadingBookmarksGetExecute(r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) (InlineResponse2001, *_nethttp.Response, error)
+	EtaTrackingBillOfLadingBookmarksGetExecute(r ApiEtaTrackingBillOfLadingBookmarksGetRequest) (InlineResponse2001, *_nethttp.Response, error)
 }
 
 // TrackingApiService TrackingApi service
 type TrackingApiService service
 
-type ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest struct {
+type ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest struct {
 	ctx _context.Context
 	ApiService TrackingApi
 	billOfLadingBookmarkId string
-	accept *string
-	contentType *string
-	xApiKey *string
 }
 
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) Accept(accept string) ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest {
-	r.accept = &accept
-	return r
-}
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) ContentType(contentType string) ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest {
-	r.contentType = &contentType
-	return r
-}
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) XApiKey(xApiKey string) ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest {
-	r.xApiKey = &xApiKey
-	return r
-}
 
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) Execute() (InlineResponse2002, *_nethttp.Response, error) {
-	return r.ApiService.ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r)
+func (r ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) Execute() (InlineResponse2002, *_nethttp.Response, error) {
+	return r.ApiService.EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r)
 }
 
 /*
-ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
+EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
 
 This will return the bill of lading bookmark, augmented bill of lading, container information and container events, sailing information, vessel ais information, vessel voyage information.
 
@@ -1284,10 +1269,10 @@ Sample response as below:
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param billOfLadingBookmarkId
- @return ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
+ @return ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
 */
-func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx _context.Context, billOfLadingBookmarkId string) ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest {
-	return ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest{
+func (a *TrackingApiService) EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx _context.Context, billOfLadingBookmarkId string) ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest {
+	return ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest{
 		ApiService: a,
 		ctx: ctx,
 		billOfLadingBookmarkId: billOfLadingBookmarkId,
@@ -1296,7 +1281,7 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBo
 
 // Execute executes the request
 //  @return InlineResponse2002
-func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r ApiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) (InlineResponse2002, *_nethttp.Response, error) {
+func (a *TrackingApiService) EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r ApiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) (InlineResponse2002, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1306,12 +1291,12 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBo
 		localVarReturnValue  InlineResponse2002
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackingApiService.ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackingApiService.EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}"
+	localVarPath := localBasePath + "/eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bill_of_lading_bookmark_id"+"}", _neturl.PathEscape(parameterToString(r.billOfLadingBookmarkId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1335,14 +1320,47 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.accept != nil {
-		localVarHeaderParams["Accept"] = parameterToString(*r.accept, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["authorization"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["authorization"] = key
+			}
+		}
 	}
-	if r.contentType != nil {
-		localVarHeaderParams["Content-Type"] = parameterToString(*r.contentType, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["x-api-key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
 	}
-	if r.xApiKey != nil {
-		localVarHeaderParams["x-api-key"] = parameterToString(*r.xApiKey, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["x-org-api-key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-org-api-key"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1384,6 +1402,16 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBo
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v MessageModel
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1400,12 +1428,9 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest struct {
+type ApiEtaTrackingBillOfLadingBookmarksGetRequest struct {
 	ctx _context.Context
 	ApiService TrackingApi
-	accept *string
-	contentType *string
-	xApiKey *string
 	startAfter *string
 	customerId *string
 	carrierNo *string
@@ -1415,69 +1440,57 @@ type ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest struct {
 	statusCode *string
 }
 
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) Accept(accept string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
-	r.accept = &accept
-	return r
-}
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) ContentType(contentType string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
-	r.contentType = &contentType
-	return r
-}
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) XApiKey(xApiKey string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
-	r.xApiKey = &xApiKey
-	return r
-}
 // start query from after this voyage bookmark id
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) StartAfter(startAfter string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) StartAfter(startAfter string) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
 	r.startAfter = &startAfter
 	return r
 }
 // get last prediction result made before this timestamp, must be in ISO8601 format with timezone, defaults to now
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) CustomerId(customerId string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) CustomerId(customerId string) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
 	r.customerId = &customerId
 	return r
 }
 // filter on the carrier scac code
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) CarrierNo(carrierNo string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) CarrierNo(carrierNo string) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
 	r.carrierNo = &carrierNo
 	return r
 }
 // filter on the imo number of the vessel
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) BlNo(blNo string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) BlNo(blNo string) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
 	r.blNo = &blNo
 	return r
 }
 // filter on the target port by port code
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) CntrNo(cntrNo string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) CntrNo(cntrNo string) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
 	r.cntrNo = &cntrNo
 	return r
 }
 // filter on the target port eta
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) Status(status string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) Status(status string) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
 	r.status = &status
 	return r
 }
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) StatusCode(statusCode string) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) StatusCode(statusCode string) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
 	r.statusCode = &statusCode
 	return r
 }
 
-func (r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) Execute() (InlineResponse2001, *_nethttp.Response, error) {
-	return r.ApiService.ApiV1EtaTrackingBillOfLadingBookmarksGetExecute(r)
+func (r ApiEtaTrackingBillOfLadingBookmarksGetRequest) Execute() (InlineResponse2001, *_nethttp.Response, error) {
+	return r.ApiService.EtaTrackingBillOfLadingBookmarksGetExecute(r)
 }
 
 /*
-ApiV1EtaTrackingBillOfLadingBookmarksGet Get a list of bill of lading bookmark tracking results based on filters
+EtaTrackingBillOfLadingBookmarksGet Get a list of bill of lading bookmark tracking results based on filters
 
 This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
 
 You could filter based the following parameters listed.
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest
+ @return ApiEtaTrackingBillOfLadingBookmarksGetRequest
 */
-func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksGet(ctx _context.Context) ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest {
-	return ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest{
+func (a *TrackingApiService) EtaTrackingBillOfLadingBookmarksGet(ctx _context.Context) ApiEtaTrackingBillOfLadingBookmarksGetRequest {
+	return ApiEtaTrackingBillOfLadingBookmarksGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1485,7 +1498,7 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksGet(ctx _conte
 
 // Execute executes the request
 //  @return InlineResponse2001
-func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksGetExecute(r ApiApiV1EtaTrackingBillOfLadingBookmarksGetRequest) (InlineResponse2001, *_nethttp.Response, error) {
+func (a *TrackingApiService) EtaTrackingBillOfLadingBookmarksGetExecute(r ApiEtaTrackingBillOfLadingBookmarksGetRequest) (InlineResponse2001, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1495,12 +1508,12 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksGetExecute(r A
 		localVarReturnValue  InlineResponse2001
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackingApiService.ApiV1EtaTrackingBillOfLadingBookmarksGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackingApiService.EtaTrackingBillOfLadingBookmarksGet")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/eta/tracking/bill-of-lading-bookmarks"
+	localVarPath := localBasePath + "/eta/tracking/bill-of-lading-bookmarks"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1544,14 +1557,47 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksGetExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.accept != nil {
-		localVarHeaderParams["Accept"] = parameterToString(*r.accept, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["authorization"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["authorization"] = key
+			}
+		}
 	}
-	if r.contentType != nil {
-		localVarHeaderParams["Content-Type"] = parameterToString(*r.contentType, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["x-api-key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
 	}
-	if r.xApiKey != nil {
-		localVarHeaderParams["x-api-key"] = parameterToString(*r.xApiKey, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["x-org-api-key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-org-api-key"] = key
+			}
+		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1586,6 +1632,16 @@ func (a *TrackingApiService) ApiV1EtaTrackingBillOfLadingBookmarksGetExecute(r A
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
+			var v MessageModel
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
 			var v MessageModel
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

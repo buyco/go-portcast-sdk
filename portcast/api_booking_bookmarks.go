@@ -26,7 +26,7 @@ var (
 type BookingBookmarksApi interface {
 
 	/*
-	ApiV1EtaBookingPost Create new bookmarks for booking
+	EtaBookingPost Create new bookmarks for booking
 
 	Please send the bill of lading or booking number with the following fields:
 ```
@@ -38,50 +38,35 @@ type BookingBookmarksApi interface {
 ```
 
 	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return ApiApiV1EtaBookingPostRequest
+	 @return ApiEtaBookingPostRequest
 	*/
-	ApiV1EtaBookingPost(ctx _context.Context) ApiApiV1EtaBookingPostRequest
+	EtaBookingPost(ctx _context.Context) ApiEtaBookingPostRequest
 
-	// ApiV1EtaBookingPostExecute executes the request
+	// EtaBookingPostExecute executes the request
 	//  @return BookingBookmarks
-	ApiV1EtaBookingPostExecute(r ApiApiV1EtaBookingPostRequest) (BookingBookmarks, *_nethttp.Response, error)
+	EtaBookingPostExecute(r ApiEtaBookingPostRequest) (BookingBookmarks, *_nethttp.Response, error)
 }
 
 // BookingBookmarksApiService BookingBookmarksApi service
 type BookingBookmarksApiService service
 
-type ApiApiV1EtaBookingPostRequest struct {
+type ApiEtaBookingPostRequest struct {
 	ctx _context.Context
 	ApiService BookingBookmarksApi
-	accept *string
-	contentType *string
-	xApiKey *string
 	body *map[string]interface{}
 }
 
-func (r ApiApiV1EtaBookingPostRequest) Accept(accept string) ApiApiV1EtaBookingPostRequest {
-	r.accept = &accept
-	return r
-}
-func (r ApiApiV1EtaBookingPostRequest) ContentType(contentType string) ApiApiV1EtaBookingPostRequest {
-	r.contentType = &contentType
-	return r
-}
-func (r ApiApiV1EtaBookingPostRequest) XApiKey(xApiKey string) ApiApiV1EtaBookingPostRequest {
-	r.xApiKey = &xApiKey
-	return r
-}
-func (r ApiApiV1EtaBookingPostRequest) Body(body map[string]interface{}) ApiApiV1EtaBookingPostRequest {
+func (r ApiEtaBookingPostRequest) Body(body map[string]interface{}) ApiEtaBookingPostRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiApiV1EtaBookingPostRequest) Execute() (BookingBookmarks, *_nethttp.Response, error) {
-	return r.ApiService.ApiV1EtaBookingPostExecute(r)
+func (r ApiEtaBookingPostRequest) Execute() (BookingBookmarks, *_nethttp.Response, error) {
+	return r.ApiService.EtaBookingPostExecute(r)
 }
 
 /*
-ApiV1EtaBookingPost Create new bookmarks for booking
+EtaBookingPost Create new bookmarks for booking
 
 Please send the bill of lading or booking number with the following fields:
 ```
@@ -93,10 +78,10 @@ Please send the bill of lading or booking number with the following fields:
 ```
 
  @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiV1EtaBookingPostRequest
+ @return ApiEtaBookingPostRequest
 */
-func (a *BookingBookmarksApiService) ApiV1EtaBookingPost(ctx _context.Context) ApiApiV1EtaBookingPostRequest {
-	return ApiApiV1EtaBookingPostRequest{
+func (a *BookingBookmarksApiService) EtaBookingPost(ctx _context.Context) ApiEtaBookingPostRequest {
+	return ApiEtaBookingPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -104,7 +89,7 @@ func (a *BookingBookmarksApiService) ApiV1EtaBookingPost(ctx _context.Context) A
 
 // Execute executes the request
 //  @return BookingBookmarks
-func (a *BookingBookmarksApiService) ApiV1EtaBookingPostExecute(r ApiApiV1EtaBookingPostRequest) (BookingBookmarks, *_nethttp.Response, error) {
+func (a *BookingBookmarksApiService) EtaBookingPostExecute(r ApiEtaBookingPostRequest) (BookingBookmarks, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -114,12 +99,12 @@ func (a *BookingBookmarksApiService) ApiV1EtaBookingPostExecute(r ApiApiV1EtaBoo
 		localVarReturnValue  BookingBookmarks
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookingBookmarksApiService.ApiV1EtaBookingPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookingBookmarksApiService.EtaBookingPost")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/eta/booking"
+	localVarPath := localBasePath + "/eta/booking"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -142,17 +127,50 @@ func (a *BookingBookmarksApiService) ApiV1EtaBookingPostExecute(r ApiApiV1EtaBoo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.accept != nil {
-		localVarHeaderParams["Accept"] = parameterToString(*r.accept, "")
-	}
-	if r.contentType != nil {
-		localVarHeaderParams["Content-Type"] = parameterToString(*r.contentType, "")
-	}
-	if r.xApiKey != nil {
-		localVarHeaderParams["x-api-key"] = parameterToString(*r.xApiKey, "")
-	}
 	// body params
 	localVarPostBody = r.body
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["authorization"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["x-api-key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["x-org-api-key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-org-api-key"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -186,6 +204,16 @@ func (a *BookingBookmarksApiService) ApiV1EtaBookingPostExecute(r ApiApiV1EtaBoo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
+			var v MessageModel
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
 			var v MessageModel
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

@@ -86,18 +86,18 @@ ctx = context.WithValue(context.Background(), sw.ContextOperationServerVariables
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.portcast.io*
+All URIs are relative to *https://api.portcast.io/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BillOfLadingBookmarksApi* | [**ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete**](docs/BillOfLadingBookmarksApi.md#apiv1etabillofladingbookmarksbillofladingbookmarkiddelete) | **Delete** /api/v1/eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Delete a particular bill of lading bookmark by ID
-*BillOfLadingBookmarksApi* | [**ApiV1EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](docs/BillOfLadingBookmarksApi.md#apiv1etabillofladingbookmarksbillofladingbookmarkidget) | **Get** /api/v1/eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get a particular bill of lading bookmark by ID
-*BillOfLadingBookmarksApi* | [**ApiV1EtaBillOfLadingBookmarksGet**](docs/BillOfLadingBookmarksApi.md#apiv1etabillofladingbookmarksget) | **Get** /api/v1/eta/bill-of-lading-bookmarks | Get a list of bookmarked bill of ladings
-*BillOfLadingBookmarksApi* | [**ApiV1EtaBillOfLadingBookmarksPost**](docs/BillOfLadingBookmarksApi.md#apiv1etabillofladingbookmarkspost) | **Post** /api/v1/eta/bill-of-lading-bookmarks | Create a new bill of lading bookmark
-*BookingBookmarksApi* | [**ApiV1EtaBookingPost**](docs/BookingBookmarksApi.md#apiv1etabookingpost) | **Post** /api/v1/eta/booking | Create new bookmarks for booking
+*BillOfLadingBookmarksApi* | [**EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete**](docs/BillOfLadingBookmarksApi.md#etabillofladingbookmarksbillofladingbookmarkiddelete) | **Delete** /eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Delete a particular bill of lading bookmark by ID
+*BillOfLadingBookmarksApi* | [**EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](docs/BillOfLadingBookmarksApi.md#etabillofladingbookmarksbillofladingbookmarkidget) | **Get** /eta/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get a particular bill of lading bookmark by ID
+*BillOfLadingBookmarksApi* | [**EtaBillOfLadingBookmarksGet**](docs/BillOfLadingBookmarksApi.md#etabillofladingbookmarksget) | **Get** /eta/bill-of-lading-bookmarks | Get a list of bookmarked bill of ladings
+*BillOfLadingBookmarksApi* | [**EtaBillOfLadingBookmarksPost**](docs/BillOfLadingBookmarksApi.md#etabillofladingbookmarkspost) | **Post** /eta/bill-of-lading-bookmarks | Create a new bill of lading bookmark
+*BookingBookmarksApi* | [**EtaBookingPost**](docs/BookingBookmarksApi.md#etabookingpost) | **Post** /eta/booking | Create new bookmarks for booking
 *DefaultApi* | [**HealthcheckGet**](docs/DefaultApi.md#healthcheckget) | **Get** /healthcheck | Health Check API
-*TrackingApi* | [**ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](docs/TrackingApi.md#apiv1etatrackingbillofladingbookmarksbillofladingbookmarkidget) | **Get** /api/v1/eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
-*TrackingApi* | [**ApiV1EtaTrackingBillOfLadingBookmarksGet**](docs/TrackingApi.md#apiv1etatrackingbillofladingbookmarksget) | **Get** /api/v1/eta/tracking/bill-of-lading-bookmarks | Get a list of bill of lading bookmark tracking results based on filters
+*TrackingApi* | [**EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](docs/TrackingApi.md#etatrackingbillofladingbookmarksbillofladingbookmarkidget) | **Get** /eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
+*TrackingApi* | [**EtaTrackingBillOfLadingBookmarksGet**](docs/TrackingApi.md#etatrackingbillofladingbookmarksget) | **Get** /eta/tracking/bill-of-lading-bookmarks | Get a list of bill of lading bookmark tracking results based on filters
 
 
 ## Documentation For Models
@@ -111,8 +111,6 @@ Class | Method | HTTP request | Description
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
- - [InlineResponse401](docs/InlineResponse401.md)
- - [InlineResponse404](docs/InlineResponse404.md)
  - [MessageModel](docs/MessageModel.md)
  - [TrackingEvent](docs/TrackingEvent.md)
  - [TrackingEventAis](docs/TrackingEventAis.md)
@@ -126,7 +124,33 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- Endpoints do not require authorization.
+
+
+### authorization
+
+- **Type**: API key
+- **API key parameter name**: authorization
+- **Location**: HTTP header
+
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: authorization and passed in as the auth context for each request.
+
+
+### x-api-key
+
+- **Type**: API key
+- **API key parameter name**: x-api-key
+- **Location**: HTTP header
+
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: x-api-key and passed in as the auth context for each request.
+
+
+### x-org-api-key
+
+- **Type**: API key
+- **API key parameter name**: x-org-api-key
+- **Location**: HTTP header
+
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: x-org-api-key and passed in as the auth context for each request.
 
 
 ## Documentation for Utility Methods

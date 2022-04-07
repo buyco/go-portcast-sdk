@@ -1,6 +1,6 @@
 # \DefaultApi
 
-All URIs are relative to *https://api.portcast.io*
+All URIs are relative to *https://api.portcast.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiHealthcheckGetRequest stru
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 

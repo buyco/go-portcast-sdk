@@ -1,16 +1,16 @@
 # \BookingBookmarksApi
 
-All URIs are relative to *https://api.portcast.io*
+All URIs are relative to *https://api.portcast.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApiV1EtaBookingPost**](BookingBookmarksApi.md#ApiV1EtaBookingPost) | **Post** /api/v1/eta/booking | Create new bookmarks for booking
+[**EtaBookingPost**](BookingBookmarksApi.md#EtaBookingPost) | **Post** /eta/booking | Create new bookmarks for booking
 
 
 
-## ApiV1EtaBookingPost
+## EtaBookingPost
 
-> BookingBookmarks ApiV1EtaBookingPost(ctx).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Body(body).Execute()
+> BookingBookmarks EtaBookingPost(ctx).Body(body).Execute()
 
 Create new bookmarks for booking
 
@@ -29,20 +29,17 @@ import (
 )
 
 func main() {
-    accept := "application/json" // string |  (optional)
-    contentType := "application/json" // string |  (optional)
-    xApiKey := "{{x-api-key}}" // string |  (optional)
     body := map[string]interface{}(Object) // map[string]interface{} |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BookingBookmarksApi.ApiV1EtaBookingPost(context.Background()).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Body(body).Execute()
+    resp, r, err := api_client.BookingBookmarksApi.EtaBookingPost(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookingBookmarksApi.ApiV1EtaBookingPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookingBookmarksApi.EtaBookingPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApiV1EtaBookingPost`: BookingBookmarks
-    fmt.Fprintf(os.Stdout, "Response from `BookingBookmarksApi.ApiV1EtaBookingPost`: %v\n", resp)
+    // response from `EtaBookingPost`: BookingBookmarks
+    fmt.Fprintf(os.Stdout, "Response from `BookingBookmarksApi.EtaBookingPost`: %v\n", resp)
 }
 ```
 
@@ -52,14 +49,11 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiV1EtaBookingPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEtaBookingPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **string** |  | 
- **contentType** | **string** |  | 
- **xApiKey** | **string** |  | 
  **body** | **map[string]interface{}** |  | 
 
 ### Return type
@@ -68,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 

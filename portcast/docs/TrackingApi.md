@@ -1,17 +1,17 @@
 # \TrackingApi
 
-All URIs are relative to *https://api.portcast.io*
+All URIs are relative to *https://api.portcast.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](TrackingApi.md#ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet) | **Get** /api/v1/eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
-[**ApiV1EtaTrackingBillOfLadingBookmarksGet**](TrackingApi.md#ApiV1EtaTrackingBillOfLadingBookmarksGet) | **Get** /api/v1/eta/tracking/bill-of-lading-bookmarks | Get a list of bill of lading bookmark tracking results based on filters
+[**EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](TrackingApi.md#EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet) | **Get** /eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
+[**EtaTrackingBillOfLadingBookmarksGet**](TrackingApi.md#EtaTrackingBillOfLadingBookmarksGet) | **Get** /eta/tracking/bill-of-lading-bookmarks | Get a list of bill of lading bookmark tracking results based on filters
 
 
 
-## ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet
+## EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet
 
-> InlineResponse2002 ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx, billOfLadingBookmarkId).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Execute()
+> InlineResponse2002 EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx, billOfLadingBookmarkId).Execute()
 
 Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
 
@@ -31,19 +31,16 @@ import (
 
 func main() {
     billOfLadingBookmarkId := "billOfLadingBookmarkId_example" // string | 
-    accept := "application/json" // string |  (optional)
-    contentType := "application/json" // string |  (optional)
-    xApiKey := "{{x-api-key}}" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TrackingApi.ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(context.Background(), billOfLadingBookmarkId).Accept(accept).ContentType(contentType).XApiKey(xApiKey).Execute()
+    resp, r, err := api_client.TrackingApi.EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet(context.Background(), billOfLadingBookmarkId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackingApi.ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackingApi.EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: InlineResponse2002
-    fmt.Fprintf(os.Stdout, "Response from `TrackingApi.ApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: %v\n", resp)
+    // response from `EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: InlineResponse2002
+    fmt.Fprintf(os.Stdout, "Response from `TrackingApi.EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet`: %v\n", resp)
 }
 ```
 
@@ -57,15 +54,12 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiV1EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **accept** | **string** |  | 
- **contentType** | **string** |  | 
- **xApiKey** | **string** |  | 
 
 ### Return type
 
@@ -73,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 
@@ -85,9 +79,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ApiV1EtaTrackingBillOfLadingBookmarksGet
+## EtaTrackingBillOfLadingBookmarksGet
 
-> InlineResponse2001 ApiV1EtaTrackingBillOfLadingBookmarksGet(ctx).Accept(accept).ContentType(contentType).XApiKey(xApiKey).StartAfter(startAfter).CustomerId(customerId).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
+> InlineResponse2001 EtaTrackingBillOfLadingBookmarksGet(ctx).StartAfter(startAfter).CustomerId(customerId).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
 
 Get a list of bill of lading bookmark tracking results based on filters
 
@@ -106,9 +100,6 @@ import (
 )
 
 func main() {
-    accept := "application/json" // string |  (optional)
-    contentType := "application/json" // string |  (optional)
-    xApiKey := "{{x-api-key}}" // string |  (optional)
     startAfter := "startAfter_example" // string | start query from after this voyage bookmark id (optional)
     customerId := "customerId_example" // string | get last prediction result made before this timestamp, must be in ISO8601 format with timezone, defaults to now (optional)
     carrierNo := "carrierNo_example" // string | filter on the carrier scac code (optional)
@@ -119,13 +110,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TrackingApi.ApiV1EtaTrackingBillOfLadingBookmarksGet(context.Background()).Accept(accept).ContentType(contentType).XApiKey(xApiKey).StartAfter(startAfter).CustomerId(customerId).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
+    resp, r, err := api_client.TrackingApi.EtaTrackingBillOfLadingBookmarksGet(context.Background()).StartAfter(startAfter).CustomerId(customerId).CarrierNo(carrierNo).BlNo(blNo).CntrNo(cntrNo).Status(status).StatusCode(statusCode).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackingApi.ApiV1EtaTrackingBillOfLadingBookmarksGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackingApi.EtaTrackingBillOfLadingBookmarksGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApiV1EtaTrackingBillOfLadingBookmarksGet`: InlineResponse2001
-    fmt.Fprintf(os.Stdout, "Response from `TrackingApi.ApiV1EtaTrackingBillOfLadingBookmarksGet`: %v\n", resp)
+    // response from `EtaTrackingBillOfLadingBookmarksGet`: InlineResponse2001
+    fmt.Fprintf(os.Stdout, "Response from `TrackingApi.EtaTrackingBillOfLadingBookmarksGet`: %v\n", resp)
 }
 ```
 
@@ -135,14 +126,11 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiV1EtaTrackingBillOfLadingBookmarksGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEtaTrackingBillOfLadingBookmarksGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **string** |  | 
- **contentType** | **string** |  | 
- **xApiKey** | **string** |  | 
  **startAfter** | **string** | start query from after this voyage bookmark id | 
  **customerId** | **string** | get last prediction result made before this timestamp, must be in ISO8601 format with timezone, defaults to now | 
  **carrierNo** | **string** | filter on the carrier scac code | 
@@ -157,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
 
 ### HTTP request headers
 

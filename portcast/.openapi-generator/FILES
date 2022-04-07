@@ -20,8 +20,6 @@ docs/DefaultApi.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
 docs/InlineResponse2002.md
-docs/InlineResponse401.md
-docs/InlineResponse404.md
 docs/MessageModel.md
 docs/TrackingApi.md
 docs/TrackingEvent.md
@@ -44,8 +42,6 @@ model_bookmark_response.go
 model_inline_response_200.go
 model_inline_response_200_1.go
 model_inline_response_200_2.go
-model_inline_response_401.go
-model_inline_response_404.go
 model_message_model.go
 model_tracking_event.go
 model_tracking_event_ais.go
