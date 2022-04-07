@@ -47,20 +47,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "doc_no",
-                  "doc_type",
-                  "carrier_no"
-                ],
-                "example": {
-                  "doc_no": "YMLUN851098484",
-                  "doc_type": "BK",
-                  "carrier_no": "YMLU"
-                }
+                "$ref": "#/components/schemas/bookingBookmarkRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -68,7 +59,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/bookingBookmarks"
+                  "$ref": "#/components/schemas/bookingBookmarksResponse"
                 }
               }
             }
@@ -235,20 +226,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "bl_no",
-                  "cntr_no",
-                  "carrier_no"
-                ],
-                "example": {
-                  "bl_no": "YMLUN851098484",
-                  "cntr_no": "TGHU5312550",
-                  "carrier_no": "YMLU"
-                }
+                "$ref": "#/components/schemas/containerBookmarkRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -650,7 +632,7 @@
   },
   "components": {
     "schemas": {
-      "bookingBookmarks": {
+      "bookingBookmarksResponse": {
         "type": "object",
         "properties": {
           "containers": {
@@ -668,7 +650,7 @@
           "response": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/bookingBookmarkResponse"
+              "$ref": "#/components/schemas/bookingBookmark"
             }
           }
         }
@@ -695,7 +677,7 @@
           }
         }
       },
-      "bookingBookmarkResponse": {
+      "bookingBookmark": {
         "type": "object",
         "anyOf": [
           {
@@ -1375,6 +1357,50 @@
           "message": {
             "type": "string",
             "example": "API Quota Exceeded"
+          }
+        }
+      },
+      "bookingBookmarkRequest": {
+        "required": [
+          "carrier_no",
+          "doc_no",
+          "doc_type"
+        ],
+        "type": "object",
+        "properties": {
+          "doc_type": {
+            "type": "string",
+            "example": "BK"
+          },
+          "doc_no": {
+            "type": "string",
+            "example": "MAEU969678061"
+          },
+          "carrier_no": {
+            "type": "string",
+            "example": "CMDU"
+          }
+        }
+      },
+      "containerBookmarkRequest": {
+        "required": [
+          "carrier_no",
+          "cntr_no",
+          "bl_no"
+        ],
+        "type": "object",
+        "properties": {
+          "cntr_no": {
+            "type": "string",
+            "example": "TLLU1181321"
+          },
+          "bl_no": {
+            "type": "string",
+            "example": "ONEYANRB31646600"
+          },
+          "carrier_no": {
+            "type": "string",
+            "example": "ONEY"
           }
         }
       }

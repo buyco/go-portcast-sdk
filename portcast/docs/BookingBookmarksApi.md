@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## EtaBookingPost
 
-> BookingBookmarks EtaBookingPost(ctx).Body(body).Execute()
+> BookingBookmarksResponse EtaBookingPost(ctx).BookingBookmarkRequest(bookingBookmarkRequest).Execute()
 
 Create new bookmarks for booking
 
@@ -29,16 +29,16 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}(Object) // map[string]interface{} |  (optional)
+    bookingBookmarkRequest := *openapiclient.NewBookingBookmarkRequest("BK", "MAEU969678061", "CMDU") // BookingBookmarkRequest | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BookingBookmarksApi.EtaBookingPost(context.Background()).Body(body).Execute()
+    resp, r, err := api_client.BookingBookmarksApi.EtaBookingPost(context.Background()).BookingBookmarkRequest(bookingBookmarkRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BookingBookmarksApi.EtaBookingPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `EtaBookingPost`: BookingBookmarks
+    // response from `EtaBookingPost`: BookingBookmarksResponse
     fmt.Fprintf(os.Stdout, "Response from `BookingBookmarksApi.EtaBookingPost`: %v\n", resp)
 }
 ```
@@ -54,11 +54,11 @@ Other parameters are passed through a pointer to a apiEtaBookingPostRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **bookingBookmarkRequest** | [**BookingBookmarkRequest**](BookingBookmarkRequest.md) |  | 
 
 ### Return type
 
-[**BookingBookmarks**](BookingBookmarks.md)
+[**BookingBookmarksResponse**](BookingBookmarksResponse.md)
 
 ### Authorization
 

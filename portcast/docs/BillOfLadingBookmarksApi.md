@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ## EtaBillOfLadingBookmarksPost
 
-> Bookmark EtaBillOfLadingBookmarksPost(ctx).Body(body).Execute()
+> Bookmark EtaBillOfLadingBookmarksPost(ctx).ContainerBookmarkRequest(containerBookmarkRequest).Execute()
 
 Create a new bill of lading bookmark
 
@@ -246,11 +246,11 @@ import (
 )
 
 func main() {
-    body := map[string]interface{}(Object) // map[string]interface{} |  (optional)
+    containerBookmarkRequest := *openapiclient.NewContainerBookmarkRequest("TLLU1181321", "ONEYANRB31646600", "ONEY") // ContainerBookmarkRequest | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksPost(context.Background()).Body(body).Execute()
+    resp, r, err := api_client.BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksPost(context.Background()).ContainerBookmarkRequest(containerBookmarkRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillOfLadingBookmarksApi.EtaBillOfLadingBookmarksPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -271,7 +271,7 @@ Other parameters are passed through a pointer to a apiEtaBillOfLadingBookmarksPo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **containerBookmarkRequest** | [**ContainerBookmarkRequest**](ContainerBookmarkRequest.md) |  | 
 
 ### Return type
 

@@ -103,11 +103,13 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AuthError](docs/AuthError.md)
- - [BookingBookmarkResponse](docs/BookingBookmarkResponse.md)
+ - [BookingBookmark](docs/BookingBookmark.md)
+ - [BookingBookmarkRequest](docs/BookingBookmarkRequest.md)
  - [BookingBookmarkResponseExisted](docs/BookingBookmarkResponseExisted.md)
- - [BookingBookmarks](docs/BookingBookmarks.md)
+ - [BookingBookmarksResponse](docs/BookingBookmarksResponse.md)
  - [Bookmark](docs/Bookmark.md)
  - [BookmarkResponse](docs/BookmarkResponse.md)
+ - [ContainerBookmarkRequest](docs/ContainerBookmarkRequest.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)

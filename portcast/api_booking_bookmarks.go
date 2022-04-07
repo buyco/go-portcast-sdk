@@ -43,8 +43,8 @@ type BookingBookmarksApi interface {
 	EtaBookingPost(ctx _context.Context) ApiEtaBookingPostRequest
 
 	// EtaBookingPostExecute executes the request
-	//  @return BookingBookmarks
-	EtaBookingPostExecute(r ApiEtaBookingPostRequest) (BookingBookmarks, *_nethttp.Response, error)
+	//  @return BookingBookmarksResponse
+	EtaBookingPostExecute(r ApiEtaBookingPostRequest) (BookingBookmarksResponse, *_nethttp.Response, error)
 }
 
 // BookingBookmarksApiService BookingBookmarksApi service
@@ -53,15 +53,15 @@ type BookingBookmarksApiService service
 type ApiEtaBookingPostRequest struct {
 	ctx _context.Context
 	ApiService BookingBookmarksApi
-	body *map[string]interface{}
+	bookingBookmarkRequest *BookingBookmarkRequest
 }
 
-func (r ApiEtaBookingPostRequest) Body(body map[string]interface{}) ApiEtaBookingPostRequest {
-	r.body = &body
+func (r ApiEtaBookingPostRequest) BookingBookmarkRequest(bookingBookmarkRequest BookingBookmarkRequest) ApiEtaBookingPostRequest {
+	r.bookingBookmarkRequest = &bookingBookmarkRequest
 	return r
 }
 
-func (r ApiEtaBookingPostRequest) Execute() (BookingBookmarks, *_nethttp.Response, error) {
+func (r ApiEtaBookingPostRequest) Execute() (BookingBookmarksResponse, *_nethttp.Response, error) {
 	return r.ApiService.EtaBookingPostExecute(r)
 }
 
@@ -88,15 +88,15 @@ func (a *BookingBookmarksApiService) EtaBookingPost(ctx _context.Context) ApiEta
 }
 
 // Execute executes the request
-//  @return BookingBookmarks
-func (a *BookingBookmarksApiService) EtaBookingPostExecute(r ApiEtaBookingPostRequest) (BookingBookmarks, *_nethttp.Response, error) {
+//  @return BookingBookmarksResponse
+func (a *BookingBookmarksApiService) EtaBookingPostExecute(r ApiEtaBookingPostRequest) (BookingBookmarksResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  BookingBookmarks
+		localVarReturnValue  BookingBookmarksResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookingBookmarksApiService.EtaBookingPost")
@@ -109,6 +109,9 @@ func (a *BookingBookmarksApiService) EtaBookingPostExecute(r ApiEtaBookingPostRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
+	if r.bookingBookmarkRequest == nil {
+		return localVarReturnValue, nil, reportError("bookingBookmarkRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -128,7 +131,7 @@ func (a *BookingBookmarksApiService) EtaBookingPostExecute(r ApiEtaBookingPostRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.bookingBookmarkRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

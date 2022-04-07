@@ -684,11 +684,11 @@ func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksGetExecute(r A
 type ApiEtaBillOfLadingBookmarksPostRequest struct {
 	ctx _context.Context
 	ApiService BillOfLadingBookmarksApi
-	body *map[string]interface{}
+	containerBookmarkRequest *ContainerBookmarkRequest
 }
 
-func (r ApiEtaBillOfLadingBookmarksPostRequest) Body(body map[string]interface{}) ApiEtaBillOfLadingBookmarksPostRequest {
-	r.body = &body
+func (r ApiEtaBillOfLadingBookmarksPostRequest) ContainerBookmarkRequest(containerBookmarkRequest ContainerBookmarkRequest) ApiEtaBillOfLadingBookmarksPostRequest {
+	r.containerBookmarkRequest = &containerBookmarkRequest
 	return r
 }
 
@@ -740,6 +740,9 @@ func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksPostExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
+	if r.containerBookmarkRequest == nil {
+		return localVarReturnValue, nil, reportError("containerBookmarkRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -759,7 +762,7 @@ func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksPostExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.containerBookmarkRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
