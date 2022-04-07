@@ -2,7 +2,7 @@ DOCKER_BUILD := docker run --rm -u `id -u` -v ${PWD}:/sdk openapitools/openapi-g
 GO_CLIENT := -g go -o /sdk/portcast \
 			--git-repo-id=go-portcast-sdk --git-user-id=buyco \
 			--additional-properties=packageName=portcast \
-			--additional-properties=isGoSubmodule=false \
+			--additional-properties=isGoSubmodule=true \
 			--additional-properties=generateInterfaces=true
 
 # Go related variables.
