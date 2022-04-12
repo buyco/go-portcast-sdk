@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Created** | Pointer to **string** |  | [optional] 
 **EventRaw** | Pointer to **string** |  | [optional] 
 **EventTime** | Pointer to **time.Time** |  | [optional] 
-**EventTimeEstimated** | Pointer to **time.Time** |  | [optional] 
+**EventTimeEstimated** | Pointer to **string** |  | [optional] 
 **EventTypeCode** | Pointer to **string** |  | [optional] 
 **EventTypeName** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -114,20 +114,20 @@ HasEventTime returns a boolean if a field has been set.
 
 ### GetEventTimeEstimated
 
-`func (o *TrackingEventContainerEventList) GetEventTimeEstimated() time.Time`
+`func (o *TrackingEventContainerEventList) GetEventTimeEstimated() string`
 
 GetEventTimeEstimated returns the EventTimeEstimated field if non-nil, zero value otherwise.
 
 ### GetEventTimeEstimatedOk
 
-`func (o *TrackingEventContainerEventList) GetEventTimeEstimatedOk() (*time.Time, bool)`
+`func (o *TrackingEventContainerEventList) GetEventTimeEstimatedOk() (*string, bool)`
 
 GetEventTimeEstimatedOk returns a tuple with the EventTimeEstimated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTimeEstimated
 
-`func (o *TrackingEventContainerEventList) SetEventTimeEstimated(v time.Time)`
+`func (o *TrackingEventContainerEventList) SetEventTimeEstimated(v string)`
 
 SetEventTimeEstimated sets EventTimeEstimated field to given value.
 

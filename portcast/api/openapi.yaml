@@ -1203,7 +1203,7 @@ components:
         container_event_list:
         - created: created
           event_raw: event_raw
-          event_time_estimated: 2000-01-23T04:56:07.000+00:00
+          event_time_estimated: event_time_estimated
           event_type_code: event_type_code
           event_type_name: event_type_name
           port_name: port_name
@@ -1216,7 +1216,7 @@ components:
           port_code: port_code
         - created: created
           event_raw: event_raw
-          event_time_estimated: 2000-01-23T04:56:07.000+00:00
+          event_time_estimated: event_time_estimated
           event_type_code: event_type_code
           event_type_name: event_type_name
           port_name: port_name
@@ -1260,7 +1260,7 @@ components:
             pol: pol
             pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: pod_actual_discharge_lt
             id: id
             pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -1280,7 +1280,7 @@ components:
             pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
             carrier_no: carrier_no
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_loading_lt: pol_actual_loading_lt
             pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             status: status
@@ -1373,7 +1373,7 @@ components:
             pol: pol
             pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: pod_actual_discharge_lt
             id: id
             pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -1393,7 +1393,7 @@ components:
             pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
             carrier_no: carrier_no
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_loading_lt: pol_actual_loading_lt
             pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             status: status
@@ -1638,7 +1638,7 @@ components:
           container_event_list:
           - created: created
             event_raw: event_raw
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: event_time_estimated
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -1651,7 +1651,7 @@ components:
             port_code: port_code
           - created: created
             event_raw: event_raw
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: event_time_estimated
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -1695,7 +1695,7 @@ components:
               pol: pol
               pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: pod_actual_discharge_lt
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -1715,7 +1715,7 @@ components:
               pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: pol_actual_loading_lt
               pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
@@ -1808,7 +1808,7 @@ components:
               pol: pol
               pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: pod_actual_discharge_lt
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -1828,7 +1828,7 @@ components:
               pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: pol_actual_loading_lt
               pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
@@ -1953,7 +1953,7 @@ components:
           container_event_list:
           - created: created
             event_raw: event_raw
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: event_time_estimated
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -1966,7 +1966,7 @@ components:
             port_code: port_code
           - created: created
             event_raw: event_raw
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: event_time_estimated
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -2010,7 +2010,7 @@ components:
               pol: pol
               pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: pod_actual_discharge_lt
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -2030,7 +2030,7 @@ components:
               pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: pol_actual_loading_lt
               pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
@@ -2123,7 +2123,7 @@ components:
               pol: pol
               pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: pod_actual_discharge_lt
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -2143,7 +2143,7 @@ components:
               pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: pol_actual_loading_lt
               pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
@@ -2280,7 +2280,7 @@ components:
           container_event_list:
           - created: created
             event_raw: event_raw
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: event_time_estimated
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -2293,7 +2293,7 @@ components:
             port_code: port_code
           - created: created
             event_raw: event_raw
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: event_time_estimated
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -2337,7 +2337,7 @@ components:
               pol: pol
               pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: pod_actual_discharge_lt
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -2357,7 +2357,7 @@ components:
               pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: pol_actual_loading_lt
               pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
@@ -2450,7 +2450,7 @@ components:
               pol: pol
               pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: pod_actual_discharge_lt
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -2470,7 +2470,7 @@ components:
               pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: pol_actual_loading_lt
               pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
@@ -2787,7 +2787,7 @@ components:
       example:
         created: created
         event_raw: event_raw
-        event_time_estimated: 2000-01-23T04:56:07.000+00:00
+        event_time_estimated: event_time_estimated
         event_type_code: event_type_code
         event_type_name: event_type_name
         port_name: port_name
@@ -2807,7 +2807,7 @@ components:
           format: date-time
           type: string
         event_time_estimated:
-          format: date-time
+          format: nullable
           type: string
         event_type_code:
           type: string
@@ -2872,7 +2872,7 @@ components:
         pol: pol
         pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
         pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+        pod_actual_discharge_lt: pod_actual_discharge_lt
         id: id
         pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
         pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -2892,7 +2892,7 @@ components:
         pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
         carrier_no: carrier_no
         updated: 2000-01-23T04:56:07.000+00:00
-        pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+        pol_actual_loading_lt: pol_actual_loading_lt
         pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
         pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
         status: status
@@ -2917,7 +2917,7 @@ components:
           format: date-time
           type: string
         pod_actual_discharge_lt:
-          format: date-time
+          format: nullable
           type: string
         pod_name:
           type: string
@@ -2951,7 +2951,7 @@ components:
           format: date-time
           type: string
         pol_actual_loading_lt:
-          format: date-time
+          format: nullable
           type: string
         pol_name:
           type: string
@@ -3121,7 +3121,7 @@ components:
           pol: pol
           pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
           pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+          pod_actual_discharge_lt: pod_actual_discharge_lt
           id: id
           pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
           pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
@@ -3141,7 +3141,7 @@ components:
           pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
           carrier_no: carrier_no
           updated: 2000-01-23T04:56:07.000+00:00
-          pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+          pol_actual_loading_lt: pol_actual_loading_lt
           pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
           pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
           status: status

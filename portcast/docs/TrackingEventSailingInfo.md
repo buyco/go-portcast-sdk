@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Pod** | Pointer to **string** |  | [optional] 
 **PodActualArrivalLt** | Pointer to **time.Time** |  | [optional] 
 **PodActualDepartureLt** | Pointer to **time.Time** |  | [optional] 
-**PodActualDischargeLt** | Pointer to **time.Time** |  | [optional] 
+**PodActualDischargeLt** | Pointer to **string** |  | [optional] 
 **PodName** | Pointer to **string** |  | [optional] 
 **PodPredictedArrivalLt** | Pointer to **time.Time** |  | [optional] 
 **PodPredictedDepartureLt** | Pointer to **time.Time** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **PolActualArrivalLt** | Pointer to **time.Time** |  | [optional] 
 **PolActualDeparture** | Pointer to **time.Time** |  | [optional] 
 **PolActualDepartureLt** | Pointer to **time.Time** |  | [optional] 
-**PolActualLoadingLt** | Pointer to **time.Time** |  | [optional] 
+**PolActualLoadingLt** | Pointer to **string** |  | [optional] 
 **PolName** | Pointer to **string** |  | [optional] 
 **PolPredictedArrivalLt** | Pointer to **time.Time** |  | [optional] 
 **PolPredictedDepartureLt** | Pointer to **time.Time** |  | [optional] 
@@ -260,20 +260,20 @@ HasPodActualDepartureLt returns a boolean if a field has been set.
 
 ### GetPodActualDischargeLt
 
-`func (o *TrackingEventSailingInfo) GetPodActualDischargeLt() time.Time`
+`func (o *TrackingEventSailingInfo) GetPodActualDischargeLt() string`
 
 GetPodActualDischargeLt returns the PodActualDischargeLt field if non-nil, zero value otherwise.
 
 ### GetPodActualDischargeLtOk
 
-`func (o *TrackingEventSailingInfo) GetPodActualDischargeLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfo) GetPodActualDischargeLtOk() (*string, bool)`
 
 GetPodActualDischargeLtOk returns a tuple with the PodActualDischargeLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodActualDischargeLt
 
-`func (o *TrackingEventSailingInfo) SetPodActualDischargeLt(v time.Time)`
+`func (o *TrackingEventSailingInfo) SetPodActualDischargeLt(v string)`
 
 SetPodActualDischargeLt sets PodActualDischargeLt field to given value.
 
@@ -560,20 +560,20 @@ HasPolActualDepartureLt returns a boolean if a field has been set.
 
 ### GetPolActualLoadingLt
 
-`func (o *TrackingEventSailingInfo) GetPolActualLoadingLt() time.Time`
+`func (o *TrackingEventSailingInfo) GetPolActualLoadingLt() string`
 
 GetPolActualLoadingLt returns the PolActualLoadingLt field if non-nil, zero value otherwise.
 
 ### GetPolActualLoadingLtOk
 
-`func (o *TrackingEventSailingInfo) GetPolActualLoadingLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfo) GetPolActualLoadingLtOk() (*string, bool)`
 
 GetPolActualLoadingLtOk returns a tuple with the PolActualLoadingLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolActualLoadingLt
 
-`func (o *TrackingEventSailingInfo) SetPolActualLoadingLt(v time.Time)`
+`func (o *TrackingEventSailingInfo) SetPolActualLoadingLt(v string)`
 
 SetPolActualLoadingLt sets PolActualLoadingLt field to given value.
 

@@ -982,7 +982,7 @@
                 },
                 "event_time_estimated": {
                   "type": "string",
-                  "format" : "date-time"
+                  "format" : "nullable"
                 },
                 "event_type_code": {
                   "type": "string"
@@ -1124,7 +1124,7 @@
                     },
                     "pod_actual_discharge_lt": {
                       "type": "string",
-                      "format": "date-time"
+                      "format": "nullable"
                     },
                     "pod_name": {
                       "type": "string"
@@ -1170,7 +1170,7 @@
                     },
                     "pol_actual_loading_lt": {
                       "type": "string",
-                      "format": "date-time"
+                      "format": "nullable"
                     },
                     "pol_name": {
                       "type": "string"
