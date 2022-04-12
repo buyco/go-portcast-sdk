@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 **PolScheduledLoadingLt** | Pointer to **time.Time** |  | [optional] 
 **ScheduledDeliveryTime** | Pointer to **time.Time** |  | [optional] 
 **ScheduledReceiptTime** | Pointer to **time.Time** |  | [optional] 
-**Updated** | Pointer to **string** |  | [optional] 
+**Updated** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
 
@@ -1041,20 +1041,20 @@ HasScheduledReceiptTime returns a boolean if a field has been set.
 
 ### GetUpdated
 
-`func (o *TrackingEventBillOfLading) GetUpdated() string`
+`func (o *TrackingEventBillOfLading) GetUpdated() time.Time`
 
 GetUpdated returns the Updated field if non-nil, zero value otherwise.
 
 ### GetUpdatedOk
 
-`func (o *TrackingEventBillOfLading) GetUpdatedOk() (*string, bool)`
+`func (o *TrackingEventBillOfLading) GetUpdatedOk() (*time.Time, bool)`
 
 GetUpdatedOk returns a tuple with the Updated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdated
 
-`func (o *TrackingEventBillOfLading) SetUpdated(v string)`
+`func (o *TrackingEventBillOfLading) SetUpdated(v time.Time)`
 
 SetUpdated sets Updated field to given value.
 

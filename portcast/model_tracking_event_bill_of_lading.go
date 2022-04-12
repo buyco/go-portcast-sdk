@@ -56,7 +56,7 @@ type TrackingEventBillOfLading struct {
 	PolScheduledLoadingLt *time.Time `json:"pol_scheduled_loading_lt,omitempty"`
 	ScheduledDeliveryTime *time.Time `json:"scheduled_delivery_time,omitempty"`
 	ScheduledReceiptTime *time.Time `json:"scheduled_receipt_time,omitempty"`
-	Updated *string `json:"updated,omitempty"`
+	Updated *time.Time `json:"updated,omitempty"`
 }
 
 // NewTrackingEventBillOfLading instantiates a new TrackingEventBillOfLading object
@@ -1325,9 +1325,9 @@ func (o *TrackingEventBillOfLading) SetScheduledReceiptTime(v time.Time) {
 }
 
 // GetUpdated returns the Updated field value if set, zero value otherwise.
-func (o *TrackingEventBillOfLading) GetUpdated() string {
+func (o *TrackingEventBillOfLading) GetUpdated() time.Time {
 	if o == nil || o.Updated == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.Updated
@@ -1335,7 +1335,7 @@ func (o *TrackingEventBillOfLading) GetUpdated() string {
 
 // GetUpdatedOk returns a tuple with the Updated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventBillOfLading) GetUpdatedOk() (*string, bool) {
+func (o *TrackingEventBillOfLading) GetUpdatedOk() (*time.Time, bool) {
 	if o == nil || o.Updated == nil {
 		return nil, false
 	}
@@ -1351,8 +1351,8 @@ func (o *TrackingEventBillOfLading) HasUpdated() bool {
 	return false
 }
 
-// SetUpdated gets a reference to the given string and assigns it to the Updated field.
-func (o *TrackingEventBillOfLading) SetUpdated(v string) {
+// SetUpdated gets a reference to the given time.Time and assigns it to the Updated field.
+func (o *TrackingEventBillOfLading) SetUpdated(v time.Time) {
 	o.Updated = &v
 }
 

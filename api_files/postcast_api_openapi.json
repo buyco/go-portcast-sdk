@@ -908,7 +908,8 @@
                 "format" : "date-time"
               },
               "updated": {
-                "type": "string"
+                "type": "string",
+                "format" : "date-time"
               }
             }
           },
@@ -1205,7 +1206,8 @@
                       "type": "string"
                     },
                     "updated": {
-                      "type": "string"
+                      "type": "string",
+                      "format" : "date-time"
                     },
                     "vessel_leg": {
                       "type": "integer",

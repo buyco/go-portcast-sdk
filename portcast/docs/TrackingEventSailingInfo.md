@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **PolScheduledLoadingLt** | Pointer to **time.Time** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusCode** | Pointer to **string** |  | [optional] 
-**Updated** | Pointer to **string** |  | [optional] 
+**Updated** | Pointer to **time.Time** |  | [optional] 
 **VesselLeg** | Pointer to **int32** |  | [optional] 
 **VesselName** | Pointer to **string** |  | [optional] 
 **VoyageNo** | Pointer to **string** |  | [optional] 
@@ -810,20 +810,20 @@ HasStatusCode returns a boolean if a field has been set.
 
 ### GetUpdated
 
-`func (o *TrackingEventSailingInfo) GetUpdated() string`
+`func (o *TrackingEventSailingInfo) GetUpdated() time.Time`
 
 GetUpdated returns the Updated field if non-nil, zero value otherwise.
 
 ### GetUpdatedOk
 
-`func (o *TrackingEventSailingInfo) GetUpdatedOk() (*string, bool)`
+`func (o *TrackingEventSailingInfo) GetUpdatedOk() (*time.Time, bool)`
 
 GetUpdatedOk returns a tuple with the Updated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdated
 
-`func (o *TrackingEventSailingInfo) SetUpdated(v string)`
+`func (o *TrackingEventSailingInfo) SetUpdated(v time.Time)`
 
 SetUpdated sets Updated field to given value.
 
