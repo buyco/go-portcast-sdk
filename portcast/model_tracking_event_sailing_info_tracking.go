@@ -12,13 +12,12 @@ package portcast
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // TrackingEventSailingInfoTracking struct for TrackingEventSailingInfoTracking
 type TrackingEventSailingInfoTracking struct {
-	ActualArrivalLt *time.Time `json:"actual_arrival_lt,omitempty"`
-	ActualArrivalUtc *time.Time `json:"actual_arrival_utc,omitempty"`
+	ActualArrivalLt *string `json:"actual_arrival_lt,omitempty"`
+	ActualArrivalUtc *string `json:"actual_arrival_utc,omitempty"`
 	Ais *TrackingEventAis `json:"ais,omitempty"`
 	Cancelled *bool `json:"cancelled,omitempty"`
 	PredictedArrivalLt *string `json:"predicted_arrival_lt,omitempty"`
@@ -26,8 +25,8 @@ type TrackingEventSailingInfoTracking struct {
 	PredictionConfidenceLevel *string `json:"prediction_confidence_level,omitempty"`
 	PredictionTimeUtc *string `json:"prediction_time_utc,omitempty"`
 	SailingInfo *TrackingEventSailingInfo `json:"sailing_info,omitempty"`
-	ScheduledArrivalLt *time.Time `json:"scheduled_arrival_lt,omitempty"`
-	ScheduledArrivalUtc *time.Time `json:"scheduled_arrival_utc,omitempty"`
+	ScheduledArrivalLt *string `json:"scheduled_arrival_lt,omitempty"`
+	ScheduledArrivalUtc *string `json:"scheduled_arrival_utc,omitempty"`
 	TargetPortCode *string `json:"target_port_code,omitempty"`
 	TargetPortName *string `json:"target_port_name,omitempty"`
 	VoyageDetails *[]TrackingEventVoyageDetails `json:"voyage_details,omitempty"`
@@ -52,9 +51,9 @@ func NewTrackingEventSailingInfoTrackingWithDefaults() *TrackingEventSailingInfo
 }
 
 // GetActualArrivalLt returns the ActualArrivalLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetActualArrivalLt() time.Time {
+func (o *TrackingEventSailingInfoTracking) GetActualArrivalLt() string {
 	if o == nil || o.ActualArrivalLt == nil {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ActualArrivalLt
@@ -62,7 +61,7 @@ func (o *TrackingEventSailingInfoTracking) GetActualArrivalLt() time.Time {
 
 // GetActualArrivalLtOk returns a tuple with the ActualArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetActualArrivalLtOk() (*time.Time, bool) {
+func (o *TrackingEventSailingInfoTracking) GetActualArrivalLtOk() (*string, bool) {
 	if o == nil || o.ActualArrivalLt == nil {
 		return nil, false
 	}
@@ -78,15 +77,15 @@ func (o *TrackingEventSailingInfoTracking) HasActualArrivalLt() bool {
 	return false
 }
 
-// SetActualArrivalLt gets a reference to the given time.Time and assigns it to the ActualArrivalLt field.
-func (o *TrackingEventSailingInfoTracking) SetActualArrivalLt(v time.Time) {
+// SetActualArrivalLt gets a reference to the given string and assigns it to the ActualArrivalLt field.
+func (o *TrackingEventSailingInfoTracking) SetActualArrivalLt(v string) {
 	o.ActualArrivalLt = &v
 }
 
 // GetActualArrivalUtc returns the ActualArrivalUtc field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtc() time.Time {
+func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtc() string {
 	if o == nil || o.ActualArrivalUtc == nil {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ActualArrivalUtc
@@ -94,7 +93,7 @@ func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtc() time.Time {
 
 // GetActualArrivalUtcOk returns a tuple with the ActualArrivalUtc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtcOk() (*time.Time, bool) {
+func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtcOk() (*string, bool) {
 	if o == nil || o.ActualArrivalUtc == nil {
 		return nil, false
 	}
@@ -110,8 +109,8 @@ func (o *TrackingEventSailingInfoTracking) HasActualArrivalUtc() bool {
 	return false
 }
 
-// SetActualArrivalUtc gets a reference to the given time.Time and assigns it to the ActualArrivalUtc field.
-func (o *TrackingEventSailingInfoTracking) SetActualArrivalUtc(v time.Time) {
+// SetActualArrivalUtc gets a reference to the given string and assigns it to the ActualArrivalUtc field.
+func (o *TrackingEventSailingInfoTracking) SetActualArrivalUtc(v string) {
 	o.ActualArrivalUtc = &v
 }
 
@@ -340,9 +339,9 @@ func (o *TrackingEventSailingInfoTracking) SetSailingInfo(v TrackingEventSailing
 }
 
 // GetScheduledArrivalLt returns the ScheduledArrivalLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLt() time.Time {
+func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLt() string {
 	if o == nil || o.ScheduledArrivalLt == nil {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ScheduledArrivalLt
@@ -350,7 +349,7 @@ func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLt() time.Time {
 
 // GetScheduledArrivalLtOk returns a tuple with the ScheduledArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLtOk() (*time.Time, bool) {
+func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLtOk() (*string, bool) {
 	if o == nil || o.ScheduledArrivalLt == nil {
 		return nil, false
 	}
@@ -366,15 +365,15 @@ func (o *TrackingEventSailingInfoTracking) HasScheduledArrivalLt() bool {
 	return false
 }
 
-// SetScheduledArrivalLt gets a reference to the given time.Time and assigns it to the ScheduledArrivalLt field.
-func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalLt(v time.Time) {
+// SetScheduledArrivalLt gets a reference to the given string and assigns it to the ScheduledArrivalLt field.
+func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalLt(v string) {
 	o.ScheduledArrivalLt = &v
 }
 
 // GetScheduledArrivalUtc returns the ScheduledArrivalUtc field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtc() time.Time {
+func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtc() string {
 	if o == nil || o.ScheduledArrivalUtc == nil {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ScheduledArrivalUtc
@@ -382,7 +381,7 @@ func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtc() time.Time {
 
 // GetScheduledArrivalUtcOk returns a tuple with the ScheduledArrivalUtc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtcOk() (*time.Time, bool) {
+func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtcOk() (*string, bool) {
 	if o == nil || o.ScheduledArrivalUtc == nil {
 		return nil, false
 	}
@@ -398,8 +397,8 @@ func (o *TrackingEventSailingInfoTracking) HasScheduledArrivalUtc() bool {
 	return false
 }
 
-// SetScheduledArrivalUtc gets a reference to the given time.Time and assigns it to the ScheduledArrivalUtc field.
-func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalUtc(v time.Time) {
+// SetScheduledArrivalUtc gets a reference to the given string and assigns it to the ScheduledArrivalUtc field.
+func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalUtc(v string) {
 	o.ScheduledArrivalUtc = &v
 }
 

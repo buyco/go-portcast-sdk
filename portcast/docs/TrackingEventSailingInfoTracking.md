@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ActualArrivalLt** | Pointer to **time.Time** |  | [optional] 
-**ActualArrivalUtc** | Pointer to **time.Time** |  | [optional] 
+**ActualArrivalLt** | Pointer to **string** |  | [optional] 
+**ActualArrivalUtc** | Pointer to **string** |  | [optional] 
 **Ais** | Pointer to [**TrackingEventAis**](TrackingEventAis.md) |  | [optional] 
 **Cancelled** | Pointer to **bool** |  | [optional] 
 **PredictedArrivalLt** | Pointer to **string** |  | [optional] 
@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **PredictionConfidenceLevel** | Pointer to **string** |  | [optional] 
 **PredictionTimeUtc** | Pointer to **string** |  | [optional] 
 **SailingInfo** | Pointer to [**TrackingEventSailingInfo**](TrackingEventSailingInfo.md) |  | [optional] 
-**ScheduledArrivalLt** | Pointer to **time.Time** |  | [optional] 
-**ScheduledArrivalUtc** | Pointer to **time.Time** |  | [optional] 
+**ScheduledArrivalLt** | Pointer to **string** |  | [optional] 
+**ScheduledArrivalUtc** | Pointer to **string** |  | [optional] 
 **TargetPortCode** | Pointer to **string** |  | [optional] 
 **TargetPortName** | Pointer to **string** |  | [optional] 
 **VoyageDetails** | Pointer to [**[]TrackingEventVoyageDetails**](TrackingEventVoyageDetails.md) |  | [optional] 
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetActualArrivalLt
 
-`func (o *TrackingEventSailingInfoTracking) GetActualArrivalLt() time.Time`
+`func (o *TrackingEventSailingInfoTracking) GetActualArrivalLt() string`
 
 GetActualArrivalLt returns the ActualArrivalLt field if non-nil, zero value otherwise.
 
 ### GetActualArrivalLtOk
 
-`func (o *TrackingEventSailingInfoTracking) GetActualArrivalLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfoTracking) GetActualArrivalLtOk() (*string, bool)`
 
 GetActualArrivalLtOk returns a tuple with the ActualArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualArrivalLt
 
-`func (o *TrackingEventSailingInfoTracking) SetActualArrivalLt(v time.Time)`
+`func (o *TrackingEventSailingInfoTracking) SetActualArrivalLt(v string)`
 
 SetActualArrivalLt sets ActualArrivalLt field to given value.
 
@@ -66,20 +66,20 @@ HasActualArrivalLt returns a boolean if a field has been set.
 
 ### GetActualArrivalUtc
 
-`func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtc() time.Time`
+`func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtc() string`
 
 GetActualArrivalUtc returns the ActualArrivalUtc field if non-nil, zero value otherwise.
 
 ### GetActualArrivalUtcOk
 
-`func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfoTracking) GetActualArrivalUtcOk() (*string, bool)`
 
 GetActualArrivalUtcOk returns a tuple with the ActualArrivalUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualArrivalUtc
 
-`func (o *TrackingEventSailingInfoTracking) SetActualArrivalUtc(v time.Time)`
+`func (o *TrackingEventSailingInfoTracking) SetActualArrivalUtc(v string)`
 
 SetActualArrivalUtc sets ActualArrivalUtc field to given value.
 
@@ -266,20 +266,20 @@ HasSailingInfo returns a boolean if a field has been set.
 
 ### GetScheduledArrivalLt
 
-`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLt() time.Time`
+`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLt() string`
 
 GetScheduledArrivalLt returns the ScheduledArrivalLt field if non-nil, zero value otherwise.
 
 ### GetScheduledArrivalLtOk
 
-`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalLtOk() (*string, bool)`
 
 GetScheduledArrivalLtOk returns a tuple with the ScheduledArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduledArrivalLt
 
-`func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalLt(v time.Time)`
+`func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalLt(v string)`
 
 SetScheduledArrivalLt sets ScheduledArrivalLt field to given value.
 
@@ -291,20 +291,20 @@ HasScheduledArrivalLt returns a boolean if a field has been set.
 
 ### GetScheduledArrivalUtc
 
-`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtc() time.Time`
+`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtc() string`
 
 GetScheduledArrivalUtc returns the ScheduledArrivalUtc field if non-nil, zero value otherwise.
 
 ### GetScheduledArrivalUtcOk
 
-`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfoTracking) GetScheduledArrivalUtcOk() (*string, bool)`
 
 GetScheduledArrivalUtcOk returns a tuple with the ScheduledArrivalUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduledArrivalUtc
 
-`func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalUtc(v time.Time)`
+`func (o *TrackingEventSailingInfoTracking) SetScheduledArrivalUtc(v string)`
 
 SetScheduledArrivalUtc sets ScheduledArrivalUtc field to given value.
 

@@ -831,46 +831,46 @@
               },
               "pod_predicted_arrival_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pod_predicted_arrival_utc": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pod_predicted_departure_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pod_predicted_discharge_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pod_scheduled_arrival_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pod_scheduled_departure_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pod_scheduled_discharge_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pol": {
                 "type": "string"
               },
               "pol_actual_arrival_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pol_actual_departure_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pol_actual_loading_lt": {
                 "type": "string",
-                "format": "date-time"
+                "format" : "nullable"
               },
               "pol_name": {
                 "type": "string"
@@ -1034,11 +1034,11 @@
               "properties": {
                 "actual_arrival_lt": {
                   "type": "string",
-                  "format": "date-time"
+                  "format" : "nullable"
                 },
                 "actual_arrival_utc": {
                   "type": "string",
-                  "format": "date-time"
+                  "format" : "nullable"
                 },
                 "ais": {
                   "type": "object",
@@ -1068,7 +1068,7 @@
                     },
                     "timestamp_utc": {
                       "type": "string",
-                      "format": "date-time"
+                      "format" : "nullable"
                     }
                   }
                 },
@@ -1115,11 +1115,11 @@
                     },
                     "pod_actual_arrival_lt": {
                       "type": "string",
-                      "format": "date-time"
+                      "format" : "nullable"
                     },
                     "pod_actual_departure_lt": {
                       "type": "string",
-                      "format": "date-time"
+                      "format" : "nullable"
                     },
                     "pod_actual_discharge_lt": {
                       "type": "string",
@@ -1157,7 +1157,7 @@
                     },
                     "pol_actual_arrival_lt": {
                       "type": "string",
-                      "format": "date-time"
+                      "format" : "nullable"
                     },
                     "pol_actual_departure": {
                       "type": "string",
@@ -1222,11 +1222,11 @@
                 },
                 "scheduled_arrival_lt": {
                   "type": "string",
-                  "format": "date-time"
+                  "format" : "nullable"
                 },
                 "scheduled_arrival_utc": {
                   "type": "string",
-                  "format": "date-time"
+                  "format" : "nullable"
                 },
                 "target_port_code": {
                   "type": "string"
@@ -1244,19 +1244,19 @@
                       },
                       "actual_arrival_lt": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "actual_arrival_utc": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "actual_departure_lt": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "actual_departure_utc": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "id": {
                         "type": "string"
@@ -1302,7 +1302,7 @@
                       },
                       "scheduled_arrival_lt": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "scheduled_arrival_on_time_confidence": {
                         "type": "string",
@@ -1310,11 +1310,11 @@
                       },
                       "scheduled_arrival_utc": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "scheduled_departure_lt": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "scheduled_departure_on_time_confidence": {
                         "type": "string",
@@ -1322,7 +1322,7 @@
                       },
                       "scheduled_departure_utc": {
                         "type": "string",
-                        "format": "date-time"
+                        "format" : "nullable"
                       },
                       "timezone": {
                         "type": "string"

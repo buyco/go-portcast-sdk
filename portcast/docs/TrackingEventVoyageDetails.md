@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActiveScac** | Pointer to **string** |  | [optional] 
-**ActualArrivalLt** | Pointer to **time.Time** |  | [optional] 
-**ActualArrivalUtc** | Pointer to **time.Time** |  | [optional] 
-**ActualDepartureLt** | Pointer to **time.Time** |  | [optional] 
-**ActualDepartureUtc** | Pointer to **time.Time** |  | [optional] 
+**ActualArrivalLt** | Pointer to **string** |  | [optional] 
+**ActualArrivalUtc** | Pointer to **string** |  | [optional] 
+**ActualDepartureLt** | Pointer to **string** |  | [optional] 
+**ActualDepartureUtc** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Index** | Pointer to **int32** |  | [optional] 
 **Lat** | Pointer to **float32** |  | [optional] 
@@ -21,12 +21,12 @@ Name | Type | Description | Notes
 **PredictedDepartureLt** | Pointer to **string** |  | [optional] 
 **PredictedDepartureUtc** | Pointer to **string** |  | [optional] 
 **PredictionTimeUtc** | Pointer to **string** |  | [optional] 
-**ScheduledArrivalLt** | Pointer to **time.Time** |  | [optional] 
+**ScheduledArrivalLt** | Pointer to **string** |  | [optional] 
 **ScheduledArrivalOnTimeConfidence** | Pointer to **string** |  | [optional] 
-**ScheduledArrivalUtc** | Pointer to **time.Time** |  | [optional] 
-**ScheduledDepartureLt** | Pointer to **time.Time** |  | [optional] 
+**ScheduledArrivalUtc** | Pointer to **string** |  | [optional] 
+**ScheduledDepartureLt** | Pointer to **string** |  | [optional] 
 **ScheduledDepartureOnTimeConfidence** | Pointer to **string** |  | [optional] 
-**ScheduledDepartureUtc** | Pointer to **time.Time** |  | [optional] 
+**ScheduledDepartureUtc** | Pointer to **string** |  | [optional] 
 **Timezone** | Pointer to **string** |  | [optional] 
 **VoyageNoList** | Pointer to **[]string** |  | [optional] 
 
@@ -76,20 +76,20 @@ HasActiveScac returns a boolean if a field has been set.
 
 ### GetActualArrivalLt
 
-`func (o *TrackingEventVoyageDetails) GetActualArrivalLt() time.Time`
+`func (o *TrackingEventVoyageDetails) GetActualArrivalLt() string`
 
 GetActualArrivalLt returns the ActualArrivalLt field if non-nil, zero value otherwise.
 
 ### GetActualArrivalLtOk
 
-`func (o *TrackingEventVoyageDetails) GetActualArrivalLtOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetActualArrivalLtOk() (*string, bool)`
 
 GetActualArrivalLtOk returns a tuple with the ActualArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualArrivalLt
 
-`func (o *TrackingEventVoyageDetails) SetActualArrivalLt(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetActualArrivalLt(v string)`
 
 SetActualArrivalLt sets ActualArrivalLt field to given value.
 
@@ -101,20 +101,20 @@ HasActualArrivalLt returns a boolean if a field has been set.
 
 ### GetActualArrivalUtc
 
-`func (o *TrackingEventVoyageDetails) GetActualArrivalUtc() time.Time`
+`func (o *TrackingEventVoyageDetails) GetActualArrivalUtc() string`
 
 GetActualArrivalUtc returns the ActualArrivalUtc field if non-nil, zero value otherwise.
 
 ### GetActualArrivalUtcOk
 
-`func (o *TrackingEventVoyageDetails) GetActualArrivalUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetActualArrivalUtcOk() (*string, bool)`
 
 GetActualArrivalUtcOk returns a tuple with the ActualArrivalUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualArrivalUtc
 
-`func (o *TrackingEventVoyageDetails) SetActualArrivalUtc(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetActualArrivalUtc(v string)`
 
 SetActualArrivalUtc sets ActualArrivalUtc field to given value.
 
@@ -126,20 +126,20 @@ HasActualArrivalUtc returns a boolean if a field has been set.
 
 ### GetActualDepartureLt
 
-`func (o *TrackingEventVoyageDetails) GetActualDepartureLt() time.Time`
+`func (o *TrackingEventVoyageDetails) GetActualDepartureLt() string`
 
 GetActualDepartureLt returns the ActualDepartureLt field if non-nil, zero value otherwise.
 
 ### GetActualDepartureLtOk
 
-`func (o *TrackingEventVoyageDetails) GetActualDepartureLtOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetActualDepartureLtOk() (*string, bool)`
 
 GetActualDepartureLtOk returns a tuple with the ActualDepartureLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualDepartureLt
 
-`func (o *TrackingEventVoyageDetails) SetActualDepartureLt(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetActualDepartureLt(v string)`
 
 SetActualDepartureLt sets ActualDepartureLt field to given value.
 
@@ -151,20 +151,20 @@ HasActualDepartureLt returns a boolean if a field has been set.
 
 ### GetActualDepartureUtc
 
-`func (o *TrackingEventVoyageDetails) GetActualDepartureUtc() time.Time`
+`func (o *TrackingEventVoyageDetails) GetActualDepartureUtc() string`
 
 GetActualDepartureUtc returns the ActualDepartureUtc field if non-nil, zero value otherwise.
 
 ### GetActualDepartureUtcOk
 
-`func (o *TrackingEventVoyageDetails) GetActualDepartureUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetActualDepartureUtcOk() (*string, bool)`
 
 GetActualDepartureUtcOk returns a tuple with the ActualDepartureUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualDepartureUtc
 
-`func (o *TrackingEventVoyageDetails) SetActualDepartureUtc(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetActualDepartureUtc(v string)`
 
 SetActualDepartureUtc sets ActualDepartureUtc field to given value.
 
@@ -476,20 +476,20 @@ HasPredictionTimeUtc returns a boolean if a field has been set.
 
 ### GetScheduledArrivalLt
 
-`func (o *TrackingEventVoyageDetails) GetScheduledArrivalLt() time.Time`
+`func (o *TrackingEventVoyageDetails) GetScheduledArrivalLt() string`
 
 GetScheduledArrivalLt returns the ScheduledArrivalLt field if non-nil, zero value otherwise.
 
 ### GetScheduledArrivalLtOk
 
-`func (o *TrackingEventVoyageDetails) GetScheduledArrivalLtOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetScheduledArrivalLtOk() (*string, bool)`
 
 GetScheduledArrivalLtOk returns a tuple with the ScheduledArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduledArrivalLt
 
-`func (o *TrackingEventVoyageDetails) SetScheduledArrivalLt(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetScheduledArrivalLt(v string)`
 
 SetScheduledArrivalLt sets ScheduledArrivalLt field to given value.
 
@@ -526,20 +526,20 @@ HasScheduledArrivalOnTimeConfidence returns a boolean if a field has been set.
 
 ### GetScheduledArrivalUtc
 
-`func (o *TrackingEventVoyageDetails) GetScheduledArrivalUtc() time.Time`
+`func (o *TrackingEventVoyageDetails) GetScheduledArrivalUtc() string`
 
 GetScheduledArrivalUtc returns the ScheduledArrivalUtc field if non-nil, zero value otherwise.
 
 ### GetScheduledArrivalUtcOk
 
-`func (o *TrackingEventVoyageDetails) GetScheduledArrivalUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetScheduledArrivalUtcOk() (*string, bool)`
 
 GetScheduledArrivalUtcOk returns a tuple with the ScheduledArrivalUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduledArrivalUtc
 
-`func (o *TrackingEventVoyageDetails) SetScheduledArrivalUtc(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetScheduledArrivalUtc(v string)`
 
 SetScheduledArrivalUtc sets ScheduledArrivalUtc field to given value.
 
@@ -551,20 +551,20 @@ HasScheduledArrivalUtc returns a boolean if a field has been set.
 
 ### GetScheduledDepartureLt
 
-`func (o *TrackingEventVoyageDetails) GetScheduledDepartureLt() time.Time`
+`func (o *TrackingEventVoyageDetails) GetScheduledDepartureLt() string`
 
 GetScheduledDepartureLt returns the ScheduledDepartureLt field if non-nil, zero value otherwise.
 
 ### GetScheduledDepartureLtOk
 
-`func (o *TrackingEventVoyageDetails) GetScheduledDepartureLtOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetScheduledDepartureLtOk() (*string, bool)`
 
 GetScheduledDepartureLtOk returns a tuple with the ScheduledDepartureLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduledDepartureLt
 
-`func (o *TrackingEventVoyageDetails) SetScheduledDepartureLt(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetScheduledDepartureLt(v string)`
 
 SetScheduledDepartureLt sets ScheduledDepartureLt field to given value.
 
@@ -601,20 +601,20 @@ HasScheduledDepartureOnTimeConfidence returns a boolean if a field has been set.
 
 ### GetScheduledDepartureUtc
 
-`func (o *TrackingEventVoyageDetails) GetScheduledDepartureUtc() time.Time`
+`func (o *TrackingEventVoyageDetails) GetScheduledDepartureUtc() string`
 
 GetScheduledDepartureUtc returns the ScheduledDepartureUtc field if non-nil, zero value otherwise.
 
 ### GetScheduledDepartureUtcOk
 
-`func (o *TrackingEventVoyageDetails) GetScheduledDepartureUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventVoyageDetails) GetScheduledDepartureUtcOk() (*string, bool)`
 
 GetScheduledDepartureUtcOk returns a tuple with the ScheduledDepartureUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduledDepartureUtc
 
-`func (o *TrackingEventVoyageDetails) SetScheduledDepartureUtc(v time.Time)`
+`func (o *TrackingEventVoyageDetails) SetScheduledDepartureUtc(v string)`
 
 SetScheduledDepartureUtc sets ScheduledDepartureUtc field to given value.
 

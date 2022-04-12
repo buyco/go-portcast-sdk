@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Lon** | Pointer to **float32** |  | [optional] 
 **SpeedNm** | Pointer to **int32** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**TimestampUtc** | Pointer to **time.Time** |  | [optional] 
+**TimestampUtc** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -209,20 +209,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTimestampUtc
 
-`func (o *TrackingEventAis) GetTimestampUtc() time.Time`
+`func (o *TrackingEventAis) GetTimestampUtc() string`
 
 GetTimestampUtc returns the TimestampUtc field if non-nil, zero value otherwise.
 
 ### GetTimestampUtcOk
 
-`func (o *TrackingEventAis) GetTimestampUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventAis) GetTimestampUtcOk() (*string, bool)`
 
 GetTimestampUtcOk returns a tuple with the TimestampUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestampUtc
 
-`func (o *TrackingEventAis) SetTimestampUtc(v time.Time)`
+`func (o *TrackingEventAis) SetTimestampUtc(v string)`
 
 SetTimestampUtc sets TimestampUtc field to given value.
 

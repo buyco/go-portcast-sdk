@@ -12,7 +12,6 @@ package portcast
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // TrackingEventAis struct for TrackingEventAis
@@ -24,7 +23,7 @@ type TrackingEventAis struct {
 	Lon *float32 `json:"lon,omitempty"`
 	SpeedNm *int32 `json:"speed_nm,omitempty"`
 	Status *string `json:"status,omitempty"`
-	TimestampUtc *time.Time `json:"timestamp_utc,omitempty"`
+	TimestampUtc *string `json:"timestamp_utc,omitempty"`
 }
 
 // NewTrackingEventAis instantiates a new TrackingEventAis object
@@ -269,9 +268,9 @@ func (o *TrackingEventAis) SetStatus(v string) {
 }
 
 // GetTimestampUtc returns the TimestampUtc field value if set, zero value otherwise.
-func (o *TrackingEventAis) GetTimestampUtc() time.Time {
+func (o *TrackingEventAis) GetTimestampUtc() string {
 	if o == nil || o.TimestampUtc == nil {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.TimestampUtc
@@ -279,7 +278,7 @@ func (o *TrackingEventAis) GetTimestampUtc() time.Time {
 
 // GetTimestampUtcOk returns a tuple with the TimestampUtc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventAis) GetTimestampUtcOk() (*time.Time, bool) {
+func (o *TrackingEventAis) GetTimestampUtcOk() (*string, bool) {
 	if o == nil || o.TimestampUtc == nil {
 		return nil, false
 	}
@@ -295,8 +294,8 @@ func (o *TrackingEventAis) HasTimestampUtc() bool {
 	return false
 }
 
-// SetTimestampUtc gets a reference to the given time.Time and assigns it to the TimestampUtc field.
-func (o *TrackingEventAis) SetTimestampUtc(v time.Time) {
+// SetTimestampUtc gets a reference to the given string and assigns it to the TimestampUtc field.
+func (o *TrackingEventAis) SetTimestampUtc(v string) {
 	o.TimestampUtc = &v
 }
 

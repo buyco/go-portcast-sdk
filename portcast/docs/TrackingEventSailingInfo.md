@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Imo** | Pointer to **string** |  | [optional] 
 **IsActive** | Pointer to **bool** |  | [optional] 
 **Pod** | Pointer to **string** |  | [optional] 
-**PodActualArrivalLt** | Pointer to **time.Time** |  | [optional] 
-**PodActualDepartureLt** | Pointer to **time.Time** |  | [optional] 
+**PodActualArrivalLt** | Pointer to **string** |  | [optional] 
+**PodActualDepartureLt** | Pointer to **string** |  | [optional] 
 **PodActualDischargeLt** | Pointer to **string** |  | [optional] 
 **PodName** | Pointer to **string** |  | [optional] 
 **PodPredictedArrivalLt** | Pointer to **string** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **PodScheduledDepartureLt** | Pointer to **string** |  | [optional] 
 **PodScheduledDischargeLt** | Pointer to **string** |  | [optional] 
 **Pol** | Pointer to **string** |  | [optional] 
-**PolActualArrivalLt** | Pointer to **time.Time** |  | [optional] 
+**PolActualArrivalLt** | Pointer to **string** |  | [optional] 
 **PolActualDeparture** | Pointer to **string** |  | [optional] 
 **PolActualDepartureLt** | Pointer to **string** |  | [optional] 
 **PolActualLoadingLt** | Pointer to **string** |  | [optional] 
@@ -210,20 +210,20 @@ HasPod returns a boolean if a field has been set.
 
 ### GetPodActualArrivalLt
 
-`func (o *TrackingEventSailingInfo) GetPodActualArrivalLt() time.Time`
+`func (o *TrackingEventSailingInfo) GetPodActualArrivalLt() string`
 
 GetPodActualArrivalLt returns the PodActualArrivalLt field if non-nil, zero value otherwise.
 
 ### GetPodActualArrivalLtOk
 
-`func (o *TrackingEventSailingInfo) GetPodActualArrivalLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfo) GetPodActualArrivalLtOk() (*string, bool)`
 
 GetPodActualArrivalLtOk returns a tuple with the PodActualArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodActualArrivalLt
 
-`func (o *TrackingEventSailingInfo) SetPodActualArrivalLt(v time.Time)`
+`func (o *TrackingEventSailingInfo) SetPodActualArrivalLt(v string)`
 
 SetPodActualArrivalLt sets PodActualArrivalLt field to given value.
 
@@ -235,20 +235,20 @@ HasPodActualArrivalLt returns a boolean if a field has been set.
 
 ### GetPodActualDepartureLt
 
-`func (o *TrackingEventSailingInfo) GetPodActualDepartureLt() time.Time`
+`func (o *TrackingEventSailingInfo) GetPodActualDepartureLt() string`
 
 GetPodActualDepartureLt returns the PodActualDepartureLt field if non-nil, zero value otherwise.
 
 ### GetPodActualDepartureLtOk
 
-`func (o *TrackingEventSailingInfo) GetPodActualDepartureLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfo) GetPodActualDepartureLtOk() (*string, bool)`
 
 GetPodActualDepartureLtOk returns a tuple with the PodActualDepartureLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodActualDepartureLt
 
-`func (o *TrackingEventSailingInfo) SetPodActualDepartureLt(v time.Time)`
+`func (o *TrackingEventSailingInfo) SetPodActualDepartureLt(v string)`
 
 SetPodActualDepartureLt sets PodActualDepartureLt field to given value.
 
@@ -485,20 +485,20 @@ HasPol returns a boolean if a field has been set.
 
 ### GetPolActualArrivalLt
 
-`func (o *TrackingEventSailingInfo) GetPolActualArrivalLt() time.Time`
+`func (o *TrackingEventSailingInfo) GetPolActualArrivalLt() string`
 
 GetPolActualArrivalLt returns the PolActualArrivalLt field if non-nil, zero value otherwise.
 
 ### GetPolActualArrivalLtOk
 
-`func (o *TrackingEventSailingInfo) GetPolActualArrivalLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfo) GetPolActualArrivalLtOk() (*string, bool)`
 
 GetPolActualArrivalLtOk returns a tuple with the PolActualArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolActualArrivalLt
 
-`func (o *TrackingEventSailingInfo) SetPolActualArrivalLt(v time.Time)`
+`func (o *TrackingEventSailingInfo) SetPolActualArrivalLt(v string)`
 
 SetPolActualArrivalLt sets PolActualArrivalLt field to given value.
 
