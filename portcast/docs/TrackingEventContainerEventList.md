@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Created** | Pointer to **string** |  | [optional] 
 **EventRaw** | Pointer to **string** |  | [optional] 
-**EventTime** | Pointer to **time.Time** |  | [optional] 
+**EventTime** | Pointer to **string** |  | [optional] 
 **EventTimeEstimated** | Pointer to **string** |  | [optional] 
 **EventTypeCode** | Pointer to **string** |  | [optional] 
 **EventTypeName** | Pointer to **string** |  | [optional] 
@@ -89,20 +89,20 @@ HasEventRaw returns a boolean if a field has been set.
 
 ### GetEventTime
 
-`func (o *TrackingEventContainerEventList) GetEventTime() time.Time`
+`func (o *TrackingEventContainerEventList) GetEventTime() string`
 
 GetEventTime returns the EventTime field if non-nil, zero value otherwise.
 
 ### GetEventTimeOk
 
-`func (o *TrackingEventContainerEventList) GetEventTimeOk() (*time.Time, bool)`
+`func (o *TrackingEventContainerEventList) GetEventTimeOk() (*string, bool)`
 
 GetEventTimeOk returns a tuple with the EventTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTime
 
-`func (o *TrackingEventContainerEventList) SetEventTime(v time.Time)`
+`func (o *TrackingEventContainerEventList) SetEventTime(v string)`
 
 SetEventTime sets EventTime field to given value.
 

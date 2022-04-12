@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **ActualArrivalUtc** | Pointer to **time.Time** |  | [optional] 
 **Ais** | Pointer to [**TrackingEventAis**](TrackingEventAis.md) |  | [optional] 
 **Cancelled** | Pointer to **bool** |  | [optional] 
-**PredictedArrivalLt** | Pointer to **time.Time** |  | [optional] 
-**PredictedArrivalUtc** | Pointer to **time.Time** |  | [optional] 
+**PredictedArrivalLt** | Pointer to **string** |  | [optional] 
+**PredictedArrivalUtc** | Pointer to **string** |  | [optional] 
 **PredictionConfidenceLevel** | Pointer to **string** |  | [optional] 
-**PredictionTimeUtc** | Pointer to **time.Time** |  | [optional] 
+**PredictionTimeUtc** | Pointer to **string** |  | [optional] 
 **SailingInfo** | Pointer to [**TrackingEventSailingInfo**](TrackingEventSailingInfo.md) |  | [optional] 
 **ScheduledArrivalLt** | Pointer to **time.Time** |  | [optional] 
 **ScheduledArrivalUtc** | Pointer to **time.Time** |  | [optional] 
@@ -141,20 +141,20 @@ HasCancelled returns a boolean if a field has been set.
 
 ### GetPredictedArrivalLt
 
-`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLt() time.Time`
+`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLt() string`
 
 GetPredictedArrivalLt returns the PredictedArrivalLt field if non-nil, zero value otherwise.
 
 ### GetPredictedArrivalLtOk
 
-`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLtOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLtOk() (*string, bool)`
 
 GetPredictedArrivalLtOk returns a tuple with the PredictedArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPredictedArrivalLt
 
-`func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalLt(v time.Time)`
+`func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalLt(v string)`
 
 SetPredictedArrivalLt sets PredictedArrivalLt field to given value.
 
@@ -166,20 +166,20 @@ HasPredictedArrivalLt returns a boolean if a field has been set.
 
 ### GetPredictedArrivalUtc
 
-`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtc() time.Time`
+`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtc() string`
 
 GetPredictedArrivalUtc returns the PredictedArrivalUtc field if non-nil, zero value otherwise.
 
 ### GetPredictedArrivalUtcOk
 
-`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtcOk() (*string, bool)`
 
 GetPredictedArrivalUtcOk returns a tuple with the PredictedArrivalUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPredictedArrivalUtc
 
-`func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalUtc(v time.Time)`
+`func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalUtc(v string)`
 
 SetPredictedArrivalUtc sets PredictedArrivalUtc field to given value.
 
@@ -216,20 +216,20 @@ HasPredictionConfidenceLevel returns a boolean if a field has been set.
 
 ### GetPredictionTimeUtc
 
-`func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtc() time.Time`
+`func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtc() string`
 
 GetPredictionTimeUtc returns the PredictionTimeUtc field if non-nil, zero value otherwise.
 
 ### GetPredictionTimeUtcOk
 
-`func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtcOk() (*time.Time, bool)`
+`func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtcOk() (*string, bool)`
 
 GetPredictionTimeUtcOk returns a tuple with the PredictionTimeUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPredictionTimeUtc
 
-`func (o *TrackingEventSailingInfoTracking) SetPredictionTimeUtc(v time.Time)`
+`func (o *TrackingEventSailingInfoTracking) SetPredictionTimeUtc(v string)`
 
 SetPredictionTimeUtc sets PredictionTimeUtc field to given value.
 
