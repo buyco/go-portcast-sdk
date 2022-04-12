@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BlNo** | Pointer to **string** |  | [optional] 
 **CarrierNo** | Pointer to **string** |  | [optional] 
 **CntrNo** | Pointer to **string** |  | [optional] 
-**Created** | Pointer to **string** |  | [optional] 
+**Created** | Pointer to **time.Time** |  | [optional] 
 **CustomerId** | Pointer to **string** |  | [optional] 
 **CustomerNo** | Pointer to **string** |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
@@ -116,20 +116,20 @@ HasCntrNo returns a boolean if a field has been set.
 
 ### GetCreated
 
-`func (o *Bookmark) GetCreated() string`
+`func (o *Bookmark) GetCreated() time.Time`
 
 GetCreated returns the Created field if non-nil, zero value otherwise.
 
 ### GetCreatedOk
 
-`func (o *Bookmark) GetCreatedOk() (*string, bool)`
+`func (o *Bookmark) GetCreatedOk() (*time.Time, bool)`
 
 GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreated
 
-`func (o *Bookmark) SetCreated(v string)`
+`func (o *Bookmark) SetCreated(v time.Time)`
 
 SetCreated sets Created field to given value.
 

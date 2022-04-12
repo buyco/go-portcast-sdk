@@ -18,7 +18,7 @@ import (
 // TrackingEventSailingInfo struct for TrackingEventSailingInfo
 type TrackingEventSailingInfo struct {
 	CarrierNo *string `json:"carrier_no,omitempty"`
-	Created *string `json:"created,omitempty"`
+	Created *time.Time `json:"created,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Imo *string `json:"imo,omitempty"`
 	IsActive *bool `json:"is_active,omitempty"`
@@ -27,24 +27,24 @@ type TrackingEventSailingInfo struct {
 	PodActualDepartureLt *time.Time `json:"pod_actual_departure_lt,omitempty"`
 	PodActualDischargeLt *time.Time `json:"pod_actual_discharge_lt,omitempty"`
 	PodName *string `json:"pod_name,omitempty"`
-	PodPredictedArrivalLt *string `json:"pod_predicted_arrival_lt,omitempty"`
-	PodPredictedDepartureLt *string `json:"pod_predicted_departure_lt,omitempty"`
-	PodPredictedDischargeLt *string `json:"pod_predicted_discharge_lt,omitempty"`
-	PodScheduledArrivalLt *string `json:"pod_scheduled_arrival_lt,omitempty"`
-	PodScheduledDepartureLt *string `json:"pod_scheduled_departure_lt,omitempty"`
-	PodScheduledDischargeLt *string `json:"pod_scheduled_discharge_lt,omitempty"`
+	PodPredictedArrivalLt *time.Time `json:"pod_predicted_arrival_lt,omitempty"`
+	PodPredictedDepartureLt *time.Time `json:"pod_predicted_departure_lt,omitempty"`
+	PodPredictedDischargeLt *time.Time `json:"pod_predicted_discharge_lt,omitempty"`
+	PodScheduledArrivalLt *time.Time `json:"pod_scheduled_arrival_lt,omitempty"`
+	PodScheduledDepartureLt *time.Time `json:"pod_scheduled_departure_lt,omitempty"`
+	PodScheduledDischargeLt *time.Time `json:"pod_scheduled_discharge_lt,omitempty"`
 	Pol *string `json:"pol,omitempty"`
 	PolActualArrivalLt *time.Time `json:"pol_actual_arrival_lt,omitempty"`
-	PolActualDeparture *string `json:"pol_actual_departure,omitempty"`
+	PolActualDeparture *time.Time `json:"pol_actual_departure,omitempty"`
 	PolActualDepartureLt *time.Time `json:"pol_actual_departure_lt,omitempty"`
 	PolActualLoadingLt *time.Time `json:"pol_actual_loading_lt,omitempty"`
 	PolName *string `json:"pol_name,omitempty"`
-	PolPredictedArrivalLt *string `json:"pol_predicted_arrival_lt,omitempty"`
-	PolPredictedDepartureLt *string `json:"pol_predicted_departure_lt,omitempty"`
-	PolPredictedLoadingLt *string `json:"pol_predicted_loading_lt,omitempty"`
-	PolScheduledArrivalLt *string `json:"pol_scheduled_arrival_lt,omitempty"`
-	PolScheduledDepartureLt *string `json:"pol_scheduled_departure_lt,omitempty"`
-	PolScheduledLoadingLt *string `json:"pol_scheduled_loading_lt,omitempty"`
+	PolPredictedArrivalLt *time.Time `json:"pol_predicted_arrival_lt,omitempty"`
+	PolPredictedDepartureLt *time.Time `json:"pol_predicted_departure_lt,omitempty"`
+	PolPredictedLoadingLt *time.Time `json:"pol_predicted_loading_lt,omitempty"`
+	PolScheduledArrivalLt *time.Time `json:"pol_scheduled_arrival_lt,omitempty"`
+	PolScheduledDepartureLt *time.Time `json:"pol_scheduled_departure_lt,omitempty"`
+	PolScheduledLoadingLt *time.Time `json:"pol_scheduled_loading_lt,omitempty"`
 	Status *string `json:"status,omitempty"`
 	StatusCode *string `json:"status_code,omitempty"`
 	Updated *string `json:"updated,omitempty"`
@@ -103,9 +103,9 @@ func (o *TrackingEventSailingInfo) SetCarrierNo(v string) {
 }
 
 // GetCreated returns the Created field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetCreated() string {
+func (o *TrackingEventSailingInfo) GetCreated() time.Time {
 	if o == nil || o.Created == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.Created
@@ -113,7 +113,7 @@ func (o *TrackingEventSailingInfo) GetCreated() string {
 
 // GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetCreatedOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetCreatedOk() (*time.Time, bool) {
 	if o == nil || o.Created == nil {
 		return nil, false
 	}
@@ -129,8 +129,8 @@ func (o *TrackingEventSailingInfo) HasCreated() bool {
 	return false
 }
 
-// SetCreated gets a reference to the given string and assigns it to the Created field.
-func (o *TrackingEventSailingInfo) SetCreated(v string) {
+// SetCreated gets a reference to the given time.Time and assigns it to the Created field.
+func (o *TrackingEventSailingInfo) SetCreated(v time.Time) {
 	o.Created = &v
 }
 
@@ -391,9 +391,9 @@ func (o *TrackingEventSailingInfo) SetPodName(v string) {
 }
 
 // GetPodPredictedArrivalLt returns the PodPredictedArrivalLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPodPredictedArrivalLt() string {
+func (o *TrackingEventSailingInfo) GetPodPredictedArrivalLt() time.Time {
 	if o == nil || o.PodPredictedArrivalLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PodPredictedArrivalLt
@@ -401,7 +401,7 @@ func (o *TrackingEventSailingInfo) GetPodPredictedArrivalLt() string {
 
 // GetPodPredictedArrivalLtOk returns a tuple with the PodPredictedArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPodPredictedArrivalLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPodPredictedArrivalLtOk() (*time.Time, bool) {
 	if o == nil || o.PodPredictedArrivalLt == nil {
 		return nil, false
 	}
@@ -417,15 +417,15 @@ func (o *TrackingEventSailingInfo) HasPodPredictedArrivalLt() bool {
 	return false
 }
 
-// SetPodPredictedArrivalLt gets a reference to the given string and assigns it to the PodPredictedArrivalLt field.
-func (o *TrackingEventSailingInfo) SetPodPredictedArrivalLt(v string) {
+// SetPodPredictedArrivalLt gets a reference to the given time.Time and assigns it to the PodPredictedArrivalLt field.
+func (o *TrackingEventSailingInfo) SetPodPredictedArrivalLt(v time.Time) {
 	o.PodPredictedArrivalLt = &v
 }
 
 // GetPodPredictedDepartureLt returns the PodPredictedDepartureLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPodPredictedDepartureLt() string {
+func (o *TrackingEventSailingInfo) GetPodPredictedDepartureLt() time.Time {
 	if o == nil || o.PodPredictedDepartureLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PodPredictedDepartureLt
@@ -433,7 +433,7 @@ func (o *TrackingEventSailingInfo) GetPodPredictedDepartureLt() string {
 
 // GetPodPredictedDepartureLtOk returns a tuple with the PodPredictedDepartureLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPodPredictedDepartureLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPodPredictedDepartureLtOk() (*time.Time, bool) {
 	if o == nil || o.PodPredictedDepartureLt == nil {
 		return nil, false
 	}
@@ -449,15 +449,15 @@ func (o *TrackingEventSailingInfo) HasPodPredictedDepartureLt() bool {
 	return false
 }
 
-// SetPodPredictedDepartureLt gets a reference to the given string and assigns it to the PodPredictedDepartureLt field.
-func (o *TrackingEventSailingInfo) SetPodPredictedDepartureLt(v string) {
+// SetPodPredictedDepartureLt gets a reference to the given time.Time and assigns it to the PodPredictedDepartureLt field.
+func (o *TrackingEventSailingInfo) SetPodPredictedDepartureLt(v time.Time) {
 	o.PodPredictedDepartureLt = &v
 }
 
 // GetPodPredictedDischargeLt returns the PodPredictedDischargeLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPodPredictedDischargeLt() string {
+func (o *TrackingEventSailingInfo) GetPodPredictedDischargeLt() time.Time {
 	if o == nil || o.PodPredictedDischargeLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PodPredictedDischargeLt
@@ -465,7 +465,7 @@ func (o *TrackingEventSailingInfo) GetPodPredictedDischargeLt() string {
 
 // GetPodPredictedDischargeLtOk returns a tuple with the PodPredictedDischargeLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPodPredictedDischargeLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPodPredictedDischargeLtOk() (*time.Time, bool) {
 	if o == nil || o.PodPredictedDischargeLt == nil {
 		return nil, false
 	}
@@ -481,15 +481,15 @@ func (o *TrackingEventSailingInfo) HasPodPredictedDischargeLt() bool {
 	return false
 }
 
-// SetPodPredictedDischargeLt gets a reference to the given string and assigns it to the PodPredictedDischargeLt field.
-func (o *TrackingEventSailingInfo) SetPodPredictedDischargeLt(v string) {
+// SetPodPredictedDischargeLt gets a reference to the given time.Time and assigns it to the PodPredictedDischargeLt field.
+func (o *TrackingEventSailingInfo) SetPodPredictedDischargeLt(v time.Time) {
 	o.PodPredictedDischargeLt = &v
 }
 
 // GetPodScheduledArrivalLt returns the PodScheduledArrivalLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLt() string {
+func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLt() time.Time {
 	if o == nil || o.PodScheduledArrivalLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PodScheduledArrivalLt
@@ -497,7 +497,7 @@ func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLt() string {
 
 // GetPodScheduledArrivalLtOk returns a tuple with the PodScheduledArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLtOk() (*time.Time, bool) {
 	if o == nil || o.PodScheduledArrivalLt == nil {
 		return nil, false
 	}
@@ -513,15 +513,15 @@ func (o *TrackingEventSailingInfo) HasPodScheduledArrivalLt() bool {
 	return false
 }
 
-// SetPodScheduledArrivalLt gets a reference to the given string and assigns it to the PodScheduledArrivalLt field.
-func (o *TrackingEventSailingInfo) SetPodScheduledArrivalLt(v string) {
+// SetPodScheduledArrivalLt gets a reference to the given time.Time and assigns it to the PodScheduledArrivalLt field.
+func (o *TrackingEventSailingInfo) SetPodScheduledArrivalLt(v time.Time) {
 	o.PodScheduledArrivalLt = &v
 }
 
 // GetPodScheduledDepartureLt returns the PodScheduledDepartureLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLt() string {
+func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLt() time.Time {
 	if o == nil || o.PodScheduledDepartureLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PodScheduledDepartureLt
@@ -529,7 +529,7 @@ func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLt() string {
 
 // GetPodScheduledDepartureLtOk returns a tuple with the PodScheduledDepartureLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLtOk() (*time.Time, bool) {
 	if o == nil || o.PodScheduledDepartureLt == nil {
 		return nil, false
 	}
@@ -545,15 +545,15 @@ func (o *TrackingEventSailingInfo) HasPodScheduledDepartureLt() bool {
 	return false
 }
 
-// SetPodScheduledDepartureLt gets a reference to the given string and assigns it to the PodScheduledDepartureLt field.
-func (o *TrackingEventSailingInfo) SetPodScheduledDepartureLt(v string) {
+// SetPodScheduledDepartureLt gets a reference to the given time.Time and assigns it to the PodScheduledDepartureLt field.
+func (o *TrackingEventSailingInfo) SetPodScheduledDepartureLt(v time.Time) {
 	o.PodScheduledDepartureLt = &v
 }
 
 // GetPodScheduledDischargeLt returns the PodScheduledDischargeLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPodScheduledDischargeLt() string {
+func (o *TrackingEventSailingInfo) GetPodScheduledDischargeLt() time.Time {
 	if o == nil || o.PodScheduledDischargeLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PodScheduledDischargeLt
@@ -561,7 +561,7 @@ func (o *TrackingEventSailingInfo) GetPodScheduledDischargeLt() string {
 
 // GetPodScheduledDischargeLtOk returns a tuple with the PodScheduledDischargeLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPodScheduledDischargeLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPodScheduledDischargeLtOk() (*time.Time, bool) {
 	if o == nil || o.PodScheduledDischargeLt == nil {
 		return nil, false
 	}
@@ -577,8 +577,8 @@ func (o *TrackingEventSailingInfo) HasPodScheduledDischargeLt() bool {
 	return false
 }
 
-// SetPodScheduledDischargeLt gets a reference to the given string and assigns it to the PodScheduledDischargeLt field.
-func (o *TrackingEventSailingInfo) SetPodScheduledDischargeLt(v string) {
+// SetPodScheduledDischargeLt gets a reference to the given time.Time and assigns it to the PodScheduledDischargeLt field.
+func (o *TrackingEventSailingInfo) SetPodScheduledDischargeLt(v time.Time) {
 	o.PodScheduledDischargeLt = &v
 }
 
@@ -647,9 +647,9 @@ func (o *TrackingEventSailingInfo) SetPolActualArrivalLt(v time.Time) {
 }
 
 // GetPolActualDeparture returns the PolActualDeparture field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPolActualDeparture() string {
+func (o *TrackingEventSailingInfo) GetPolActualDeparture() time.Time {
 	if o == nil || o.PolActualDeparture == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PolActualDeparture
@@ -657,7 +657,7 @@ func (o *TrackingEventSailingInfo) GetPolActualDeparture() string {
 
 // GetPolActualDepartureOk returns a tuple with the PolActualDeparture field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPolActualDepartureOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPolActualDepartureOk() (*time.Time, bool) {
 	if o == nil || o.PolActualDeparture == nil {
 		return nil, false
 	}
@@ -673,8 +673,8 @@ func (o *TrackingEventSailingInfo) HasPolActualDeparture() bool {
 	return false
 }
 
-// SetPolActualDeparture gets a reference to the given string and assigns it to the PolActualDeparture field.
-func (o *TrackingEventSailingInfo) SetPolActualDeparture(v string) {
+// SetPolActualDeparture gets a reference to the given time.Time and assigns it to the PolActualDeparture field.
+func (o *TrackingEventSailingInfo) SetPolActualDeparture(v time.Time) {
 	o.PolActualDeparture = &v
 }
 
@@ -775,9 +775,9 @@ func (o *TrackingEventSailingInfo) SetPolName(v string) {
 }
 
 // GetPolPredictedArrivalLt returns the PolPredictedArrivalLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPolPredictedArrivalLt() string {
+func (o *TrackingEventSailingInfo) GetPolPredictedArrivalLt() time.Time {
 	if o == nil || o.PolPredictedArrivalLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PolPredictedArrivalLt
@@ -785,7 +785,7 @@ func (o *TrackingEventSailingInfo) GetPolPredictedArrivalLt() string {
 
 // GetPolPredictedArrivalLtOk returns a tuple with the PolPredictedArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPolPredictedArrivalLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPolPredictedArrivalLtOk() (*time.Time, bool) {
 	if o == nil || o.PolPredictedArrivalLt == nil {
 		return nil, false
 	}
@@ -801,15 +801,15 @@ func (o *TrackingEventSailingInfo) HasPolPredictedArrivalLt() bool {
 	return false
 }
 
-// SetPolPredictedArrivalLt gets a reference to the given string and assigns it to the PolPredictedArrivalLt field.
-func (o *TrackingEventSailingInfo) SetPolPredictedArrivalLt(v string) {
+// SetPolPredictedArrivalLt gets a reference to the given time.Time and assigns it to the PolPredictedArrivalLt field.
+func (o *TrackingEventSailingInfo) SetPolPredictedArrivalLt(v time.Time) {
 	o.PolPredictedArrivalLt = &v
 }
 
 // GetPolPredictedDepartureLt returns the PolPredictedDepartureLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPolPredictedDepartureLt() string {
+func (o *TrackingEventSailingInfo) GetPolPredictedDepartureLt() time.Time {
 	if o == nil || o.PolPredictedDepartureLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PolPredictedDepartureLt
@@ -817,7 +817,7 @@ func (o *TrackingEventSailingInfo) GetPolPredictedDepartureLt() string {
 
 // GetPolPredictedDepartureLtOk returns a tuple with the PolPredictedDepartureLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPolPredictedDepartureLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPolPredictedDepartureLtOk() (*time.Time, bool) {
 	if o == nil || o.PolPredictedDepartureLt == nil {
 		return nil, false
 	}
@@ -833,15 +833,15 @@ func (o *TrackingEventSailingInfo) HasPolPredictedDepartureLt() bool {
 	return false
 }
 
-// SetPolPredictedDepartureLt gets a reference to the given string and assigns it to the PolPredictedDepartureLt field.
-func (o *TrackingEventSailingInfo) SetPolPredictedDepartureLt(v string) {
+// SetPolPredictedDepartureLt gets a reference to the given time.Time and assigns it to the PolPredictedDepartureLt field.
+func (o *TrackingEventSailingInfo) SetPolPredictedDepartureLt(v time.Time) {
 	o.PolPredictedDepartureLt = &v
 }
 
 // GetPolPredictedLoadingLt returns the PolPredictedLoadingLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPolPredictedLoadingLt() string {
+func (o *TrackingEventSailingInfo) GetPolPredictedLoadingLt() time.Time {
 	if o == nil || o.PolPredictedLoadingLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PolPredictedLoadingLt
@@ -849,7 +849,7 @@ func (o *TrackingEventSailingInfo) GetPolPredictedLoadingLt() string {
 
 // GetPolPredictedLoadingLtOk returns a tuple with the PolPredictedLoadingLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPolPredictedLoadingLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPolPredictedLoadingLtOk() (*time.Time, bool) {
 	if o == nil || o.PolPredictedLoadingLt == nil {
 		return nil, false
 	}
@@ -865,15 +865,15 @@ func (o *TrackingEventSailingInfo) HasPolPredictedLoadingLt() bool {
 	return false
 }
 
-// SetPolPredictedLoadingLt gets a reference to the given string and assigns it to the PolPredictedLoadingLt field.
-func (o *TrackingEventSailingInfo) SetPolPredictedLoadingLt(v string) {
+// SetPolPredictedLoadingLt gets a reference to the given time.Time and assigns it to the PolPredictedLoadingLt field.
+func (o *TrackingEventSailingInfo) SetPolPredictedLoadingLt(v time.Time) {
 	o.PolPredictedLoadingLt = &v
 }
 
 // GetPolScheduledArrivalLt returns the PolScheduledArrivalLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLt() string {
+func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLt() time.Time {
 	if o == nil || o.PolScheduledArrivalLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PolScheduledArrivalLt
@@ -881,7 +881,7 @@ func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLt() string {
 
 // GetPolScheduledArrivalLtOk returns a tuple with the PolScheduledArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLtOk() (*time.Time, bool) {
 	if o == nil || o.PolScheduledArrivalLt == nil {
 		return nil, false
 	}
@@ -897,15 +897,15 @@ func (o *TrackingEventSailingInfo) HasPolScheduledArrivalLt() bool {
 	return false
 }
 
-// SetPolScheduledArrivalLt gets a reference to the given string and assigns it to the PolScheduledArrivalLt field.
-func (o *TrackingEventSailingInfo) SetPolScheduledArrivalLt(v string) {
+// SetPolScheduledArrivalLt gets a reference to the given time.Time and assigns it to the PolScheduledArrivalLt field.
+func (o *TrackingEventSailingInfo) SetPolScheduledArrivalLt(v time.Time) {
 	o.PolScheduledArrivalLt = &v
 }
 
 // GetPolScheduledDepartureLt returns the PolScheduledDepartureLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPolScheduledDepartureLt() string {
+func (o *TrackingEventSailingInfo) GetPolScheduledDepartureLt() time.Time {
 	if o == nil || o.PolScheduledDepartureLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PolScheduledDepartureLt
@@ -913,7 +913,7 @@ func (o *TrackingEventSailingInfo) GetPolScheduledDepartureLt() string {
 
 // GetPolScheduledDepartureLtOk returns a tuple with the PolScheduledDepartureLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPolScheduledDepartureLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPolScheduledDepartureLtOk() (*time.Time, bool) {
 	if o == nil || o.PolScheduledDepartureLt == nil {
 		return nil, false
 	}
@@ -929,15 +929,15 @@ func (o *TrackingEventSailingInfo) HasPolScheduledDepartureLt() bool {
 	return false
 }
 
-// SetPolScheduledDepartureLt gets a reference to the given string and assigns it to the PolScheduledDepartureLt field.
-func (o *TrackingEventSailingInfo) SetPolScheduledDepartureLt(v string) {
+// SetPolScheduledDepartureLt gets a reference to the given time.Time and assigns it to the PolScheduledDepartureLt field.
+func (o *TrackingEventSailingInfo) SetPolScheduledDepartureLt(v time.Time) {
 	o.PolScheduledDepartureLt = &v
 }
 
 // GetPolScheduledLoadingLt returns the PolScheduledLoadingLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfo) GetPolScheduledLoadingLt() string {
+func (o *TrackingEventSailingInfo) GetPolScheduledLoadingLt() time.Time {
 	if o == nil || o.PolScheduledLoadingLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PolScheduledLoadingLt
@@ -945,7 +945,7 @@ func (o *TrackingEventSailingInfo) GetPolScheduledLoadingLt() string {
 
 // GetPolScheduledLoadingLtOk returns a tuple with the PolScheduledLoadingLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfo) GetPolScheduledLoadingLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfo) GetPolScheduledLoadingLtOk() (*time.Time, bool) {
 	if o == nil || o.PolScheduledLoadingLt == nil {
 		return nil, false
 	}
@@ -961,8 +961,8 @@ func (o *TrackingEventSailingInfo) HasPolScheduledLoadingLt() bool {
 	return false
 }
 
-// SetPolScheduledLoadingLt gets a reference to the given string and assigns it to the PolScheduledLoadingLt field.
-func (o *TrackingEventSailingInfo) SetPolScheduledLoadingLt(v string) {
+// SetPolScheduledLoadingLt gets a reference to the given time.Time and assigns it to the PolScheduledLoadingLt field.
+func (o *TrackingEventSailingInfo) SetPolScheduledLoadingLt(v time.Time) {
 	o.PolScheduledLoadingLt = &v
 }
 

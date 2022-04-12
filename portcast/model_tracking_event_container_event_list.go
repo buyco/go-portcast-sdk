@@ -12,14 +12,15 @@ package portcast
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // TrackingEventContainerEventList struct for TrackingEventContainerEventList
 type TrackingEventContainerEventList struct {
 	Created *string `json:"created,omitempty"`
 	EventRaw *string `json:"event_raw,omitempty"`
-	EventTime *string `json:"event_time,omitempty"`
-	EventTimeEstimated *string `json:"event_time_estimated,omitempty"`
+	EventTime *time.Time `json:"event_time,omitempty"`
+	EventTimeEstimated *time.Time `json:"event_time_estimated,omitempty"`
 	EventTypeCode *string `json:"event_type_code,omitempty"`
 	EventTypeName *string `json:"event_type_name,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -28,7 +29,7 @@ type TrackingEventContainerEventList struct {
 	LocationTypeName *string `json:"location_type_name,omitempty"`
 	PortCode *string `json:"port_code,omitempty"`
 	PortName *string `json:"port_name,omitempty"`
-	Updated *string `json:"updated,omitempty"`
+	Updated *time.Time `json:"updated,omitempty"`
 }
 
 // NewTrackingEventContainerEventList instantiates a new TrackingEventContainerEventList object
@@ -113,9 +114,9 @@ func (o *TrackingEventContainerEventList) SetEventRaw(v string) {
 }
 
 // GetEventTime returns the EventTime field value if set, zero value otherwise.
-func (o *TrackingEventContainerEventList) GetEventTime() string {
+func (o *TrackingEventContainerEventList) GetEventTime() time.Time {
 	if o == nil || o.EventTime == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.EventTime
@@ -123,7 +124,7 @@ func (o *TrackingEventContainerEventList) GetEventTime() string {
 
 // GetEventTimeOk returns a tuple with the EventTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventContainerEventList) GetEventTimeOk() (*string, bool) {
+func (o *TrackingEventContainerEventList) GetEventTimeOk() (*time.Time, bool) {
 	if o == nil || o.EventTime == nil {
 		return nil, false
 	}
@@ -139,15 +140,15 @@ func (o *TrackingEventContainerEventList) HasEventTime() bool {
 	return false
 }
 
-// SetEventTime gets a reference to the given string and assigns it to the EventTime field.
-func (o *TrackingEventContainerEventList) SetEventTime(v string) {
+// SetEventTime gets a reference to the given time.Time and assigns it to the EventTime field.
+func (o *TrackingEventContainerEventList) SetEventTime(v time.Time) {
 	o.EventTime = &v
 }
 
 // GetEventTimeEstimated returns the EventTimeEstimated field value if set, zero value otherwise.
-func (o *TrackingEventContainerEventList) GetEventTimeEstimated() string {
+func (o *TrackingEventContainerEventList) GetEventTimeEstimated() time.Time {
 	if o == nil || o.EventTimeEstimated == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.EventTimeEstimated
@@ -155,7 +156,7 @@ func (o *TrackingEventContainerEventList) GetEventTimeEstimated() string {
 
 // GetEventTimeEstimatedOk returns a tuple with the EventTimeEstimated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventContainerEventList) GetEventTimeEstimatedOk() (*string, bool) {
+func (o *TrackingEventContainerEventList) GetEventTimeEstimatedOk() (*time.Time, bool) {
 	if o == nil || o.EventTimeEstimated == nil {
 		return nil, false
 	}
@@ -171,8 +172,8 @@ func (o *TrackingEventContainerEventList) HasEventTimeEstimated() bool {
 	return false
 }
 
-// SetEventTimeEstimated gets a reference to the given string and assigns it to the EventTimeEstimated field.
-func (o *TrackingEventContainerEventList) SetEventTimeEstimated(v string) {
+// SetEventTimeEstimated gets a reference to the given time.Time and assigns it to the EventTimeEstimated field.
+func (o *TrackingEventContainerEventList) SetEventTimeEstimated(v time.Time) {
 	o.EventTimeEstimated = &v
 }
 
@@ -433,9 +434,9 @@ func (o *TrackingEventContainerEventList) SetPortName(v string) {
 }
 
 // GetUpdated returns the Updated field value if set, zero value otherwise.
-func (o *TrackingEventContainerEventList) GetUpdated() string {
+func (o *TrackingEventContainerEventList) GetUpdated() time.Time {
 	if o == nil || o.Updated == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.Updated
@@ -443,7 +444,7 @@ func (o *TrackingEventContainerEventList) GetUpdated() string {
 
 // GetUpdatedOk returns a tuple with the Updated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventContainerEventList) GetUpdatedOk() (*string, bool) {
+func (o *TrackingEventContainerEventList) GetUpdatedOk() (*time.Time, bool) {
 	if o == nil || o.Updated == nil {
 		return nil, false
 	}
@@ -459,8 +460,8 @@ func (o *TrackingEventContainerEventList) HasUpdated() bool {
 	return false
 }
 
-// SetUpdated gets a reference to the given string and assigns it to the Updated field.
-func (o *TrackingEventContainerEventList) SetUpdated(v string) {
+// SetUpdated gets a reference to the given time.Time and assigns it to the Updated field.
+func (o *TrackingEventContainerEventList) SetUpdated(v time.Time) {
 	o.Updated = &v
 }
 

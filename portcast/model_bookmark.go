@@ -20,7 +20,7 @@ type Bookmark struct {
 	BlNo *string `json:"bl_no,omitempty"`
 	CarrierNo *string `json:"carrier_no,omitempty"`
 	CntrNo *string `json:"cntr_no,omitempty"`
-	Created *string `json:"created,omitempty"`
+	Created *time.Time `json:"created,omitempty"`
 	CustomerId *string `json:"customer_id,omitempty"`
 	CustomerNo *string `json:"customer_no,omitempty"`
 	Deleted *bool `json:"deleted,omitempty"`
@@ -148,9 +148,9 @@ func (o *Bookmark) SetCntrNo(v string) {
 }
 
 // GetCreated returns the Created field value if set, zero value otherwise.
-func (o *Bookmark) GetCreated() string {
+func (o *Bookmark) GetCreated() time.Time {
 	if o == nil || o.Created == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.Created
@@ -158,7 +158,7 @@ func (o *Bookmark) GetCreated() string {
 
 // GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Bookmark) GetCreatedOk() (*string, bool) {
+func (o *Bookmark) GetCreatedOk() (*time.Time, bool) {
 	if o == nil || o.Created == nil {
 		return nil, false
 	}
@@ -174,8 +174,8 @@ func (o *Bookmark) HasCreated() bool {
 	return false
 }
 
-// SetCreated gets a reference to the given string and assigns it to the Created field.
-func (o *Bookmark) SetCreated(v string) {
+// SetCreated gets a reference to the given time.Time and assigns it to the Created field.
+func (o *Bookmark) SetCreated(v time.Time) {
 	o.Created = &v
 }
 

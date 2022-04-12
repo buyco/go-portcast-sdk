@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BlNo** | Pointer to **string** |  | [optional] 
 **CarrierNo** | Pointer to **string** |  | [optional] 
 **CntrNo** | Pointer to **string** |  | [optional] 
-**Created** | Pointer to **string** |  | [optional] 
+**Created** | Pointer to **time.Time** |  | [optional] 
 **CustomerId** | Pointer to **string** |  | [optional] 
 **CustomerNo** | Pointer to **string** |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** |  | [optional] 
 **StatusCode** | Pointer to **string** |  | [optional] 
 **SystemDeleted** | Pointer to **bool** |  | [optional] 
-**Updated** | Pointer to **string** |  | [optional] 
+**Updated** | Pointer to **time.Time** |  | [optional] 
 **VoyageNo** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -115,20 +115,20 @@ HasCntrNo returns a boolean if a field has been set.
 
 ### GetCreated
 
-`func (o *TrackingEventBillOfLadingBookmark) GetCreated() string`
+`func (o *TrackingEventBillOfLadingBookmark) GetCreated() time.Time`
 
 GetCreated returns the Created field if non-nil, zero value otherwise.
 
 ### GetCreatedOk
 
-`func (o *TrackingEventBillOfLadingBookmark) GetCreatedOk() (*string, bool)`
+`func (o *TrackingEventBillOfLadingBookmark) GetCreatedOk() (*time.Time, bool)`
 
 GetCreatedOk returns a tuple with the Created field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreated
 
-`func (o *TrackingEventBillOfLadingBookmark) SetCreated(v string)`
+`func (o *TrackingEventBillOfLadingBookmark) SetCreated(v time.Time)`
 
 SetCreated sets Created field to given value.
 
@@ -340,20 +340,20 @@ HasSystemDeleted returns a boolean if a field has been set.
 
 ### GetUpdated
 
-`func (o *TrackingEventBillOfLadingBookmark) GetUpdated() string`
+`func (o *TrackingEventBillOfLadingBookmark) GetUpdated() time.Time`
 
 GetUpdated returns the Updated field if non-nil, zero value otherwise.
 
 ### GetUpdatedOk
 
-`func (o *TrackingEventBillOfLadingBookmark) GetUpdatedOk() (*string, bool)`
+`func (o *TrackingEventBillOfLadingBookmark) GetUpdatedOk() (*time.Time, bool)`
 
 GetUpdatedOk returns a tuple with the Updated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdated
 
-`func (o *TrackingEventBillOfLadingBookmark) SetUpdated(v string)`
+`func (o *TrackingEventBillOfLadingBookmark) SetUpdated(v time.Time)`
 
 SetUpdated sets Updated field to given value.
 

@@ -1085,7 +1085,7 @@ components:
           cntr_no: cntr_no
           customer_no: customer_no
           status_code: status_code
-          created: created
+          created: 2000-01-23T04:56:07.000+00:00
           vessel_list:
           - vessel_list
           - vessel_list
@@ -1131,7 +1131,7 @@ components:
         cntr_no: cntr_no
         customer_no: customer_no
         status_code: status_code
-        created: created
+        created: 2000-01-23T04:56:07.000+00:00
         vessel_list:
         - vessel_list
         - vessel_list
@@ -1151,6 +1151,7 @@ components:
         cntr_no:
           type: string
         created:
+          format: date-time
           type: string
         customer_id:
           format: nullable
@@ -1190,19 +1191,19 @@ components:
           cntr_no: cntr_no
           customer_no: customer_no
           status_code: status_code
-          created: created
+          created: 2000-01-23T04:56:07.000+00:00
           deleted: true
           org_id: org_id
           carrier_no: carrier_no
           id: id
           customer_id: customer_id
           system_deleted: true
-          updated: updated
+          updated: 2000-01-23T04:56:07.000+00:00
           status: status
         container_event_list:
         - created: created
           event_raw: event_raw
-          event_time_estimated: event_time_estimated
+          event_time_estimated: 2000-01-23T04:56:07.000+00:00
           event_type_code: event_type_code
           event_type_name: event_type_name
           port_name: port_name
@@ -1210,12 +1211,12 @@ components:
           id: id
           location_type_name: location_type_name
           location_type_code: location_type_code
-          updated: updated
-          event_time: event_time
+          updated: 2000-01-23T04:56:07.000+00:00
+          event_time: 2000-01-23T04:56:07.000+00:00
           port_code: port_code
         - created: created
           event_raw: event_raw
-          event_time_estimated: event_time_estimated
+          event_time_estimated: 2000-01-23T04:56:07.000+00:00
           event_type_code: event_type_code
           event_type_name: event_type_name
           port_name: port_name
@@ -1223,8 +1224,8 @@ components:
           id: id
           location_type_name: location_type_name
           location_type_code: location_type_code
-          updated: updated
-          event_time: event_time
+          updated: 2000-01-23T04:56:07.000+00:00
+          event_time: 2000-01-23T04:56:07.000+00:00
           port_code: port_code
         sailing_info_tracking:
         - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1237,12 +1238,12 @@ components:
             lat: 6.027456183070403
             speed_nm: 5
             status: status
-          predicted_arrival_lt: predicted_arrival_lt
+          predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          prediction_time_utc: prediction_time_utc
+          prediction_time_utc: 2000-01-23T04:56:07.000+00:00
           target_port_name: target_port_name
           actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          predicted_arrival_utc: predicted_arrival_utc
+          predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
           prediction_confidence_level: prediction_confidence_level
           voyage_no_list:
@@ -1252,60 +1253,60 @@ components:
             voyage_no: voyage_no
             status_code: status_code
             pod: pod
-            pod_predicted_discharge_lt: pod_predicted_discharge_lt
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
             imo: imo
             pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             pol: pol
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
             id: id
             pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
+            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             vessel_leg: 5
             is_active: true
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt: pod_scheduled_departure_lt
-            created: created
+            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            created: 2000-01-23T04:56:07.000+00:00
             pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure: pol_actual_departure
+            pol_actual_departure: 2000-01-23T04:56:07.000+00:00
             vessel_name: vessel_name
             pol_name: pol_name
-            pol_predicted_loading_lt: pol_predicted_loading_lt
+            pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
             pod_name: pod_name
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
             carrier_no: carrier_no
             updated: updated
             pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+            pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             status: status
           cancelled: true
           target_port_code: target_port_code
           voyage_details:
           - original_voyage_no: original_voyage_no
             timezone: timezone
-            predicted_departure_lt: predicted_departure_lt
+            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             lon: 9.301444243932576
             actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             id: id
             active_scac: active_scac
             lat: 7.061401241503109
-            predicted_departure_utc: predicted_departure_utc
+            predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
             actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             index: 2
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             port_name: port_name
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1315,24 +1316,24 @@ components:
             - voyage_no_list
           - original_voyage_no: original_voyage_no
             timezone: timezone
-            predicted_departure_lt: predicted_departure_lt
+            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             lon: 9.301444243932576
             actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             id: id
             active_scac: active_scac
             lat: 7.061401241503109
-            predicted_departure_utc: predicted_departure_utc
+            predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
             actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             index: 2
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             port_name: port_name
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1350,12 +1351,12 @@ components:
             lat: 6.027456183070403
             speed_nm: 5
             status: status
-          predicted_arrival_lt: predicted_arrival_lt
+          predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          prediction_time_utc: prediction_time_utc
+          prediction_time_utc: 2000-01-23T04:56:07.000+00:00
           target_port_name: target_port_name
           actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          predicted_arrival_utc: predicted_arrival_utc
+          predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
           prediction_confidence_level: prediction_confidence_level
           voyage_no_list:
@@ -1365,60 +1366,60 @@ components:
             voyage_no: voyage_no
             status_code: status_code
             pod: pod
-            pod_predicted_discharge_lt: pod_predicted_discharge_lt
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
             imo: imo
             pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             pol: pol
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
             id: id
             pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
+            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             vessel_leg: 5
             is_active: true
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt: pod_scheduled_departure_lt
-            created: created
+            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            created: 2000-01-23T04:56:07.000+00:00
             pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure: pol_actual_departure
+            pol_actual_departure: 2000-01-23T04:56:07.000+00:00
             vessel_name: vessel_name
             pol_name: pol_name
-            pol_predicted_loading_lt: pol_predicted_loading_lt
+            pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
             pod_name: pod_name
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
             carrier_no: carrier_no
             updated: updated
             pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+            pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             status: status
           cancelled: true
           target_port_code: target_port_code
           voyage_details:
           - original_voyage_no: original_voyage_no
             timezone: timezone
-            predicted_departure_lt: predicted_departure_lt
+            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             lon: 9.301444243932576
             actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             id: id
             active_scac: active_scac
             lat: 7.061401241503109
-            predicted_departure_utc: predicted_departure_utc
+            predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
             actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             index: 2
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             port_name: port_name
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1428,24 +1429,24 @@ components:
             - voyage_no_list
           - original_voyage_no: original_voyage_no
             timezone: timezone
-            predicted_departure_lt: predicted_departure_lt
+            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
             lon: 9.301444243932576
             actual_departure_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             id: id
             active_scac: active_scac
             lat: 7.061401241503109
-            predicted_departure_utc: predicted_departure_utc
+            predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
             actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             index: 2
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             port_name: port_name
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1461,7 +1462,7 @@ components:
           cntr_no: cntr_no
           pod: pod
           pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
-          scheduled_delivery_time: scheduled_delivery_time
+          scheduled_delivery_time: 2000-01-23T04:56:07.000+00:00
           place_of_delivery_name: place_of_delivery_name
           place_of_receipt_name: place_of_receipt_name
           pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
@@ -1469,34 +1470,34 @@ components:
           pol: pol
           actual_delivery_time: actual_delivery_time
           pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-          pol_scheduled_departure_lt: pol_scheduled_departure_lt
-          pod_actual_arrival_lt: pod_actual_arrival_lt
-          pod_actual_discharge_lt: pod_actual_discharge_lt
+          pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
           kgs: kgs
           id: id
-          pod_actual_departure_lt: pod_actual_departure_lt
-          pol_predicted_arrival_lt: pol_predicted_arrival_lt
+          pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           actual_receipt_time: actual_receipt_time
           pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           place_of_delivery: place_of_delivery
           pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          scheduled_receipt_time: scheduled_receipt_time
+          scheduled_receipt_time: 2000-01-23T04:56:07.000+00:00
           pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-          created: created
-          pod_actual_arrival_utc: pod_actual_arrival_utc
+          created: 2000-01-23T04:56:07.000+00:00
+          pod_actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
           pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
           pol_name: pol_name
-          pol_predicted_loading_lt: pol_predicted_loading_lt
+          pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
           cbm: cbm
           pod_name: pod_name
           place_of_receipt: place_of_receipt
           pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-          pol_scheduled_loading_lt: pol_scheduled_loading_lt
+          pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
           carrier_no: carrier_no
           updated: updated
           pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-          pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-          pol_predicted_departure_lt: pol_predicted_departure_lt
+          pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
         id: id
       properties:
         bill_of_lading:
@@ -1577,7 +1578,7 @@ components:
           cntr_no: cntr_no
           customer_no: customer_no
           status_code: status_code
-          created: created
+          created: 2000-01-23T04:56:07.000+00:00
           vessel_list:
           - vessel_list
           - vessel_list
@@ -1594,7 +1595,7 @@ components:
           cntr_no: cntr_no
           customer_no: customer_no
           status_code: status_code
-          created: created
+          created: 2000-01-23T04:56:07.000+00:00
           vessel_list:
           - vessel_list
           - vessel_list
@@ -1625,19 +1626,19 @@ components:
             cntr_no: cntr_no
             customer_no: customer_no
             status_code: status_code
-            created: created
+            created: 2000-01-23T04:56:07.000+00:00
             deleted: true
             org_id: org_id
             carrier_no: carrier_no
             id: id
             customer_id: customer_id
             system_deleted: true
-            updated: updated
+            updated: 2000-01-23T04:56:07.000+00:00
             status: status
           container_event_list:
           - created: created
             event_raw: event_raw
-            event_time_estimated: event_time_estimated
+            event_time_estimated: 2000-01-23T04:56:07.000+00:00
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -1645,12 +1646,12 @@ components:
             id: id
             location_type_name: location_type_name
             location_type_code: location_type_code
-            updated: updated
-            event_time: event_time
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
           - created: created
             event_raw: event_raw
-            event_time_estimated: event_time_estimated
+            event_time_estimated: 2000-01-23T04:56:07.000+00:00
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -1658,8 +1659,8 @@ components:
             id: id
             location_type_name: location_type_name
             location_type_code: location_type_code
-            updated: updated
-            event_time: event_time
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
           sailing_info_tracking:
           - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1672,12 +1673,12 @@ components:
               lat: 6.027456183070403
               speed_nm: 5
               status: status
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             target_port_name: target_port_name
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
             prediction_confidence_level: prediction_confidence_level
             voyage_no_list:
@@ -1687,60 +1688,60 @@ components:
               voyage_no: voyage_no
               status_code: status_code
               pod: pod
-              pod_predicted_discharge_lt: pod_predicted_discharge_lt
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
               imo: imo
               pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol: pol
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               vessel_leg: 5
               is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt: pod_scheduled_departure_lt
-              created: created
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
               pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure: pol_actual_departure
+              pol_actual_departure: 2000-01-23T04:56:07.000+00:00
               vessel_name: vessel_name
               pol_name: pol_name
-              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
               pod_name: pod_name
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: updated
               pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
+              pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
             cancelled: true
             target_port_code: target_port_code
             voyage_details:
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1750,24 +1751,24 @@ components:
               - voyage_no_list
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1785,12 +1786,12 @@ components:
               lat: 6.027456183070403
               speed_nm: 5
               status: status
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             target_port_name: target_port_name
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
             prediction_confidence_level: prediction_confidence_level
             voyage_no_list:
@@ -1800,60 +1801,60 @@ components:
               voyage_no: voyage_no
               status_code: status_code
               pod: pod
-              pod_predicted_discharge_lt: pod_predicted_discharge_lt
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
               imo: imo
               pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol: pol
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               vessel_leg: 5
               is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt: pod_scheduled_departure_lt
-              created: created
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
               pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure: pol_actual_departure
+              pol_actual_departure: 2000-01-23T04:56:07.000+00:00
               vessel_name: vessel_name
               pol_name: pol_name
-              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
               pod_name: pod_name
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: updated
               pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
+              pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
             cancelled: true
             target_port_code: target_port_code
             voyage_details:
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1863,24 +1864,24 @@ components:
               - voyage_no_list
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1896,7 +1897,7 @@ components:
             cntr_no: cntr_no
             pod: pod
             pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_delivery_time: scheduled_delivery_time
+            scheduled_delivery_time: 2000-01-23T04:56:07.000+00:00
             place_of_delivery_name: place_of_delivery_name
             place_of_receipt_name: place_of_receipt_name
             pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
@@ -1904,34 +1905,34 @@ components:
             pol: pol
             actual_delivery_time: actual_delivery_time
             pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
             kgs: kgs
             id: id
-            pod_actual_departure_lt: pod_actual_departure_lt
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             actual_receipt_time: actual_receipt_time
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             place_of_delivery: place_of_delivery
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_receipt_time: scheduled_receipt_time
+            scheduled_receipt_time: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            created: created
-            pod_actual_arrival_utc: pod_actual_arrival_utc
+            created: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pol_name: pol_name
-            pol_predicted_loading_lt: pol_predicted_loading_lt
+            pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
             cbm: cbm
             pod_name: pod_name
             place_of_receipt: place_of_receipt
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
             carrier_no: carrier_no
             updated: updated
             pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+            pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
           id: id
         - msg: msg
           bill_of_lading_bookmark:
@@ -1940,19 +1941,19 @@ components:
             cntr_no: cntr_no
             customer_no: customer_no
             status_code: status_code
-            created: created
+            created: 2000-01-23T04:56:07.000+00:00
             deleted: true
             org_id: org_id
             carrier_no: carrier_no
             id: id
             customer_id: customer_id
             system_deleted: true
-            updated: updated
+            updated: 2000-01-23T04:56:07.000+00:00
             status: status
           container_event_list:
           - created: created
             event_raw: event_raw
-            event_time_estimated: event_time_estimated
+            event_time_estimated: 2000-01-23T04:56:07.000+00:00
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -1960,12 +1961,12 @@ components:
             id: id
             location_type_name: location_type_name
             location_type_code: location_type_code
-            updated: updated
-            event_time: event_time
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
           - created: created
             event_raw: event_raw
-            event_time_estimated: event_time_estimated
+            event_time_estimated: 2000-01-23T04:56:07.000+00:00
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -1973,8 +1974,8 @@ components:
             id: id
             location_type_name: location_type_name
             location_type_code: location_type_code
-            updated: updated
-            event_time: event_time
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
           sailing_info_tracking:
           - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -1987,12 +1988,12 @@ components:
               lat: 6.027456183070403
               speed_nm: 5
               status: status
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             target_port_name: target_port_name
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
             prediction_confidence_level: prediction_confidence_level
             voyage_no_list:
@@ -2002,60 +2003,60 @@ components:
               voyage_no: voyage_no
               status_code: status_code
               pod: pod
-              pod_predicted_discharge_lt: pod_predicted_discharge_lt
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
               imo: imo
               pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol: pol
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               vessel_leg: 5
               is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt: pod_scheduled_departure_lt
-              created: created
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
               pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure: pol_actual_departure
+              pol_actual_departure: 2000-01-23T04:56:07.000+00:00
               vessel_name: vessel_name
               pol_name: pol_name
-              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
               pod_name: pod_name
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: updated
               pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
+              pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
             cancelled: true
             target_port_code: target_port_code
             voyage_details:
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2065,24 +2066,24 @@ components:
               - voyage_no_list
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2100,12 +2101,12 @@ components:
               lat: 6.027456183070403
               speed_nm: 5
               status: status
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             target_port_name: target_port_name
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
             prediction_confidence_level: prediction_confidence_level
             voyage_no_list:
@@ -2115,60 +2116,60 @@ components:
               voyage_no: voyage_no
               status_code: status_code
               pod: pod
-              pod_predicted_discharge_lt: pod_predicted_discharge_lt
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
               imo: imo
               pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol: pol
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               vessel_leg: 5
               is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt: pod_scheduled_departure_lt
-              created: created
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
               pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure: pol_actual_departure
+              pol_actual_departure: 2000-01-23T04:56:07.000+00:00
               vessel_name: vessel_name
               pol_name: pol_name
-              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
               pod_name: pod_name
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: updated
               pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
+              pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
             cancelled: true
             target_port_code: target_port_code
             voyage_details:
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2178,24 +2179,24 @@ components:
               - voyage_no_list
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2211,7 +2212,7 @@ components:
             cntr_no: cntr_no
             pod: pod
             pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_delivery_time: scheduled_delivery_time
+            scheduled_delivery_time: 2000-01-23T04:56:07.000+00:00
             place_of_delivery_name: place_of_delivery_name
             place_of_receipt_name: place_of_receipt_name
             pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
@@ -2219,34 +2220,34 @@ components:
             pol: pol
             actual_delivery_time: actual_delivery_time
             pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
             kgs: kgs
             id: id
-            pod_actual_departure_lt: pod_actual_departure_lt
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             actual_receipt_time: actual_receipt_time
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             place_of_delivery: place_of_delivery
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_receipt_time: scheduled_receipt_time
+            scheduled_receipt_time: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            created: created
-            pod_actual_arrival_utc: pod_actual_arrival_utc
+            created: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pol_name: pol_name
-            pol_predicted_loading_lt: pol_predicted_loading_lt
+            pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
             cbm: cbm
             pod_name: pod_name
             place_of_receipt: place_of_receipt
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
             carrier_no: carrier_no
             updated: updated
             pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+            pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
           id: id
         _ended_at: _ended_at
       properties:
@@ -2267,19 +2268,19 @@ components:
             cntr_no: cntr_no
             customer_no: customer_no
             status_code: status_code
-            created: created
+            created: 2000-01-23T04:56:07.000+00:00
             deleted: true
             org_id: org_id
             carrier_no: carrier_no
             id: id
             customer_id: customer_id
             system_deleted: true
-            updated: updated
+            updated: 2000-01-23T04:56:07.000+00:00
             status: status
           container_event_list:
           - created: created
             event_raw: event_raw
-            event_time_estimated: event_time_estimated
+            event_time_estimated: 2000-01-23T04:56:07.000+00:00
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -2287,12 +2288,12 @@ components:
             id: id
             location_type_name: location_type_name
             location_type_code: location_type_code
-            updated: updated
-            event_time: event_time
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
           - created: created
             event_raw: event_raw
-            event_time_estimated: event_time_estimated
+            event_time_estimated: 2000-01-23T04:56:07.000+00:00
             event_type_code: event_type_code
             event_type_name: event_type_name
             port_name: port_name
@@ -2300,8 +2301,8 @@ components:
             id: id
             location_type_name: location_type_name
             location_type_code: location_type_code
-            updated: updated
-            event_time: event_time
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2000-01-23T04:56:07.000+00:00
             port_code: port_code
           sailing_info_tracking:
           - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2314,12 +2315,12 @@ components:
               lat: 6.027456183070403
               speed_nm: 5
               status: status
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             target_port_name: target_port_name
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
             prediction_confidence_level: prediction_confidence_level
             voyage_no_list:
@@ -2329,60 +2330,60 @@ components:
               voyage_no: voyage_no
               status_code: status_code
               pod: pod
-              pod_predicted_discharge_lt: pod_predicted_discharge_lt
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
               imo: imo
               pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol: pol
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               vessel_leg: 5
               is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt: pod_scheduled_departure_lt
-              created: created
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
               pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure: pol_actual_departure
+              pol_actual_departure: 2000-01-23T04:56:07.000+00:00
               vessel_name: vessel_name
               pol_name: pol_name
-              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
               pod_name: pod_name
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: updated
               pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
+              pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
             cancelled: true
             target_port_code: target_port_code
             voyage_details:
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2392,24 +2393,24 @@ components:
               - voyage_no_list
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2427,12 +2428,12 @@ components:
               lat: 6.027456183070403
               speed_nm: 5
               status: status
-            predicted_arrival_lt: predicted_arrival_lt
+            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            prediction_time_utc: prediction_time_utc
+            prediction_time_utc: 2000-01-23T04:56:07.000+00:00
             target_port_name: target_port_name
             actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            predicted_arrival_utc: predicted_arrival_utc
+            predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
             prediction_confidence_level: prediction_confidence_level
             voyage_no_list:
@@ -2442,60 +2443,60 @@ components:
               voyage_no: voyage_no
               status_code: status_code
               pod: pod
-              pod_predicted_discharge_lt: pod_predicted_discharge_lt
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+              pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
               imo: imo
               pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               pol: pol
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
               id: id
               pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               vessel_leg: 5
               is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt: pod_scheduled_departure_lt
-              created: created
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
               pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure: pol_actual_departure
+              pol_actual_departure: 2000-01-23T04:56:07.000+00:00
               vessel_name: vessel_name
               pol_name: pol_name
-              pol_predicted_loading_lt: pol_predicted_loading_lt
+              pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
               pod_name: pod_name
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
               carrier_no: carrier_no
               updated: updated
               pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
+              pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               status: status
             cancelled: true
             target_port_code: target_port_code
             voyage_details:
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2505,24 +2506,24 @@ components:
               - voyage_no_list
             - original_voyage_no: original_voyage_no
               timezone: timezone
-              predicted_departure_lt: predicted_departure_lt
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
               lon: 9.301444243932576
               actual_departure_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: predicted_arrival_utc
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               id: id
               active_scac: active_scac
               lat: 7.061401241503109
-              predicted_departure_utc: predicted_departure_utc
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: port_code
               actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               index: 2
-              predicted_arrival_lt: predicted_arrival_lt
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
               port_name: port_name
-              prediction_time_utc: prediction_time_utc
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
               actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -2538,7 +2539,7 @@ components:
             cntr_no: cntr_no
             pod: pod
             pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_delivery_time: scheduled_delivery_time
+            scheduled_delivery_time: 2000-01-23T04:56:07.000+00:00
             place_of_delivery_name: place_of_delivery_name
             place_of_receipt_name: place_of_receipt_name
             pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
@@ -2546,34 +2547,34 @@ components:
             pol: pol
             actual_delivery_time: actual_delivery_time
             pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
             kgs: kgs
             id: id
-            pod_actual_departure_lt: pod_actual_departure_lt
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             actual_receipt_time: actual_receipt_time
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             place_of_delivery: place_of_delivery
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_receipt_time: scheduled_receipt_time
+            scheduled_receipt_time: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            created: created
-            pod_actual_arrival_utc: pod_actual_arrival_utc
+            created: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pol_name: pol_name
-            pol_predicted_loading_lt: pol_predicted_loading_lt
+            pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
             cbm: cbm
             pod_name: pod_name
             place_of_receipt: place_of_receipt
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
+            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
             carrier_no: carrier_no
             updated: updated
             pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+            pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
           id: id
       properties:
         obj:
@@ -2585,7 +2586,7 @@ components:
         cntr_no: cntr_no
         pod: pod
         pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
-        scheduled_delivery_time: scheduled_delivery_time
+        scheduled_delivery_time: 2000-01-23T04:56:07.000+00:00
         place_of_delivery_name: place_of_delivery_name
         place_of_receipt_name: place_of_receipt_name
         pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
@@ -2593,34 +2594,34 @@ components:
         pol: pol
         actual_delivery_time: actual_delivery_time
         pod_predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-        pol_scheduled_departure_lt: pol_scheduled_departure_lt
-        pod_actual_arrival_lt: pod_actual_arrival_lt
-        pod_actual_discharge_lt: pod_actual_discharge_lt
+        pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
         kgs: kgs
         id: id
-        pod_actual_departure_lt: pod_actual_departure_lt
-        pol_predicted_arrival_lt: pol_predicted_arrival_lt
+        pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
         actual_receipt_time: actual_receipt_time
         pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
         place_of_delivery: place_of_delivery
         pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        scheduled_receipt_time: scheduled_receipt_time
+        scheduled_receipt_time: 2000-01-23T04:56:07.000+00:00
         pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-        created: created
-        pod_actual_arrival_utc: pod_actual_arrival_utc
+        created: 2000-01-23T04:56:07.000+00:00
+        pod_actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
         pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
         pol_name: pol_name
-        pol_predicted_loading_lt: pol_predicted_loading_lt
+        pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
         cbm: cbm
         pod_name: pod_name
         place_of_receipt: place_of_receipt
         pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-        pol_scheduled_loading_lt: pol_scheduled_loading_lt
+        pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
         carrier_no: carrier_no
         updated: updated
         pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-        pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-        pol_predicted_departure_lt: pol_predicted_departure_lt
+        pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
       properties:
         actual_delivery_time:
           format: nullable
@@ -2638,6 +2639,7 @@ components:
         cntr_no:
           type: string
         created:
+          format: date-time
           type: string
         id:
           type: string
@@ -2655,16 +2657,16 @@ components:
         pod:
           type: string
         pod_actual_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_actual_arrival_utc:
-          format: nullable
+          format: date-time
           type: string
         pod_actual_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_actual_discharge_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_name:
           type: string
@@ -2703,28 +2705,28 @@ components:
         pol_name:
           type: string
         pol_predicted_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_predicted_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_predicted_loading_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_scheduled_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_scheduled_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_scheduled_loading_lt:
-          format: nullable
+          format: date-time
           type: string
         scheduled_delivery_time:
-          format: nullable
+          format: date-time
           type: string
         scheduled_receipt_time:
-          format: nullable
+          format: date-time
           type: string
         updated:
           type: string
@@ -2736,14 +2738,14 @@ components:
         cntr_no: cntr_no
         customer_no: customer_no
         status_code: status_code
-        created: created
+        created: 2000-01-23T04:56:07.000+00:00
         deleted: true
         org_id: org_id
         carrier_no: carrier_no
         id: id
         customer_id: customer_id
         system_deleted: true
-        updated: updated
+        updated: 2000-01-23T04:56:07.000+00:00
         status: status
       properties:
         bl_no:
@@ -2753,6 +2755,7 @@ components:
         cntr_no:
           type: string
         created:
+          format: date-time
           type: string
         customer_id:
           format: nullable
@@ -2773,6 +2776,7 @@ components:
         system_deleted:
           type: boolean
         updated:
+          format: date-time
           type: string
         voyage_no:
           format: nullable
@@ -2782,7 +2786,7 @@ components:
       example:
         created: created
         event_raw: event_raw
-        event_time_estimated: event_time_estimated
+        event_time_estimated: 2000-01-23T04:56:07.000+00:00
         event_type_code: event_type_code
         event_type_name: event_type_name
         port_name: port_name
@@ -2790,8 +2794,8 @@ components:
         id: id
         location_type_name: location_type_name
         location_type_code: location_type_code
-        updated: updated
-        event_time: event_time
+        updated: 2000-01-23T04:56:07.000+00:00
+        event_time: 2000-01-23T04:56:07.000+00:00
         port_code: port_code
       properties:
         created:
@@ -2799,9 +2803,10 @@ components:
         event_raw:
           type: string
         event_time:
+          format: date-time
           type: string
         event_time_estimated:
-          format: nullable
+          format: date-time
           type: string
         event_type_code:
           type: string
@@ -2820,6 +2825,7 @@ components:
         port_name:
           type: string
         updated:
+          format: date-time
           type: string
       type: object
     trackingEvent_ais:
@@ -2858,41 +2864,42 @@ components:
         voyage_no: voyage_no
         status_code: status_code
         pod: pod
-        pod_predicted_discharge_lt: pod_predicted_discharge_lt
-        pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+        pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
         imo: imo
         pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
         pol: pol
-        pol_scheduled_departure_lt: pol_scheduled_departure_lt
+        pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
         pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
         pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
         id: id
         pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-        pol_predicted_arrival_lt: pol_predicted_arrival_lt
-        pod_predicted_arrival_lt: pod_predicted_arrival_lt
+        pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
         vessel_leg: 5
         is_active: true
-        pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-        pod_scheduled_departure_lt: pod_scheduled_departure_lt
-        created: created
+        pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+        created: 2000-01-23T04:56:07.000+00:00
         pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pol_actual_departure: pol_actual_departure
+        pol_actual_departure: 2000-01-23T04:56:07.000+00:00
         vessel_name: vessel_name
         pol_name: pol_name
-        pol_predicted_loading_lt: pol_predicted_loading_lt
+        pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
         pod_name: pod_name
-        pod_predicted_departure_lt: pod_predicted_departure_lt
-        pol_scheduled_loading_lt: pol_scheduled_loading_lt
+        pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
         carrier_no: carrier_no
         updated: updated
         pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-        pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-        pol_predicted_departure_lt: pol_predicted_departure_lt
+        pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
         status: status
       properties:
         carrier_no:
           type: string
         created:
+          format: date-time
           type: string
         id:
           type: string
@@ -2914,22 +2921,22 @@ components:
         pod_name:
           type: string
         pod_predicted_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_predicted_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_predicted_discharge_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_scheduled_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_scheduled_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         pod_scheduled_discharge_lt:
-          format: nullable
+          format: date-time
           type: string
         pol:
           type: string
@@ -2937,7 +2944,7 @@ components:
           format: date-time
           type: string
         pol_actual_departure:
-          format: nullable
+          format: date-time
           type: string
         pol_actual_departure_lt:
           format: date-time
@@ -2948,22 +2955,22 @@ components:
         pol_name:
           type: string
         pol_predicted_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_predicted_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_predicted_loading_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_scheduled_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_scheduled_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         pol_scheduled_loading_lt:
-          format: nullable
+          format: date-time
           type: string
         status:
           type: string
@@ -2983,24 +2990,24 @@ components:
       example:
         original_voyage_no: original_voyage_no
         timezone: timezone
-        predicted_departure_lt: predicted_departure_lt
+        predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
         lon: 9.301444243932576
         actual_departure_lt: 2000-01-23T04:56:07.000+00:00
         scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-        predicted_arrival_utc: predicted_arrival_utc
+        predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
         scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
         actual_departure_utc: 2000-01-23T04:56:07.000+00:00
         id: id
         active_scac: active_scac
         lat: 7.061401241503109
-        predicted_departure_utc: predicted_departure_utc
+        predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
         port_code: port_code
         actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
         index: 2
-        predicted_arrival_lt: predicted_arrival_lt
+        predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
         scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
         port_name: port_name
-        prediction_time_utc: prediction_time_utc
+        prediction_time_utc: 2000-01-23T04:56:07.000+00:00
         actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
         scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
         scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -3039,19 +3046,19 @@ components:
         port_name:
           type: string
         predicted_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         predicted_arrival_utc:
-          format: nullable
+          format: date-time
           type: string
         predicted_departure_lt:
-          format: nullable
+          format: date-time
           type: string
         predicted_departure_utc:
-          format: nullable
+          format: date-time
           type: string
         prediction_time_utc:
-          format: nullable
+          format: date-time
           type: string
         scheduled_arrival_lt:
           format: date-time
@@ -3090,12 +3097,12 @@ components:
           lat: 6.027456183070403
           speed_nm: 5
           status: status
-        predicted_arrival_lt: predicted_arrival_lt
+        predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
         scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        prediction_time_utc: prediction_time_utc
+        prediction_time_utc: 2000-01-23T04:56:07.000+00:00
         target_port_name: target_port_name
         actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        predicted_arrival_utc: predicted_arrival_utc
+        predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
         scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
         prediction_confidence_level: prediction_confidence_level
         voyage_no_list:
@@ -3105,60 +3112,60 @@ components:
           voyage_no: voyage_no
           status_code: status_code
           pod: pod
-          pod_predicted_discharge_lt: pod_predicted_discharge_lt
-          pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+          pod_predicted_discharge_lt: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
           imo: imo
           pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
           pol: pol
-          pol_scheduled_departure_lt: pol_scheduled_departure_lt
+          pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
           pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
           pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
           id: id
           pod_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-          pol_predicted_arrival_lt: pol_predicted_arrival_lt
-          pod_predicted_arrival_lt: pod_predicted_arrival_lt
+          pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           vessel_leg: 5
           is_active: true
-          pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-          pod_scheduled_departure_lt: pod_scheduled_departure_lt
-          created: created
+          pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+          created: 2000-01-23T04:56:07.000+00:00
           pol_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pol_actual_departure: pol_actual_departure
+          pol_actual_departure: 2000-01-23T04:56:07.000+00:00
           vessel_name: vessel_name
           pol_name: pol_name
-          pol_predicted_loading_lt: pol_predicted_loading_lt
+          pol_predicted_loading_lt: 2000-01-23T04:56:07.000+00:00
           pod_name: pod_name
-          pod_predicted_departure_lt: pod_predicted_departure_lt
-          pol_scheduled_loading_lt: pol_scheduled_loading_lt
+          pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
           carrier_no: carrier_no
           updated: updated
           pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-          pol_scheduled_arrival_lt: pol_scheduled_arrival_lt
-          pol_predicted_departure_lt: pol_predicted_departure_lt
+          pol_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
           status: status
         cancelled: true
         target_port_code: target_port_code
         voyage_details:
         - original_voyage_no: original_voyage_no
           timezone: timezone
-          predicted_departure_lt: predicted_departure_lt
+          predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
           lon: 9.301444243932576
           actual_departure_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-          predicted_arrival_utc: predicted_arrival_utc
+          predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
           scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
           actual_departure_utc: 2000-01-23T04:56:07.000+00:00
           id: id
           active_scac: active_scac
           lat: 7.061401241503109
-          predicted_departure_utc: predicted_departure_utc
+          predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
           port_code: port_code
           actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
           index: 2
-          predicted_arrival_lt: predicted_arrival_lt
+          predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
           port_name: port_name
-          prediction_time_utc: prediction_time_utc
+          prediction_time_utc: 2000-01-23T04:56:07.000+00:00
           actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
           scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -3168,24 +3175,24 @@ components:
           - voyage_no_list
         - original_voyage_no: original_voyage_no
           timezone: timezone
-          predicted_departure_lt: predicted_departure_lt
+          predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
           lon: 9.301444243932576
           actual_departure_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-          predicted_arrival_utc: predicted_arrival_utc
+          predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
           scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
           actual_departure_utc: 2000-01-23T04:56:07.000+00:00
           id: id
           active_scac: active_scac
           lat: 7.061401241503109
-          predicted_departure_utc: predicted_departure_utc
+          predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
           port_code: port_code
           actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
           index: 2
-          predicted_arrival_lt: predicted_arrival_lt
+          predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
           port_name: port_name
-          prediction_time_utc: prediction_time_utc
+          prediction_time_utc: 2000-01-23T04:56:07.000+00:00
           actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_on_time_confidence: scheduled_arrival_on_time_confidence
           scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
@@ -3205,16 +3212,16 @@ components:
         cancelled:
           type: boolean
         predicted_arrival_lt:
-          format: nullable
+          format: date-time
           type: string
         predicted_arrival_utc:
-          format: nullable
+          format: date-time
           type: string
         prediction_confidence_level:
           format: nullable
           type: string
         prediction_time_utc:
-          format: nullable
+          format: date-time
           type: string
         sailing_info:
           $ref: '#/components/schemas/trackingEvent_sailing_info'

@@ -21,10 +21,10 @@ type TrackingEventSailingInfoTracking struct {
 	ActualArrivalUtc *time.Time `json:"actual_arrival_utc,omitempty"`
 	Ais *TrackingEventAis `json:"ais,omitempty"`
 	Cancelled *bool `json:"cancelled,omitempty"`
-	PredictedArrivalLt *string `json:"predicted_arrival_lt,omitempty"`
-	PredictedArrivalUtc *string `json:"predicted_arrival_utc,omitempty"`
+	PredictedArrivalLt *time.Time `json:"predicted_arrival_lt,omitempty"`
+	PredictedArrivalUtc *time.Time `json:"predicted_arrival_utc,omitempty"`
 	PredictionConfidenceLevel *string `json:"prediction_confidence_level,omitempty"`
-	PredictionTimeUtc *string `json:"prediction_time_utc,omitempty"`
+	PredictionTimeUtc *time.Time `json:"prediction_time_utc,omitempty"`
 	SailingInfo *TrackingEventSailingInfo `json:"sailing_info,omitempty"`
 	ScheduledArrivalLt *time.Time `json:"scheduled_arrival_lt,omitempty"`
 	ScheduledArrivalUtc *time.Time `json:"scheduled_arrival_utc,omitempty"`
@@ -180,9 +180,9 @@ func (o *TrackingEventSailingInfoTracking) SetCancelled(v bool) {
 }
 
 // GetPredictedArrivalLt returns the PredictedArrivalLt field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLt() string {
+func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLt() time.Time {
 	if o == nil || o.PredictedArrivalLt == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PredictedArrivalLt
@@ -190,7 +190,7 @@ func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLt() string {
 
 // GetPredictedArrivalLtOk returns a tuple with the PredictedArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLtOk() (*string, bool) {
+func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLtOk() (*time.Time, bool) {
 	if o == nil || o.PredictedArrivalLt == nil {
 		return nil, false
 	}
@@ -206,15 +206,15 @@ func (o *TrackingEventSailingInfoTracking) HasPredictedArrivalLt() bool {
 	return false
 }
 
-// SetPredictedArrivalLt gets a reference to the given string and assigns it to the PredictedArrivalLt field.
-func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalLt(v string) {
+// SetPredictedArrivalLt gets a reference to the given time.Time and assigns it to the PredictedArrivalLt field.
+func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalLt(v time.Time) {
 	o.PredictedArrivalLt = &v
 }
 
 // GetPredictedArrivalUtc returns the PredictedArrivalUtc field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtc() string {
+func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtc() time.Time {
 	if o == nil || o.PredictedArrivalUtc == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PredictedArrivalUtc
@@ -222,7 +222,7 @@ func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtc() string {
 
 // GetPredictedArrivalUtcOk returns a tuple with the PredictedArrivalUtc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtcOk() (*string, bool) {
+func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalUtcOk() (*time.Time, bool) {
 	if o == nil || o.PredictedArrivalUtc == nil {
 		return nil, false
 	}
@@ -238,8 +238,8 @@ func (o *TrackingEventSailingInfoTracking) HasPredictedArrivalUtc() bool {
 	return false
 }
 
-// SetPredictedArrivalUtc gets a reference to the given string and assigns it to the PredictedArrivalUtc field.
-func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalUtc(v string) {
+// SetPredictedArrivalUtc gets a reference to the given time.Time and assigns it to the PredictedArrivalUtc field.
+func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalUtc(v time.Time) {
 	o.PredictedArrivalUtc = &v
 }
 
@@ -276,9 +276,9 @@ func (o *TrackingEventSailingInfoTracking) SetPredictionConfidenceLevel(v string
 }
 
 // GetPredictionTimeUtc returns the PredictionTimeUtc field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtc() string {
+func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtc() time.Time {
 	if o == nil || o.PredictionTimeUtc == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.PredictionTimeUtc
@@ -286,7 +286,7 @@ func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtc() string {
 
 // GetPredictionTimeUtcOk returns a tuple with the PredictionTimeUtc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtcOk() (*string, bool) {
+func (o *TrackingEventSailingInfoTracking) GetPredictionTimeUtcOk() (*time.Time, bool) {
 	if o == nil || o.PredictionTimeUtc == nil {
 		return nil, false
 	}
@@ -302,8 +302,8 @@ func (o *TrackingEventSailingInfoTracking) HasPredictionTimeUtc() bool {
 	return false
 }
 
-// SetPredictionTimeUtc gets a reference to the given string and assigns it to the PredictionTimeUtc field.
-func (o *TrackingEventSailingInfoTracking) SetPredictionTimeUtc(v string) {
+// SetPredictionTimeUtc gets a reference to the given time.Time and assigns it to the PredictionTimeUtc field.
+func (o *TrackingEventSailingInfoTracking) SetPredictionTimeUtc(v time.Time) {
 	o.PredictionTimeUtc = &v
 }
 

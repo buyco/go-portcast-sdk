@@ -12,6 +12,7 @@ package portcast
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // TrackingEventBillOfLadingBookmark struct for TrackingEventBillOfLadingBookmark
@@ -19,7 +20,7 @@ type TrackingEventBillOfLadingBookmark struct {
 	BlNo *string `json:"bl_no,omitempty"`
 	CarrierNo *string `json:"carrier_no,omitempty"`
 	CntrNo *string `json:"cntr_no,omitempty"`
-	Created *string `json:"created,omitempty"`
+	Created *time.Time `json:"created,omitempty"`
 	CustomerId *string `json:"customer_id,omitempty"`
 	CustomerNo *string `json:"customer_no,omitempty"`
 	Deleted *bool `json:"deleted,omitempty"`
@@ -28,7 +29,7 @@ type TrackingEventBillOfLadingBookmark struct {
 	Status *string `json:"status,omitempty"`
 	StatusCode *string `json:"status_code,omitempty"`
 	SystemDeleted *bool `json:"system_deleted,omitempty"`
-	Updated *string `json:"updated,omitempty"`
+	Updated *time.Time `json:"updated,omitempty"`
 	VoyageNo *string `json:"voyage_no,omitempty"`
 }
 
@@ -146,9 +147,9 @@ func (o *TrackingEventBillOfLadingBookmark) SetCntrNo(v string) {
 }
 
 // GetCreated returns the Created field value if set, zero value otherwise.
-func (o *TrackingEventBillOfLadingBookmark) GetCreated() string {
+func (o *TrackingEventBillOfLadingBookmark) GetCreated() time.Time {
 	if o == nil || o.Created == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.Created
@@ -156,7 +157,7 @@ func (o *TrackingEventBillOfLadingBookmark) GetCreated() string {
 
 // GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventBillOfLadingBookmark) GetCreatedOk() (*string, bool) {
+func (o *TrackingEventBillOfLadingBookmark) GetCreatedOk() (*time.Time, bool) {
 	if o == nil || o.Created == nil {
 		return nil, false
 	}
@@ -172,8 +173,8 @@ func (o *TrackingEventBillOfLadingBookmark) HasCreated() bool {
 	return false
 }
 
-// SetCreated gets a reference to the given string and assigns it to the Created field.
-func (o *TrackingEventBillOfLadingBookmark) SetCreated(v string) {
+// SetCreated gets a reference to the given time.Time and assigns it to the Created field.
+func (o *TrackingEventBillOfLadingBookmark) SetCreated(v time.Time) {
 	o.Created = &v
 }
 
@@ -434,9 +435,9 @@ func (o *TrackingEventBillOfLadingBookmark) SetSystemDeleted(v bool) {
 }
 
 // GetUpdated returns the Updated field value if set, zero value otherwise.
-func (o *TrackingEventBillOfLadingBookmark) GetUpdated() string {
+func (o *TrackingEventBillOfLadingBookmark) GetUpdated() time.Time {
 	if o == nil || o.Updated == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.Updated
@@ -444,7 +445,7 @@ func (o *TrackingEventBillOfLadingBookmark) GetUpdated() string {
 
 // GetUpdatedOk returns a tuple with the Updated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventBillOfLadingBookmark) GetUpdatedOk() (*string, bool) {
+func (o *TrackingEventBillOfLadingBookmark) GetUpdatedOk() (*time.Time, bool) {
 	if o == nil || o.Updated == nil {
 		return nil, false
 	}
@@ -460,8 +461,8 @@ func (o *TrackingEventBillOfLadingBookmark) HasUpdated() bool {
 	return false
 }
 
-// SetUpdated gets a reference to the given string and assigns it to the Updated field.
-func (o *TrackingEventBillOfLadingBookmark) SetUpdated(v string) {
+// SetUpdated gets a reference to the given time.Time and assigns it to the Updated field.
+func (o *TrackingEventBillOfLadingBookmark) SetUpdated(v time.Time) {
 	o.Updated = &v
 }
 

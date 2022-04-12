@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Created** | Pointer to **string** |  | [optional] 
 **EventRaw** | Pointer to **string** |  | [optional] 
-**EventTime** | Pointer to **string** |  | [optional] 
-**EventTimeEstimated** | Pointer to **string** |  | [optional] 
+**EventTime** | Pointer to **time.Time** |  | [optional] 
+**EventTimeEstimated** | Pointer to **time.Time** |  | [optional] 
 **EventTypeCode** | Pointer to **string** |  | [optional] 
 **EventTypeName** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **LocationTypeName** | Pointer to **string** |  | [optional] 
 **PortCode** | Pointer to **string** |  | [optional] 
 **PortName** | Pointer to **string** |  | [optional] 
-**Updated** | Pointer to **string** |  | [optional] 
+**Updated** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
 
@@ -89,20 +89,20 @@ HasEventRaw returns a boolean if a field has been set.
 
 ### GetEventTime
 
-`func (o *TrackingEventContainerEventList) GetEventTime() string`
+`func (o *TrackingEventContainerEventList) GetEventTime() time.Time`
 
 GetEventTime returns the EventTime field if non-nil, zero value otherwise.
 
 ### GetEventTimeOk
 
-`func (o *TrackingEventContainerEventList) GetEventTimeOk() (*string, bool)`
+`func (o *TrackingEventContainerEventList) GetEventTimeOk() (*time.Time, bool)`
 
 GetEventTimeOk returns a tuple with the EventTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTime
 
-`func (o *TrackingEventContainerEventList) SetEventTime(v string)`
+`func (o *TrackingEventContainerEventList) SetEventTime(v time.Time)`
 
 SetEventTime sets EventTime field to given value.
 
@@ -114,20 +114,20 @@ HasEventTime returns a boolean if a field has been set.
 
 ### GetEventTimeEstimated
 
-`func (o *TrackingEventContainerEventList) GetEventTimeEstimated() string`
+`func (o *TrackingEventContainerEventList) GetEventTimeEstimated() time.Time`
 
 GetEventTimeEstimated returns the EventTimeEstimated field if non-nil, zero value otherwise.
 
 ### GetEventTimeEstimatedOk
 
-`func (o *TrackingEventContainerEventList) GetEventTimeEstimatedOk() (*string, bool)`
+`func (o *TrackingEventContainerEventList) GetEventTimeEstimatedOk() (*time.Time, bool)`
 
 GetEventTimeEstimatedOk returns a tuple with the EventTimeEstimated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTimeEstimated
 
-`func (o *TrackingEventContainerEventList) SetEventTimeEstimated(v string)`
+`func (o *TrackingEventContainerEventList) SetEventTimeEstimated(v time.Time)`
 
 SetEventTimeEstimated sets EventTimeEstimated field to given value.
 
@@ -339,20 +339,20 @@ HasPortName returns a boolean if a field has been set.
 
 ### GetUpdated
 
-`func (o *TrackingEventContainerEventList) GetUpdated() string`
+`func (o *TrackingEventContainerEventList) GetUpdated() time.Time`
 
 GetUpdated returns the Updated field if non-nil, zero value otherwise.
 
 ### GetUpdatedOk
 
-`func (o *TrackingEventContainerEventList) GetUpdatedOk() (*string, bool)`
+`func (o *TrackingEventContainerEventList) GetUpdatedOk() (*time.Time, bool)`
 
 GetUpdatedOk returns a tuple with the Updated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdated
 
-`func (o *TrackingEventContainerEventList) SetUpdated(v string)`
+`func (o *TrackingEventContainerEventList) SetUpdated(v time.Time)`
 
 SetUpdated sets Updated field to given value.
 
