@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Imo** | Pointer to **string** |  | [optional] 
 **Lat** | Pointer to **float32** |  | [optional] 
 **Lon** | Pointer to **float32** |  | [optional] 
-**SpeedNm** | Pointer to **int32** |  | [optional] 
+**SpeedNm** | Pointer to **float32** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **TimestampUtc** | Pointer to **string** |  | [optional] 
 
@@ -159,20 +159,20 @@ HasLon returns a boolean if a field has been set.
 
 ### GetSpeedNm
 
-`func (o *TrackingEventAis) GetSpeedNm() int32`
+`func (o *TrackingEventAis) GetSpeedNm() float32`
 
 GetSpeedNm returns the SpeedNm field if non-nil, zero value otherwise.
 
 ### GetSpeedNmOk
 
-`func (o *TrackingEventAis) GetSpeedNmOk() (*int32, bool)`
+`func (o *TrackingEventAis) GetSpeedNmOk() (*float32, bool)`
 
 GetSpeedNmOk returns a tuple with the SpeedNm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSpeedNm
 
-`func (o *TrackingEventAis) SetSpeedNm(v int32)`
+`func (o *TrackingEventAis) SetSpeedNm(v float32)`
 
 SetSpeedNm sets SpeedNm field to given value.
 

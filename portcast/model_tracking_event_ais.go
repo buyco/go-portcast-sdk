@@ -21,7 +21,7 @@ type TrackingEventAis struct {
 	Imo *string `json:"imo,omitempty"`
 	Lat *float32 `json:"lat,omitempty"`
 	Lon *float32 `json:"lon,omitempty"`
-	SpeedNm *int32 `json:"speed_nm,omitempty"`
+	SpeedNm *float32 `json:"speed_nm,omitempty"`
 	Status *string `json:"status,omitempty"`
 	TimestampUtc *string `json:"timestamp_utc,omitempty"`
 }
@@ -204,9 +204,9 @@ func (o *TrackingEventAis) SetLon(v float32) {
 }
 
 // GetSpeedNm returns the SpeedNm field value if set, zero value otherwise.
-func (o *TrackingEventAis) GetSpeedNm() int32 {
+func (o *TrackingEventAis) GetSpeedNm() float32 {
 	if o == nil || o.SpeedNm == nil {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.SpeedNm
@@ -214,7 +214,7 @@ func (o *TrackingEventAis) GetSpeedNm() int32 {
 
 // GetSpeedNmOk returns a tuple with the SpeedNm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventAis) GetSpeedNmOk() (*int32, bool) {
+func (o *TrackingEventAis) GetSpeedNmOk() (*float32, bool) {
 	if o == nil || o.SpeedNm == nil {
 		return nil, false
 	}
@@ -230,8 +230,8 @@ func (o *TrackingEventAis) HasSpeedNm() bool {
 	return false
 }
 
-// SetSpeedNm gets a reference to the given int32 and assigns it to the SpeedNm field.
-func (o *TrackingEventAis) SetSpeedNm(v int32) {
+// SetSpeedNm gets a reference to the given float32 and assigns it to the SpeedNm field.
+func (o *TrackingEventAis) SetSpeedNm(v float32) {
 	o.SpeedNm = &v
 }
 

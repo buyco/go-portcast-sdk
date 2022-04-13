@@ -1236,7 +1236,7 @@ components:
             lon: 1.4658129805029452
             draught_m: draught_m
             lat: 6.027456183070403
-            speed_nm: 5
+            speed_nm: 5.962133916683182
             status: status
           predicted_arrival_lt: predicted_arrival_lt
           scheduled_arrival_lt: scheduled_arrival_lt
@@ -1349,7 +1349,7 @@ components:
             lon: 1.4658129805029452
             draught_m: draught_m
             lat: 6.027456183070403
-            speed_nm: 5
+            speed_nm: 5.962133916683182
             status: status
           predicted_arrival_lt: predicted_arrival_lt
           scheduled_arrival_lt: scheduled_arrival_lt
@@ -1671,7 +1671,7 @@ components:
               lon: 1.4658129805029452
               draught_m: draught_m
               lat: 6.027456183070403
-              speed_nm: 5
+              speed_nm: 5.962133916683182
               status: status
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
@@ -1784,7 +1784,7 @@ components:
               lon: 1.4658129805029452
               draught_m: draught_m
               lat: 6.027456183070403
-              speed_nm: 5
+              speed_nm: 5.962133916683182
               status: status
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
@@ -1986,7 +1986,7 @@ components:
               lon: 1.4658129805029452
               draught_m: draught_m
               lat: 6.027456183070403
-              speed_nm: 5
+              speed_nm: 5.962133916683182
               status: status
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
@@ -2099,7 +2099,7 @@ components:
               lon: 1.4658129805029452
               draught_m: draught_m
               lat: 6.027456183070403
-              speed_nm: 5
+              speed_nm: 5.962133916683182
               status: status
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
@@ -2313,7 +2313,7 @@ components:
               lon: 1.4658129805029452
               draught_m: draught_m
               lat: 6.027456183070403
-              speed_nm: 5
+              speed_nm: 5.962133916683182
               status: status
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
@@ -2426,7 +2426,7 @@ components:
               lon: 1.4658129805029452
               draught_m: draught_m
               lat: 6.027456183070403
-              speed_nm: 5
+              speed_nm: 5.962133916683182
               status: status
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
@@ -2836,7 +2836,7 @@ components:
         lon: 1.4658129805029452
         draught_m: draught_m
         lat: 6.027456183070403
-        speed_nm: 5
+        speed_nm: 5.962133916683182
         status: status
       properties:
         course:
@@ -2851,8 +2851,7 @@ components:
         lon:
           type: number
         speed_nm:
-          format: int32
-          type: integer
+          type: number
         status:
           type: string
         timestamp_utc:
@@ -3096,7 +3095,7 @@ components:
           lon: 1.4658129805029452
           draught_m: draught_m
           lat: 6.027456183070403
-          speed_nm: 5
+          speed_nm: 5.962133916683182
           status: status
         predicted_arrival_lt: predicted_arrival_lt
         scheduled_arrival_lt: scheduled_arrival_lt
