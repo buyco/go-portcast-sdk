@@ -1237,7 +1237,7 @@ components:
             draught_m: draught_m
             lat: 6.027456183070403
             speed_nm: 5.962133916683182
-            status: status
+            status: 5.637376656633329
           predicted_arrival_lt: predicted_arrival_lt
           scheduled_arrival_lt: scheduled_arrival_lt
           prediction_time_utc: prediction_time_utc
@@ -1265,7 +1265,7 @@ components:
             pod_actual_departure_lt: pod_actual_departure_lt
             pol_predicted_arrival_lt: pol_predicted_arrival_lt
             pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            vessel_leg: 5
+            vessel_leg: 2
             is_active: true
             pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
             pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -1290,7 +1290,7 @@ components:
           - original_voyage_no: original_voyage_no
             timezone: timezone
             predicted_departure_lt: predicted_departure_lt
-            lon: 9.301444243932576
+            lon: 3.616076749251911
             actual_departure_lt: actual_departure_lt
             scheduled_departure_utc: scheduled_departure_utc
             predicted_arrival_utc: predicted_arrival_utc
@@ -1298,11 +1298,11 @@ components:
             actual_departure_utc: actual_departure_utc
             id: id
             active_scac: active_scac
-            lat: 7.061401241503109
+            lat: 9.301444243932576
             predicted_departure_utc: predicted_departure_utc
             port_code: port_code
             actual_arrival_utc: actual_arrival_utc
-            index: 2
+            index: 7
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             port_name: port_name
@@ -1317,7 +1317,7 @@ components:
           - original_voyage_no: original_voyage_no
             timezone: timezone
             predicted_departure_lt: predicted_departure_lt
-            lon: 9.301444243932576
+            lon: 3.616076749251911
             actual_departure_lt: actual_departure_lt
             scheduled_departure_utc: scheduled_departure_utc
             predicted_arrival_utc: predicted_arrival_utc
@@ -1325,11 +1325,11 @@ components:
             actual_departure_utc: actual_departure_utc
             id: id
             active_scac: active_scac
-            lat: 7.061401241503109
+            lat: 9.301444243932576
             predicted_departure_utc: predicted_departure_utc
             port_code: port_code
             actual_arrival_utc: actual_arrival_utc
-            index: 2
+            index: 7
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             port_name: port_name
@@ -1350,7 +1350,7 @@ components:
             draught_m: draught_m
             lat: 6.027456183070403
             speed_nm: 5.962133916683182
-            status: status
+            status: 5.637376656633329
           predicted_arrival_lt: predicted_arrival_lt
           scheduled_arrival_lt: scheduled_arrival_lt
           prediction_time_utc: prediction_time_utc
@@ -1378,7 +1378,7 @@ components:
             pod_actual_departure_lt: pod_actual_departure_lt
             pol_predicted_arrival_lt: pol_predicted_arrival_lt
             pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            vessel_leg: 5
+            vessel_leg: 2
             is_active: true
             pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
             pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -1403,7 +1403,7 @@ components:
           - original_voyage_no: original_voyage_no
             timezone: timezone
             predicted_departure_lt: predicted_departure_lt
-            lon: 9.301444243932576
+            lon: 3.616076749251911
             actual_departure_lt: actual_departure_lt
             scheduled_departure_utc: scheduled_departure_utc
             predicted_arrival_utc: predicted_arrival_utc
@@ -1411,11 +1411,11 @@ components:
             actual_departure_utc: actual_departure_utc
             id: id
             active_scac: active_scac
-            lat: 7.061401241503109
+            lat: 9.301444243932576
             predicted_departure_utc: predicted_departure_utc
             port_code: port_code
             actual_arrival_utc: actual_arrival_utc
-            index: 2
+            index: 7
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             port_name: port_name
@@ -1430,7 +1430,7 @@ components:
           - original_voyage_no: original_voyage_no
             timezone: timezone
             predicted_departure_lt: predicted_departure_lt
-            lon: 9.301444243932576
+            lon: 3.616076749251911
             actual_departure_lt: actual_departure_lt
             scheduled_departure_utc: scheduled_departure_utc
             predicted_arrival_utc: predicted_arrival_utc
@@ -1438,11 +1438,11 @@ components:
             actual_departure_utc: actual_departure_utc
             id: id
             active_scac: active_scac
-            lat: 7.061401241503109
+            lat: 9.301444243932576
             predicted_departure_utc: predicted_departure_utc
             port_code: port_code
             actual_arrival_utc: actual_arrival_utc
-            index: 2
+            index: 7
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             port_name: port_name
@@ -1672,7 +1672,7 @@ components:
               draught_m: draught_m
               lat: 6.027456183070403
               speed_nm: 5.962133916683182
-              status: status
+              status: 5.637376656633329
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             prediction_time_utc: prediction_time_utc
@@ -1700,7 +1700,7 @@ components:
               pod_actual_departure_lt: pod_actual_departure_lt
               pol_predicted_arrival_lt: pol_predicted_arrival_lt
               pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 5
+              vessel_leg: 2
               is_active: true
               pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
               pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -1725,7 +1725,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -1733,11 +1733,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -1752,7 +1752,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -1760,11 +1760,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -1785,7 +1785,7 @@ components:
               draught_m: draught_m
               lat: 6.027456183070403
               speed_nm: 5.962133916683182
-              status: status
+              status: 5.637376656633329
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             prediction_time_utc: prediction_time_utc
@@ -1813,7 +1813,7 @@ components:
               pod_actual_departure_lt: pod_actual_departure_lt
               pol_predicted_arrival_lt: pol_predicted_arrival_lt
               pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 5
+              vessel_leg: 2
               is_active: true
               pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
               pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -1838,7 +1838,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -1846,11 +1846,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -1865,7 +1865,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -1873,11 +1873,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -1987,7 +1987,7 @@ components:
               draught_m: draught_m
               lat: 6.027456183070403
               speed_nm: 5.962133916683182
-              status: status
+              status: 5.637376656633329
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             prediction_time_utc: prediction_time_utc
@@ -2015,7 +2015,7 @@ components:
               pod_actual_departure_lt: pod_actual_departure_lt
               pol_predicted_arrival_lt: pol_predicted_arrival_lt
               pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 5
+              vessel_leg: 2
               is_active: true
               pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
               pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -2040,7 +2040,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2048,11 +2048,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2067,7 +2067,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2075,11 +2075,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2100,7 +2100,7 @@ components:
               draught_m: draught_m
               lat: 6.027456183070403
               speed_nm: 5.962133916683182
-              status: status
+              status: 5.637376656633329
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             prediction_time_utc: prediction_time_utc
@@ -2128,7 +2128,7 @@ components:
               pod_actual_departure_lt: pod_actual_departure_lt
               pol_predicted_arrival_lt: pol_predicted_arrival_lt
               pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 5
+              vessel_leg: 2
               is_active: true
               pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
               pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -2153,7 +2153,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2161,11 +2161,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2180,7 +2180,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2188,11 +2188,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2314,7 +2314,7 @@ components:
               draught_m: draught_m
               lat: 6.027456183070403
               speed_nm: 5.962133916683182
-              status: status
+              status: 5.637376656633329
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             prediction_time_utc: prediction_time_utc
@@ -2342,7 +2342,7 @@ components:
               pod_actual_departure_lt: pod_actual_departure_lt
               pol_predicted_arrival_lt: pol_predicted_arrival_lt
               pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 5
+              vessel_leg: 2
               is_active: true
               pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
               pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -2367,7 +2367,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2375,11 +2375,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2394,7 +2394,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2402,11 +2402,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2427,7 +2427,7 @@ components:
               draught_m: draught_m
               lat: 6.027456183070403
               speed_nm: 5.962133916683182
-              status: status
+              status: 5.637376656633329
             predicted_arrival_lt: predicted_arrival_lt
             scheduled_arrival_lt: scheduled_arrival_lt
             prediction_time_utc: prediction_time_utc
@@ -2455,7 +2455,7 @@ components:
               pod_actual_departure_lt: pod_actual_departure_lt
               pol_predicted_arrival_lt: pol_predicted_arrival_lt
               pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 5
+              vessel_leg: 2
               is_active: true
               pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
               pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -2480,7 +2480,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2488,11 +2488,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2507,7 +2507,7 @@ components:
             - original_voyage_no: original_voyage_no
               timezone: timezone
               predicted_departure_lt: predicted_departure_lt
-              lon: 9.301444243932576
+              lon: 3.616076749251911
               actual_departure_lt: actual_departure_lt
               scheduled_departure_utc: scheduled_departure_utc
               predicted_arrival_utc: predicted_arrival_utc
@@ -2515,11 +2515,11 @@ components:
               actual_departure_utc: actual_departure_utc
               id: id
               active_scac: active_scac
-              lat: 7.061401241503109
+              lat: 9.301444243932576
               predicted_departure_utc: predicted_departure_utc
               port_code: port_code
               actual_arrival_utc: actual_arrival_utc
-              index: 2
+              index: 7
               predicted_arrival_lt: predicted_arrival_lt
               scheduled_arrival_lt: scheduled_arrival_lt
               port_name: port_name
@@ -2837,7 +2837,7 @@ components:
         draught_m: draught_m
         lat: 6.027456183070403
         speed_nm: 5.962133916683182
-        status: status
+        status: 5.637376656633329
       properties:
         course:
           type: number
@@ -2853,7 +2853,7 @@ components:
         speed_nm:
           type: number
         status:
-          type: string
+          type: number
         timestamp_utc:
           format: nullable
           type: string
@@ -2875,7 +2875,7 @@ components:
         pod_actual_departure_lt: pod_actual_departure_lt
         pol_predicted_arrival_lt: pol_predicted_arrival_lt
         pod_predicted_arrival_lt: pod_predicted_arrival_lt
-        vessel_leg: 5
+        vessel_leg: 2
         is_active: true
         pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
         pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -2991,7 +2991,7 @@ components:
         original_voyage_no: original_voyage_no
         timezone: timezone
         predicted_departure_lt: predicted_departure_lt
-        lon: 9.301444243932576
+        lon: 3.616076749251911
         actual_departure_lt: actual_departure_lt
         scheduled_departure_utc: scheduled_departure_utc
         predicted_arrival_utc: predicted_arrival_utc
@@ -2999,11 +2999,11 @@ components:
         actual_departure_utc: actual_departure_utc
         id: id
         active_scac: active_scac
-        lat: 7.061401241503109
+        lat: 9.301444243932576
         predicted_departure_utc: predicted_departure_utc
         port_code: port_code
         actual_arrival_utc: actual_arrival_utc
-        index: 2
+        index: 7
         predicted_arrival_lt: predicted_arrival_lt
         scheduled_arrival_lt: scheduled_arrival_lt
         port_name: port_name
@@ -3096,7 +3096,7 @@ components:
           draught_m: draught_m
           lat: 6.027456183070403
           speed_nm: 5.962133916683182
-          status: status
+          status: 5.637376656633329
         predicted_arrival_lt: predicted_arrival_lt
         scheduled_arrival_lt: scheduled_arrival_lt
         prediction_time_utc: prediction_time_utc
@@ -3124,7 +3124,7 @@ components:
           pod_actual_departure_lt: pod_actual_departure_lt
           pol_predicted_arrival_lt: pol_predicted_arrival_lt
           pod_predicted_arrival_lt: pod_predicted_arrival_lt
-          vessel_leg: 5
+          vessel_leg: 2
           is_active: true
           pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
           pod_scheduled_departure_lt: pod_scheduled_departure_lt
@@ -3149,7 +3149,7 @@ components:
         - original_voyage_no: original_voyage_no
           timezone: timezone
           predicted_departure_lt: predicted_departure_lt
-          lon: 9.301444243932576
+          lon: 3.616076749251911
           actual_departure_lt: actual_departure_lt
           scheduled_departure_utc: scheduled_departure_utc
           predicted_arrival_utc: predicted_arrival_utc
@@ -3157,11 +3157,11 @@ components:
           actual_departure_utc: actual_departure_utc
           id: id
           active_scac: active_scac
-          lat: 7.061401241503109
+          lat: 9.301444243932576
           predicted_departure_utc: predicted_departure_utc
           port_code: port_code
           actual_arrival_utc: actual_arrival_utc
-          index: 2
+          index: 7
           predicted_arrival_lt: predicted_arrival_lt
           scheduled_arrival_lt: scheduled_arrival_lt
           port_name: port_name
@@ -3176,7 +3176,7 @@ components:
         - original_voyage_no: original_voyage_no
           timezone: timezone
           predicted_departure_lt: predicted_departure_lt
-          lon: 9.301444243932576
+          lon: 3.616076749251911
           actual_departure_lt: actual_departure_lt
           scheduled_departure_utc: scheduled_departure_utc
           predicted_arrival_utc: predicted_arrival_utc
@@ -3184,11 +3184,11 @@ components:
           actual_departure_utc: actual_departure_utc
           id: id
           active_scac: active_scac
-          lat: 7.061401241503109
+          lat: 9.301444243932576
           predicted_departure_utc: predicted_departure_utc
           port_code: port_code
           actual_arrival_utc: actual_arrival_utc
-          index: 2
+          index: 7
           predicted_arrival_lt: predicted_arrival_lt
           scheduled_arrival_lt: scheduled_arrival_lt
           port_name: port_name

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Lat** | Pointer to **float32** |  | [optional] 
 **Lon** | Pointer to **float32** |  | [optional] 
 **SpeedNm** | Pointer to **float32** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **float32** |  | [optional] 
 **TimestampUtc** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -184,20 +184,20 @@ HasSpeedNm returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *TrackingEventAis) GetStatus() string`
+`func (o *TrackingEventAis) GetStatus() float32`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *TrackingEventAis) GetStatusOk() (*string, bool)`
+`func (o *TrackingEventAis) GetStatusOk() (*float32, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *TrackingEventAis) SetStatus(v string)`
+`func (o *TrackingEventAis) SetStatus(v float32)`
 
 SetStatus sets Status field to given value.
 

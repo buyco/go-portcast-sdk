@@ -1063,7 +1063,7 @@
                       "type": "number"
                     },
                     "status": {
-                      "type": "string"
+                      "type": "number"
                     },
                     "timestamp_utc": {
                       "type": "string",

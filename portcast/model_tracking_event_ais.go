@@ -22,7 +22,7 @@ type TrackingEventAis struct {
 	Lat *float32 `json:"lat,omitempty"`
 	Lon *float32 `json:"lon,omitempty"`
 	SpeedNm *float32 `json:"speed_nm,omitempty"`
-	Status *string `json:"status,omitempty"`
+	Status *float32 `json:"status,omitempty"`
 	TimestampUtc *string `json:"timestamp_utc,omitempty"`
 }
 
@@ -236,9 +236,9 @@ func (o *TrackingEventAis) SetSpeedNm(v float32) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *TrackingEventAis) GetStatus() string {
+func (o *TrackingEventAis) GetStatus() float32 {
 	if o == nil || o.Status == nil {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.Status
@@ -246,7 +246,7 @@ func (o *TrackingEventAis) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventAis) GetStatusOk() (*string, bool) {
+func (o *TrackingEventAis) GetStatusOk() (*float32, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -262,8 +262,8 @@ func (o *TrackingEventAis) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *TrackingEventAis) SetStatus(v string) {
+// SetStatus gets a reference to the given float32 and assigns it to the Status field.
+func (o *TrackingEventAis) SetStatus(v float32) {
 	o.Status = &v
 }
 
