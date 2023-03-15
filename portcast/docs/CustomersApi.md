@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    customerRequest := *openapiclient.NewCustomerRequest("Customer_example") // CustomerRequest |  (optional)
+    customerRequest := *openapiclient.NewCustomerRequest("Customer_example") // CustomerRequest | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

@@ -113,7 +113,8 @@
                 "$ref": "#/components/schemas/customerRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
