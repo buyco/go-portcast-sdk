@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
 
 API version: 1.0.0
 */
@@ -26,19 +26,19 @@ var (
 type BookingBookmarksApi interface {
 
 	/*
-	EtaBookingPost Create new bookmarks for booking
+			EtaBookingPost Create new bookmarks for booking
 
-	Please send the bill of lading or booking number with the following fields:
-```
-{
-    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
-    "bl_no": <string, required, ocean carrier bill of lading number>,
-    "dock_type": <string, required, type of doc_no. Accept value: BK (booking) , BL (Bill of Lading)>
-}
-```
+			Please send the bill of lading or booking number with the following fields:
+		```
+		{
+		    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
+		    "bl_no": <string, required, ocean carrier bill of lading number>,
+		    "dock_type": <string, required, type of doc_no. Accept value: BK (booking) , BL (Bill of Lading)>
+		}
+		```
 
-	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return ApiEtaBookingPostRequest
+			 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+			 @return ApiEtaBookingPostRequest
 	*/
 	EtaBookingPost(ctx _context.Context) ApiEtaBookingPostRequest
 
@@ -51,8 +51,8 @@ type BookingBookmarksApi interface {
 type BookingBookmarksApiService service
 
 type ApiEtaBookingPostRequest struct {
-	ctx _context.Context
-	ApiService BookingBookmarksApi
+	ctx                    _context.Context
+	ApiService             BookingBookmarksApi
 	bookingBookmarkRequest *BookingBookmarkRequest
 }
 
@@ -70,25 +70,28 @@ EtaBookingPost Create new bookmarks for booking
 
 Please send the bill of lading or booking number with the following fields:
 ```
-{
-    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
-    "bl_no": <string, required, ocean carrier bill of lading number>,
-    "dock_type": <string, required, type of doc_no. Accept value: BK (booking) , BL (Bill of Lading)>
-}
+
+	{
+	    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
+	    "bl_no": <string, required, ocean carrier bill of lading number>,
+	    "dock_type": <string, required, type of doc_no. Accept value: BK (booking) , BL (Bill of Lading)>
+	}
+
 ```
 
- @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEtaBookingPostRequest
+	@param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEtaBookingPostRequest
 */
 func (a *BookingBookmarksApiService) EtaBookingPost(ctx _context.Context) ApiEtaBookingPostRequest {
 	return ApiEtaBookingPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BookingBookmarksResponse
+//
+//	@return BookingBookmarksResponse
 func (a *BookingBookmarksApiService) EtaBookingPostExecute(r ApiEtaBookingPostRequest) (BookingBookmarksResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
@@ -163,14 +166,14 @@ func (a *BookingBookmarksApiService) EtaBookingPostExecute(r ApiEtaBookingPostRe
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["x-org-api-key"]; ok {
+			if apiKey, ok := auth["x-customer"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
 					key = apiKey.Prefix + " " + apiKey.Key
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["x-org-api-key"] = key
+				localVarHeaderParams["x-customer"] = key
 			}
 		}
 	}

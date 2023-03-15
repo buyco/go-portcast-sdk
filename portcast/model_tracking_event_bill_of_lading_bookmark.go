@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
 
 API version: 1.0.0
 */
@@ -17,20 +17,20 @@ import (
 
 // TrackingEventBillOfLadingBookmark struct for TrackingEventBillOfLadingBookmark
 type TrackingEventBillOfLadingBookmark struct {
-	BlNo *string `json:"bl_no,omitempty"`
-	CarrierNo *string `json:"carrier_no,omitempty"`
-	CntrNo *string `json:"cntr_no,omitempty"`
-	Created *time.Time `json:"created,omitempty"`
-	CustomerId *string `json:"customer_id,omitempty"`
-	CustomerNo *string `json:"customer_no,omitempty"`
-	Deleted *bool `json:"deleted,omitempty"`
-	Id *string `json:"id,omitempty"`
-	OrgId *string `json:"org_id,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusCode *string `json:"status_code,omitempty"`
-	SystemDeleted *bool `json:"system_deleted,omitempty"`
-	Updated *time.Time `json:"updated,omitempty"`
-	VoyageNo *string `json:"voyage_no,omitempty"`
+	BlNo          *string    `json:"bl_no,omitempty"`
+	CarrierNo     *string    `json:"carrier_no,omitempty"`
+	CntrNo        *string    `json:"cntr_no,omitempty"`
+	Created       *time.Time `json:"created,omitempty"`
+	CustomerId    *string    `json:"customer_id,omitempty"`
+	CustomerNo    *string    `json:"customer_no,omitempty"`
+	Deleted       *bool      `json:"deleted,omitempty"`
+	Id            *string    `json:"id,omitempty"`
+	OrgId         *string    `json:"org_id,omitempty"`
+	Status        *string    `json:"status,omitempty"`
+	StatusCode    *string    `json:"status_code,omitempty"`
+	SystemDeleted *bool      `json:"system_deleted,omitempty"`
+	Updated       *time.Time `json:"updated,omitempty"`
+	VoyageNo      *string    `json:"voyage_no,omitempty"`
 }
 
 // NewTrackingEventBillOfLadingBookmark instantiates a new TrackingEventBillOfLadingBookmark object
@@ -580,5 +580,3 @@ func (v *NullableTrackingEventBillOfLadingBookmark) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

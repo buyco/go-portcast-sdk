@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
 
 API version: 1.0.0
 */
@@ -16,31 +16,31 @@ import (
 
 // TrackingEventVoyageDetails struct for TrackingEventVoyageDetails
 type TrackingEventVoyageDetails struct {
-	ActiveScac *string `json:"active_scac,omitempty"`
-	ActualArrivalLt *string `json:"actual_arrival_lt,omitempty"`
-	ActualArrivalUtc *string `json:"actual_arrival_utc,omitempty"`
-	ActualDepartureLt *string `json:"actual_departure_lt,omitempty"`
-	ActualDepartureUtc *string `json:"actual_departure_utc,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Index *int32 `json:"index,omitempty"`
-	Lat *float32 `json:"lat,omitempty"`
-	Lon *float32 `json:"lon,omitempty"`
-	OriginalVoyageNo *string `json:"original_voyage_no,omitempty"`
-	PortCode *string `json:"port_code,omitempty"`
-	PortName *string `json:"port_name,omitempty"`
-	PredictedArrivalLt *string `json:"predicted_arrival_lt,omitempty"`
-	PredictedArrivalUtc *string `json:"predicted_arrival_utc,omitempty"`
-	PredictedDepartureLt *string `json:"predicted_departure_lt,omitempty"`
-	PredictedDepartureUtc *string `json:"predicted_departure_utc,omitempty"`
-	PredictionTimeUtc *string `json:"prediction_time_utc,omitempty"`
-	ScheduledArrivalLt *string `json:"scheduled_arrival_lt,omitempty"`
-	ScheduledArrivalOnTimeConfidence *string `json:"scheduled_arrival_on_time_confidence,omitempty"`
-	ScheduledArrivalUtc *string `json:"scheduled_arrival_utc,omitempty"`
-	ScheduledDepartureLt *string `json:"scheduled_departure_lt,omitempty"`
-	ScheduledDepartureOnTimeConfidence *string `json:"scheduled_departure_on_time_confidence,omitempty"`
-	ScheduledDepartureUtc *string `json:"scheduled_departure_utc,omitempty"`
-	Timezone *string `json:"timezone,omitempty"`
-	VoyageNoList *[]string `json:"voyage_no_list,omitempty"`
+	ActiveScac                         *string   `json:"active_scac,omitempty"`
+	ActualArrivalLt                    *string   `json:"actual_arrival_lt,omitempty"`
+	ActualArrivalUtc                   *string   `json:"actual_arrival_utc,omitempty"`
+	ActualDepartureLt                  *string   `json:"actual_departure_lt,omitempty"`
+	ActualDepartureUtc                 *string   `json:"actual_departure_utc,omitempty"`
+	Id                                 *string   `json:"id,omitempty"`
+	Index                              *int32    `json:"index,omitempty"`
+	Lat                                *float32  `json:"lat,omitempty"`
+	Lon                                *float32  `json:"lon,omitempty"`
+	OriginalVoyageNo                   *string   `json:"original_voyage_no,omitempty"`
+	PortCode                           *string   `json:"port_code,omitempty"`
+	PortName                           *string   `json:"port_name,omitempty"`
+	PredictedArrivalLt                 *string   `json:"predicted_arrival_lt,omitempty"`
+	PredictedArrivalUtc                *string   `json:"predicted_arrival_utc,omitempty"`
+	PredictedDepartureLt               *string   `json:"predicted_departure_lt,omitempty"`
+	PredictedDepartureUtc              *string   `json:"predicted_departure_utc,omitempty"`
+	PredictionTimeUtc                  *string   `json:"prediction_time_utc,omitempty"`
+	ScheduledArrivalLt                 *string   `json:"scheduled_arrival_lt,omitempty"`
+	ScheduledArrivalOnTimeConfidence   *string   `json:"scheduled_arrival_on_time_confidence,omitempty"`
+	ScheduledArrivalUtc                *string   `json:"scheduled_arrival_utc,omitempty"`
+	ScheduledDepartureLt               *string   `json:"scheduled_departure_lt,omitempty"`
+	ScheduledDepartureOnTimeConfidence *string   `json:"scheduled_departure_on_time_confidence,omitempty"`
+	ScheduledDepartureUtc              *string   `json:"scheduled_departure_utc,omitempty"`
+	Timezone                           *string   `json:"timezone,omitempty"`
+	VoyageNoList                       *[]string `json:"voyage_no_list,omitempty"`
 }
 
 // NewTrackingEventVoyageDetails instantiates a new TrackingEventVoyageDetails object
@@ -975,5 +975,3 @@ func (v *NullableTrackingEventVoyageDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

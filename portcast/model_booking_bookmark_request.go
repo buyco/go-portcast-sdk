@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
 
 API version: 1.0.0
 */
@@ -16,8 +16,8 @@ import (
 
 // BookingBookmarkRequest struct for BookingBookmarkRequest
 type BookingBookmarkRequest struct {
-	DocType string `json:"doc_type"`
-	DocNo string `json:"doc_no"`
+	DocType   string `json:"doc_type"`
+	DocNo     string `json:"doc_no"`
 	CarrierNo string `json:"carrier_no"`
 }
 
@@ -54,7 +54,7 @@ func (o *BookingBookmarkRequest) GetDocType() string {
 // GetDocTypeOk returns a tuple with the DocType field value
 // and a boolean to check if the value has been set.
 func (o *BookingBookmarkRequest) GetDocTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DocType, true
@@ -78,7 +78,7 @@ func (o *BookingBookmarkRequest) GetDocNo() string {
 // GetDocNoOk returns a tuple with the DocNo field value
 // and a boolean to check if the value has been set.
 func (o *BookingBookmarkRequest) GetDocNoOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DocNo, true
@@ -102,7 +102,7 @@ func (o *BookingBookmarkRequest) GetCarrierNo() string {
 // GetCarrierNoOk returns a tuple with the CarrierNo field value
 // and a boolean to check if the value has been set.
 func (o *BookingBookmarkRequest) GetCarrierNoOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CarrierNo, true
@@ -162,5 +162,3 @@ func (v *NullableBookingBookmarkRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
