@@ -14,100 +14,93 @@ import (
 	"encoding/json"
 )
 
-// AuthError struct for AuthError
-type AuthError struct {
-	Error *string `json:"Error,omitempty"`
+// CustomerRequest struct for CustomerRequest
+type CustomerRequest struct {
+	Customer string `json:"customer"`
 }
 
-// NewAuthError instantiates a new AuthError object
+// NewCustomerRequest instantiates a new CustomerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthError() *AuthError {
-	this := AuthError{}
+func NewCustomerRequest(customer string) *CustomerRequest {
+	this := CustomerRequest{}
+	this.Customer = customer
 	return &this
 }
 
-// NewAuthErrorWithDefaults instantiates a new AuthError object
+// NewCustomerRequestWithDefaults instantiates a new CustomerRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAuthErrorWithDefaults() *AuthError {
-	this := AuthError{}
+func NewCustomerRequestWithDefaults() *CustomerRequest {
+	this := CustomerRequest{}
 	return &this
 }
 
-// GetError returns the Error field value if set, zero value otherwise.
-func (o *AuthError) GetError() string {
-	if o == nil || o.Error == nil {
+// GetCustomer returns the Customer field value
+func (o *CustomerRequest) GetCustomer() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Error
+
+	return o.Customer
 }
 
-// GetErrorOk returns a tuple with the Error field value if set, nil otherwise
+// GetCustomerOk returns a tuple with the Customer field value
 // and a boolean to check if the value has been set.
-func (o *AuthError) GetErrorOk() (*string, bool) {
-	if o == nil || o.Error == nil {
+func (o *CustomerRequest) GetCustomerOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Error, true
+	return &o.Customer, true
 }
 
-// HasError returns a boolean if a field has been set.
-func (o *AuthError) HasError() bool {
-	if o != nil && o.Error != nil {
-		return true
-	}
-
-	return false
+// SetCustomer sets field value
+func (o *CustomerRequest) SetCustomer(v string) {
+	o.Customer = v
 }
 
-// SetError gets a reference to the given string and assigns it to the Error field.
-func (o *AuthError) SetError(v string) {
-	o.Error = &v
-}
-
-func (o AuthError) MarshalJSON() ([]byte, error) {
+func (o CustomerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Error != nil {
-		toSerialize["Error"] = o.Error
+	if true {
+		toSerialize["customer"] = o.Customer
 	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableAuthError struct {
-	value *AuthError
+type NullableCustomerRequest struct {
+	value *CustomerRequest
 	isSet bool
 }
 
-func (v NullableAuthError) Get() *AuthError {
+func (v NullableCustomerRequest) Get() *CustomerRequest {
 	return v.value
 }
 
-func (v *NullableAuthError) Set(val *AuthError) {
+func (v *NullableCustomerRequest) Set(val *CustomerRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAuthError) IsSet() bool {
+func (v NullableCustomerRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAuthError) Unset() {
+func (v *NullableCustomerRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAuthError(val *AuthError) *NullableAuthError {
-	return &NullableAuthError{value: val, isSet: true}
+func NewNullableCustomerRequest(val *CustomerRequest) *NullableCustomerRequest {
+	return &NullableCustomerRequest{value: val, isSet: true}
 }
 
-func (v NullableAuthError) MarshalJSON() ([]byte, error) {
+func (v NullableCustomerRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAuthError) UnmarshalJSON(src []byte) error {
+func (v *NullableCustomerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

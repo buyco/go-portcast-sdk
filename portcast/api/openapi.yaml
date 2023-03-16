@@ -20,7 +20,7 @@ servers:
 security:
 - authorization: []
 - x-api-key: []
-- x-org-api-key: []
+- x-customer: []
 tags:
 - description: Restful operations on vessel bookmarks
   name: Booking Bookmarks
@@ -28,7 +28,85 @@ tags:
   name: Bill of Lading Bookmarks
 - description: Get tracking results for the vessel bookmarks
   name: Tracking
+- name: Customers
 paths:
+  /org/customers:
+    get:
+      operationId: ListCustomers
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customersResponse'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpected error
+      security:
+      - x-api-key: []
+      summary: Get a list of customers
+      tags:
+      - Customers
+    post:
+      operationId: CreateCustomer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customerRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer'
+          description: Successful response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authError'
+          description: Invalid API key
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/messageModel'
+          description: Internal server error / Unexpect error
+      security:
+      - x-api-key: []
+      summary: Create a new customer
+      tags:
+      - Customers
   /eta/booking:
     post:
       description: |-
@@ -1537,6 +1615,31 @@ components:
         message:
           example: API Quota Exceeded
           type: string
+      type: object
+    customer:
+      example:
+        created: 2000-01-23T04:56:07.000+00:00
+        name: name
+      properties:
+        created:
+          format: date-time
+          type: string
+        name:
+          type: string
+      required:
+      - created
+      - name
+      type: object
+    customersResponse:
+      items:
+        $ref: '#/components/schemas/customer'
+      type: array
+    customerRequest:
+      properties:
+        customer:
+          type: string
+      required:
+      - customer
       type: object
     bookingBookmarkRequest:
       properties:
@@ -3253,7 +3356,7 @@ components:
       in: header
       name: x-api-key
       type: apiKey
-    x-org-api-key:
+    x-customer:
       in: header
-      name: x-org-api-key
+      name: x-customer
       type: apiKey

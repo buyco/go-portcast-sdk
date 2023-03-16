@@ -9,6 +9,11 @@ GO_CLIENT := -g go -o /sdk/portcast \
 GOBASE := $(shell pwd)
 GOBIN := $(GOBASE)/bin
 
+## lint: Run go fmt
+fmt:
+	@echo "  >  Running go formatter..."
+	gofmt -w -s ./portcast 1>&2
+
 ## generate: Clean and generate SDK from file.
 generate:
 	${MAKE} clean

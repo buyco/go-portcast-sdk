@@ -16,8 +16,8 @@ import (
 
 // RestfulBookingModel struct for RestfulBookingModel
 type RestfulBookingModel struct {
-	DocType string `json:"doc_type"`
-	DocNo string `json:"doc_no"`
+	DocType   string `json:"doc_type"`
+	DocNo     string `json:"doc_no"`
 	CarrierNo string `json:"carrier_no"`
 }
 
@@ -54,7 +54,7 @@ func (o *RestfulBookingModel) GetDocType() string {
 // GetDocTypeOk returns a tuple with the DocType field value
 // and a boolean to check if the value has been set.
 func (o *RestfulBookingModel) GetDocTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DocType, true
@@ -78,7 +78,7 @@ func (o *RestfulBookingModel) GetDocNo() string {
 // GetDocNoOk returns a tuple with the DocNo field value
 // and a boolean to check if the value has been set.
 func (o *RestfulBookingModel) GetDocNoOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DocNo, true
@@ -102,7 +102,7 @@ func (o *RestfulBookingModel) GetCarrierNo() string {
 // GetCarrierNoOk returns a tuple with the CarrierNo field value
 // and a boolean to check if the value has been set.
 func (o *RestfulBookingModel) GetCarrierNoOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CarrierNo, true
@@ -162,5 +162,3 @@ func (v *NullableRestfulBookingModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

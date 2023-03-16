@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiHealthcheckGetRequest stru
 
 ### Authorization
 
-[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-org-api-key](../README.md#x-org-api-key)
+[authorization](../README.md#authorization), [x-api-key](../README.md#x-api-key), [x-customer](../README.md#x-customer)
 
 ### HTTP request headers
 

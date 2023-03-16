@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
 
 API version: 1.0.0
 */
@@ -17,40 +17,40 @@ import (
 
 // TrackingEventSailingInfo struct for TrackingEventSailingInfo
 type TrackingEventSailingInfo struct {
-	CarrierNo *string `json:"carrier_no,omitempty"`
-	Created *time.Time `json:"created,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Imo *string `json:"imo,omitempty"`
-	IsActive *bool `json:"is_active,omitempty"`
-	Pod *string `json:"pod,omitempty"`
-	PodActualArrivalLt *string `json:"pod_actual_arrival_lt,omitempty"`
-	PodActualDepartureLt *string `json:"pod_actual_departure_lt,omitempty"`
-	PodActualDischargeLt *string `json:"pod_actual_discharge_lt,omitempty"`
-	PodName *string `json:"pod_name,omitempty"`
-	PodPredictedArrivalLt *string `json:"pod_predicted_arrival_lt,omitempty"`
-	PodPredictedDepartureLt *string `json:"pod_predicted_departure_lt,omitempty"`
-	PodPredictedDischargeLt *string `json:"pod_predicted_discharge_lt,omitempty"`
-	PodScheduledArrivalLt *string `json:"pod_scheduled_arrival_lt,omitempty"`
-	PodScheduledDepartureLt *string `json:"pod_scheduled_departure_lt,omitempty"`
-	PodScheduledDischargeLt *string `json:"pod_scheduled_discharge_lt,omitempty"`
-	Pol *string `json:"pol,omitempty"`
-	PolActualArrivalLt *string `json:"pol_actual_arrival_lt,omitempty"`
-	PolActualDeparture *string `json:"pol_actual_departure,omitempty"`
-	PolActualDepartureLt *string `json:"pol_actual_departure_lt,omitempty"`
-	PolActualLoadingLt *string `json:"pol_actual_loading_lt,omitempty"`
-	PolName *string `json:"pol_name,omitempty"`
-	PolPredictedArrivalLt *string `json:"pol_predicted_arrival_lt,omitempty"`
-	PolPredictedDepartureLt *string `json:"pol_predicted_departure_lt,omitempty"`
-	PolPredictedLoadingLt *string `json:"pol_predicted_loading_lt,omitempty"`
-	PolScheduledArrivalLt *string `json:"pol_scheduled_arrival_lt,omitempty"`
-	PolScheduledDepartureLt *string `json:"pol_scheduled_departure_lt,omitempty"`
-	PolScheduledLoadingLt *string `json:"pol_scheduled_loading_lt,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusCode *string `json:"status_code,omitempty"`
-	Updated *time.Time `json:"updated,omitempty"`
-	VesselLeg *int32 `json:"vessel_leg,omitempty"`
-	VesselName *string `json:"vessel_name,omitempty"`
-	VoyageNo *string `json:"voyage_no,omitempty"`
+	CarrierNo               *string    `json:"carrier_no,omitempty"`
+	Created                 *time.Time `json:"created,omitempty"`
+	Id                      *string    `json:"id,omitempty"`
+	Imo                     *string    `json:"imo,omitempty"`
+	IsActive                *bool      `json:"is_active,omitempty"`
+	Pod                     *string    `json:"pod,omitempty"`
+	PodActualArrivalLt      *string    `json:"pod_actual_arrival_lt,omitempty"`
+	PodActualDepartureLt    *string    `json:"pod_actual_departure_lt,omitempty"`
+	PodActualDischargeLt    *string    `json:"pod_actual_discharge_lt,omitempty"`
+	PodName                 *string    `json:"pod_name,omitempty"`
+	PodPredictedArrivalLt   *string    `json:"pod_predicted_arrival_lt,omitempty"`
+	PodPredictedDepartureLt *string    `json:"pod_predicted_departure_lt,omitempty"`
+	PodPredictedDischargeLt *string    `json:"pod_predicted_discharge_lt,omitempty"`
+	PodScheduledArrivalLt   *string    `json:"pod_scheduled_arrival_lt,omitempty"`
+	PodScheduledDepartureLt *string    `json:"pod_scheduled_departure_lt,omitempty"`
+	PodScheduledDischargeLt *string    `json:"pod_scheduled_discharge_lt,omitempty"`
+	Pol                     *string    `json:"pol,omitempty"`
+	PolActualArrivalLt      *string    `json:"pol_actual_arrival_lt,omitempty"`
+	PolActualDeparture      *string    `json:"pol_actual_departure,omitempty"`
+	PolActualDepartureLt    *string    `json:"pol_actual_departure_lt,omitempty"`
+	PolActualLoadingLt      *string    `json:"pol_actual_loading_lt,omitempty"`
+	PolName                 *string    `json:"pol_name,omitempty"`
+	PolPredictedArrivalLt   *string    `json:"pol_predicted_arrival_lt,omitempty"`
+	PolPredictedDepartureLt *string    `json:"pol_predicted_departure_lt,omitempty"`
+	PolPredictedLoadingLt   *string    `json:"pol_predicted_loading_lt,omitempty"`
+	PolScheduledArrivalLt   *string    `json:"pol_scheduled_arrival_lt,omitempty"`
+	PolScheduledDepartureLt *string    `json:"pol_scheduled_departure_lt,omitempty"`
+	PolScheduledLoadingLt   *string    `json:"pol_scheduled_loading_lt,omitempty"`
+	Status                  *string    `json:"status,omitempty"`
+	StatusCode              *string    `json:"status_code,omitempty"`
+	Updated                 *time.Time `json:"updated,omitempty"`
+	VesselLeg               *int32     `json:"vessel_leg,omitempty"`
+	VesselName              *string    `json:"vessel_name,omitempty"`
+	VoyageNo                *string    `json:"voyage_no,omitempty"`
 }
 
 // NewTrackingEventSailingInfo instantiates a new TrackingEventSailingInfo object
@@ -1300,5 +1300,3 @@ func (v *NullableTrackingEventSailingInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

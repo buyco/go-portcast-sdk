@@ -95,6 +95,8 @@ Class | Method | HTTP request | Description
 *BillOfLadingBookmarksApi* | [**EtaBillOfLadingBookmarksGet**](docs/BillOfLadingBookmarksApi.md#etabillofladingbookmarksget) | **Get** /eta/bill-of-lading-bookmarks | Get a list of bookmarked bill of ladings
 *BillOfLadingBookmarksApi* | [**EtaBillOfLadingBookmarksPost**](docs/BillOfLadingBookmarksApi.md#etabillofladingbookmarkspost) | **Post** /eta/bill-of-lading-bookmarks | Create a new bill of lading bookmark
 *BookingBookmarksApi* | [**EtaBookingPost**](docs/BookingBookmarksApi.md#etabookingpost) | **Post** /eta/booking | Create new bookmarks for booking
+*CustomersApi* | [**CreateCustomer**](docs/CustomersApi.md#createcustomer) | **Post** /org/customers | Create a new customer
+*CustomersApi* | [**ListCustomers**](docs/CustomersApi.md#listcustomers) | **Get** /org/customers | Get a list of customers
 *DefaultApi* | [**HealthcheckGet**](docs/DefaultApi.md#healthcheckget) | **Get** /healthcheck | Health Check API
 *TrackingApi* | [**EtaTrackingBillOfLadingBookmarksBillOfLadingBookmarkIdGet**](docs/TrackingApi.md#etatrackingbillofladingbookmarksbillofladingbookmarkidget) | **Get** /eta/tracking/bill-of-lading-bookmarks/{bill_of_lading_bookmark_id} | Get bill of lading bookmark tracking results for a particular bill of lading bookmark by ID
 *TrackingApi* | [**EtaTrackingBillOfLadingBookmarksGet**](docs/TrackingApi.md#etatrackingbillofladingbookmarksget) | **Get** /eta/tracking/bill-of-lading-bookmarks | Get a list of bill of lading bookmark tracking results based on filters
@@ -110,6 +112,8 @@ Class | Method | HTTP request | Description
  - [Bookmark](docs/Bookmark.md)
  - [BookmarkResponse](docs/BookmarkResponse.md)
  - [ContainerBookmarkRequest](docs/ContainerBookmarkRequest.md)
+ - [Customer](docs/Customer.md)
+ - [CustomerRequest](docs/CustomerRequest.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
@@ -146,13 +150,13 @@ Note, each API key must be added to a map of `map[string]APIKey` where the key i
 Note, each API key must be added to a map of `map[string]APIKey` where the key is: x-api-key and passed in as the auth context for each request.
 
 
-### x-org-api-key
+### x-customer
 
 - **Type**: API key
-- **API key parameter name**: x-org-api-key
+- **API key parameter name**: x-customer
 - **Location**: HTTP header
 
-Note, each API key must be added to a map of `map[string]APIKey` where the key is: x-org-api-key and passed in as the auth context for each request.
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: x-customer and passed in as the auth context for each request.
 
 
 ## Documentation for Utility Methods
