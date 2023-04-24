@@ -7,10 +7,8 @@ Name | Type | Description | Notes
 **ActualArrivalLt** | Pointer to **string** |  | [optional] 
 **ActualArrivalUtc** | Pointer to **string** |  | [optional] 
 **Ais** | Pointer to [**TrackingEventAis**](TrackingEventAis.md) |  | [optional] 
-**Cancelled** | Pointer to **bool** |  | [optional] 
 **PredictedArrivalLt** | Pointer to **string** |  | [optional] 
 **PredictedArrivalUtc** | Pointer to **string** |  | [optional] 
-**PredictionConfidenceLevel** | Pointer to **string** |  | [optional] 
 **PredictionTimeUtc** | Pointer to **string** |  | [optional] 
 **SailingInfo** | Pointer to [**TrackingEventSailingInfo**](TrackingEventSailingInfo.md) |  | [optional] 
 **ScheduledArrivalLt** | Pointer to **string** |  | [optional] 
@@ -114,31 +112,6 @@ SetAis sets Ais field to given value.
 
 HasAis returns a boolean if a field has been set.
 
-### GetCancelled
-
-`func (o *TrackingEventSailingInfoTracking) GetCancelled() bool`
-
-GetCancelled returns the Cancelled field if non-nil, zero value otherwise.
-
-### GetCancelledOk
-
-`func (o *TrackingEventSailingInfoTracking) GetCancelledOk() (*bool, bool)`
-
-GetCancelledOk returns a tuple with the Cancelled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCancelled
-
-`func (o *TrackingEventSailingInfoTracking) SetCancelled(v bool)`
-
-SetCancelled sets Cancelled field to given value.
-
-### HasCancelled
-
-`func (o *TrackingEventSailingInfoTracking) HasCancelled() bool`
-
-HasCancelled returns a boolean if a field has been set.
-
 ### GetPredictedArrivalLt
 
 `func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLt() string`
@@ -188,31 +161,6 @@ SetPredictedArrivalUtc sets PredictedArrivalUtc field to given value.
 `func (o *TrackingEventSailingInfoTracking) HasPredictedArrivalUtc() bool`
 
 HasPredictedArrivalUtc returns a boolean if a field has been set.
-
-### GetPredictionConfidenceLevel
-
-`func (o *TrackingEventSailingInfoTracking) GetPredictionConfidenceLevel() string`
-
-GetPredictionConfidenceLevel returns the PredictionConfidenceLevel field if non-nil, zero value otherwise.
-
-### GetPredictionConfidenceLevelOk
-
-`func (o *TrackingEventSailingInfoTracking) GetPredictionConfidenceLevelOk() (*string, bool)`
-
-GetPredictionConfidenceLevelOk returns a tuple with the PredictionConfidenceLevel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPredictionConfidenceLevel
-
-`func (o *TrackingEventSailingInfoTracking) SetPredictionConfidenceLevel(v string)`
-
-SetPredictionConfidenceLevel sets PredictionConfidenceLevel field to given value.
-
-### HasPredictionConfidenceLevel
-
-`func (o *TrackingEventSailingInfoTracking) HasPredictionConfidenceLevel() bool`
-
-HasPredictionConfidenceLevel returns a boolean if a field has been set.
 
 ### GetPredictionTimeUtc
 

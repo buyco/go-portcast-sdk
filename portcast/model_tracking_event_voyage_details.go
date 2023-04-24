@@ -16,31 +16,28 @@ import (
 
 // TrackingEventVoyageDetails struct for TrackingEventVoyageDetails
 type TrackingEventVoyageDetails struct {
-	ActiveScac                         *string   `json:"active_scac,omitempty"`
-	ActualArrivalLt                    *string   `json:"actual_arrival_lt,omitempty"`
-	ActualArrivalUtc                   *string   `json:"actual_arrival_utc,omitempty"`
-	ActualDepartureLt                  *string   `json:"actual_departure_lt,omitempty"`
-	ActualDepartureUtc                 *string   `json:"actual_departure_utc,omitempty"`
-	Id                                 *string   `json:"id,omitempty"`
-	Index                              *int32    `json:"index,omitempty"`
-	Lat                                *float32  `json:"lat,omitempty"`
-	Lon                                *float32  `json:"lon,omitempty"`
-	OriginalVoyageNo                   *string   `json:"original_voyage_no,omitempty"`
-	PortCode                           *string   `json:"port_code,omitempty"`
-	PortName                           *string   `json:"port_name,omitempty"`
-	PredictedArrivalLt                 *string   `json:"predicted_arrival_lt,omitempty"`
-	PredictedArrivalUtc                *string   `json:"predicted_arrival_utc,omitempty"`
-	PredictedDepartureLt               *string   `json:"predicted_departure_lt,omitempty"`
-	PredictedDepartureUtc              *string   `json:"predicted_departure_utc,omitempty"`
-	PredictionTimeUtc                  *string   `json:"prediction_time_utc,omitempty"`
-	ScheduledArrivalLt                 *string   `json:"scheduled_arrival_lt,omitempty"`
-	ScheduledArrivalOnTimeConfidence   *string   `json:"scheduled_arrival_on_time_confidence,omitempty"`
-	ScheduledArrivalUtc                *string   `json:"scheduled_arrival_utc,omitempty"`
-	ScheduledDepartureLt               *string   `json:"scheduled_departure_lt,omitempty"`
-	ScheduledDepartureOnTimeConfidence *string   `json:"scheduled_departure_on_time_confidence,omitempty"`
-	ScheduledDepartureUtc              *string   `json:"scheduled_departure_utc,omitempty"`
-	Timezone                           *string   `json:"timezone,omitempty"`
-	VoyageNoList                       *[]string `json:"voyage_no_list,omitempty"`
+	ActiveScac            *string   `json:"active_scac,omitempty"`
+	ActualArrivalLt       *string   `json:"actual_arrival_lt,omitempty"`
+	ActualArrivalUtc      *string   `json:"actual_arrival_utc,omitempty"`
+	ActualDepartureLt     *string   `json:"actual_departure_lt,omitempty"`
+	ActualDepartureUtc    *string   `json:"actual_departure_utc,omitempty"`
+	Id                    *string   `json:"id,omitempty"`
+	Index                 *int32    `json:"index,omitempty"`
+	Lat                   *float32  `json:"lat,omitempty"`
+	Lon                   *float32  `json:"lon,omitempty"`
+	PortCode              *string   `json:"port_code,omitempty"`
+	PortName              *string   `json:"port_name,omitempty"`
+	PredictedArrivalLt    *string   `json:"predicted_arrival_lt,omitempty"`
+	PredictedArrivalUtc   *string   `json:"predicted_arrival_utc,omitempty"`
+	PredictedDepartureLt  *string   `json:"predicted_departure_lt,omitempty"`
+	PredictedDepartureUtc *string   `json:"predicted_departure_utc,omitempty"`
+	PredictionTimeUtc     *string   `json:"prediction_time_utc,omitempty"`
+	ScheduledArrivalLt    *string   `json:"scheduled_arrival_lt,omitempty"`
+	ScheduledArrivalUtc   *string   `json:"scheduled_arrival_utc,omitempty"`
+	ScheduledDepartureLt  *string   `json:"scheduled_departure_lt,omitempty"`
+	ScheduledDepartureUtc *string   `json:"scheduled_departure_utc,omitempty"`
+	Timezone              *string   `json:"timezone,omitempty"`
+	VoyageNoList          *[]string `json:"voyage_no_list,omitempty"`
 }
 
 // NewTrackingEventVoyageDetails instantiates a new TrackingEventVoyageDetails object
@@ -348,38 +345,6 @@ func (o *TrackingEventVoyageDetails) SetLon(v float32) {
 	o.Lon = &v
 }
 
-// GetOriginalVoyageNo returns the OriginalVoyageNo field value if set, zero value otherwise.
-func (o *TrackingEventVoyageDetails) GetOriginalVoyageNo() string {
-	if o == nil || o.OriginalVoyageNo == nil {
-		var ret string
-		return ret
-	}
-	return *o.OriginalVoyageNo
-}
-
-// GetOriginalVoyageNoOk returns a tuple with the OriginalVoyageNo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEventVoyageDetails) GetOriginalVoyageNoOk() (*string, bool) {
-	if o == nil || o.OriginalVoyageNo == nil {
-		return nil, false
-	}
-	return o.OriginalVoyageNo, true
-}
-
-// HasOriginalVoyageNo returns a boolean if a field has been set.
-func (o *TrackingEventVoyageDetails) HasOriginalVoyageNo() bool {
-	if o != nil && o.OriginalVoyageNo != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOriginalVoyageNo gets a reference to the given string and assigns it to the OriginalVoyageNo field.
-func (o *TrackingEventVoyageDetails) SetOriginalVoyageNo(v string) {
-	o.OriginalVoyageNo = &v
-}
-
 // GetPortCode returns the PortCode field value if set, zero value otherwise.
 func (o *TrackingEventVoyageDetails) GetPortCode() string {
 	if o == nil || o.PortCode == nil {
@@ -636,38 +601,6 @@ func (o *TrackingEventVoyageDetails) SetScheduledArrivalLt(v string) {
 	o.ScheduledArrivalLt = &v
 }
 
-// GetScheduledArrivalOnTimeConfidence returns the ScheduledArrivalOnTimeConfidence field value if set, zero value otherwise.
-func (o *TrackingEventVoyageDetails) GetScheduledArrivalOnTimeConfidence() string {
-	if o == nil || o.ScheduledArrivalOnTimeConfidence == nil {
-		var ret string
-		return ret
-	}
-	return *o.ScheduledArrivalOnTimeConfidence
-}
-
-// GetScheduledArrivalOnTimeConfidenceOk returns a tuple with the ScheduledArrivalOnTimeConfidence field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEventVoyageDetails) GetScheduledArrivalOnTimeConfidenceOk() (*string, bool) {
-	if o == nil || o.ScheduledArrivalOnTimeConfidence == nil {
-		return nil, false
-	}
-	return o.ScheduledArrivalOnTimeConfidence, true
-}
-
-// HasScheduledArrivalOnTimeConfidence returns a boolean if a field has been set.
-func (o *TrackingEventVoyageDetails) HasScheduledArrivalOnTimeConfidence() bool {
-	if o != nil && o.ScheduledArrivalOnTimeConfidence != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetScheduledArrivalOnTimeConfidence gets a reference to the given string and assigns it to the ScheduledArrivalOnTimeConfidence field.
-func (o *TrackingEventVoyageDetails) SetScheduledArrivalOnTimeConfidence(v string) {
-	o.ScheduledArrivalOnTimeConfidence = &v
-}
-
 // GetScheduledArrivalUtc returns the ScheduledArrivalUtc field value if set, zero value otherwise.
 func (o *TrackingEventVoyageDetails) GetScheduledArrivalUtc() string {
 	if o == nil || o.ScheduledArrivalUtc == nil {
@@ -730,38 +663,6 @@ func (o *TrackingEventVoyageDetails) HasScheduledDepartureLt() bool {
 // SetScheduledDepartureLt gets a reference to the given string and assigns it to the ScheduledDepartureLt field.
 func (o *TrackingEventVoyageDetails) SetScheduledDepartureLt(v string) {
 	o.ScheduledDepartureLt = &v
-}
-
-// GetScheduledDepartureOnTimeConfidence returns the ScheduledDepartureOnTimeConfidence field value if set, zero value otherwise.
-func (o *TrackingEventVoyageDetails) GetScheduledDepartureOnTimeConfidence() string {
-	if o == nil || o.ScheduledDepartureOnTimeConfidence == nil {
-		var ret string
-		return ret
-	}
-	return *o.ScheduledDepartureOnTimeConfidence
-}
-
-// GetScheduledDepartureOnTimeConfidenceOk returns a tuple with the ScheduledDepartureOnTimeConfidence field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEventVoyageDetails) GetScheduledDepartureOnTimeConfidenceOk() (*string, bool) {
-	if o == nil || o.ScheduledDepartureOnTimeConfidence == nil {
-		return nil, false
-	}
-	return o.ScheduledDepartureOnTimeConfidence, true
-}
-
-// HasScheduledDepartureOnTimeConfidence returns a boolean if a field has been set.
-func (o *TrackingEventVoyageDetails) HasScheduledDepartureOnTimeConfidence() bool {
-	if o != nil && o.ScheduledDepartureOnTimeConfidence != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetScheduledDepartureOnTimeConfidence gets a reference to the given string and assigns it to the ScheduledDepartureOnTimeConfidence field.
-func (o *TrackingEventVoyageDetails) SetScheduledDepartureOnTimeConfidence(v string) {
-	o.ScheduledDepartureOnTimeConfidence = &v
 }
 
 // GetScheduledDepartureUtc returns the ScheduledDepartureUtc field value if set, zero value otherwise.
@@ -889,9 +790,6 @@ func (o TrackingEventVoyageDetails) MarshalJSON() ([]byte, error) {
 	if o.Lon != nil {
 		toSerialize["lon"] = o.Lon
 	}
-	if o.OriginalVoyageNo != nil {
-		toSerialize["original_voyage_no"] = o.OriginalVoyageNo
-	}
 	if o.PortCode != nil {
 		toSerialize["port_code"] = o.PortCode
 	}
@@ -916,17 +814,11 @@ func (o TrackingEventVoyageDetails) MarshalJSON() ([]byte, error) {
 	if o.ScheduledArrivalLt != nil {
 		toSerialize["scheduled_arrival_lt"] = o.ScheduledArrivalLt
 	}
-	if o.ScheduledArrivalOnTimeConfidence != nil {
-		toSerialize["scheduled_arrival_on_time_confidence"] = o.ScheduledArrivalOnTimeConfidence
-	}
 	if o.ScheduledArrivalUtc != nil {
 		toSerialize["scheduled_arrival_utc"] = o.ScheduledArrivalUtc
 	}
 	if o.ScheduledDepartureLt != nil {
 		toSerialize["scheduled_departure_lt"] = o.ScheduledDepartureLt
-	}
-	if o.ScheduledDepartureOnTimeConfidence != nil {
-		toSerialize["scheduled_departure_on_time_confidence"] = o.ScheduledDepartureOnTimeConfidence
 	}
 	if o.ScheduledDepartureUtc != nil {
 		toSerialize["scheduled_departure_utc"] = o.ScheduledDepartureUtc

@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **CarrierNo** | Pointer to **string** |  | [optional] 
 **CntrNo** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **time.Time** |  | [optional] 
-**CustomerId** | Pointer to **string** |  | [optional] 
-**CustomerNo** | Pointer to **string** |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **OrgId** | Pointer to **string** |  | [optional] 
@@ -137,56 +135,6 @@ SetCreated sets Created field to given value.
 `func (o *TrackingEventBillOfLadingBookmark) HasCreated() bool`
 
 HasCreated returns a boolean if a field has been set.
-
-### GetCustomerId
-
-`func (o *TrackingEventBillOfLadingBookmark) GetCustomerId() string`
-
-GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
-
-### GetCustomerIdOk
-
-`func (o *TrackingEventBillOfLadingBookmark) GetCustomerIdOk() (*string, bool)`
-
-GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerId
-
-`func (o *TrackingEventBillOfLadingBookmark) SetCustomerId(v string)`
-
-SetCustomerId sets CustomerId field to given value.
-
-### HasCustomerId
-
-`func (o *TrackingEventBillOfLadingBookmark) HasCustomerId() bool`
-
-HasCustomerId returns a boolean if a field has been set.
-
-### GetCustomerNo
-
-`func (o *TrackingEventBillOfLadingBookmark) GetCustomerNo() string`
-
-GetCustomerNo returns the CustomerNo field if non-nil, zero value otherwise.
-
-### GetCustomerNoOk
-
-`func (o *TrackingEventBillOfLadingBookmark) GetCustomerNoOk() (*string, bool)`
-
-GetCustomerNoOk returns a tuple with the CustomerNo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerNo
-
-`func (o *TrackingEventBillOfLadingBookmark) SetCustomerNo(v string)`
-
-SetCustomerNo sets CustomerNo field to given value.
-
-### HasCustomerNo
-
-`func (o *TrackingEventBillOfLadingBookmark) HasCustomerNo() bool`
-
-HasCustomerNo returns a boolean if a field has been set.
 
 ### GetDeleted
 
