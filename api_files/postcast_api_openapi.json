@@ -897,23 +897,11 @@
           "bill_of_lading": {
             "type": "object",
             "properties": {
-              "actual_delivery_time": {
-                "type": "string",
-                "format": "nullable"
-              },
-              "actual_receipt_time": {
-                "type": "string",
-                "format": "nullable"
-              },
               "bl_no": {
                 "type": "string"
               },
               "carrier_no": {
                 "type": "string"
-              },
-              "cbm": {
-                "type": "string",
-                "format": "nullable"
               },
               "cntr_no": {
                 "type": "string"
@@ -924,10 +912,6 @@
               },
               "id": {
                 "type": "string"
-              },
-              "kgs": {
-                "type": "string",
-                "format": "nullable"
               },
               "place_of_delivery": {
                 "type": "string"
@@ -952,7 +936,11 @@
                 "type": "string",
                 "format": "nullable"
               },
-              "pod_actual_departure_lt": {
+              "pod_actual_arrival_lt_from_ais": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pod_actual_departure_lt_from_ais": {
                 "type": "string",
                 "format": "nullable"
               },
@@ -975,15 +963,15 @@
                 "type": "string",
                 "format": "nullable"
               },
-              "pod_predicted_discharge_lt": {
-                "type": "string",
-                "format": "nullable"
-              },
               "pod_scheduled_arrival_lt": {
                 "type": "string",
                 "format": "nullable"
               },
-              "pod_scheduled_departure_lt": {
+              "pod_scheduled_arrival_lt_from_schedule": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pod_scheduled_departure_lt_from_schedule": {
                 "type": "string",
                 "format": "nullable"
               },
@@ -998,7 +986,15 @@
                 "type": "string",
                 "format": "nullable"
               },
+              "pol_actual_arrival_lt_from_ais": {
+                "type": "string",
+                "format": "nullable"
+              },
               "pol_actual_departure_lt": {
+                "type": "string",
+                "format": "nullable"
+              },
+              "pol_actual_departure_lt_from_ais": {
                 "type": "string",
                 "format": "nullable"
               },
@@ -1017,11 +1013,7 @@
                 "type": "string",
                 "format": "nullable"
               },
-              "pol_predicted_loading_lt": {
-                "type": "string",
-                "format": "nullable"
-              },
-              "pol_scheduled_arrival_lt": {
+              "pol_scheduled_arrival_lt_from_schedule": {
                 "type": "string",
                 "format": "nullable"
               },
@@ -1029,15 +1021,11 @@
                 "type": "string",
                 "format": "nullable"
               },
+              "pol_scheduled_departure_lt_from_schedule": {
+                "type": "string",
+                "format": "nullable"
+              },
               "pol_scheduled_loading_lt": {
-                "type": "string",
-                "format": "nullable"
-              },
-              "scheduled_delivery_time": {
-                "type": "string",
-                "format": "nullable"
-              },
-              "scheduled_receipt_time": {
                 "type": "string",
                 "format": "nullable"
               },
@@ -1062,14 +1050,6 @@
               "created": {
                 "type": "string",
                 "format": "date-time"
-              },
-              "customer_id": {
-                "type": "string",
-                "format": "nullable"
-              },
-              "customer_no": {
-                "type": "string",
-                "format": "nullable"
               },
               "deleted": {
                 "type": "boolean"
@@ -1144,6 +1124,14 @@
                 "updated": {
                   "type": "string",
                   "format": "date-time"
+                },
+                "vessel_name": {
+                  "type": "string",
+                  "format": "nullable"
+                },
+                "vessel_imo": {
+                  "type": "string",
+                  "format": "nullable"
                 }
               }
             }
@@ -1205,18 +1193,11 @@
                     }
                   }
                 },
-                "cancelled": {
-                  "type": "boolean"
-                },
                 "predicted_arrival_lt": {
                   "type": "string",
                   "format": "nullable"
                 },
                 "predicted_arrival_utc": {
-                  "type": "string",
-                  "format": "nullable"
-                },
-                "prediction_confidence_level": {
                   "type": "string",
                   "format": "nullable"
                 },
@@ -1250,7 +1231,15 @@
                       "type": "string",
                       "format": "nullable"
                     },
+                    "pod_actual_arrival_lt_from_ais": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
                     "pod_actual_departure_lt": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
+                    "pod_actual_departure_lt_from_ais": {
                       "type": "string",
                       "format": "nullable"
                     },
@@ -1269,15 +1258,11 @@
                       "type": "string",
                       "format": "nullable"
                     },
-                    "pod_predicted_discharge_lt": {
-                      "type": "string",
-                      "format": "nullable"
-                    },
                     "pod_scheduled_arrival_lt": {
                       "type": "string",
                       "format": "nullable"
                     },
-                    "pod_scheduled_departure_lt": {
+                    "pod_scheduled_arrival_lt_from_schedule": {
                       "type": "string",
                       "format": "nullable"
                     },
@@ -1285,18 +1270,18 @@
                       "type": "string",
                       "format": "nullable"
                     },
+                    "pod_scheduled_departure_lt_from_schedule": {
+                      "type": "string",
+                      "format": "nullable"
+                    },
                     "pol": {
                       "type": "string"
                     },
-                    "pol_actual_arrival_lt": {
+                    "pol_actual_arrival_lt_from_ais": {
                       "type": "string",
                       "format": "nullable"
                     },
-                    "pol_actual_departure": {
-                      "type": "string",
-                      "format": "nullable"
-                    },
-                    "pol_actual_departure_lt": {
+                    "pol_actual_departure_lt_from_ais": {
                       "type": "string",
                       "format": "nullable"
                     },
@@ -1315,11 +1300,7 @@
                       "type": "string",
                       "format": "nullable"
                     },
-                    "pol_predicted_loading_lt": {
-                      "type": "string",
-                      "format": "nullable"
-                    },
-                    "pol_scheduled_arrival_lt": {
+                    "pol_scheduled_arrival_lt_from_schedule": {
                       "type": "string",
                       "format": "nullable"
                     },
@@ -1330,9 +1311,6 @@
                     "pol_scheduled_loading_lt": {
                       "type": "string",
                       "format": "nullable"
-                    },
-                    "status": {
-                      "type": "string"
                     },
                     "status_code": {
                       "type": "string"
@@ -1404,9 +1382,6 @@
                       "lon": {
                         "type": "number"
                       },
-                      "original_voyage_no": {
-                        "type": "string"
-                      },
                       "port_code": {
                         "type": "string"
                       },
@@ -1437,19 +1412,11 @@
                         "type": "string",
                         "format": "nullable"
                       },
-                      "scheduled_arrival_on_time_confidence": {
-                        "type": "string",
-                        "format": "nullable"
-                      },
                       "scheduled_arrival_utc": {
                         "type": "string",
                         "format": "nullable"
                       },
                       "scheduled_departure_lt": {
-                        "type": "string",
-                        "format": "nullable"
-                      },
-                      "scheduled_departure_on_time_confidence": {
                         "type": "string",
                         "format": "nullable"
                       },
@@ -1477,9 +1444,6 @@
                 }
               }
             }
-          },
-          "success": {
-            "type": "boolean"
           }
         }
       },

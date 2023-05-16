@@ -21,8 +21,6 @@ type TrackingEventBillOfLadingBookmark struct {
 	CarrierNo     *string    `json:"carrier_no,omitempty"`
 	CntrNo        *string    `json:"cntr_no,omitempty"`
 	Created       *time.Time `json:"created,omitempty"`
-	CustomerId    *string    `json:"customer_id,omitempty"`
-	CustomerNo    *string    `json:"customer_no,omitempty"`
 	Deleted       *bool      `json:"deleted,omitempty"`
 	Id            *string    `json:"id,omitempty"`
 	OrgId         *string    `json:"org_id,omitempty"`
@@ -176,70 +174,6 @@ func (o *TrackingEventBillOfLadingBookmark) HasCreated() bool {
 // SetCreated gets a reference to the given time.Time and assigns it to the Created field.
 func (o *TrackingEventBillOfLadingBookmark) SetCreated(v time.Time) {
 	o.Created = &v
-}
-
-// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
-func (o *TrackingEventBillOfLadingBookmark) GetCustomerId() string {
-	if o == nil || o.CustomerId == nil {
-		var ret string
-		return ret
-	}
-	return *o.CustomerId
-}
-
-// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEventBillOfLadingBookmark) GetCustomerIdOk() (*string, bool) {
-	if o == nil || o.CustomerId == nil {
-		return nil, false
-	}
-	return o.CustomerId, true
-}
-
-// HasCustomerId returns a boolean if a field has been set.
-func (o *TrackingEventBillOfLadingBookmark) HasCustomerId() bool {
-	if o != nil && o.CustomerId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
-func (o *TrackingEventBillOfLadingBookmark) SetCustomerId(v string) {
-	o.CustomerId = &v
-}
-
-// GetCustomerNo returns the CustomerNo field value if set, zero value otherwise.
-func (o *TrackingEventBillOfLadingBookmark) GetCustomerNo() string {
-	if o == nil || o.CustomerNo == nil {
-		var ret string
-		return ret
-	}
-	return *o.CustomerNo
-}
-
-// GetCustomerNoOk returns a tuple with the CustomerNo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEventBillOfLadingBookmark) GetCustomerNoOk() (*string, bool) {
-	if o == nil || o.CustomerNo == nil {
-		return nil, false
-	}
-	return o.CustomerNo, true
-}
-
-// HasCustomerNo returns a boolean if a field has been set.
-func (o *TrackingEventBillOfLadingBookmark) HasCustomerNo() bool {
-	if o != nil && o.CustomerNo != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCustomerNo gets a reference to the given string and assigns it to the CustomerNo field.
-func (o *TrackingEventBillOfLadingBookmark) SetCustomerNo(v string) {
-	o.CustomerNo = &v
 }
 
 // GetDeleted returns the Deleted field value if set, zero value otherwise.
@@ -511,12 +445,6 @@ func (o TrackingEventBillOfLadingBookmark) MarshalJSON() ([]byte, error) {
 	}
 	if o.Created != nil {
 		toSerialize["created"] = o.Created
-	}
-	if o.CustomerId != nil {
-		toSerialize["customer_id"] = o.CustomerId
-	}
-	if o.CustomerNo != nil {
-		toSerialize["customer_no"] = o.CustomerNo
 	}
 	if o.Deleted != nil {
 		toSerialize["deleted"] = o.Deleted

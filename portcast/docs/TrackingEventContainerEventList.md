@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **PortCode** | Pointer to **string** |  | [optional] 
 **PortName** | Pointer to **string** |  | [optional] 
 **Updated** | Pointer to **time.Time** |  | [optional] 
+**VesselName** | Pointer to **string** |  | [optional] 
+**VesselImo** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -361,6 +363,56 @@ SetUpdated sets Updated field to given value.
 `func (o *TrackingEventContainerEventList) HasUpdated() bool`
 
 HasUpdated returns a boolean if a field has been set.
+
+### GetVesselName
+
+`func (o *TrackingEventContainerEventList) GetVesselName() string`
+
+GetVesselName returns the VesselName field if non-nil, zero value otherwise.
+
+### GetVesselNameOk
+
+`func (o *TrackingEventContainerEventList) GetVesselNameOk() (*string, bool)`
+
+GetVesselNameOk returns a tuple with the VesselName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVesselName
+
+`func (o *TrackingEventContainerEventList) SetVesselName(v string)`
+
+SetVesselName sets VesselName field to given value.
+
+### HasVesselName
+
+`func (o *TrackingEventContainerEventList) HasVesselName() bool`
+
+HasVesselName returns a boolean if a field has been set.
+
+### GetVesselImo
+
+`func (o *TrackingEventContainerEventList) GetVesselImo() string`
+
+GetVesselImo returns the VesselImo field if non-nil, zero value otherwise.
+
+### GetVesselImoOk
+
+`func (o *TrackingEventContainerEventList) GetVesselImoOk() (*string, bool)`
+
+GetVesselImoOk returns a tuple with the VesselImo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVesselImo
+
+`func (o *TrackingEventContainerEventList) SetVesselImo(v string)`
+
+SetVesselImo sets VesselImo field to given value.
+
+### HasVesselImo
+
+`func (o *TrackingEventContainerEventList) HasVesselImo() bool`
+
+HasVesselImo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -16,21 +16,19 @@ import (
 
 // TrackingEventSailingInfoTracking struct for TrackingEventSailingInfoTracking
 type TrackingEventSailingInfoTracking struct {
-	ActualArrivalLt           *string                       `json:"actual_arrival_lt,omitempty"`
-	ActualArrivalUtc          *string                       `json:"actual_arrival_utc,omitempty"`
-	Ais                       *TrackingEventAis             `json:"ais,omitempty"`
-	Cancelled                 *bool                         `json:"cancelled,omitempty"`
-	PredictedArrivalLt        *string                       `json:"predicted_arrival_lt,omitempty"`
-	PredictedArrivalUtc       *string                       `json:"predicted_arrival_utc,omitempty"`
-	PredictionConfidenceLevel *string                       `json:"prediction_confidence_level,omitempty"`
-	PredictionTimeUtc         *string                       `json:"prediction_time_utc,omitempty"`
-	SailingInfo               *TrackingEventSailingInfo     `json:"sailing_info,omitempty"`
-	ScheduledArrivalLt        *string                       `json:"scheduled_arrival_lt,omitempty"`
-	ScheduledArrivalUtc       *string                       `json:"scheduled_arrival_utc,omitempty"`
-	TargetPortCode            *string                       `json:"target_port_code,omitempty"`
-	TargetPortName            *string                       `json:"target_port_name,omitempty"`
-	VoyageDetails             *[]TrackingEventVoyageDetails `json:"voyage_details,omitempty"`
-	VoyageNoList              *[]string                     `json:"voyage_no_list,omitempty"`
+	ActualArrivalLt     *string                       `json:"actual_arrival_lt,omitempty"`
+	ActualArrivalUtc    *string                       `json:"actual_arrival_utc,omitempty"`
+	Ais                 *TrackingEventAis             `json:"ais,omitempty"`
+	PredictedArrivalLt  *string                       `json:"predicted_arrival_lt,omitempty"`
+	PredictedArrivalUtc *string                       `json:"predicted_arrival_utc,omitempty"`
+	PredictionTimeUtc   *string                       `json:"prediction_time_utc,omitempty"`
+	SailingInfo         *TrackingEventSailingInfo     `json:"sailing_info,omitempty"`
+	ScheduledArrivalLt  *string                       `json:"scheduled_arrival_lt,omitempty"`
+	ScheduledArrivalUtc *string                       `json:"scheduled_arrival_utc,omitempty"`
+	TargetPortCode      *string                       `json:"target_port_code,omitempty"`
+	TargetPortName      *string                       `json:"target_port_name,omitempty"`
+	VoyageDetails       *[]TrackingEventVoyageDetails `json:"voyage_details,omitempty"`
+	VoyageNoList        *[]string                     `json:"voyage_no_list,omitempty"`
 }
 
 // NewTrackingEventSailingInfoTracking instantiates a new TrackingEventSailingInfoTracking object
@@ -146,38 +144,6 @@ func (o *TrackingEventSailingInfoTracking) SetAis(v TrackingEventAis) {
 	o.Ais = &v
 }
 
-// GetCancelled returns the Cancelled field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetCancelled() bool {
-	if o == nil || o.Cancelled == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Cancelled
-}
-
-// GetCancelledOk returns a tuple with the Cancelled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetCancelledOk() (*bool, bool) {
-	if o == nil || o.Cancelled == nil {
-		return nil, false
-	}
-	return o.Cancelled, true
-}
-
-// HasCancelled returns a boolean if a field has been set.
-func (o *TrackingEventSailingInfoTracking) HasCancelled() bool {
-	if o != nil && o.Cancelled != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCancelled gets a reference to the given bool and assigns it to the Cancelled field.
-func (o *TrackingEventSailingInfoTracking) SetCancelled(v bool) {
-	o.Cancelled = &v
-}
-
 // GetPredictedArrivalLt returns the PredictedArrivalLt field value if set, zero value otherwise.
 func (o *TrackingEventSailingInfoTracking) GetPredictedArrivalLt() string {
 	if o == nil || o.PredictedArrivalLt == nil {
@@ -240,38 +206,6 @@ func (o *TrackingEventSailingInfoTracking) HasPredictedArrivalUtc() bool {
 // SetPredictedArrivalUtc gets a reference to the given string and assigns it to the PredictedArrivalUtc field.
 func (o *TrackingEventSailingInfoTracking) SetPredictedArrivalUtc(v string) {
 	o.PredictedArrivalUtc = &v
-}
-
-// GetPredictionConfidenceLevel returns the PredictionConfidenceLevel field value if set, zero value otherwise.
-func (o *TrackingEventSailingInfoTracking) GetPredictionConfidenceLevel() string {
-	if o == nil || o.PredictionConfidenceLevel == nil {
-		var ret string
-		return ret
-	}
-	return *o.PredictionConfidenceLevel
-}
-
-// GetPredictionConfidenceLevelOk returns a tuple with the PredictionConfidenceLevel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEventSailingInfoTracking) GetPredictionConfidenceLevelOk() (*string, bool) {
-	if o == nil || o.PredictionConfidenceLevel == nil {
-		return nil, false
-	}
-	return o.PredictionConfidenceLevel, true
-}
-
-// HasPredictionConfidenceLevel returns a boolean if a field has been set.
-func (o *TrackingEventSailingInfoTracking) HasPredictionConfidenceLevel() bool {
-	if o != nil && o.PredictionConfidenceLevel != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPredictionConfidenceLevel gets a reference to the given string and assigns it to the PredictionConfidenceLevel field.
-func (o *TrackingEventSailingInfoTracking) SetPredictionConfidenceLevel(v string) {
-	o.PredictionConfidenceLevel = &v
 }
 
 // GetPredictionTimeUtc returns the PredictionTimeUtc field value if set, zero value otherwise.
@@ -541,17 +475,11 @@ func (o TrackingEventSailingInfoTracking) MarshalJSON() ([]byte, error) {
 	if o.Ais != nil {
 		toSerialize["ais"] = o.Ais
 	}
-	if o.Cancelled != nil {
-		toSerialize["cancelled"] = o.Cancelled
-	}
 	if o.PredictedArrivalLt != nil {
 		toSerialize["predicted_arrival_lt"] = o.PredictedArrivalLt
 	}
 	if o.PredictedArrivalUtc != nil {
 		toSerialize["predicted_arrival_utc"] = o.PredictedArrivalUtc
-	}
-	if o.PredictionConfidenceLevel != nil {
-		toSerialize["prediction_confidence_level"] = o.PredictionConfidenceLevel
 	}
 	if o.PredictionTimeUtc != nil {
 		toSerialize["prediction_time_utc"] = o.PredictionTimeUtc

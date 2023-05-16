@@ -11,28 +11,27 @@ Name | Type | Description | Notes
 **IsActive** | Pointer to **bool** |  | [optional] 
 **Pod** | Pointer to **string** |  | [optional] 
 **PodActualArrivalLt** | Pointer to **string** |  | [optional] 
+**PodActualArrivalLtFromAis** | Pointer to **string** |  | [optional] 
 **PodActualDepartureLt** | Pointer to **string** |  | [optional] 
+**PodActualDepartureLtFromAis** | Pointer to **string** |  | [optional] 
 **PodActualDischargeLt** | Pointer to **string** |  | [optional] 
 **PodName** | Pointer to **string** |  | [optional] 
 **PodPredictedArrivalLt** | Pointer to **string** |  | [optional] 
 **PodPredictedDepartureLt** | Pointer to **string** |  | [optional] 
-**PodPredictedDischargeLt** | Pointer to **string** |  | [optional] 
 **PodScheduledArrivalLt** | Pointer to **string** |  | [optional] 
-**PodScheduledDepartureLt** | Pointer to **string** |  | [optional] 
+**PodScheduledArrivalLtFromSchedule** | Pointer to **string** |  | [optional] 
 **PodScheduledDischargeLt** | Pointer to **string** |  | [optional] 
+**PodScheduledDepartureLtFromSchedule** | Pointer to **string** |  | [optional] 
 **Pol** | Pointer to **string** |  | [optional] 
-**PolActualArrivalLt** | Pointer to **string** |  | [optional] 
-**PolActualDeparture** | Pointer to **string** |  | [optional] 
-**PolActualDepartureLt** | Pointer to **string** |  | [optional] 
+**PolActualArrivalLtFromAis** | Pointer to **string** |  | [optional] 
+**PolActualDepartureLtFromAis** | Pointer to **string** |  | [optional] 
 **PolActualLoadingLt** | Pointer to **string** |  | [optional] 
 **PolName** | Pointer to **string** |  | [optional] 
 **PolPredictedArrivalLt** | Pointer to **string** |  | [optional] 
 **PolPredictedDepartureLt** | Pointer to **string** |  | [optional] 
-**PolPredictedLoadingLt** | Pointer to **string** |  | [optional] 
-**PolScheduledArrivalLt** | Pointer to **string** |  | [optional] 
+**PolScheduledArrivalLtFromSchedule** | Pointer to **string** |  | [optional] 
 **PolScheduledDepartureLt** | Pointer to **string** |  | [optional] 
 **PolScheduledLoadingLt** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
 **StatusCode** | Pointer to **string** |  | [optional] 
 **Updated** | Pointer to **time.Time** |  | [optional] 
 **VesselLeg** | Pointer to **int32** |  | [optional] 
@@ -233,6 +232,31 @@ SetPodActualArrivalLt sets PodActualArrivalLt field to given value.
 
 HasPodActualArrivalLt returns a boolean if a field has been set.
 
+### GetPodActualArrivalLtFromAis
+
+`func (o *TrackingEventSailingInfo) GetPodActualArrivalLtFromAis() string`
+
+GetPodActualArrivalLtFromAis returns the PodActualArrivalLtFromAis field if non-nil, zero value otherwise.
+
+### GetPodActualArrivalLtFromAisOk
+
+`func (o *TrackingEventSailingInfo) GetPodActualArrivalLtFromAisOk() (*string, bool)`
+
+GetPodActualArrivalLtFromAisOk returns a tuple with the PodActualArrivalLtFromAis field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPodActualArrivalLtFromAis
+
+`func (o *TrackingEventSailingInfo) SetPodActualArrivalLtFromAis(v string)`
+
+SetPodActualArrivalLtFromAis sets PodActualArrivalLtFromAis field to given value.
+
+### HasPodActualArrivalLtFromAis
+
+`func (o *TrackingEventSailingInfo) HasPodActualArrivalLtFromAis() bool`
+
+HasPodActualArrivalLtFromAis returns a boolean if a field has been set.
+
 ### GetPodActualDepartureLt
 
 `func (o *TrackingEventSailingInfo) GetPodActualDepartureLt() string`
@@ -257,6 +281,31 @@ SetPodActualDepartureLt sets PodActualDepartureLt field to given value.
 `func (o *TrackingEventSailingInfo) HasPodActualDepartureLt() bool`
 
 HasPodActualDepartureLt returns a boolean if a field has been set.
+
+### GetPodActualDepartureLtFromAis
+
+`func (o *TrackingEventSailingInfo) GetPodActualDepartureLtFromAis() string`
+
+GetPodActualDepartureLtFromAis returns the PodActualDepartureLtFromAis field if non-nil, zero value otherwise.
+
+### GetPodActualDepartureLtFromAisOk
+
+`func (o *TrackingEventSailingInfo) GetPodActualDepartureLtFromAisOk() (*string, bool)`
+
+GetPodActualDepartureLtFromAisOk returns a tuple with the PodActualDepartureLtFromAis field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPodActualDepartureLtFromAis
+
+`func (o *TrackingEventSailingInfo) SetPodActualDepartureLtFromAis(v string)`
+
+SetPodActualDepartureLtFromAis sets PodActualDepartureLtFromAis field to given value.
+
+### HasPodActualDepartureLtFromAis
+
+`func (o *TrackingEventSailingInfo) HasPodActualDepartureLtFromAis() bool`
+
+HasPodActualDepartureLtFromAis returns a boolean if a field has been set.
 
 ### GetPodActualDischargeLt
 
@@ -358,31 +407,6 @@ SetPodPredictedDepartureLt sets PodPredictedDepartureLt field to given value.
 
 HasPodPredictedDepartureLt returns a boolean if a field has been set.
 
-### GetPodPredictedDischargeLt
-
-`func (o *TrackingEventSailingInfo) GetPodPredictedDischargeLt() string`
-
-GetPodPredictedDischargeLt returns the PodPredictedDischargeLt field if non-nil, zero value otherwise.
-
-### GetPodPredictedDischargeLtOk
-
-`func (o *TrackingEventSailingInfo) GetPodPredictedDischargeLtOk() (*string, bool)`
-
-GetPodPredictedDischargeLtOk returns a tuple with the PodPredictedDischargeLt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPodPredictedDischargeLt
-
-`func (o *TrackingEventSailingInfo) SetPodPredictedDischargeLt(v string)`
-
-SetPodPredictedDischargeLt sets PodPredictedDischargeLt field to given value.
-
-### HasPodPredictedDischargeLt
-
-`func (o *TrackingEventSailingInfo) HasPodPredictedDischargeLt() bool`
-
-HasPodPredictedDischargeLt returns a boolean if a field has been set.
-
 ### GetPodScheduledArrivalLt
 
 `func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLt() string`
@@ -408,30 +432,30 @@ SetPodScheduledArrivalLt sets PodScheduledArrivalLt field to given value.
 
 HasPodScheduledArrivalLt returns a boolean if a field has been set.
 
-### GetPodScheduledDepartureLt
+### GetPodScheduledArrivalLtFromSchedule
 
-`func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLt() string`
+`func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLtFromSchedule() string`
 
-GetPodScheduledDepartureLt returns the PodScheduledDepartureLt field if non-nil, zero value otherwise.
+GetPodScheduledArrivalLtFromSchedule returns the PodScheduledArrivalLtFromSchedule field if non-nil, zero value otherwise.
 
-### GetPodScheduledDepartureLtOk
+### GetPodScheduledArrivalLtFromScheduleOk
 
-`func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLtOk() (*string, bool)`
+`func (o *TrackingEventSailingInfo) GetPodScheduledArrivalLtFromScheduleOk() (*string, bool)`
 
-GetPodScheduledDepartureLtOk returns a tuple with the PodScheduledDepartureLt field if it's non-nil, zero value otherwise
+GetPodScheduledArrivalLtFromScheduleOk returns a tuple with the PodScheduledArrivalLtFromSchedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPodScheduledDepartureLt
+### SetPodScheduledArrivalLtFromSchedule
 
-`func (o *TrackingEventSailingInfo) SetPodScheduledDepartureLt(v string)`
+`func (o *TrackingEventSailingInfo) SetPodScheduledArrivalLtFromSchedule(v string)`
 
-SetPodScheduledDepartureLt sets PodScheduledDepartureLt field to given value.
+SetPodScheduledArrivalLtFromSchedule sets PodScheduledArrivalLtFromSchedule field to given value.
 
-### HasPodScheduledDepartureLt
+### HasPodScheduledArrivalLtFromSchedule
 
-`func (o *TrackingEventSailingInfo) HasPodScheduledDepartureLt() bool`
+`func (o *TrackingEventSailingInfo) HasPodScheduledArrivalLtFromSchedule() bool`
 
-HasPodScheduledDepartureLt returns a boolean if a field has been set.
+HasPodScheduledArrivalLtFromSchedule returns a boolean if a field has been set.
 
 ### GetPodScheduledDischargeLt
 
@@ -458,6 +482,31 @@ SetPodScheduledDischargeLt sets PodScheduledDischargeLt field to given value.
 
 HasPodScheduledDischargeLt returns a boolean if a field has been set.
 
+### GetPodScheduledDepartureLtFromSchedule
+
+`func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLtFromSchedule() string`
+
+GetPodScheduledDepartureLtFromSchedule returns the PodScheduledDepartureLtFromSchedule field if non-nil, zero value otherwise.
+
+### GetPodScheduledDepartureLtFromScheduleOk
+
+`func (o *TrackingEventSailingInfo) GetPodScheduledDepartureLtFromScheduleOk() (*string, bool)`
+
+GetPodScheduledDepartureLtFromScheduleOk returns a tuple with the PodScheduledDepartureLtFromSchedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPodScheduledDepartureLtFromSchedule
+
+`func (o *TrackingEventSailingInfo) SetPodScheduledDepartureLtFromSchedule(v string)`
+
+SetPodScheduledDepartureLtFromSchedule sets PodScheduledDepartureLtFromSchedule field to given value.
+
+### HasPodScheduledDepartureLtFromSchedule
+
+`func (o *TrackingEventSailingInfo) HasPodScheduledDepartureLtFromSchedule() bool`
+
+HasPodScheduledDepartureLtFromSchedule returns a boolean if a field has been set.
+
 ### GetPol
 
 `func (o *TrackingEventSailingInfo) GetPol() string`
@@ -483,80 +532,55 @@ SetPol sets Pol field to given value.
 
 HasPol returns a boolean if a field has been set.
 
-### GetPolActualArrivalLt
+### GetPolActualArrivalLtFromAis
 
-`func (o *TrackingEventSailingInfo) GetPolActualArrivalLt() string`
+`func (o *TrackingEventSailingInfo) GetPolActualArrivalLtFromAis() string`
 
-GetPolActualArrivalLt returns the PolActualArrivalLt field if non-nil, zero value otherwise.
+GetPolActualArrivalLtFromAis returns the PolActualArrivalLtFromAis field if non-nil, zero value otherwise.
 
-### GetPolActualArrivalLtOk
+### GetPolActualArrivalLtFromAisOk
 
-`func (o *TrackingEventSailingInfo) GetPolActualArrivalLtOk() (*string, bool)`
+`func (o *TrackingEventSailingInfo) GetPolActualArrivalLtFromAisOk() (*string, bool)`
 
-GetPolActualArrivalLtOk returns a tuple with the PolActualArrivalLt field if it's non-nil, zero value otherwise
+GetPolActualArrivalLtFromAisOk returns a tuple with the PolActualArrivalLtFromAis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPolActualArrivalLt
+### SetPolActualArrivalLtFromAis
 
-`func (o *TrackingEventSailingInfo) SetPolActualArrivalLt(v string)`
+`func (o *TrackingEventSailingInfo) SetPolActualArrivalLtFromAis(v string)`
 
-SetPolActualArrivalLt sets PolActualArrivalLt field to given value.
+SetPolActualArrivalLtFromAis sets PolActualArrivalLtFromAis field to given value.
 
-### HasPolActualArrivalLt
+### HasPolActualArrivalLtFromAis
 
-`func (o *TrackingEventSailingInfo) HasPolActualArrivalLt() bool`
+`func (o *TrackingEventSailingInfo) HasPolActualArrivalLtFromAis() bool`
 
-HasPolActualArrivalLt returns a boolean if a field has been set.
+HasPolActualArrivalLtFromAis returns a boolean if a field has been set.
 
-### GetPolActualDeparture
+### GetPolActualDepartureLtFromAis
 
-`func (o *TrackingEventSailingInfo) GetPolActualDeparture() string`
+`func (o *TrackingEventSailingInfo) GetPolActualDepartureLtFromAis() string`
 
-GetPolActualDeparture returns the PolActualDeparture field if non-nil, zero value otherwise.
+GetPolActualDepartureLtFromAis returns the PolActualDepartureLtFromAis field if non-nil, zero value otherwise.
 
-### GetPolActualDepartureOk
+### GetPolActualDepartureLtFromAisOk
 
-`func (o *TrackingEventSailingInfo) GetPolActualDepartureOk() (*string, bool)`
+`func (o *TrackingEventSailingInfo) GetPolActualDepartureLtFromAisOk() (*string, bool)`
 
-GetPolActualDepartureOk returns a tuple with the PolActualDeparture field if it's non-nil, zero value otherwise
+GetPolActualDepartureLtFromAisOk returns a tuple with the PolActualDepartureLtFromAis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPolActualDeparture
+### SetPolActualDepartureLtFromAis
 
-`func (o *TrackingEventSailingInfo) SetPolActualDeparture(v string)`
+`func (o *TrackingEventSailingInfo) SetPolActualDepartureLtFromAis(v string)`
 
-SetPolActualDeparture sets PolActualDeparture field to given value.
+SetPolActualDepartureLtFromAis sets PolActualDepartureLtFromAis field to given value.
 
-### HasPolActualDeparture
+### HasPolActualDepartureLtFromAis
 
-`func (o *TrackingEventSailingInfo) HasPolActualDeparture() bool`
+`func (o *TrackingEventSailingInfo) HasPolActualDepartureLtFromAis() bool`
 
-HasPolActualDeparture returns a boolean if a field has been set.
-
-### GetPolActualDepartureLt
-
-`func (o *TrackingEventSailingInfo) GetPolActualDepartureLt() string`
-
-GetPolActualDepartureLt returns the PolActualDepartureLt field if non-nil, zero value otherwise.
-
-### GetPolActualDepartureLtOk
-
-`func (o *TrackingEventSailingInfo) GetPolActualDepartureLtOk() (*string, bool)`
-
-GetPolActualDepartureLtOk returns a tuple with the PolActualDepartureLt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPolActualDepartureLt
-
-`func (o *TrackingEventSailingInfo) SetPolActualDepartureLt(v string)`
-
-SetPolActualDepartureLt sets PolActualDepartureLt field to given value.
-
-### HasPolActualDepartureLt
-
-`func (o *TrackingEventSailingInfo) HasPolActualDepartureLt() bool`
-
-HasPolActualDepartureLt returns a boolean if a field has been set.
+HasPolActualDepartureLtFromAis returns a boolean if a field has been set.
 
 ### GetPolActualLoadingLt
 
@@ -658,55 +682,30 @@ SetPolPredictedDepartureLt sets PolPredictedDepartureLt field to given value.
 
 HasPolPredictedDepartureLt returns a boolean if a field has been set.
 
-### GetPolPredictedLoadingLt
+### GetPolScheduledArrivalLtFromSchedule
 
-`func (o *TrackingEventSailingInfo) GetPolPredictedLoadingLt() string`
+`func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLtFromSchedule() string`
 
-GetPolPredictedLoadingLt returns the PolPredictedLoadingLt field if non-nil, zero value otherwise.
+GetPolScheduledArrivalLtFromSchedule returns the PolScheduledArrivalLtFromSchedule field if non-nil, zero value otherwise.
 
-### GetPolPredictedLoadingLtOk
+### GetPolScheduledArrivalLtFromScheduleOk
 
-`func (o *TrackingEventSailingInfo) GetPolPredictedLoadingLtOk() (*string, bool)`
+`func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLtFromScheduleOk() (*string, bool)`
 
-GetPolPredictedLoadingLtOk returns a tuple with the PolPredictedLoadingLt field if it's non-nil, zero value otherwise
+GetPolScheduledArrivalLtFromScheduleOk returns a tuple with the PolScheduledArrivalLtFromSchedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPolPredictedLoadingLt
+### SetPolScheduledArrivalLtFromSchedule
 
-`func (o *TrackingEventSailingInfo) SetPolPredictedLoadingLt(v string)`
+`func (o *TrackingEventSailingInfo) SetPolScheduledArrivalLtFromSchedule(v string)`
 
-SetPolPredictedLoadingLt sets PolPredictedLoadingLt field to given value.
+SetPolScheduledArrivalLtFromSchedule sets PolScheduledArrivalLtFromSchedule field to given value.
 
-### HasPolPredictedLoadingLt
+### HasPolScheduledArrivalLtFromSchedule
 
-`func (o *TrackingEventSailingInfo) HasPolPredictedLoadingLt() bool`
+`func (o *TrackingEventSailingInfo) HasPolScheduledArrivalLtFromSchedule() bool`
 
-HasPolPredictedLoadingLt returns a boolean if a field has been set.
-
-### GetPolScheduledArrivalLt
-
-`func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLt() string`
-
-GetPolScheduledArrivalLt returns the PolScheduledArrivalLt field if non-nil, zero value otherwise.
-
-### GetPolScheduledArrivalLtOk
-
-`func (o *TrackingEventSailingInfo) GetPolScheduledArrivalLtOk() (*string, bool)`
-
-GetPolScheduledArrivalLtOk returns a tuple with the PolScheduledArrivalLt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPolScheduledArrivalLt
-
-`func (o *TrackingEventSailingInfo) SetPolScheduledArrivalLt(v string)`
-
-SetPolScheduledArrivalLt sets PolScheduledArrivalLt field to given value.
-
-### HasPolScheduledArrivalLt
-
-`func (o *TrackingEventSailingInfo) HasPolScheduledArrivalLt() bool`
-
-HasPolScheduledArrivalLt returns a boolean if a field has been set.
+HasPolScheduledArrivalLtFromSchedule returns a boolean if a field has been set.
 
 ### GetPolScheduledDepartureLt
 
@@ -757,31 +756,6 @@ SetPolScheduledLoadingLt sets PolScheduledLoadingLt field to given value.
 `func (o *TrackingEventSailingInfo) HasPolScheduledLoadingLt() bool`
 
 HasPolScheduledLoadingLt returns a boolean if a field has been set.
-
-### GetStatus
-
-`func (o *TrackingEventSailingInfo) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *TrackingEventSailingInfo) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *TrackingEventSailingInfo) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *TrackingEventSailingInfo) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
 
 ### GetStatusCode
 

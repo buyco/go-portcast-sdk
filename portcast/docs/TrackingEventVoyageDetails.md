@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **Index** | Pointer to **int32** |  | [optional] 
 **Lat** | Pointer to **float32** |  | [optional] 
 **Lon** | Pointer to **float32** |  | [optional] 
-**OriginalVoyageNo** | Pointer to **string** |  | [optional] 
 **PortCode** | Pointer to **string** |  | [optional] 
 **PortName** | Pointer to **string** |  | [optional] 
 **PredictedArrivalLt** | Pointer to **string** |  | [optional] 
@@ -22,10 +21,8 @@ Name | Type | Description | Notes
 **PredictedDepartureUtc** | Pointer to **string** |  | [optional] 
 **PredictionTimeUtc** | Pointer to **string** |  | [optional] 
 **ScheduledArrivalLt** | Pointer to **string** |  | [optional] 
-**ScheduledArrivalOnTimeConfidence** | Pointer to **string** |  | [optional] 
 **ScheduledArrivalUtc** | Pointer to **string** |  | [optional] 
 **ScheduledDepartureLt** | Pointer to **string** |  | [optional] 
-**ScheduledDepartureOnTimeConfidence** | Pointer to **string** |  | [optional] 
 **ScheduledDepartureUtc** | Pointer to **string** |  | [optional] 
 **Timezone** | Pointer to **string** |  | [optional] 
 **VoyageNoList** | Pointer to **[]string** |  | [optional] 
@@ -274,31 +271,6 @@ SetLon sets Lon field to given value.
 
 HasLon returns a boolean if a field has been set.
 
-### GetOriginalVoyageNo
-
-`func (o *TrackingEventVoyageDetails) GetOriginalVoyageNo() string`
-
-GetOriginalVoyageNo returns the OriginalVoyageNo field if non-nil, zero value otherwise.
-
-### GetOriginalVoyageNoOk
-
-`func (o *TrackingEventVoyageDetails) GetOriginalVoyageNoOk() (*string, bool)`
-
-GetOriginalVoyageNoOk returns a tuple with the OriginalVoyageNo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOriginalVoyageNo
-
-`func (o *TrackingEventVoyageDetails) SetOriginalVoyageNo(v string)`
-
-SetOriginalVoyageNo sets OriginalVoyageNo field to given value.
-
-### HasOriginalVoyageNo
-
-`func (o *TrackingEventVoyageDetails) HasOriginalVoyageNo() bool`
-
-HasOriginalVoyageNo returns a boolean if a field has been set.
-
 ### GetPortCode
 
 `func (o *TrackingEventVoyageDetails) GetPortCode() string`
@@ -499,31 +471,6 @@ SetScheduledArrivalLt sets ScheduledArrivalLt field to given value.
 
 HasScheduledArrivalLt returns a boolean if a field has been set.
 
-### GetScheduledArrivalOnTimeConfidence
-
-`func (o *TrackingEventVoyageDetails) GetScheduledArrivalOnTimeConfidence() string`
-
-GetScheduledArrivalOnTimeConfidence returns the ScheduledArrivalOnTimeConfidence field if non-nil, zero value otherwise.
-
-### GetScheduledArrivalOnTimeConfidenceOk
-
-`func (o *TrackingEventVoyageDetails) GetScheduledArrivalOnTimeConfidenceOk() (*string, bool)`
-
-GetScheduledArrivalOnTimeConfidenceOk returns a tuple with the ScheduledArrivalOnTimeConfidence field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScheduledArrivalOnTimeConfidence
-
-`func (o *TrackingEventVoyageDetails) SetScheduledArrivalOnTimeConfidence(v string)`
-
-SetScheduledArrivalOnTimeConfidence sets ScheduledArrivalOnTimeConfidence field to given value.
-
-### HasScheduledArrivalOnTimeConfidence
-
-`func (o *TrackingEventVoyageDetails) HasScheduledArrivalOnTimeConfidence() bool`
-
-HasScheduledArrivalOnTimeConfidence returns a boolean if a field has been set.
-
 ### GetScheduledArrivalUtc
 
 `func (o *TrackingEventVoyageDetails) GetScheduledArrivalUtc() string`
@@ -573,31 +520,6 @@ SetScheduledDepartureLt sets ScheduledDepartureLt field to given value.
 `func (o *TrackingEventVoyageDetails) HasScheduledDepartureLt() bool`
 
 HasScheduledDepartureLt returns a boolean if a field has been set.
-
-### GetScheduledDepartureOnTimeConfidence
-
-`func (o *TrackingEventVoyageDetails) GetScheduledDepartureOnTimeConfidence() string`
-
-GetScheduledDepartureOnTimeConfidence returns the ScheduledDepartureOnTimeConfidence field if non-nil, zero value otherwise.
-
-### GetScheduledDepartureOnTimeConfidenceOk
-
-`func (o *TrackingEventVoyageDetails) GetScheduledDepartureOnTimeConfidenceOk() (*string, bool)`
-
-GetScheduledDepartureOnTimeConfidenceOk returns a tuple with the ScheduledDepartureOnTimeConfidence field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScheduledDepartureOnTimeConfidence
-
-`func (o *TrackingEventVoyageDetails) SetScheduledDepartureOnTimeConfidence(v string)`
-
-SetScheduledDepartureOnTimeConfidence sets ScheduledDepartureOnTimeConfidence field to given value.
-
-### HasScheduledDepartureOnTimeConfidence
-
-`func (o *TrackingEventVoyageDetails) HasScheduledDepartureOnTimeConfidence() bool`
-
-HasScheduledDepartureOnTimeConfidence returns a boolean if a field has been set.
 
 ### GetScheduledDepartureUtc
 

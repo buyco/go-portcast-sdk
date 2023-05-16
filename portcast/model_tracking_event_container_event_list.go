@@ -30,6 +30,8 @@ type TrackingEventContainerEventList struct {
 	PortCode           *string    `json:"port_code,omitempty"`
 	PortName           *string    `json:"port_name,omitempty"`
 	Updated            *time.Time `json:"updated,omitempty"`
+	VesselName         *string    `json:"vessel_name,omitempty"`
+	VesselImo          *string    `json:"vessel_imo,omitempty"`
 }
 
 // NewTrackingEventContainerEventList instantiates a new TrackingEventContainerEventList object
@@ -465,6 +467,70 @@ func (o *TrackingEventContainerEventList) SetUpdated(v time.Time) {
 	o.Updated = &v
 }
 
+// GetVesselName returns the VesselName field value if set, zero value otherwise.
+func (o *TrackingEventContainerEventList) GetVesselName() string {
+	if o == nil || o.VesselName == nil {
+		var ret string
+		return ret
+	}
+	return *o.VesselName
+}
+
+// GetVesselNameOk returns a tuple with the VesselName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TrackingEventContainerEventList) GetVesselNameOk() (*string, bool) {
+	if o == nil || o.VesselName == nil {
+		return nil, false
+	}
+	return o.VesselName, true
+}
+
+// HasVesselName returns a boolean if a field has been set.
+func (o *TrackingEventContainerEventList) HasVesselName() bool {
+	if o != nil && o.VesselName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVesselName gets a reference to the given string and assigns it to the VesselName field.
+func (o *TrackingEventContainerEventList) SetVesselName(v string) {
+	o.VesselName = &v
+}
+
+// GetVesselImo returns the VesselImo field value if set, zero value otherwise.
+func (o *TrackingEventContainerEventList) GetVesselImo() string {
+	if o == nil || o.VesselImo == nil {
+		var ret string
+		return ret
+	}
+	return *o.VesselImo
+}
+
+// GetVesselImoOk returns a tuple with the VesselImo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TrackingEventContainerEventList) GetVesselImoOk() (*string, bool) {
+	if o == nil || o.VesselImo == nil {
+		return nil, false
+	}
+	return o.VesselImo, true
+}
+
+// HasVesselImo returns a boolean if a field has been set.
+func (o *TrackingEventContainerEventList) HasVesselImo() bool {
+	if o != nil && o.VesselImo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVesselImo gets a reference to the given string and assigns it to the VesselImo field.
+func (o *TrackingEventContainerEventList) SetVesselImo(v string) {
+	o.VesselImo = &v
+}
+
 func (o TrackingEventContainerEventList) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Created != nil {
@@ -505,6 +571,12 @@ func (o TrackingEventContainerEventList) MarshalJSON() ([]byte, error) {
 	}
 	if o.Updated != nil {
 		toSerialize["updated"] = o.Updated
+	}
+	if o.VesselName != nil {
+		toSerialize["vessel_name"] = o.VesselName
+	}
+	if o.VesselImo != nil {
+		toSerialize["vessel_imo"] = o.VesselImo
 	}
 	return json.Marshal(toSerialize)
 }

@@ -24,7 +24,6 @@ type TrackingEvent struct {
 	Msg                  *string                             `json:"msg,omitempty"`
 	OrgId                *string                             `json:"org_id,omitempty"`
 	SailingInfoTracking  *[]TrackingEventSailingInfoTracking `json:"sailing_info_tracking,omitempty"`
-	Success              *bool                               `json:"success,omitempty"`
 }
 
 // NewTrackingEvent instantiates a new TrackingEvent object
@@ -300,38 +299,6 @@ func (o *TrackingEvent) SetSailingInfoTracking(v []TrackingEventSailingInfoTrack
 	o.SailingInfoTracking = &v
 }
 
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *TrackingEvent) GetSuccess() bool {
-	if o == nil || o.Success == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TrackingEvent) GetSuccessOk() (*bool, bool) {
-	if o == nil || o.Success == nil {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// HasSuccess returns a boolean if a field has been set.
-func (o *TrackingEvent) HasSuccess() bool {
-	if o != nil && o.Success != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *TrackingEvent) SetSuccess(v bool) {
-	o.Success = &v
-}
-
 func (o TrackingEvent) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BillOfLading != nil {
@@ -357,9 +324,6 @@ func (o TrackingEvent) MarshalJSON() ([]byte, error) {
 	}
 	if o.SailingInfoTracking != nil {
 		toSerialize["sailing_info_tracking"] = o.SailingInfoTracking
-	}
-	if o.Success != nil {
-		toSerialize["success"] = o.Success
 	}
 	return json.Marshal(toSerialize)
 }
