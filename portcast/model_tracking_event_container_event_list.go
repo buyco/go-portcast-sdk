@@ -31,7 +31,7 @@ type TrackingEventContainerEventList struct {
 	PortName           *string    `json:"port_name,omitempty"`
 	Updated            *time.Time `json:"updated,omitempty"`
 	VesselName         *string    `json:"vessel_name,omitempty"`
-	VesselImo          *string    `json:"vessel_imo,omitempty"`
+	VesselImo          *int32     `json:"vessel_imo,omitempty"`
 }
 
 // NewTrackingEventContainerEventList instantiates a new TrackingEventContainerEventList object
@@ -500,9 +500,9 @@ func (o *TrackingEventContainerEventList) SetVesselName(v string) {
 }
 
 // GetVesselImo returns the VesselImo field value if set, zero value otherwise.
-func (o *TrackingEventContainerEventList) GetVesselImo() string {
+func (o *TrackingEventContainerEventList) GetVesselImo() int32 {
 	if o == nil || o.VesselImo == nil {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.VesselImo
@@ -510,7 +510,7 @@ func (o *TrackingEventContainerEventList) GetVesselImo() string {
 
 // GetVesselImoOk returns a tuple with the VesselImo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventContainerEventList) GetVesselImoOk() (*string, bool) {
+func (o *TrackingEventContainerEventList) GetVesselImoOk() (*int32, bool) {
 	if o == nil || o.VesselImo == nil {
 		return nil, false
 	}
@@ -526,8 +526,8 @@ func (o *TrackingEventContainerEventList) HasVesselImo() bool {
 	return false
 }
 
-// SetVesselImo gets a reference to the given string and assigns it to the VesselImo field.
-func (o *TrackingEventContainerEventList) SetVesselImo(v string) {
+// SetVesselImo gets a reference to the given int32 and assigns it to the VesselImo field.
+func (o *TrackingEventContainerEventList) SetVesselImo(v int32) {
 	o.VesselImo = &v
 }
 

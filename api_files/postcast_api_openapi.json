@@ -1130,7 +1130,7 @@
                   "format": "nullable"
                 },
                 "vessel_imo": {
-                  "type": "string",
+                  "type": "integer",
                   "format": "nullable"
                 }
               }

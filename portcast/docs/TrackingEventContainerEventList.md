@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **PortName** | Pointer to **string** |  | [optional] 
 **Updated** | Pointer to **time.Time** |  | [optional] 
 **VesselName** | Pointer to **string** |  | [optional] 
-**VesselImo** | Pointer to **string** |  | [optional] 
+**VesselImo** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -391,20 +391,20 @@ HasVesselName returns a boolean if a field has been set.
 
 ### GetVesselImo
 
-`func (o *TrackingEventContainerEventList) GetVesselImo() string`
+`func (o *TrackingEventContainerEventList) GetVesselImo() int32`
 
 GetVesselImo returns the VesselImo field if non-nil, zero value otherwise.
 
 ### GetVesselImoOk
 
-`func (o *TrackingEventContainerEventList) GetVesselImoOk() (*string, bool)`
+`func (o *TrackingEventContainerEventList) GetVesselImoOk() (*int32, bool)`
 
 GetVesselImoOk returns a tuple with the VesselImo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVesselImo
 
-`func (o *TrackingEventContainerEventList) SetVesselImo(v string)`
+`func (o *TrackingEventContainerEventList) SetVesselImo(v int32)`
 
 SetVesselImo sets VesselImo field to given value.
 
