@@ -1169,7 +1169,7 @@
                       "type": "number"
                     },
                     "draught_m": {
-                      "type": "string",
+                      "type": "number",
                       "format": "nullable"
                     },
                     "imo": {

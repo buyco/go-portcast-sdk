@@ -17,7 +17,7 @@ import (
 // TrackingEventAis struct for TrackingEventAis
 type TrackingEventAis struct {
 	Course       *float32 `json:"course,omitempty"`
-	DraughtM     *string  `json:"draught_m,omitempty"`
+	DraughtM     *float32 `json:"draught_m,omitempty"`
 	Imo          *string  `json:"imo,omitempty"`
 	Lat          *float32 `json:"lat,omitempty"`
 	Lon          *float32 `json:"lon,omitempty"`
@@ -76,9 +76,9 @@ func (o *TrackingEventAis) SetCourse(v float32) {
 }
 
 // GetDraughtM returns the DraughtM field value if set, zero value otherwise.
-func (o *TrackingEventAis) GetDraughtM() string {
+func (o *TrackingEventAis) GetDraughtM() float32 {
 	if o == nil || o.DraughtM == nil {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.DraughtM
@@ -86,7 +86,7 @@ func (o *TrackingEventAis) GetDraughtM() string {
 
 // GetDraughtMOk returns a tuple with the DraughtM field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrackingEventAis) GetDraughtMOk() (*string, bool) {
+func (o *TrackingEventAis) GetDraughtMOk() (*float32, bool) {
 	if o == nil || o.DraughtM == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *TrackingEventAis) HasDraughtM() bool {
 	return false
 }
 
-// SetDraughtM gets a reference to the given string and assigns it to the DraughtM field.
-func (o *TrackingEventAis) SetDraughtM(v string) {
+// SetDraughtM gets a reference to the given float32 and assigns it to the DraughtM field.
+func (o *TrackingEventAis) SetDraughtM(v float32) {
 	o.DraughtM = &v
 }
 

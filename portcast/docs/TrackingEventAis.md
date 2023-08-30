@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Course** | Pointer to **float32** |  | [optional] 
-**DraughtM** | Pointer to **string** |  | [optional] 
+**DraughtM** | Pointer to **float32** |  | [optional] 
 **Imo** | Pointer to **string** |  | [optional] 
 **Lat** | Pointer to **float32** |  | [optional] 
 **Lon** | Pointer to **float32** |  | [optional] 
@@ -59,20 +59,20 @@ HasCourse returns a boolean if a field has been set.
 
 ### GetDraughtM
 
-`func (o *TrackingEventAis) GetDraughtM() string`
+`func (o *TrackingEventAis) GetDraughtM() float32`
 
 GetDraughtM returns the DraughtM field if non-nil, zero value otherwise.
 
 ### GetDraughtMOk
 
-`func (o *TrackingEventAis) GetDraughtMOk() (*string, bool)`
+`func (o *TrackingEventAis) GetDraughtMOk() (*float32, bool)`
 
 GetDraughtMOk returns a tuple with the DraughtM field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDraughtM
 
-`func (o *TrackingEventAis) SetDraughtM(v string)`
+`func (o *TrackingEventAis) SetDraughtM(v float32)`
 
 SetDraughtM sets DraughtM field to given value.
 
