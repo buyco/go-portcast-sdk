@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
 
 API version: 1.0.0
 */
@@ -17,43 +17,43 @@ import (
 
 // TrackingEventBillOfLading struct for TrackingEventBillOfLading
 type TrackingEventBillOfLading struct {
-	BlNo                                *string    `json:"bl_no,omitempty"`
-	CarrierNo                           *string    `json:"carrier_no,omitempty"`
-	CntrNo                              *string    `json:"cntr_no,omitempty"`
-	Created                             *time.Time `json:"created,omitempty"`
-	Id                                  *string    `json:"id,omitempty"`
-	PlaceOfDelivery                     *string    `json:"place_of_delivery,omitempty"`
-	PlaceOfDeliveryName                 *string    `json:"place_of_delivery_name,omitempty"`
-	PlaceOfReceipt                      *string    `json:"place_of_receipt,omitempty"`
-	PlaceOfReceiptName                  *string    `json:"place_of_receipt_name,omitempty"`
-	Pod                                 *string    `json:"pod,omitempty"`
-	PodActualArrivalLt                  *string    `json:"pod_actual_arrival_lt,omitempty"`
-	PodActualArrivalUtc                 *string    `json:"pod_actual_arrival_utc,omitempty"`
-	PodActualArrivalLtFromAis           *string    `json:"pod_actual_arrival_lt_from_ais,omitempty"`
-	PodActualDepartureLtFromAis         *string    `json:"pod_actual_departure_lt_from_ais,omitempty"`
-	PodActualDischargeLt                *string    `json:"pod_actual_discharge_lt,omitempty"`
-	PodName                             *string    `json:"pod_name,omitempty"`
-	PodPredictedArrivalLt               *string    `json:"pod_predicted_arrival_lt,omitempty"`
-	PodPredictedArrivalUtc              *string    `json:"pod_predicted_arrival_utc,omitempty"`
-	PodPredictedDepartureLt             *string    `json:"pod_predicted_departure_lt,omitempty"`
-	PodScheduledArrivalLt               *string    `json:"pod_scheduled_arrival_lt,omitempty"`
-	PodScheduledArrivalLtFromSchedule   *string    `json:"pod_scheduled_arrival_lt_from_schedule,omitempty"`
-	PodScheduledDepartureLtFromSchedule *string    `json:"pod_scheduled_departure_lt_from_schedule,omitempty"`
-	PodScheduledDischargeLt             *string    `json:"pod_scheduled_discharge_lt,omitempty"`
-	Pol                                 *string    `json:"pol,omitempty"`
-	PolActualArrivalLt                  *string    `json:"pol_actual_arrival_lt,omitempty"`
-	PolActualArrivalLtFromAis           *string    `json:"pol_actual_arrival_lt_from_ais,omitempty"`
-	PolActualDepartureLt                *string    `json:"pol_actual_departure_lt,omitempty"`
-	PolActualDepartureLtFromAis         *string    `json:"pol_actual_departure_lt_from_ais,omitempty"`
-	PolActualLoadingLt                  *string    `json:"pol_actual_loading_lt,omitempty"`
-	PolName                             *string    `json:"pol_name,omitempty"`
-	PolPredictedArrivalLt               *string    `json:"pol_predicted_arrival_lt,omitempty"`
-	PolPredictedDepartureLt             *string    `json:"pol_predicted_departure_lt,omitempty"`
-	PolScheduledArrivalLtFromSchedule   *string    `json:"pol_scheduled_arrival_lt_from_schedule,omitempty"`
-	PolScheduledDepartureLt             *string    `json:"pol_scheduled_departure_lt,omitempty"`
-	PolScheduledDepartureLtFromSchedule *string    `json:"pol_scheduled_departure_lt_from_schedule,omitempty"`
-	PolScheduledLoadingLt               *string    `json:"pol_scheduled_loading_lt,omitempty"`
-	Updated                             *time.Time `json:"updated,omitempty"`
+	BlNo *string `json:"bl_no,omitempty"`
+	CarrierNo *string `json:"carrier_no,omitempty"`
+	CntrNo *string `json:"cntr_no,omitempty"`
+	Created *time.Time `json:"created,omitempty"`
+	Id *string `json:"id,omitempty"`
+	PlaceOfDelivery *string `json:"place_of_delivery,omitempty"`
+	PlaceOfDeliveryName *string `json:"place_of_delivery_name,omitempty"`
+	PlaceOfReceipt *string `json:"place_of_receipt,omitempty"`
+	PlaceOfReceiptName *string `json:"place_of_receipt_name,omitempty"`
+	Pod *string `json:"pod,omitempty"`
+	PodActualArrivalLt *string `json:"pod_actual_arrival_lt,omitempty"`
+	PodActualArrivalUtc *string `json:"pod_actual_arrival_utc,omitempty"`
+	PodActualArrivalLtFromAis *string `json:"pod_actual_arrival_lt_from_ais,omitempty"`
+	PodActualDepartureLtFromAis *string `json:"pod_actual_departure_lt_from_ais,omitempty"`
+	PodActualDischargeLt *string `json:"pod_actual_discharge_lt,omitempty"`
+	PodName *string `json:"pod_name,omitempty"`
+	PodPredictedArrivalLt *string `json:"pod_predicted_arrival_lt,omitempty"`
+	PodPredictedArrivalUtc *string `json:"pod_predicted_arrival_utc,omitempty"`
+	PodPredictedDepartureLt *string `json:"pod_predicted_departure_lt,omitempty"`
+	PodScheduledArrivalLt *string `json:"pod_scheduled_arrival_lt,omitempty"`
+	PodScheduledArrivalLtFromSchedule *string `json:"pod_scheduled_arrival_lt_from_schedule,omitempty"`
+	PodScheduledDepartureLtFromSchedule *string `json:"pod_scheduled_departure_lt_from_schedule,omitempty"`
+	PodScheduledDischargeLt *string `json:"pod_scheduled_discharge_lt,omitempty"`
+	Pol *string `json:"pol,omitempty"`
+	PolActualArrivalLt *string `json:"pol_actual_arrival_lt,omitempty"`
+	PolActualArrivalLtFromAis *string `json:"pol_actual_arrival_lt_from_ais,omitempty"`
+	PolActualDepartureLt *string `json:"pol_actual_departure_lt,omitempty"`
+	PolActualDepartureLtFromAis *string `json:"pol_actual_departure_lt_from_ais,omitempty"`
+	PolActualLoadingLt *string `json:"pol_actual_loading_lt,omitempty"`
+	PolName *string `json:"pol_name,omitempty"`
+	PolPredictedArrivalLt *string `json:"pol_predicted_arrival_lt,omitempty"`
+	PolPredictedDepartureLt *string `json:"pol_predicted_departure_lt,omitempty"`
+	PolScheduledArrivalLtFromSchedule *string `json:"pol_scheduled_arrival_lt_from_schedule,omitempty"`
+	PolScheduledDepartureLt *string `json:"pol_scheduled_departure_lt,omitempty"`
+	PolScheduledDepartureLtFromSchedule *string `json:"pol_scheduled_departure_lt_from_schedule,omitempty"`
+	PolScheduledLoadingLt *string `json:"pol_scheduled_loading_lt,omitempty"`
+	Updated *time.Time `json:"updated,omitempty"`
 }
 
 // NewTrackingEventBillOfLading instantiates a new TrackingEventBillOfLading object
@@ -1408,3 +1408,5 @@ func (v *NullableTrackingEventBillOfLading) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

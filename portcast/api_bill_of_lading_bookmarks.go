@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
 
 API version: 1.0.0
 */
@@ -27,11 +27,11 @@ var (
 type BillOfLadingBookmarksApi interface {
 
 	/*
-		EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete Delete a particular bill of lading bookmark by ID
+	EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete Delete a particular bill of lading bookmark by ID
 
-		 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param billOfLadingBookmarkId
-		 @return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest
+	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param billOfLadingBookmarkId
+	 @return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest
 	*/
 	EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete(ctx _context.Context, billOfLadingBookmarkId string) ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest
 
@@ -40,11 +40,11 @@ type BillOfLadingBookmarksApi interface {
 	EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteExecute(r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest) (MessageModel, *_nethttp.Response, error)
 
 	/*
-		EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet Get a particular bill of lading bookmark by ID
+	EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet Get a particular bill of lading bookmark by ID
 
-		 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param billOfLadingBookmarkId
-		 @return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
+	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param billOfLadingBookmarkId
+	 @return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
 	*/
 	EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx _context.Context, billOfLadingBookmarkId string) ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
 
@@ -53,14 +53,14 @@ type BillOfLadingBookmarksApi interface {
 	EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) (BookmarkResponse, *_nethttp.Response, error)
 
 	/*
-			EtaBillOfLadingBookmarksGet Get a list of bookmarked bill of ladings
+	EtaBillOfLadingBookmarksGet Get a list of bookmarked bill of ladings
 
-			This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
+	This api returns 5 records at a time, please use the value of the `_ended_at` field in the response as the `_start_after` value in a subsequent request to get the next 5 records.
 
-		You could filter based the parameters listed.
+You could filter based the parameters listed.
 
-			 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-			 @return ApiEtaBillOfLadingBookmarksGetRequest
+	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return ApiEtaBillOfLadingBookmarksGetRequest
 	*/
 	EtaBillOfLadingBookmarksGet(ctx _context.Context) ApiEtaBillOfLadingBookmarksGetRequest
 
@@ -69,19 +69,19 @@ type BillOfLadingBookmarksApi interface {
 	EtaBillOfLadingBookmarksGetExecute(r ApiEtaBillOfLadingBookmarksGetRequest) (InlineResponse200, *_nethttp.Response, error)
 
 	/*
-			EtaBillOfLadingBookmarksPost Create a new bill of lading bookmark
+	EtaBillOfLadingBookmarksPost Create a new bill of lading bookmark
 
-			Please send the bill of lading with the following fields:
-		```
-		{
-		    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
-		    "bl_no": <string, required, ocean carrier bill of lading number>,
-		    "cntr_no": <string, required, the container number you want to track from the bill of lading>
-		}
-		```
+	Please send the bill of lading with the following fields:
+```
+{
+    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
+    "bl_no": <string, required, ocean carrier bill of lading number>,
+    "cntr_no": <string, required, the container number you want to track from the bill of lading>
+}
+```
 
-			 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-			 @return ApiEtaBillOfLadingBookmarksPostRequest
+	 @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return ApiEtaBillOfLadingBookmarksPostRequest
 	*/
 	EtaBillOfLadingBookmarksPost(ctx _context.Context) ApiEtaBillOfLadingBookmarksPostRequest
 
@@ -94,10 +94,11 @@ type BillOfLadingBookmarksApi interface {
 type BillOfLadingBookmarksApiService service
 
 type ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest struct {
-	ctx                    _context.Context
-	ApiService             BillOfLadingBookmarksApi
+	ctx _context.Context
+	ApiService BillOfLadingBookmarksApi
 	billOfLadingBookmarkId string
 }
+
 
 func (r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest) Execute() (MessageModel, *_nethttp.Response, error) {
 	return r.ApiService.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteExecute(r)
@@ -106,21 +107,20 @@ func (r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest) Execute(
 /*
 EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete Delete a particular bill of lading bookmark by ID
 
-	@param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param billOfLadingBookmarkId
-	@return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest
+ @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param billOfLadingBookmarkId
+ @return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest
 */
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDelete(ctx _context.Context, billOfLadingBookmarkId string) ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest {
 	return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest{
-		ApiService:             a,
-		ctx:                    ctx,
+		ApiService: a,
+		ctx: ctx,
 		billOfLadingBookmarkId: billOfLadingBookmarkId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return MessageModel
+//  @return MessageModel
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteExecute(r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdDeleteRequest) (MessageModel, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
@@ -269,10 +269,11 @@ func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksBillOfLadingBo
 }
 
 type ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest struct {
-	ctx                    _context.Context
-	ApiService             BillOfLadingBookmarksApi
+	ctx _context.Context
+	ApiService BillOfLadingBookmarksApi
 	billOfLadingBookmarkId string
 }
+
 
 func (r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) Execute() (BookmarkResponse, *_nethttp.Response, error) {
 	return r.ApiService.EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r)
@@ -281,21 +282,20 @@ func (r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) Execute() (
 /*
 EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet Get a particular bill of lading bookmark by ID
 
-	@param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param billOfLadingBookmarkId
-	@return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
+ @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param billOfLadingBookmarkId
+ @return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest
 */
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGet(ctx _context.Context, billOfLadingBookmarkId string) ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest {
 	return ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest{
-		ApiService:             a,
-		ctx:                    ctx,
+		ApiService: a,
+		ctx: ctx,
 		billOfLadingBookmarkId: billOfLadingBookmarkId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return BookmarkResponse
+//  @return BookmarkResponse
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetExecute(r ApiEtaBillOfLadingBookmarksBillOfLadingBookmarkIdGetRequest) (BookmarkResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
@@ -444,14 +444,14 @@ func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksBillOfLadingBo
 }
 
 type ApiEtaBillOfLadingBookmarksGetRequest struct {
-	ctx        _context.Context
+	ctx _context.Context
 	ApiService BillOfLadingBookmarksApi
 	startAfter *string
-	ascending  *string
-	carrierNo  *string
-	blNo       *string
-	cntrNo     *string
-	status     *string
+	ascending *string
+	carrierNo *string
+	blNo *string
+	cntrNo *string
+	status *string
 	statusCode *string
 }
 
@@ -460,37 +460,31 @@ func (r ApiEtaBillOfLadingBookmarksGetRequest) StartAfter(startAfter string) Api
 	r.startAfter = &startAfter
 	return r
 }
-
 // if set to true, sort results based on creation time in ascending order. false by default
 func (r ApiEtaBillOfLadingBookmarksGetRequest) Ascending(ascending string) ApiEtaBillOfLadingBookmarksGetRequest {
 	r.ascending = &ascending
 	return r
 }
-
 // filter on the carrier scac
 func (r ApiEtaBillOfLadingBookmarksGetRequest) CarrierNo(carrierNo string) ApiEtaBillOfLadingBookmarksGetRequest {
 	r.carrierNo = &carrierNo
 	return r
 }
-
 // filter on the bill of lading number
 func (r ApiEtaBillOfLadingBookmarksGetRequest) BlNo(blNo string) ApiEtaBillOfLadingBookmarksGetRequest {
 	r.blNo = &blNo
 	return r
 }
-
 // filter on the container number
 func (r ApiEtaBillOfLadingBookmarksGetRequest) CntrNo(cntrNo string) ApiEtaBillOfLadingBookmarksGetRequest {
 	r.cntrNo = &cntrNo
 	return r
 }
-
 // filter on the status
 func (r ApiEtaBillOfLadingBookmarksGetRequest) Status(status string) ApiEtaBillOfLadingBookmarksGetRequest {
 	r.status = &status
 	return r
 }
-
 // filter on the status code
 func (r ApiEtaBillOfLadingBookmarksGetRequest) StatusCode(statusCode string) ApiEtaBillOfLadingBookmarksGetRequest {
 	r.statusCode = &statusCode
@@ -508,19 +502,18 @@ This api returns 5 records at a time, please use the value of the `_ended_at` fi
 
 You could filter based the parameters listed.
 
-	@param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEtaBillOfLadingBookmarksGetRequest
+ @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiEtaBillOfLadingBookmarksGetRequest
 */
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksGet(ctx _context.Context) ApiEtaBillOfLadingBookmarksGetRequest {
 	return ApiEtaBillOfLadingBookmarksGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InlineResponse200
+//  @return InlineResponse200
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksGetExecute(r ApiEtaBillOfLadingBookmarksGetRequest) (InlineResponse200, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
@@ -689,8 +682,8 @@ func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksGetExecute(r A
 }
 
 type ApiEtaBillOfLadingBookmarksPostRequest struct {
-	ctx                      _context.Context
-	ApiService               BillOfLadingBookmarksApi
+	ctx _context.Context
+	ApiService BillOfLadingBookmarksApi
 	containerBookmarkRequest *ContainerBookmarkRequest
 }
 
@@ -708,28 +701,25 @@ EtaBillOfLadingBookmarksPost Create a new bill of lading bookmark
 
 Please send the bill of lading with the following fields:
 ```
-
-	{
-	    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
-	    "bl_no": <string, required, ocean carrier bill of lading number>,
-	    "cntr_no": <string, required, the container number you want to track from the bill of lading>
-	}
-
+{
+    "carrier_no": <string, required, scac code of carrier, will use first 4 characters of bl_no as carrier_no if left empty>,
+    "bl_no": <string, required, ocean carrier bill of lading number>,
+    "cntr_no": <string, required, the container number you want to track from the bill of lading>
+}
 ```
 
-	@param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEtaBillOfLadingBookmarksPostRequest
+ @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiEtaBillOfLadingBookmarksPostRequest
 */
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksPost(ctx _context.Context) ApiEtaBillOfLadingBookmarksPostRequest {
 	return ApiEtaBillOfLadingBookmarksPostRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Bookmark
+//  @return Bookmark
 func (a *BillOfLadingBookmarksApiService) EtaBillOfLadingBookmarksPostExecute(r ApiEtaBillOfLadingBookmarksPostRequest) (Bookmark, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
