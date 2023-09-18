@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
 
 API version: 1.0.0
 */
@@ -17,22 +17,22 @@ import (
 
 // TrackingEventContainerEventList struct for TrackingEventContainerEventList
 type TrackingEventContainerEventList struct {
-	Created *string `json:"created,omitempty"`
-	EventRaw *string `json:"event_raw,omitempty"`
-	EventTime *string `json:"event_time,omitempty"`
-	EventTimeEstimated *string `json:"event_time_estimated,omitempty"`
-	EventTypeCode *string `json:"event_type_code,omitempty"`
-	EventTypeName *string `json:"event_type_name,omitempty"`
-	Id *string `json:"id,omitempty"`
-	LocationRaw *string `json:"location_raw,omitempty"`
-	LocationTypeCode *string `json:"location_type_code,omitempty"`
-	LocationTypeName *string `json:"location_type_name,omitempty"`
-	PortCode *string `json:"port_code,omitempty"`
-	PortName *string `json:"port_name,omitempty"`
-	Updated *time.Time `json:"updated,omitempty"`
-	VesselName *string `json:"vessel_name,omitempty"`
-	VesselImo *int32 `json:"vessel_imo,omitempty"`
-	ModeOfTransport *string `json:"mode_of_transport,omitempty"`
+	Created            *string    `json:"created,omitempty"`
+	EventRaw           *string    `json:"event_raw,omitempty"`
+	EventTime          *string    `json:"event_time,omitempty"`
+	EventTimeEstimated *string    `json:"event_time_estimated,omitempty"`
+	EventTypeCode      *string    `json:"event_type_code,omitempty"`
+	EventTypeName      *string    `json:"event_type_name,omitempty"`
+	Id                 *string    `json:"id,omitempty"`
+	LocationRaw        *string    `json:"location_raw,omitempty"`
+	LocationTypeCode   *string    `json:"location_type_code,omitempty"`
+	LocationTypeName   *string    `json:"location_type_name,omitempty"`
+	PortCode           *string    `json:"port_code,omitempty"`
+	PortName           *string    `json:"port_name,omitempty"`
+	Updated            *time.Time `json:"updated,omitempty"`
+	VesselName         *string    `json:"vessel_name,omitempty"`
+	VesselImo          *int32     `json:"vessel_imo,omitempty"`
+	ModeOfTransport    *string    `json:"mode_of_transport,omitempty"`
 }
 
 // NewTrackingEventContainerEventList instantiates a new TrackingEventContainerEventList object
@@ -652,5 +652,3 @@ func (v *NullableTrackingEventContainerEventList) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

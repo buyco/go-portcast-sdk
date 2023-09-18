@@ -1,7 +1,7 @@
 /*
 Portcast API (1.1.0) - Bill of Lading Tracking
 
-**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`) 
+**This documentation is for the latest version of the Portcast Bill of Lading Tracking API.**  There are two variables used in this documentation: 1. `api-url`: the url to use for accessing the API. The official url is `https://api.portcast.io` 2. `x-api-key`: the access token to send along with every request to the API. This key will be provided to each organisation upon API access activation  The general workflow is as below:  1. Create the bill of lading bookmark if it does not exist already (`POST {{api-url}}/api/v1/eta/bill-of-lading-bookmarks`). 2. A bookmark must contain `carrier_no`, `bl_no` and `cntr_no` information. This will return the bill of lading bookmark information created. Record the `id` field from the response. 3. Wait for predictions to be generated. This could take up to 5 mins. 5. Query for the tracking results based on the `id` recorded earlier (`GET {{api-url}}/api/v1/eta/tracking/bill-of-lading-bookmarks/<id>`)
 
 API version: 1.0.0
 */
@@ -16,14 +16,14 @@ import (
 
 // TrackingEventAis struct for TrackingEventAis
 type TrackingEventAis struct {
-	Course *float32 `json:"course,omitempty"`
-	DraughtM *float32 `json:"draught_m,omitempty"`
-	Imo *string `json:"imo,omitempty"`
-	Lat *float32 `json:"lat,omitempty"`
-	Lon *float32 `json:"lon,omitempty"`
-	SpeedNm *float32 `json:"speed_nm,omitempty"`
-	Status *float32 `json:"status,omitempty"`
-	TimestampUtc *string `json:"timestamp_utc,omitempty"`
+	Course       *float32 `json:"course,omitempty"`
+	DraughtM     *float32 `json:"draught_m,omitempty"`
+	Imo          *string  `json:"imo,omitempty"`
+	Lat          *float32 `json:"lat,omitempty"`
+	Lon          *float32 `json:"lon,omitempty"`
+	SpeedNm      *float32 `json:"speed_nm,omitempty"`
+	Status       *float32 `json:"status,omitempty"`
+	TimestampUtc *string  `json:"timestamp_utc,omitempty"`
 }
 
 // NewTrackingEventAis instantiates a new TrackingEventAis object
@@ -363,5 +363,3 @@ func (v *NullableTrackingEventAis) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
