@@ -1132,6 +1132,10 @@
                 "vessel_imo": {
                   "type": "integer",
                   "format": "nullable"
+                },
+                "mode_of_transport": {
+                  "type": "string",
+                  "enum": ["TRUCK", "RAIL", "VESSEL", "BARGE", "UNCLASSIFIED"]
                 }
               }
             }

@@ -1284,6 +1284,7 @@ components:
           event_type_code: event_type_code
           vessel_name: vessel_name
           event_type_name: event_type_name
+          mode_of_transport: TRUCK
           port_name: port_name
           location_raw: location_raw
           id: id
@@ -1299,6 +1300,7 @@ components:
           event_type_code: event_type_code
           vessel_name: vessel_name
           event_type_name: event_type_name
+          mode_of_transport: TRUCK
           port_name: port_name
           location_raw: location_raw
           id: id
@@ -1722,6 +1724,7 @@ components:
             event_type_code: event_type_code
             vessel_name: vessel_name
             event_type_name: event_type_name
+            mode_of_transport: TRUCK
             port_name: port_name
             location_raw: location_raw
             id: id
@@ -1737,6 +1740,7 @@ components:
             event_type_code: event_type_code
             vessel_name: vessel_name
             event_type_name: event_type_name
+            mode_of_transport: TRUCK
             port_name: port_name
             location_raw: location_raw
             id: id
@@ -2017,6 +2021,7 @@ components:
             event_type_code: event_type_code
             vessel_name: vessel_name
             event_type_name: event_type_name
+            mode_of_transport: TRUCK
             port_name: port_name
             location_raw: location_raw
             id: id
@@ -2032,6 +2037,7 @@ components:
             event_type_code: event_type_code
             vessel_name: vessel_name
             event_type_name: event_type_name
+            mode_of_transport: TRUCK
             port_name: port_name
             location_raw: location_raw
             id: id
@@ -2324,6 +2330,7 @@ components:
             event_type_code: event_type_code
             vessel_name: vessel_name
             event_type_name: event_type_name
+            mode_of_transport: TRUCK
             port_name: port_name
             location_raw: location_raw
             id: id
@@ -2339,6 +2346,7 @@ components:
             event_type_code: event_type_code
             vessel_name: vessel_name
             event_type_name: event_type_name
+            mode_of_transport: TRUCK
             port_name: port_name
             location_raw: location_raw
             id: id
@@ -2793,6 +2801,7 @@ components:
         event_type_code: event_type_code
         vessel_name: vessel_name
         event_type_name: event_type_name
+        mode_of_transport: TRUCK
         port_name: port_name
         location_raw: location_raw
         id: id
@@ -2836,6 +2845,14 @@ components:
         vessel_imo:
           format: nullable
           type: integer
+        mode_of_transport:
+          enum:
+          - TRUCK
+          - RAIL
+          - VESSEL
+          - BARGE
+          - UNCLASSIFIED
+          type: string
       type: object
     trackingEvent_ais:
       example:

@@ -32,6 +32,7 @@ type TrackingEventContainerEventList struct {
 	Updated            *time.Time `json:"updated,omitempty"`
 	VesselName         *string    `json:"vessel_name,omitempty"`
 	VesselImo          *int32     `json:"vessel_imo,omitempty"`
+	ModeOfTransport    *string    `json:"mode_of_transport,omitempty"`
 }
 
 // NewTrackingEventContainerEventList instantiates a new TrackingEventContainerEventList object
@@ -531,6 +532,38 @@ func (o *TrackingEventContainerEventList) SetVesselImo(v int32) {
 	o.VesselImo = &v
 }
 
+// GetModeOfTransport returns the ModeOfTransport field value if set, zero value otherwise.
+func (o *TrackingEventContainerEventList) GetModeOfTransport() string {
+	if o == nil || o.ModeOfTransport == nil {
+		var ret string
+		return ret
+	}
+	return *o.ModeOfTransport
+}
+
+// GetModeOfTransportOk returns a tuple with the ModeOfTransport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TrackingEventContainerEventList) GetModeOfTransportOk() (*string, bool) {
+	if o == nil || o.ModeOfTransport == nil {
+		return nil, false
+	}
+	return o.ModeOfTransport, true
+}
+
+// HasModeOfTransport returns a boolean if a field has been set.
+func (o *TrackingEventContainerEventList) HasModeOfTransport() bool {
+	if o != nil && o.ModeOfTransport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModeOfTransport gets a reference to the given string and assigns it to the ModeOfTransport field.
+func (o *TrackingEventContainerEventList) SetModeOfTransport(v string) {
+	o.ModeOfTransport = &v
+}
+
 func (o TrackingEventContainerEventList) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Created != nil {
@@ -577,6 +610,9 @@ func (o TrackingEventContainerEventList) MarshalJSON() ([]byte, error) {
 	}
 	if o.VesselImo != nil {
 		toSerialize["vessel_imo"] = o.VesselImo
+	}
+	if o.ModeOfTransport != nil {
+		toSerialize["mode_of_transport"] = o.ModeOfTransport
 	}
 	return json.Marshal(toSerialize)
 }
