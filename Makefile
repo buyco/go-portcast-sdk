@@ -1,4 +1,4 @@
-DOCKER_BUILD := docker run --rm -u `id -u` -v ${PWD}:/sdk openapitools/openapi-generator-cli:v5.2.1 generate -i  sdk/api_files/postcast_api_openapi.json
+DOCKER_BUILD := docker run --rm -u `id -u` -v ${PWD}:/sdk openapitools/openapi-generator-cli generate --skip-validate-spec -i  sdk/api_files/postcast_api_openapi.json
 GO_CLIENT := -g go -o /sdk/portcast \
 			--git-repo-id=go-portcast-sdk --git-user-id=buyco \
 			--additional-properties=packageName=portcast \
