@@ -77,21 +77,24 @@ ctx = context.WithValue(context.Background(), portcast.ContextOperationServerVar
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.portcast.io/api/v2/eta*
+All URIs are relative to *https://api.portcast.io/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*GetTrackingDataForUploadedContainersAPI* | [**DeleteTrackingBillOfLadingBookmarksBookmarkId**](docs/GetTrackingDataForUploadedContainersAPI.md#deletetrackingbillofladingbookmarksbookmarkid) | **Delete** /bill-of-lading-bookmarks/{bookmark_id} | Archive Bookmark ID
-*GetTrackingDataForUploadedContainersAPI* | [**GetApiV1EtaBillOfLadingBookmarks**](docs/GetTrackingDataForUploadedContainersAPI.md#getapiv1etabillofladingbookmarks) | **Get** /tracking/bill-of-lading-bookmarks/{bookmark_id} | Fetch tracking data by Bookmark ID
-*GetTrackingDataForUploadedContainersAPI* | [**ListApiV1EtaBillOfLadingBookmarks**](docs/GetTrackingDataForUploadedContainersAPI.md#listapiv1etabillofladingbookmarks) | **Get** /tracking/bill-of-lading-bookmarks | List Tracking data by Container, Bill of Lading or Carrier
-*SubAPIsAPI* | [**GetApiV1EtaBillOfLadingBookmarksTerminals**](docs/SubAPIsAPI.md#getapiv1etabillofladingbookmarksterminals) | **Get** /tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan | Fetch terminal data by Bookmark ID
-*SupportingAPIAPI* | [**GetScac**](docs/SupportingAPIAPI.md#getscac) | **Get** /scac | Supported Carrier SCAC List
-*UploadContainersForTrackingAPI* | [**PostBooking**](docs/UploadContainersForTrackingAPI.md#postbooking) | **Post** /booking | Upload using Booking/Bill of Lading
-*UploadContainersForTrackingAPI* | [**PostEtaBillOfLadingBookmarks**](docs/UploadContainersForTrackingAPI.md#postetabillofladingbookmarks) | **Post** /bill-of-lading-bookmarks | Upload using Container Number
+*CustomersAPI* | [**CreateCustomer**](docs/CustomersAPI.md#createcustomer) | **Post** /org/customers | Create a new customer
+*CustomersAPI* | [**ListCustomers**](docs/CustomersAPI.md#listcustomers) | **Get** /org/customers | Get a list of customers
+*GetTrackingDataForUploadedContainersAPI* | [**DeleteTrackingBillOfLadingBookmarksBookmarkId**](docs/GetTrackingDataForUploadedContainersAPI.md#deletetrackingbillofladingbookmarksbookmarkid) | **Delete** /eta/bill-of-lading-bookmarks/{bookmark_id} | Archive Bookmark ID
+*GetTrackingDataForUploadedContainersAPI* | [**GetApiV1EtaBillOfLadingBookmarks**](docs/GetTrackingDataForUploadedContainersAPI.md#getapiv1etabillofladingbookmarks) | **Get** /eta/tracking/bill-of-lading-bookmarks/{bookmark_id} | Fetch tracking data by Bookmark ID
+*GetTrackingDataForUploadedContainersAPI* | [**ListApiV1EtaBillOfLadingBookmarks**](docs/GetTrackingDataForUploadedContainersAPI.md#listapiv1etabillofladingbookmarks) | **Get** /eta/tracking/bill-of-lading-bookmarks | List Tracking data by Container, Bill of Lading or Carrier
+*SubAPIsAPI* | [**GetApiV1EtaBillOfLadingBookmarksTerminals**](docs/SubAPIsAPI.md#getapiv1etabillofladingbookmarksterminals) | **Get** /eta/tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan | Fetch terminal data by Bookmark ID
+*SupportingAPIAPI* | [**GetScac**](docs/SupportingAPIAPI.md#getscac) | **Get** /eta/scac | Supported Carrier SCAC List
+*UploadContainersForTrackingAPI* | [**PostBooking**](docs/UploadContainersForTrackingAPI.md#postbooking) | **Post** /eta/booking | Upload using Booking/Bill of Lading
+*UploadContainersForTrackingAPI* | [**PostEtaBillOfLadingBookmarks**](docs/UploadContainersForTrackingAPI.md#postetabillofladingbookmarks) | **Post** /eta/bill-of-lading-bookmarks | Upload using Container Number
 
 
 ## Documentation For Models
 
+ - [AuthError](docs/AuthError.md)
  - [BillOfLading](docs/BillOfLading.md)
  - [BillOfLadingBookmark](docs/BillOfLadingBookmark.md)
  - [BillOfLadingBookmarkStatusInfo](docs/BillOfLadingBookmarkStatusInfo.md)
@@ -109,6 +112,8 @@ Class | Method | HTTP request | Description
  - [ContainerEvent](docs/ContainerEvent.md)
  - [ContainerEventTerminalDetails](docs/ContainerEventTerminalDetails.md)
  - [ContainerMetadata](docs/ContainerMetadata.md)
+ - [Customer](docs/Customer.md)
+ - [CustomerRequest](docs/CustomerRequest.md)
  - [DelayReasons](docs/DelayReasons.md)
  - [DelayReasonsRotationChange](docs/DelayReasonsRotationChange.md)
  - [DelayReasonsScheduleChangeInner](docs/DelayReasonsScheduleChangeInner.md)
@@ -125,6 +130,7 @@ Class | Method | HTTP request | Description
  - [GetScac200ResponseInner](docs/GetScac200ResponseInner.md)
  - [ListApiV1EtaBillOfLadingBookmarks200Response](docs/ListApiV1EtaBillOfLadingBookmarks200Response.md)
  - [ListApiV1EtaBillOfLadingBookmarks400Response](docs/ListApiV1EtaBillOfLadingBookmarks400Response.md)
+ - [MessageModel](docs/MessageModel.md)
  - [PortTerminalAddOn](docs/PortTerminalAddOn.md)
  - [PortTerminalAddOnExportPlan](docs/PortTerminalAddOnExportPlan.md)
  - [PortTerminalAddOnImportPlan](docs/PortTerminalAddOnImportPlan.md)

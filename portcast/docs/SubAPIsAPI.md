@@ -1,10 +1,10 @@
 # \SubAPIsAPI
 
-All URIs are relative to *https://api.portcast.io/api/v2/eta*
+All URIs are relative to *https://api.portcast.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1EtaBillOfLadingBookmarksTerminals**](SubAPIsAPI.md#GetApiV1EtaBillOfLadingBookmarksTerminals) | **Get** /tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan | Fetch terminal data by Bookmark ID
+[**GetApiV1EtaBillOfLadingBookmarksTerminals**](SubAPIsAPI.md#GetApiV1EtaBillOfLadingBookmarksTerminals) | **Get** /eta/tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan | Fetch terminal data by Bookmark ID
 
 
 

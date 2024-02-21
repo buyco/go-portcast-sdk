@@ -49,6 +49,8 @@ type APIClient struct {
 
 	// API Services
 
+	CustomersAPI CustomersAPI
+
 	GetTrackingDataForUploadedContainersAPI GetTrackingDataForUploadedContainersAPI
 
 	SubAPIsAPI SubAPIsAPI
@@ -74,6 +76,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.CustomersAPI = (*CustomersAPIService)(&c.common)
 	c.GetTrackingDataForUploadedContainersAPI = (*GetTrackingDataForUploadedContainersAPIService)(&c.common)
 	c.SubAPIsAPI = (*SubAPIsAPIService)(&c.common)
 	c.SupportingAPIAPI = (*SupportingAPIAPIService)(&c.common)

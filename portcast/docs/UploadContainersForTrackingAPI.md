@@ -1,11 +1,11 @@
 # \UploadContainersForTrackingAPI
 
-All URIs are relative to *https://api.portcast.io/api/v2/eta*
+All URIs are relative to *https://api.portcast.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PostBooking**](UploadContainersForTrackingAPI.md#PostBooking) | **Post** /booking | Upload using Booking/Bill of Lading
-[**PostEtaBillOfLadingBookmarks**](UploadContainersForTrackingAPI.md#PostEtaBillOfLadingBookmarks) | **Post** /bill-of-lading-bookmarks | Upload using Container Number
+[**PostBooking**](UploadContainersForTrackingAPI.md#PostBooking) | **Post** /eta/booking | Upload using Booking/Bill of Lading
+[**PostEtaBillOfLadingBookmarks**](UploadContainersForTrackingAPI.md#PostEtaBillOfLadingBookmarks) | **Post** /eta/bill-of-lading-bookmarks | Upload using Container Number
 
 
 

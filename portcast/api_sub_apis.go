@@ -23,19 +23,19 @@ import (
 type SubAPIsAPI interface {
 
 	/*
-			GetApiV1EtaBillOfLadingBookmarksTerminals Fetch terminal data by Bookmark ID
+		GetApiV1EtaBillOfLadingBookmarksTerminals Fetch terminal data by Bookmark ID
 
-			Enhance your supply chain visibility by ingesting terminal-specific data.
+		Enhance your supply chain visibility by ingesting terminal-specific data.
 
-		Once you upload your container into Portcast system, use the Bill of Lading Bookmark ID to fetch terminal data for that container.
+	Once you upload your container into Portcast system, use the Bill of Lading Bookmark ID to fetch terminal data for that container.
 
-		Refer to this [coverage sheet](https://docs.google.com/spreadsheets/d/1l7eA1brGaEZwhUS1_xwq1puyK35maPN0T-DWwNJvnhI/edit#gid=118367482) for a detailed overview of the supported fields and the latest terminal coverage.
+	Refer to this [coverage sheet](https://docs.google.com/spreadsheets/d/1l7eA1brGaEZwhUS1_xwq1puyK35maPN0T-DWwNJvnhI/edit#gid=118367482) for a detailed overview of the supported fields and the latest terminal coverage.
 
-		To enable this add-on, contact us at support@portcast.io.
+	To enable this add-on, contact us at support@portcast.io.
 
-			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-			@param bookmarkId Bill of Lading Bookmark ID
-			@return ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param bookmarkId Bill of Lading Bookmark ID
+		@return ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
 	*/
 	GetApiV1EtaBillOfLadingBookmarksTerminals(ctx context.Context, bookmarkId string) ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
 
@@ -103,7 +103,7 @@ func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r A
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan"
+	localVarPath := localBasePath + "/eta/tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan"
 	localVarPath = strings.Replace(localVarPath, "{"+"bookmark_id"+"}", url.PathEscape(parameterValueToString(r.bookmarkId, "bookmarkId")), -1)
 
 	localVarHeaderParams := make(map[string]string)

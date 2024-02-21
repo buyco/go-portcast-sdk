@@ -22,23 +22,23 @@ import (
 type UploadContainersForTrackingAPI interface {
 
 	/*
-			PostBooking Upload using Booking/Bill of Lading
+		PostBooking Upload using Booking/Bill of Lading
 
-			To initiate tracking any booking or bill of lading, when you do not have the container numbers, you can use this API to trigger an upload and start tracking the containers within that booking!
+		To initiate tracking any booking or bill of lading, when you do not have the container numbers, you can use this API to trigger an upload and start tracking the containers within that booking!
 
-		This API automatically fetches the container numbers which are a part of the Booking or Bill of Lading provided by you and start tracking the same.
+	This API automatically fetches the container numbers which are a part of the Booking or Bill of Lading provided by you and start tracking the same.
 
-		When the containers are fetched, we upload them on our end and share back the [Bill of Lading Bookmark](../reference/PortcastAPI.json/components/schemas/Bill_of_Lading_Bookmark) object for your reference which can then be used to fetch tracking data for those containers.
+	When the containers are fetched, we upload them on our end and share back the [Bill of Lading Bookmark](../reference/PortcastAPI.json/components/schemas/Bill_of_Lading_Bookmark) object for your reference which can then be used to fetch tracking data for those containers.
 
-		To initiate an upload, you need to provide three inputs:
-		- Carrier SCAC Code: The carrier SCAC code which helps us identify which carrier to fetch the data from
-		- Document Number: Bill of Lading or Booking Number which helps us fetch the containers
-		- Document Type: This helps us identify if the doc no provided is a booking number or a bill of lading number
+	To initiate an upload, you need to provide three inputs:
+	- Carrier SCAC Code: The carrier SCAC code which helps us identify which carrier to fetch the data from
+	- Document Number: Bill of Lading or Booking Number which helps us fetch the containers
+	- Document Type: This helps us identify if the doc no provided is a booking number or a bill of lading number
 
-		Supported carriers can be found [here](https://docs.google.com/spreadsheets/d/1l7eA1brGaEZwhUS1_xwq1puyK35maPN0T-DWwNJvnhI).
+	Supported carriers can be found [here](https://docs.google.com/spreadsheets/d/1l7eA1brGaEZwhUS1_xwq1puyK35maPN0T-DWwNJvnhI).
 
-			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-			@return ApiPostBookingRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostBookingRequest
 	*/
 	PostBooking(ctx context.Context) ApiPostBookingRequest
 
@@ -47,18 +47,18 @@ type UploadContainersForTrackingAPI interface {
 	PostBookingExecute(r ApiPostBookingRequest) (*BookingAPI, *http.Response, error)
 
 	/*
-			PostEtaBillOfLadingBookmarks Upload using Container Number
+		PostEtaBillOfLadingBookmarks Upload using Container Number
 
-			*To track shipment, you need to provide three inputs:*
+		*To track shipment, you need to provide three inputs:*
 
-		- Carrier SCAC code: This helps us to identify which carrier to fetch the data from, use AUTO if you don't know. If AUTO is used the bill of lading number is disregarded, only container number is used and the data return is for the latest journey of the container.
-		- Bill of Lading or Booking Number: This helps us to fetch the correct journey along with detailed tracking data
-		- Container Number: This helps us to identify which container you intend to track within the Booking
+	- Carrier SCAC code: This helps us to identify which carrier to fetch the data from, use AUTO if you don't know. If AUTO is used the bill of lading number is disregarded, only container number is used and the data return is for the latest journey of the container.
+	- Bill of Lading or Booking Number: This helps us to fetch the correct journey along with detailed tracking data
+	- Container Number: This helps us to identify which container you intend to track within the Booking
 
-		Incase of any missing inputs, refer to [Input Data Guide](docs/Input_Data_Guide.md) for more details!
+	Incase of any missing inputs, refer to [Input Data Guide](docs/Input_Data_Guide.md) for more details!
 
-			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-			@return ApiPostEtaBillOfLadingBookmarksRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiPostEtaBillOfLadingBookmarksRequest
 	*/
 	PostEtaBillOfLadingBookmarks(ctx context.Context) ApiPostEtaBillOfLadingBookmarksRequest
 
@@ -135,7 +135,7 @@ func (a *UploadContainersForTrackingAPIService) PostBookingExecute(r ApiPostBook
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/booking"
+	localVarPath := localBasePath + "/eta/booking"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -307,7 +307,7 @@ func (a *UploadContainersForTrackingAPIService) PostEtaBillOfLadingBookmarksExec
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/bill-of-lading-bookmarks"
+	localVarPath := localBasePath + "/eta/bill-of-lading-bookmarks"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -23,15 +23,15 @@ import (
 type GetTrackingDataForUploadedContainersAPI interface {
 
 	/*
-			DeleteTrackingBillOfLadingBookmarksBookmarkId Archive Bookmark ID
+		DeleteTrackingBillOfLadingBookmarksBookmarkId Archive Bookmark ID
 
-			Archive a container Bookmark to stop tracking it.
+		Archive a container Bookmark to stop tracking it.
 
-		This will remove the container from the refresh processes and archive the shipment.
+	This will remove the container from the refresh processes and archive the shipment.
 
-			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-			@param bookmarkId Bill of Lading Bookmark ID
-			@return ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param bookmarkId Bill of Lading Bookmark ID
+		@return ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
 	*/
 	DeleteTrackingBillOfLadingBookmarksBookmarkId(ctx context.Context, bookmarkId string) ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
 
@@ -55,14 +55,14 @@ type GetTrackingDataForUploadedContainersAPI interface {
 	GetApiV1EtaBillOfLadingBookmarksExecute(r ApiGetApiV1EtaBillOfLadingBookmarksRequest) (*GetApiV1EtaBillOfLadingBookmarks200Response, *http.Response, error)
 
 	/*
-			ListApiV1EtaBillOfLadingBookmarks List Tracking data by Container, Bill of Lading or Carrier
+		ListApiV1EtaBillOfLadingBookmarks List Tracking data by Container, Bill of Lading or Carrier
 
-			Returns a list of your Tracking Data for the Bookmarks based on your query. The tracking requests are returned sorted by creation date, with the most recent tracking request appearing first.
+		Returns a list of your Tracking Data for the Bookmarks based on your query. The tracking requests are returned sorted by creation date, with the most recent tracking request appearing first.
 
-		The list API doesn't return tracking data for more than 5 bookmarks, hence there's pagination which is applied on the same!
+	The list API doesn't return tracking data for more than 5 bookmarks, hence there's pagination which is applied on the same!
 
-			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-			@return ApiListApiV1EtaBillOfLadingBookmarksRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiListApiV1EtaBillOfLadingBookmarksRequest
 	*/
 	ListApiV1EtaBillOfLadingBookmarks(ctx context.Context) ApiListApiV1EtaBillOfLadingBookmarksRequest
 
@@ -126,7 +126,7 @@ func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLad
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/bill-of-lading-bookmarks/{bookmark_id}"
+	localVarPath := localBasePath + "/eta/bill-of-lading-bookmarks/{bookmark_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bookmark_id"+"}", url.PathEscape(parameterValueToString(r.bookmarkId, "bookmarkId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -286,7 +286,7 @@ func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLading
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/tracking/bill-of-lading-bookmarks/{bookmark_id}"
+	localVarPath := localBasePath + "/eta/tracking/bill-of-lading-bookmarks/{bookmark_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bookmark_id"+"}", url.PathEscape(parameterValueToString(r.bookmarkId, "bookmarkId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -473,7 +473,7 @@ func (a *GetTrackingDataForUploadedContainersAPIService) ListApiV1EtaBillOfLadin
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/tracking/bill-of-lading-bookmarks"
+	localVarPath := localBasePath + "/eta/tracking/bill-of-lading-bookmarks"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -94,7 +94,7 @@ func NewConfiguration() *Configuration {
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
-				URL:         "https://api.portcast.io/api/v2/eta",
+				URL:         "https://api.portcast.io/api/v2",
 				Description: "Production",
 			},
 		},

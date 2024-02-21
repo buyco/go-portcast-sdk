@@ -19,7 +19,7 @@ import (
 // PortcastAPIBillOfLading Summary of the shipment's Predicted, Scheduled and Actual Events that happen at the POL and POD
 type PortcastAPIBillOfLading struct {
 	BillOfLading *BillOfLading
-	Data         *map[string]interface{}
+	Metadata     *map[string]interface{}
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
@@ -39,16 +39,16 @@ func (dst *PortcastAPIBillOfLading) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.Data)
+	err = json.Unmarshal(data, &dst.Metadata)
 	if err == nil {
-		jsonData, _ := json.Marshal(dst.Data)
-		if string(jsonData) == "{}" { // empty struct
-			dst.Data = nil
+		jsonMetadata, _ := json.Marshal(dst.Metadata)
+		if string(jsonMetadata) == "{}" { // empty struct
+			dst.Metadata = nil
 		} else {
-			return nil // data stored in dst.Data, return on the first match
+			return nil // data stored in dst.Metadata, return on the first match
 		}
 	} else {
-		dst.Data = nil
+		dst.Metadata = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PortcastAPIBillOfLading)")
@@ -60,8 +60,8 @@ func (src *PortcastAPIBillOfLading) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.BillOfLading)
 	}
 
-	if src.Data != nil {
-		return json.Marshal(&src.Data)
+	if src.Metadata != nil {
+		return json.Marshal(&src.Metadata)
 	}
 
 	return nil, nil // no data in anyOf schemas

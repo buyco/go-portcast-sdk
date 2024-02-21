@@ -1,10 +1,10 @@
 # \SupportingAPIAPI
 
-All URIs are relative to *https://api.portcast.io/api/v2/eta*
+All URIs are relative to *https://api.portcast.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetScac**](SupportingAPIAPI.md#GetScac) | **Get** /scac | Supported Carrier SCAC List
+[**GetScac**](SupportingAPIAPI.md#GetScac) | **Get** /eta/scac | Supported Carrier SCAC List
 
 
 

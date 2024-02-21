@@ -79,7 +79,7 @@ func (a *SupportingAPIAPIService) GetScacExecute(r ApiGetScacRequest) ([]GetScac
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/scac"
+	localVarPath := localBasePath + "/eta/scac"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

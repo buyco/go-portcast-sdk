@@ -1,14 +1,15 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
+api_customers.go
 api_get_tracking_data_for_uploaded_containers.go
 api_sub_apis.go
 api_supporting_api.go
 api_upload_containers_for_tracking.go
 client.go
 configuration.go
+docs/AuthError.md
 docs/BillOfLading.md
 docs/BillOfLadingBookmark.md
 docs/BillOfLadingBookmarkStatusInfo.md
@@ -26,6 +27,9 @@ docs/BookingAPIVesselsInner.md
 docs/ContainerEvent.md
 docs/ContainerEventTerminalDetails.md
 docs/ContainerMetadata.md
+docs/Customer.md
+docs/CustomerRequest.md
+docs/CustomersAPI.md
 docs/DelayReasons.md
 docs/DelayReasonsRotationChange.md
 docs/DelayReasonsScheduleChangeInner.md
@@ -43,6 +47,7 @@ docs/GetScac200ResponseInner.md
 docs/GetTrackingDataForUploadedContainersAPI.md
 docs/ListApiV1EtaBillOfLadingBookmarks200Response.md
 docs/ListApiV1EtaBillOfLadingBookmarks400Response.md
+docs/MessageModel.md
 docs/PortTerminalAddOn.md
 docs/PortTerminalAddOnExportPlan.md
 docs/PortTerminalAddOnImportPlan.md
@@ -82,6 +87,7 @@ docs/VoyageDetails.md
 git_push.sh
 go.mod
 go.sum
+model_auth_error.go
 model_bill_of_lading.go
 model_bill_of_lading_bookmark.go
 model_bill_of_lading_bookmark_status_info.go
@@ -99,6 +105,8 @@ model_booking_api_vessels_inner.go
 model_container_event.go
 model_container_event_terminal_details.go
 model_container_metadata.go
+model_customer.go
+model_customer_request.go
 model_delay_reasons.go
 model_delay_reasons_rotation_change.go
 model_delay_reasons_schedule_change_inner.go
@@ -115,6 +123,7 @@ model_get_api_v1_eta_bill_of_lading_bookmarks_terminals_404_response.go
 model_get_scac_200_response_inner.go
 model_list_api_v1_eta_bill_of_lading_bookmarks_200_response.go
 model_list_api_v1_eta_bill_of_lading_bookmarks_400_response.go
+model_message_model.go
 model_port_terminal_add_on.go
 model_port_terminal_add_on_export_plan.go
 model_port_terminal_add_on_import_plan.go
@@ -149,8 +158,4 @@ model_sailing_info_tracking_status_info_vessel_one_of_1.go
 model_sailing_info_tracking_status_info_vessel_one_of_2.go
 model_voyage_details.go
 response.go
-test/api_get_tracking_data_for_uploaded_containers_test.go
-test/api_sub_apis_test.go
-test/api_supporting_api_test.go
-test/api_upload_containers_for_tracking_test.go
 utils.go

@@ -1,12 +1,12 @@
 # \GetTrackingDataForUploadedContainersAPI
 
-All URIs are relative to *https://api.portcast.io/api/v2/eta*
+All URIs are relative to *https://api.portcast.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteTrackingBillOfLadingBookmarksBookmarkId**](GetTrackingDataForUploadedContainersAPI.md#DeleteTrackingBillOfLadingBookmarksBookmarkId) | **Delete** /bill-of-lading-bookmarks/{bookmark_id} | Archive Bookmark ID
-[**GetApiV1EtaBillOfLadingBookmarks**](GetTrackingDataForUploadedContainersAPI.md#GetApiV1EtaBillOfLadingBookmarks) | **Get** /tracking/bill-of-lading-bookmarks/{bookmark_id} | Fetch tracking data by Bookmark ID
-[**ListApiV1EtaBillOfLadingBookmarks**](GetTrackingDataForUploadedContainersAPI.md#ListApiV1EtaBillOfLadingBookmarks) | **Get** /tracking/bill-of-lading-bookmarks | List Tracking data by Container, Bill of Lading or Carrier
+[**DeleteTrackingBillOfLadingBookmarksBookmarkId**](GetTrackingDataForUploadedContainersAPI.md#DeleteTrackingBillOfLadingBookmarksBookmarkId) | **Delete** /eta/bill-of-lading-bookmarks/{bookmark_id} | Archive Bookmark ID
+[**GetApiV1EtaBillOfLadingBookmarks**](GetTrackingDataForUploadedContainersAPI.md#GetApiV1EtaBillOfLadingBookmarks) | **Get** /eta/tracking/bill-of-lading-bookmarks/{bookmark_id} | Fetch tracking data by Bookmark ID
+[**ListApiV1EtaBillOfLadingBookmarks**](GetTrackingDataForUploadedContainersAPI.md#ListApiV1EtaBillOfLadingBookmarks) | **Get** /eta/tracking/bill-of-lading-bookmarks | List Tracking data by Container, Bill of Lading or Carrier
 
 
 

@@ -17,7 +17,7 @@ info:
   version: "2.0"
 servers:
 - description: Production
-  url: https://api.portcast.io/api/v2/eta
+  url: https://api.portcast.io/api/v2
 security:
 - x-api-key: []
 tags:
@@ -30,7 +30,84 @@ tags:
 - description: Endpoints to fetch supporting metadata
   name: Supporting API
 paths:
-  /bill-of-lading-bookmarks:
+  /org/customers:
+    get:
+      operationId: ListCustomers
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomersResponse'
+          description: Successful response
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageModel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageModel'
+          description: Internal server error / Unexpected error
+      security:
+      - x-api-key: []
+      summary: Get a list of customers
+      tags:
+      - Customers
+    post:
+      operationId: CreateCustomer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: Successful response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageModel'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthError'
+          description: Invalid API key
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageModel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageModel'
+          description: Internal server error / Unexpect error
+      security:
+      - x-api-key: []
+      summary: Create a new customer
+      tags:
+      - Customers
+  /eta/bill-of-lading-bookmarks:
     post:
       description: |-
         *To track shipment, you need to provide three inputs:*
@@ -176,7 +253,7 @@ paths:
       summary: Upload using Container Number
       tags:
       - Upload containers for tracking
-  /booking:
+  /eta/booking:
     post:
       description: "To initiate tracking any booking or bill of lading, when you do\
         \ not have the container numbers, you can use this API to trigger an upload\
@@ -298,7 +375,7 @@ paths:
       summary: Upload using Booking/Bill of Lading
       tags:
       - Upload containers for tracking
-  /tracking/bill-of-lading-bookmarks:
+  /eta/tracking/bill-of-lading-bookmarks:
     get:
       description: "Returns a list of your Tracking Data for the Bookmarks based on\
         \ your query. The tracking requests are returned sorted by creation date,\
@@ -400,7 +477,7 @@ paths:
       summary: "List Tracking data by Container, Bill of Lading or Carrier"
       tags:
       - Get tracking data for uploaded containers
-  /tracking/bill-of-lading-bookmarks/{bookmark_id}:
+  /eta/tracking/bill-of-lading-bookmarks/{bookmark_id}:
     get:
       description: Fetch the tracking data using the Bookmark ID.
       operationId: get-api-v1-eta-bill-of-lading-bookmarks
@@ -501,7 +578,7 @@ paths:
         format: uuid
         type: string
       style: simple
-  /tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan:
+  /eta/tracking/bill-of-lading-bookmarks/{bookmark_id}/import_export_plan:
     get:
       description: "Enhance your supply chain visibility by ingesting terminal-specific\
         \ data. \n\nOnce you upload your container into Portcast system, use the Bill\
@@ -624,7 +701,7 @@ paths:
         format: uuid
         type: string
       style: simple
-  /bill-of-lading-bookmarks/{bookmark_id}:
+  /eta/bill-of-lading-bookmarks/{bookmark_id}:
     delete:
       description: |-
         Archive a container Bookmark to stop tracking it.
@@ -723,7 +800,7 @@ paths:
         format: uuid
         type: string
       style: simple
-  /scac:
+  /eta/scac:
     get:
       description: API Endpoint to fetch a list of all the supported carrier SCACs
         for Ocean Container Visibility
@@ -1195,6 +1272,45 @@ components:
       title: Portcast API
       x-stoplight:
         id: 9afab104cb311
+    AuthError:
+      example:
+        Error: API Key is Invalid
+      properties:
+        Error:
+          example: API Key is Invalid
+          type: string
+    MessageModel:
+      example:
+        message: API Quota Exceeded
+      properties:
+        message:
+          example: API Quota Exceeded
+          type: string
+    Customer:
+      example:
+        created: 2000-01-23T04:56:07.000+00:00
+        name: name
+      properties:
+        created:
+          format: date-time
+          type: string
+        name:
+          type: string
+      required:
+      - created
+      - name
+    CustomersResponse:
+      items:
+        $ref: '#/components/schemas/Customer'
+      type: array
+    CustomerRequest:
+      example:
+        customer: customer
+      properties:
+        customer:
+          type: string
+      required:
+      - customer
     Bill_of_Lading:
       description: Schema for Bill of Lading Object
       example:
