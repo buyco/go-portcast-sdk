@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Created** | Pointer to **time.Time** | Container Event Object Created Date | [optional] 
 **EventRaw** | Pointer to **string** | Description of the event, as reported by the Carrier | [optional] 
-**EventTime** | Pointer to **NullableTime** | The latest actual date-time of the event, as reported by the Carrier - Local Time | [optional] 
-**EventTimeEstimated** | Pointer to **NullableTime** | The latest estimated date-time of the event, as reported by the Carrier - Local Time | [optional] 
+**EventTime** | Pointer to **NullableString** | The latest actual date-time of the event, as reported by the Carrier - Local Time | [optional] 
+**EventTimeEstimated** | Pointer to **NullableString** | The latest estimated date-time of the event, as reported by the Carrier - Local Time | [optional] 
 **EventTypeCode** | Pointer to **string** | Portcast Standardized Event Code | [optional] 
 **EventTypeName** | Pointer to **string** | Portcast Standardized Event Name | [optional] 
 **Id** | Pointer to **string** | Unique Identifier for the Container Event Object | [optional] 
@@ -93,20 +93,20 @@ HasEventRaw returns a boolean if a field has been set.
 
 ### GetEventTime
 
-`func (o *ContainerEvent) GetEventTime() time.Time`
+`func (o *ContainerEvent) GetEventTime() string`
 
 GetEventTime returns the EventTime field if non-nil, zero value otherwise.
 
 ### GetEventTimeOk
 
-`func (o *ContainerEvent) GetEventTimeOk() (*time.Time, bool)`
+`func (o *ContainerEvent) GetEventTimeOk() (*string, bool)`
 
 GetEventTimeOk returns a tuple with the EventTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTime
 
-`func (o *ContainerEvent) SetEventTime(v time.Time)`
+`func (o *ContainerEvent) SetEventTime(v string)`
 
 SetEventTime sets EventTime field to given value.
 
@@ -128,20 +128,20 @@ HasEventTime returns a boolean if a field has been set.
 UnsetEventTime ensures that no value is present for EventTime, not even an explicit nil
 ### GetEventTimeEstimated
 
-`func (o *ContainerEvent) GetEventTimeEstimated() time.Time`
+`func (o *ContainerEvent) GetEventTimeEstimated() string`
 
 GetEventTimeEstimated returns the EventTimeEstimated field if non-nil, zero value otherwise.
 
 ### GetEventTimeEstimatedOk
 
-`func (o *ContainerEvent) GetEventTimeEstimatedOk() (*time.Time, bool)`
+`func (o *ContainerEvent) GetEventTimeEstimatedOk() (*string, bool)`
 
 GetEventTimeEstimatedOk returns a tuple with the EventTimeEstimated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTimeEstimated
 
-`func (o *ContainerEvent) SetEventTimeEstimated(v time.Time)`
+`func (o *ContainerEvent) SetEventTimeEstimated(v string)`
 
 SetEventTimeEstimated sets EventTimeEstimated field to given value.
 

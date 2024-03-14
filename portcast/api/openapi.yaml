@@ -914,7 +914,7 @@ components:
         - created: 2000-01-23T04:56:07.000+00:00
           event_raw: Empty container pick-up
           vessel_imo: 9751107
-          event_time_estimated: 2000-01-23T04:56:07.000+00:00
+          event_time_estimated: 2023-12-29T00:00:00
           event_type_code: PICKUP
           terminal_details:
             terminal_code_source: BIC
@@ -929,12 +929,12 @@ components:
           location_type_name: Place of receipt
           location_type_code: POR
           updated: 2000-01-23T04:56:07.000+00:00
-          event_time: 2000-01-23T04:56:07.000+00:00
+          event_time: 2023-12-29T00:00:00
           port_code: CNXMG
         - created: 2000-01-23T04:56:07.000+00:00
           event_raw: Empty container pick-up
           vessel_imo: 9751107
-          event_time_estimated: 2000-01-23T04:56:07.000+00:00
+          event_time_estimated: 2023-12-29T00:00:00
           event_type_code: PICKUP
           terminal_details:
             terminal_code_source: BIC
@@ -949,7 +949,7 @@ components:
           location_type_name: Place of receipt
           location_type_code: POR
           updated: 2000-01-23T04:56:07.000+00:00
-          event_time: 2000-01-23T04:56:07.000+00:00
+          event_time: 2023-12-29T00:00:00
           port_code: CNXMG
         sailing_info_tracking:
         - msg: AIS successfully fetched
@@ -1656,7 +1656,7 @@ components:
         created: 2000-01-23T04:56:07.000+00:00
         event_raw: Empty container pick-up
         vessel_imo: 9751107
-        event_time_estimated: 2000-01-23T04:56:07.000+00:00
+        event_time_estimated: 2023-12-29T00:00:00
         event_type_code: PICKUP
         terminal_details:
           terminal_code_source: BIC
@@ -1671,7 +1671,7 @@ components:
         location_type_name: Place of receipt
         location_type_code: POR
         updated: 2000-01-23T04:56:07.000+00:00
-        event_time: 2000-01-23T04:56:07.000+00:00
+        event_time: 2023-12-29T00:00:00
         port_code: CNXMG
       properties:
         created:
@@ -1685,13 +1685,13 @@ components:
         event_time:
           description: "The latest actual date-time of the event, as reported by the\
             \ Carrier - Local Time"
-          format: date-time
+          example: 2023-12-29T00:00:00
           nullable: true
           type: string
         event_time_estimated:
           description: "The latest estimated date-time of the event, as reported by\
             \ the Carrier - Local Time"
-          format: date-time
+          example: 2023-12-29T00:00:00
           nullable: true
           type: string
         event_type_code:
@@ -2590,7 +2590,7 @@ components:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -2605,12 +2605,12 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -2625,7 +2625,7 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           sailing_info_tracking:
           - msg: AIS successfully fetched
@@ -2973,7 +2973,7 @@ components:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -2988,12 +2988,12 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -3008,7 +3008,7 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           sailing_info_tracking:
           - msg: AIS successfully fetched
@@ -3356,7 +3356,7 @@ components:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -3371,12 +3371,12 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -3391,7 +3391,7 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           sailing_info_tracking:
           - msg: AIS successfully fetched
@@ -3739,7 +3739,7 @@ components:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -3754,12 +3754,12 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -3774,7 +3774,7 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           sailing_info_tracking:
           - msg: AIS successfully fetched
@@ -4122,7 +4122,7 @@ components:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -4137,12 +4137,12 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -4157,7 +4157,7 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           sailing_info_tracking:
           - msg: AIS successfully fetched
@@ -4533,7 +4533,7 @@ components:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -4548,12 +4548,12 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
             vessel_imo: 9751107
-            event_time_estimated: 2000-01-23T04:56:07.000+00:00
+            event_time_estimated: 2023-12-29T00:00:00
             event_type_code: PICKUP
             terminal_details:
               terminal_code_source: BIC
@@ -4568,7 +4568,7 @@ components:
             location_type_name: Place of receipt
             location_type_code: POR
             updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
             port_code: CNXMG
           sailing_info_tracking:
           - msg: AIS successfully fetched

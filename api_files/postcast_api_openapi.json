@@ -1883,7 +1883,7 @@
                             "string",
                             "null"
                         ],
-                        "format": "date-time",
+                        "example": "2023-12-29T00:00:00",
                         "description": "The latest actual date-time of the event, as reported by the Carrier - Local Time"
                     },
                     "event_time_estimated": {
@@ -1891,7 +1891,7 @@
                             "string",
                             "null"
                         ],
-                        "format": "date-time",
+                        "example": "2023-12-29T00:00:00",
                         "description": "The latest estimated date-time of the event, as reported by the Carrier - Local Time"
                     },
                     "event_type_code": {

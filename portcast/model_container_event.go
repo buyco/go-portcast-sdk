@@ -26,9 +26,9 @@ type ContainerEvent struct {
 	// Description of the event, as reported by the Carrier
 	EventRaw *string `json:"event_raw,omitempty"`
 	// The latest actual date-time of the event, as reported by the Carrier - Local Time
-	EventTime NullableTime `json:"event_time,omitempty"`
+	EventTime NullableString `json:"event_time,omitempty"`
 	// The latest estimated date-time of the event, as reported by the Carrier - Local Time
-	EventTimeEstimated NullableTime `json:"event_time_estimated,omitempty"`
+	EventTimeEstimated NullableString `json:"event_time_estimated,omitempty"`
 	// Portcast Standardized Event Code
 	EventTypeCode *string `json:"event_type_code,omitempty"`
 	// Portcast Standardized Event Name
@@ -138,9 +138,9 @@ func (o *ContainerEvent) SetEventRaw(v string) {
 }
 
 // GetEventTime returns the EventTime field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ContainerEvent) GetEventTime() time.Time {
+func (o *ContainerEvent) GetEventTime() string {
 	if o == nil || IsNil(o.EventTime.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.EventTime.Get()
@@ -149,7 +149,7 @@ func (o *ContainerEvent) GetEventTime() time.Time {
 // GetEventTimeOk returns a tuple with the EventTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ContainerEvent) GetEventTimeOk() (*time.Time, bool) {
+func (o *ContainerEvent) GetEventTimeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -165,8 +165,8 @@ func (o *ContainerEvent) HasEventTime() bool {
 	return false
 }
 
-// SetEventTime gets a reference to the given NullableTime and assigns it to the EventTime field.
-func (o *ContainerEvent) SetEventTime(v time.Time) {
+// SetEventTime gets a reference to the given NullableString and assigns it to the EventTime field.
+func (o *ContainerEvent) SetEventTime(v string) {
 	o.EventTime.Set(&v)
 }
 // SetEventTimeNil sets the value for EventTime to be an explicit nil
@@ -180,9 +180,9 @@ func (o *ContainerEvent) UnsetEventTime() {
 }
 
 // GetEventTimeEstimated returns the EventTimeEstimated field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ContainerEvent) GetEventTimeEstimated() time.Time {
+func (o *ContainerEvent) GetEventTimeEstimated() string {
 	if o == nil || IsNil(o.EventTimeEstimated.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.EventTimeEstimated.Get()
@@ -191,7 +191,7 @@ func (o *ContainerEvent) GetEventTimeEstimated() time.Time {
 // GetEventTimeEstimatedOk returns a tuple with the EventTimeEstimated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ContainerEvent) GetEventTimeEstimatedOk() (*time.Time, bool) {
+func (o *ContainerEvent) GetEventTimeEstimatedOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -207,8 +207,8 @@ func (o *ContainerEvent) HasEventTimeEstimated() bool {
 	return false
 }
 
-// SetEventTimeEstimated gets a reference to the given NullableTime and assigns it to the EventTimeEstimated field.
-func (o *ContainerEvent) SetEventTimeEstimated(v time.Time) {
+// SetEventTimeEstimated gets a reference to the given NullableString and assigns it to the EventTimeEstimated field.
+func (o *ContainerEvent) SetEventTimeEstimated(v string) {
 	o.EventTimeEstimated.Set(&v)
 }
 // SetEventTimeEstimatedNil sets the value for EventTimeEstimated to be an explicit nil
