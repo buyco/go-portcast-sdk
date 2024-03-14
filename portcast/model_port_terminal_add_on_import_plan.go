@@ -47,7 +47,7 @@ type PortTerminalAddOnImportPlan struct {
 	ContainerHolds *string `json:"container_holds,omitempty"`
 	// Last Free Day, as reported by the Terminal. Charges will start to acrue after this date.
 	LastFreeDay *string `json:"last_free_day,omitempty"`
-	// Dollar amount owed in demurrage fees, as reported by the Terminal.
+	// Dollar amount owed in demurrage fees, as reported by the Terminal. 
 	DemurrageOwed *string `json:"demurrage_owed,omitempty"`
 	// Date and time when the container gates out of the port terminal, as reported by the Terminal - Local Time.
 	GateOutDate *string `json:"gate_out_date,omitempty"`
@@ -57,7 +57,7 @@ type PortTerminalAddOnImportPlan struct {
 	ReadyForDelivery *string `json:"ready_for_delivery,omitempty"`
 	// Confirms if the pick up appointment has been set.
 	AppointmentSet *string `json:"appointment_set,omitempty"`
-	// Date and time when container is scheduled to be picked up from the port, as reported by the Terminal - Local Time.
+	// Date and time when container is scheduled to be picked up from the port, as reported by the Terminal - Local Time. 
 	PickupAppointmentDate *time.Time `json:"pickup_appointment_date,omitempty"`
 }
 
@@ -687,7 +687,7 @@ func (o *PortTerminalAddOnImportPlan) SetPickupAppointmentDate(v time.Time) {
 }
 
 func (o PortTerminalAddOnImportPlan) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -791,3 +791,5 @@ func (v *NullablePortTerminalAddOnImportPlan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

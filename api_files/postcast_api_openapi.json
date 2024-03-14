@@ -655,8 +655,13 @@
                 ],
                 "description": "Returns a list of your Tracking Data for the Bookmarks based on your query. The tracking requests are returned sorted by creation date, with the most recent tracking request appearing first. \n\nThe list API doesn't return tracking data for more than 5 bookmarks, hence there's pagination which is applied on the same!",
                 "requestBody": {
-                    "content": {},
-                    "description": ""
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
                 }
             },
             "parameters": []
@@ -786,7 +791,13 @@
                     }
                 ],
                 "requestBody": {
-                    "content": {}
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -959,7 +970,13 @@
                     }
                 ],
                 "requestBody": {
-                    "content": {}
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "x-stoplight": {
                     "id": "tcxcc1zgim2qj"
@@ -1088,7 +1105,13 @@
                     }
                 ],
                 "requestBody": {
-                    "content": {}
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "tags": [
                     "Get tracking data for uploaded containers"
@@ -1197,6 +1220,57 @@
     },
     "components": {
         "schemas": {
+            "AuthError": {
+                "type": "object",
+                "properties": {
+                  "Error": {
+                    "type": "string",
+                    "example": "API Key is Invalid"
+                  }
+                }
+              },
+            "MessageModel": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "API Quota Exceeded"
+                    }
+                }
+            },
+            "Customer": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "created",
+                    "name"
+                ]
+            },
+            "CustomersResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Customer"
+                }
+            },
+            "CustomerRequest": {
+                "type": "object",
+                "properties": {
+                    "customer": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "customer"
+                ]
+            },
             "Portcast_API": {
                 "type": "object",
                 "description": "Portcast Container Visibility API",
@@ -1206,21 +1280,8 @@
                 "title": "Portcast API",
                 "properties": {
                     "bill_of_lading": {
-                        "description": "Summary of the shipment's Predicted, Scheduled and Actual Events that happen at the POL and POD",
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/Bill_of_Lading",
-                                "x-stoplight": {
-                                    "id": "3fa9zr2ux4pg8"
-                                }
-                            },
-                            {
-                                "type": "object",
-                                "x-stoplight": {
-                                    "id": "w7yvn7kw194t0"
-                                }
-                            }
-                        ]
+                        "$ref": "#/components/schemas/Bill_of_Lading",
+                        "description": "Summary of the shipment's Predicted, Scheduled and Actual Events that happen at the POL and POD"
                     },
                     "bill_of_lading_bookmark": {
                         "$ref": "#/components/schemas/Bill_of_Lading_Bookmark",
@@ -1278,7 +1339,7 @@
                             },
                             "intensity": {
                                 "type": [
-                                    "integer",
+                                    "number",
                                     "null"
                                 ],
                                 "x-stoplight": {
@@ -1420,57 +1481,6 @@
                         "description": "Tracking Status"
                     }
                 }
-            },
-            "AuthError": {
-                "type": "object",
-                "properties": {
-                  "Error": {
-                    "type": "string",
-                    "example": "API Key is Invalid"
-                  }
-                }
-              },
-            "MessageModel": {
-                "type": "object",
-                "properties": {
-                    "message": {
-                        "type": "string",
-                        "example": "API Quota Exceeded"
-                    }
-                }
-            },
-            "Customer": {
-                "type": "object",
-                "properties": {
-                    "created": {
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "name": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "created",
-                    "name"
-                ]
-            },
-            "CustomersResponse": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/components/schemas/Customer"
-                }
-            },
-            "CustomerRequest": {
-                "type": "object",
-                "properties": {
-                    "customer": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "customer"
-                ]
             },
             "Bill_of_Lading": {
                 "type": "object",
@@ -1959,7 +1969,10 @@
                         ]
                     },
                     "mode_of_transport": {
-                        "type": "string",
+                        "type": [
+                            "string",
+                            "null"
+                        ],
                         "description": "Mode of Transport which is used for the execution of the container event, as interpretted by Portcast",
                         "enum": [
                             "TRUCK",
@@ -3561,7 +3574,7 @@
                                 "type": "string",
                                 "description": "Earliest Receipt Date (ERD) for a standard container, as reported by the terminal - Local Time.",
                                 "format": "date-time",
-                                "default": "2023-06-24T14:15:22Z"
+                                "example": "2023-06-24T14:15:22Z"
                             },
                             "erd_reefer": {
                                 "type": "string",

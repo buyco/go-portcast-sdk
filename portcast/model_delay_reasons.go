@@ -32,11 +32,11 @@ type DelayReasons struct {
 	// Relates to the location name to which the delay incident is associated with
 	PortName *string `json:"port_name,omitempty"`
 	// Delay Incident Code: RLV(Vessel Rollover), LTD(Late Departure), PRC(Port Rotation Changes)
-	ReasonCode     *string                     `json:"reason_code,omitempty"`
+	ReasonCode *string `json:"reason_code,omitempty"`
 	RotationChange *DelayReasonsRotationChange `json:"rotation_change,omitempty"`
 	// Detailed view into impact of delay incidents into the container's arrival at POD, loading and departure events.
 	ScheduleChange []DelayReasonsScheduleChangeInner `json:"schedule_change,omitempty"`
-	VesselChange   *DelayReasonsVesselChange         `json:"vessel_change,omitempty"`
+	VesselChange *DelayReasonsVesselChange `json:"vessel_change,omitempty"`
 }
 
 // NewDelayReasons instantiates a new DelayReasons object
@@ -345,7 +345,7 @@ func (o *DelayReasons) SetVesselChange(v DelayReasonsVesselChange) {
 }
 
 func (o DelayReasons) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,3 +419,5 @@ func (v *NullableDelayReasons) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

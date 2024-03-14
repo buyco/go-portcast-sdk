@@ -77,7 +77,7 @@ func (o *PostEtaBillOfLadingBookmarks403Response) SetMessage(v string) {
 }
 
 func (o PostEtaBillOfLadingBookmarks403Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -127,3 +127,5 @@ func (v *NullablePostEtaBillOfLadingBookmarks403Response) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

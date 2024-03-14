@@ -75,7 +75,6 @@ func (o *DelayReasonsVesselChange) HasComparisonVessel() bool {
 func (o *DelayReasonsVesselChange) SetComparisonVessel(v float32) {
 	o.ComparisonVessel.Set(&v)
 }
-
 // SetComparisonVesselNil sets the value for ComparisonVessel to be an explicit nil
 func (o *DelayReasonsVesselChange) SetComparisonVesselNil() {
 	o.ComparisonVessel.Set(nil)
@@ -118,7 +117,6 @@ func (o *DelayReasonsVesselChange) HasUpdatedVessel() bool {
 func (o *DelayReasonsVesselChange) SetUpdatedVessel(v float32) {
 	o.UpdatedVessel.Set(&v)
 }
-
 // SetUpdatedVesselNil sets the value for UpdatedVessel to be an explicit nil
 func (o *DelayReasonsVesselChange) SetUpdatedVesselNil() {
 	o.UpdatedVessel.Set(nil)
@@ -130,7 +128,7 @@ func (o *DelayReasonsVesselChange) UnsetUpdatedVessel() {
 }
 
 func (o DelayReasonsVesselChange) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,3 +181,5 @@ func (v *NullableDelayReasonsVesselChange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

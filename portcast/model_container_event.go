@@ -42,11 +42,11 @@ type ContainerEvent struct {
 	// Describes the stage at which the container event takes place - Full Description
 	LocationTypeName *string `json:"location_type_name,omitempty"`
 	// Mode of Transport which is used for the execution of the container event, as interpretted by Portcast
-	ModeOfTransport *string `json:"mode_of_transport,omitempty"`
+	ModeOfTransport NullableString `json:"mode_of_transport,omitempty"`
 	// Relates to the UNLOCODE for the location where the container event takes place, as standardized by Portcast
 	PortCode NullableString `json:"port_code,omitempty"`
 	// Relates to the location name where the container event takes place, as standardized by Portcast
-	PortName        NullableString                 `json:"port_name,omitempty"`
+	PortName NullableString `json:"port_name,omitempty"`
 	TerminalDetails *ContainerEventTerminalDetails `json:"terminal_details,omitempty"`
 	// Container Event Object Updated Date
 	Updated *time.Time `json:"updated,omitempty"`
@@ -169,7 +169,6 @@ func (o *ContainerEvent) HasEventTime() bool {
 func (o *ContainerEvent) SetEventTime(v time.Time) {
 	o.EventTime.Set(&v)
 }
-
 // SetEventTimeNil sets the value for EventTime to be an explicit nil
 func (o *ContainerEvent) SetEventTimeNil() {
 	o.EventTime.Set(nil)
@@ -212,7 +211,6 @@ func (o *ContainerEvent) HasEventTimeEstimated() bool {
 func (o *ContainerEvent) SetEventTimeEstimated(v time.Time) {
 	o.EventTimeEstimated.Set(&v)
 }
-
 // SetEventTimeEstimatedNil sets the value for EventTimeEstimated to be an explicit nil
 func (o *ContainerEvent) SetEventTimeEstimatedNil() {
 	o.EventTimeEstimated.Set(nil)
@@ -351,7 +349,6 @@ func (o *ContainerEvent) HasLocationRaw() bool {
 func (o *ContainerEvent) SetLocationRaw(v string) {
 	o.LocationRaw.Set(&v)
 }
-
 // SetLocationRawNil sets the value for LocationRaw to be an explicit nil
 func (o *ContainerEvent) SetLocationRawNil() {
 	o.LocationRaw.Set(nil)
@@ -426,36 +423,46 @@ func (o *ContainerEvent) SetLocationTypeName(v string) {
 	o.LocationTypeName = &v
 }
 
-// GetModeOfTransport returns the ModeOfTransport field value if set, zero value otherwise.
+// GetModeOfTransport returns the ModeOfTransport field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContainerEvent) GetModeOfTransport() string {
-	if o == nil || IsNil(o.ModeOfTransport) {
+	if o == nil || IsNil(o.ModeOfTransport.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ModeOfTransport
+	return *o.ModeOfTransport.Get()
 }
 
 // GetModeOfTransportOk returns a tuple with the ModeOfTransport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContainerEvent) GetModeOfTransportOk() (*string, bool) {
-	if o == nil || IsNil(o.ModeOfTransport) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ModeOfTransport, true
+	return o.ModeOfTransport.Get(), o.ModeOfTransport.IsSet()
 }
 
 // HasModeOfTransport returns a boolean if a field has been set.
 func (o *ContainerEvent) HasModeOfTransport() bool {
-	if o != nil && !IsNil(o.ModeOfTransport) {
+	if o != nil && o.ModeOfTransport.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetModeOfTransport gets a reference to the given string and assigns it to the ModeOfTransport field.
+// SetModeOfTransport gets a reference to the given NullableString and assigns it to the ModeOfTransport field.
 func (o *ContainerEvent) SetModeOfTransport(v string) {
-	o.ModeOfTransport = &v
+	o.ModeOfTransport.Set(&v)
+}
+// SetModeOfTransportNil sets the value for ModeOfTransport to be an explicit nil
+func (o *ContainerEvent) SetModeOfTransportNil() {
+	o.ModeOfTransport.Set(nil)
+}
+
+// UnsetModeOfTransport ensures that no value is present for ModeOfTransport, not even an explicit nil
+func (o *ContainerEvent) UnsetModeOfTransport() {
+	o.ModeOfTransport.Unset()
 }
 
 // GetPortCode returns the PortCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -490,7 +497,6 @@ func (o *ContainerEvent) HasPortCode() bool {
 func (o *ContainerEvent) SetPortCode(v string) {
 	o.PortCode.Set(&v)
 }
-
 // SetPortCodeNil sets the value for PortCode to be an explicit nil
 func (o *ContainerEvent) SetPortCodeNil() {
 	o.PortCode.Set(nil)
@@ -533,7 +539,6 @@ func (o *ContainerEvent) HasPortName() bool {
 func (o *ContainerEvent) SetPortName(v string) {
 	o.PortName.Set(&v)
 }
-
 // SetPortNameNil sets the value for PortName to be an explicit nil
 func (o *ContainerEvent) SetPortNameNil() {
 	o.PortName.Set(nil)
@@ -640,7 +645,6 @@ func (o *ContainerEvent) HasVesselImo() bool {
 func (o *ContainerEvent) SetVesselImo(v float32) {
 	o.VesselImo.Set(&v)
 }
-
 // SetVesselImoNil sets the value for VesselImo to be an explicit nil
 func (o *ContainerEvent) SetVesselImoNil() {
 	o.VesselImo.Set(nil)
@@ -683,7 +687,6 @@ func (o *ContainerEvent) HasVesselName() bool {
 func (o *ContainerEvent) SetVesselName(v string) {
 	o.VesselName.Set(&v)
 }
-
 // SetVesselNameNil sets the value for VesselName to be an explicit nil
 func (o *ContainerEvent) SetVesselNameNil() {
 	o.VesselName.Set(nil)
@@ -695,7 +698,7 @@ func (o *ContainerEvent) UnsetVesselName() {
 }
 
 func (o ContainerEvent) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -734,8 +737,8 @@ func (o ContainerEvent) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LocationTypeName) {
 		toSerialize["location_type_name"] = o.LocationTypeName
 	}
-	if !IsNil(o.ModeOfTransport) {
-		toSerialize["mode_of_transport"] = o.ModeOfTransport
+	if o.ModeOfTransport.IsSet() {
+		toSerialize["mode_of_transport"] = o.ModeOfTransport.Get()
 	}
 	if o.PortCode.IsSet() {
 		toSerialize["port_code"] = o.PortCode.Get()
@@ -793,3 +796,5 @@ func (v *NullableContainerEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

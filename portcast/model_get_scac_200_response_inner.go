@@ -246,7 +246,6 @@ func (o *GetScac200ResponseInner) HasSupportedStatus() bool {
 func (o *GetScac200ResponseInner) SetSupportedStatus(v string) {
 	o.SupportedStatus.Set(&v)
 }
-
 // SetSupportedStatusNil sets the value for SupportedStatus to be an explicit nil
 func (o *GetScac200ResponseInner) SetSupportedStatusNil() {
 	o.SupportedStatus.Set(nil)
@@ -290,7 +289,7 @@ func (o *GetScac200ResponseInner) SetUpdated(v time.Time) {
 }
 
 func (o GetScac200ResponseInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -358,3 +357,5 @@ func (v *NullableGetScac200ResponseInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

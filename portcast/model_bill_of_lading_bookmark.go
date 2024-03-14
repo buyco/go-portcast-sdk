@@ -40,7 +40,7 @@ type BillOfLadingBookmark struct {
 	Status *string `json:"status,omitempty"`
 	// [Depricated] Old Status codes - Not supported
 	// Deprecated
-	StatusCode *string                         `json:"status_code,omitempty"`
+	StatusCode *string `json:"status_code,omitempty"`
 	StatusInfo *BillOfLadingBookmarkStatusInfo `json:"status_info,omitempty"`
 	// System Deletion Status of the bookmark
 	SystemDeleted *bool `json:"system_deleted,omitempty"`
@@ -105,7 +105,6 @@ func (o *BillOfLadingBookmark) HasBlNo() bool {
 func (o *BillOfLadingBookmark) SetBlNo(v string) {
 	o.BlNo.Set(&v)
 }
-
 // SetBlNoNil sets the value for BlNo to be an explicit nil
 func (o *BillOfLadingBookmark) SetBlNoNil() {
 	o.BlNo.Set(nil)
@@ -475,7 +474,7 @@ func (o *BillOfLadingBookmark) SetUpdated(v time.Time) {
 }
 
 func (o BillOfLadingBookmark) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -558,3 +557,5 @@ func (v *NullableBillOfLadingBookmark) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

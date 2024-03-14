@@ -21,7 +21,7 @@ var _ MappedNullable = &PortcastAPIStatusInfoOneOf2{}
 // PortcastAPIStatusInfoOneOf2 struct for PortcastAPIStatusInfoOneOf2
 type PortcastAPIStatusInfoOneOf2 struct {
 	// Internal Error in generating the API response
-	Code     *string  `json:"code,omitempty"`
+	Code *string `json:"code,omitempty"`
 	Metadata []string `json:"metadata,omitempty"`
 }
 
@@ -111,7 +111,7 @@ func (o *PortcastAPIStatusInfoOneOf2) SetMetadata(v []string) {
 }
 
 func (o PortcastAPIStatusInfoOneOf2) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,3 +164,5 @@ func (v *NullablePortcastAPIStatusInfoOneOf2) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

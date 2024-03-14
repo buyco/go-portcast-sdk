@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **LocationRaw** | Pointer to **NullableString** | Relates to a physical location where the container event takes place, as reported by the Carrier | [optional] 
 **LocationTypeCode** | Pointer to **string** | Describes the stage at which the container event takes place - Code | [optional] 
 **LocationTypeName** | Pointer to **string** | Describes the stage at which the container event takes place - Full Description | [optional] 
-**ModeOfTransport** | Pointer to **string** | Mode of Transport which is used for the execution of the container event, as interpretted by Portcast | [optional] 
+**ModeOfTransport** | Pointer to **NullableString** | Mode of Transport which is used for the execution of the container event, as interpretted by Portcast | [optional] 
 **PortCode** | Pointer to **NullableString** | Relates to the UNLOCODE for the location where the container event takes place, as standardized by Portcast | [optional] 
 **PortName** | Pointer to **NullableString** | Relates to the location name where the container event takes place, as standardized by Portcast | [optional] 
 **TerminalDetails** | Pointer to [**ContainerEventTerminalDetails**](ContainerEventTerminalDetails.md) |  | [optional] 
@@ -346,6 +346,16 @@ SetModeOfTransport sets ModeOfTransport field to given value.
 
 HasModeOfTransport returns a boolean if a field has been set.
 
+### SetModeOfTransportNil
+
+`func (o *ContainerEvent) SetModeOfTransportNil(b bool)`
+
+ SetModeOfTransportNil sets the value for ModeOfTransport to be an explicit nil
+
+### UnsetModeOfTransport
+`func (o *ContainerEvent) UnsetModeOfTransport()`
+
+UnsetModeOfTransport ensures that no value is present for ModeOfTransport, not even an explicit nil
 ### GetPortCode
 
 `func (o *ContainerEvent) GetPortCode() string`

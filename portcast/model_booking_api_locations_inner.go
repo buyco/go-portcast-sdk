@@ -119,7 +119,6 @@ func (o *BookingAPILocationsInner) HasName() bool {
 func (o *BookingAPILocationsInner) SetName(v string) {
 	o.Name.Set(&v)
 }
-
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *BookingAPILocationsInner) SetNameNil() {
 	o.Name.Set(nil)
@@ -162,7 +161,6 @@ func (o *BookingAPILocationsInner) HasState() bool {
 func (o *BookingAPILocationsInner) SetState(v string) {
 	o.State.Set(&v)
 }
-
 // SetStateNil sets the value for State to be an explicit nil
 func (o *BookingAPILocationsInner) SetStateNil() {
 	o.State.Set(nil)
@@ -205,7 +203,6 @@ func (o *BookingAPILocationsInner) HasCountry() bool {
 func (o *BookingAPILocationsInner) SetCountry(v string) {
 	o.Country.Set(&v)
 }
-
 // SetCountryNil sets the value for Country to be an explicit nil
 func (o *BookingAPILocationsInner) SetCountryNil() {
 	o.Country.Set(nil)
@@ -248,7 +245,6 @@ func (o *BookingAPILocationsInner) HasCountryCode() bool {
 func (o *BookingAPILocationsInner) SetCountryCode(v string) {
 	o.CountryCode.Set(&v)
 }
-
 // SetCountryCodeNil sets the value for CountryCode to be an explicit nil
 func (o *BookingAPILocationsInner) SetCountryCodeNil() {
 	o.CountryCode.Set(nil)
@@ -291,7 +287,6 @@ func (o *BookingAPILocationsInner) HasLocode() bool {
 func (o *BookingAPILocationsInner) SetLocode(v string) {
 	o.Locode.Set(&v)
 }
-
 // SetLocodeNil sets the value for Locode to be an explicit nil
 func (o *BookingAPILocationsInner) SetLocodeNil() {
 	o.Locode.Set(nil)
@@ -334,7 +329,6 @@ func (o *BookingAPILocationsInner) HasLat() bool {
 func (o *BookingAPILocationsInner) SetLat(v float32) {
 	o.Lat.Set(&v)
 }
-
 // SetLatNil sets the value for Lat to be an explicit nil
 func (o *BookingAPILocationsInner) SetLatNil() {
 	o.Lat.Set(nil)
@@ -377,7 +371,6 @@ func (o *BookingAPILocationsInner) HasLng() bool {
 func (o *BookingAPILocationsInner) SetLng(v float32) {
 	o.Lng.Set(&v)
 }
-
 // SetLngNil sets the value for Lng to be an explicit nil
 func (o *BookingAPILocationsInner) SetLngNil() {
 	o.Lng.Set(nil)
@@ -389,7 +382,7 @@ func (o *BookingAPILocationsInner) UnsetLng() {
 }
 
 func (o BookingAPILocationsInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -460,3 +453,5 @@ func (v *NullableBookingAPILocationsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -11,10 +11,10 @@ package portcast
 
 import (
 	"context"
-	openapiclient "github.com/buyco/go-portcast-sdk/portcast"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/buyco/go-portcast-sdk/portcast"
 )
 
 func Test_portcast_GetTrackingDataForUploadedContainersAPIService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_portcast_GetTrackingDataForUploadedContainersAPIService(t *testing.T) 
 
 	t.Run("Test GetTrackingDataForUploadedContainersAPIService DeleteTrackingBillOfLadingBookmarksBookmarkId", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var bookmarkId string
 
@@ -38,7 +38,7 @@ func Test_portcast_GetTrackingDataForUploadedContainersAPIService(t *testing.T) 
 
 	t.Run("Test GetTrackingDataForUploadedContainersAPIService GetApiV1EtaBillOfLadingBookmarks", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		var bookmarkId string
 
@@ -52,7 +52,7 @@ func Test_portcast_GetTrackingDataForUploadedContainersAPIService(t *testing.T) 
 
 	t.Run("Test GetTrackingDataForUploadedContainersAPIService ListApiV1EtaBillOfLadingBookmarks", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.GetTrackingDataForUploadedContainersAPI.ListApiV1EtaBillOfLadingBookmarks(context.Background()).Execute()
 

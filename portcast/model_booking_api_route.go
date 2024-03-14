@@ -20,9 +20,9 @@ var _ MappedNullable = &BookingAPIRoute{}
 
 // BookingAPIRoute POL & POD Route Summary
 type BookingAPIRoute struct {
-	Prepol  *BookingAPIRoutePrepol  `json:"prepol,omitempty"`
-	Pol     *BookingAPIRoutePol     `json:"pol,omitempty"`
-	Pod     *BookingAPIRoutePod     `json:"pod,omitempty"`
+	Prepol *BookingAPIRoutePrepol `json:"prepol,omitempty"`
+	Pol *BookingAPIRoutePol `json:"pol,omitempty"`
+	Pod *BookingAPIRoutePod `json:"pod,omitempty"`
 	Postpod *BookingAPIRoutePostpod `json:"postpod,omitempty"`
 }
 
@@ -172,7 +172,7 @@ func (o *BookingAPIRoute) SetPostpod(v BookingAPIRoutePostpod) {
 }
 
 func (o BookingAPIRoute) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -231,3 +231,5 @@ func (v *NullableBookingAPIRoute) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

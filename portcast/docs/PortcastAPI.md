@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BillOfLading** | Pointer to [**PortcastAPIBillOfLading**](PortcastAPIBillOfLading.md) |  | [optional] 
+**BillOfLading** | Pointer to [**BillOfLading**](BillOfLading.md) | Summary of the shipment&#39;s Predicted, Scheduled and Actual Events that happen at the POL and POD | [optional] 
 **BillOfLadingBookmark** | Pointer to [**BillOfLadingBookmark**](BillOfLadingBookmark.md) | Summary of the Bookmark ID Metadata | [optional] 
 **ContainerEventList** | Pointer to [**[]ContainerEvent**](ContainerEvent.md) | Container Events List for the tracked shipment | [optional] 
 **ContainerMetadata** | Pointer to [**ContainerMetadata**](ContainerMetadata.md) |  | [optional] 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBillOfLading
 
-`func (o *PortcastAPI) GetBillOfLading() PortcastAPIBillOfLading`
+`func (o *PortcastAPI) GetBillOfLading() BillOfLading`
 
 GetBillOfLading returns the BillOfLading field if non-nil, zero value otherwise.
 
 ### GetBillOfLadingOk
 
-`func (o *PortcastAPI) GetBillOfLadingOk() (*PortcastAPIBillOfLading, bool)`
+`func (o *PortcastAPI) GetBillOfLadingOk() (*BillOfLading, bool)`
 
 GetBillOfLadingOk returns a tuple with the BillOfLading field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillOfLading
 
-`func (o *PortcastAPI) SetBillOfLading(v PortcastAPIBillOfLading)`
+`func (o *PortcastAPI) SetBillOfLading(v BillOfLading)`
 
 SetBillOfLading sets BillOfLading field to given value.
 

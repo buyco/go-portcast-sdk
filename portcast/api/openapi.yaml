@@ -431,7 +431,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        description: ""
+        content:
+          application/json:
+            schema:
+              type: object
       responses:
         "200":
           content:
@@ -502,7 +505,11 @@ paths:
           format: uuid
           type: string
         style: simple
-      requestBody: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
       responses:
         "200":
           content:
@@ -608,7 +615,11 @@ paths:
           format: uuid
           type: string
         style: simple
-      requestBody: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
       responses:
         "200":
           content:
@@ -729,7 +740,11 @@ paths:
           format: uuid
           type: string
         style: simple
-      requestBody: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
       responses:
         "200":
           content:
@@ -837,6 +852,45 @@ paths:
         id: vcjblhdh4a1p2
 components:
   schemas:
+    AuthError:
+      example:
+        Error: API Key is Invalid
+      properties:
+        Error:
+          example: API Key is Invalid
+          type: string
+    MessageModel:
+      example:
+        message: API Quota Exceeded
+      properties:
+        message:
+          example: API Quota Exceeded
+          type: string
+    Customer:
+      example:
+        created: 2000-01-23T04:56:07.000+00:00
+        name: name
+      properties:
+        created:
+          format: date-time
+          type: string
+        name:
+          type: string
+      required:
+      - created
+      - name
+    CustomersResponse:
+      items:
+        $ref: '#/components/schemas/Customer'
+      type: array
+    CustomerRequest:
+      example:
+        customer: customer
+      properties:
+        customer:
+          type: string
+      required:
+      - customer
     Portcast_API:
       description: Portcast Container Visibility API
       example:
@@ -1219,13 +1273,13 @@ components:
           location_type_code: POL
           port_code: CNXMG
         co2_emissions:
-          intensity: 5
+          intensity: 5.962133916683182
           total: 0
           wtt: 6
           ttw: 1
       properties:
         bill_of_lading:
-          $ref: '#/components/schemas/Portcast_API_bill_of_lading'
+          $ref: '#/components/schemas/Bill_of_Lading'
         bill_of_lading_bookmark:
           $ref: '#/components/schemas/Bill_of_Lading_Bookmark'
         container_event_list:
@@ -1272,45 +1326,6 @@ components:
       title: Portcast API
       x-stoplight:
         id: 9afab104cb311
-    AuthError:
-      example:
-        Error: API Key is Invalid
-      properties:
-        Error:
-          example: API Key is Invalid
-          type: string
-    MessageModel:
-      example:
-        message: API Quota Exceeded
-      properties:
-        message:
-          example: API Quota Exceeded
-          type: string
-    Customer:
-      example:
-        created: 2000-01-23T04:56:07.000+00:00
-        name: name
-      properties:
-        created:
-          format: date-time
-          type: string
-        name:
-          type: string
-      required:
-      - created
-      - name
-    CustomersResponse:
-      items:
-        $ref: '#/components/schemas/Customer'
-      type: array
-    CustomerRequest:
-      example:
-        customer: customer
-      properties:
-        customer:
-          type: string
-      required:
-      - customer
     Bill_of_Lading:
       description: Schema for Bill of Lading Object
       example:
@@ -1753,6 +1768,7 @@ components:
           - VESSEL
           - BARGE
           - UNCLASSIFIED
+          nullable: true
           type: string
         port_code:
           description: "Relates to the UNLOCODE for the location where the container\
@@ -2331,7 +2347,7 @@ components:
         export_plan:
           voyage_no: CG303R
           port_cutoff_reefer: 2023-06-23T14:15:22Z
-          erd_standard: 2000-01-23T04:56:07.000+00:00
+          erd_standard: 2023-06-24T14:15:22Z
           latest_etd: 2023-06-26T14:15:22Z
           facility_code: PSAPP1
           vessel_name: GEMLIK EXPRESS
@@ -2933,7 +2949,7 @@ components:
             location_type_code: POL
             port_code: CNXMG
           co2_emissions:
-            intensity: 5
+            intensity: 5.962133916683182
             total: 0
             wtt: 6
             ttw: 1
@@ -3316,7 +3332,7 @@ components:
             location_type_code: POL
             port_code: CNXMG
           co2_emissions:
-            intensity: 5
+            intensity: 5.962133916683182
             total: 0
             wtt: 6
             ttw: 1
@@ -3699,7 +3715,7 @@ components:
             location_type_code: POL
             port_code: CNXMG
           co2_emissions:
-            intensity: 5
+            intensity: 5.962133916683182
             total: 0
             wtt: 6
             ttw: 1
@@ -4082,7 +4098,7 @@ components:
             location_type_code: POL
             port_code: CNXMG
           co2_emissions:
-            intensity: 5
+            intensity: 5.962133916683182
             total: 0
             wtt: 6
             ttw: 1
@@ -4465,7 +4481,7 @@ components:
             location_type_code: POL
             port_code: CNXMG
           co2_emissions:
-            intensity: 5
+            intensity: 5.962133916683182
             total: 0
             wtt: 6
             ttw: 1
@@ -4876,7 +4892,7 @@ components:
             location_type_code: POL
             port_code: CNXMG
           co2_emissions:
-            intensity: 5
+            intensity: 5.962133916683182
             total: 0
             wtt: 6
             ttw: 1
@@ -5035,18 +5051,10 @@ components:
           description: Last Updated Date for the carrier scac metadata
           format: date-time
           type: string
-    Portcast_API_bill_of_lading:
-      anyOf:
-      - $ref: '#/components/schemas/Bill_of_Lading'
-      - type: object
-        x-stoplight:
-          id: w7yvn7kw194t0
-      description: "Summary of the shipment's Predicted, Scheduled and Actual Events\
-        \ that happen at the POL and POD"
     Portcast_API_co2_emissions:
       description: Carbon Dioxide Emmissions Details
       example:
-        intensity: 5
+        intensity: 5.962133916683182
         total: 0
         wtt: 6
         ttw: 1
@@ -5082,7 +5090,7 @@ components:
             \ efficiency for each container, thus empowering stakeholders to define\
             \ actions on reducing emissions.\r\n"
           nullable: true
-          type: integer
+          type: number
           x-stoplight:
             id: 13c31rl3hsfff
       x-stoplight:
@@ -6032,7 +6040,7 @@ components:
       example:
         voyage_no: CG303R
         port_cutoff_reefer: 2023-06-23T14:15:22Z
-        erd_standard: 2000-01-23T04:56:07.000+00:00
+        erd_standard: 2023-06-24T14:15:22Z
         latest_etd: 2023-06-26T14:15:22Z
         facility_code: PSAPP1
         vessel_name: GEMLIK EXPRESS
@@ -6083,9 +6091,9 @@ components:
           example: CG303R
           type: string
         erd_standard:
-          default: 2023-06-24T14:15:22Z
           description: "Earliest Receipt Date (ERD) for a standard container, as reported\
             \ by the terminal - Local Time."
+          example: 2023-06-24T14:15:22Z
           format: date-time
           type: string
         erd_reefer:

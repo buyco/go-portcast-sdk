@@ -19,15 +19,16 @@ import (
 	"net/url"
 )
 
+
 type SupportingAPIAPI interface {
 
 	/*
-		GetScac Supported Carrier SCAC List
+	GetScac Supported Carrier SCAC List
 
-		API Endpoint to fetch a list of all the supported carrier SCACs for Ocean Container Visibility
+	API Endpoint to fetch a list of all the supported carrier SCACs for Ocean Container Visibility
 
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGetScacRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetScacRequest
 	*/
 	GetScac(ctx context.Context) ApiGetScacRequest
 
@@ -40,7 +41,7 @@ type SupportingAPIAPI interface {
 type SupportingAPIAPIService service
 
 type ApiGetScacRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService SupportingAPIAPI
 }
 
@@ -53,25 +54,24 @@ GetScac Supported Carrier SCAC List
 
 API Endpoint to fetch a list of all the supported carrier SCACs for Ocean Container Visibility
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetScacRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetScacRequest
 */
 func (a *SupportingAPIAPIService) GetScac(ctx context.Context) ApiGetScacRequest {
 	return ApiGetScacRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []GetScac200ResponseInner
+//  @return []GetScac200ResponseInner
 func (a *SupportingAPIAPIService) GetScacExecute(r ApiGetScacRequest) ([]GetScac200ResponseInner, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []GetScac200ResponseInner
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []GetScac200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SupportingAPIAPIService.GetScac")
@@ -145,8 +145,8 @@ func (a *SupportingAPIAPIService) GetScacExecute(r ApiGetScacRequest) ([]GetScac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

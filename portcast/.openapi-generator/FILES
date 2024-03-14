@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -52,7 +53,6 @@ docs/PortTerminalAddOn.md
 docs/PortTerminalAddOnExportPlan.md
 docs/PortTerminalAddOnImportPlan.md
 docs/PortcastAPI.md
-docs/PortcastAPIBillOfLading.md
 docs/PortcastAPICo2Emissions.md
 docs/PortcastAPIStatusInfo.md
 docs/PortcastAPIStatusInfoOneOf.md
@@ -128,7 +128,6 @@ model_port_terminal_add_on.go
 model_port_terminal_add_on_export_plan.go
 model_port_terminal_add_on_import_plan.go
 model_portcast_api.go
-model_portcast_api_bill_of_lading.go
 model_portcast_api_co2_emissions.go
 model_portcast_api_status_info.go
 model_portcast_api_status_info_one_of.go
@@ -158,4 +157,9 @@ model_sailing_info_tracking_status_info_vessel_one_of_1.go
 model_sailing_info_tracking_status_info_vessel_one_of_2.go
 model_voyage_details.go
 response.go
+test/api_customers_test.go
+test/api_get_tracking_data_for_uploaded_containers_test.go
+test/api_sub_apis_test.go
+test/api_supporting_api_test.go
+test/api_upload_containers_for_tracking_test.go
 utils.go

@@ -21,7 +21,7 @@ var _ MappedNullable = &SailingInfoTrackingStatusInfoVesselOneOf2{}
 // SailingInfoTrackingStatusInfoVesselOneOf2 struct for SailingInfoTrackingStatusInfoVesselOneOf2
 type SailingInfoTrackingStatusInfoVesselOneOf2 struct {
 	// Vessel related data NOT fetched (vessel schedules and/or vessel AIS data)
-	Code     *string  `json:"code,omitempty"`
+	Code *string `json:"code,omitempty"`
 	Metadata []string `json:"metadata,omitempty"`
 }
 
@@ -111,7 +111,7 @@ func (o *SailingInfoTrackingStatusInfoVesselOneOf2) SetMetadata(v []string) {
 }
 
 func (o SailingInfoTrackingStatusInfoVesselOneOf2) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,3 +164,5 @@ func (v *NullableSailingInfoTrackingStatusInfoVesselOneOf2) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

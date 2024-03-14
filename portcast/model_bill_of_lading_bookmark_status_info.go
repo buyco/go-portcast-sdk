@@ -21,7 +21,7 @@ var _ MappedNullable = &BillOfLadingBookmarkStatusInfo{}
 // BillOfLadingBookmarkStatusInfo Status Defination Object for container tracking journey stage
 type BillOfLadingBookmarkStatusInfo struct {
 	// [Container Journey Status](docs/Portcast-Status-Codes.md)
-	Code     *string  `json:"code,omitempty"`
+	Code *string `json:"code,omitempty"`
 	Metadata []string `json:"metadata,omitempty"`
 }
 
@@ -107,7 +107,7 @@ func (o *BillOfLadingBookmarkStatusInfo) SetMetadata(v []string) {
 }
 
 func (o BillOfLadingBookmarkStatusInfo) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -160,3 +160,5 @@ func (v *NullableBillOfLadingBookmarkStatusInfo) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

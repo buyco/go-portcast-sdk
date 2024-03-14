@@ -19,13 +19,14 @@ import (
 	"net/url"
 )
 
+
 type CustomersAPI interface {
 
 	/*
-		CreateCustomer Create a new customer
+	CreateCustomer Create a new customer
 
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiCreateCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateCustomerRequest
 	*/
 	CreateCustomer(ctx context.Context) ApiCreateCustomerRequest
 
@@ -34,10 +35,10 @@ type CustomersAPI interface {
 	CreateCustomerExecute(r ApiCreateCustomerRequest) (*Customer, *http.Response, error)
 
 	/*
-		ListCustomers Get a list of customers
+	ListCustomers Get a list of customers
 
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiListCustomersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCustomersRequest
 	*/
 	ListCustomers(ctx context.Context) ApiListCustomersRequest
 
@@ -50,8 +51,8 @@ type CustomersAPI interface {
 type CustomersAPIService service
 
 type ApiCreateCustomerRequest struct {
-	ctx             context.Context
-	ApiService      CustomersAPI
+	ctx context.Context
+	ApiService CustomersAPI
 	customerRequest *CustomerRequest
 }
 
@@ -67,25 +68,24 @@ func (r ApiCreateCustomerRequest) Execute() (*Customer, *http.Response, error) {
 /*
 CreateCustomer Create a new customer
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateCustomerRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateCustomerRequest
 */
 func (a *CustomersAPIService) CreateCustomer(ctx context.Context) ApiCreateCustomerRequest {
 	return ApiCreateCustomerRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return Customer
+//  @return Customer
 func (a *CustomersAPIService) CreateCustomerExecute(r ApiCreateCustomerRequest) (*Customer, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *Customer
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Customer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersAPIService.CreateCustomer")
@@ -164,8 +164,8 @@ func (a *CustomersAPIService) CreateCustomerExecute(r ApiCreateCustomerRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -175,8 +175,8 @@ func (a *CustomersAPIService) CreateCustomerExecute(r ApiCreateCustomerRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -186,8 +186,8 @@ func (a *CustomersAPIService) CreateCustomerExecute(r ApiCreateCustomerRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -197,8 +197,8 @@ func (a *CustomersAPIService) CreateCustomerExecute(r ApiCreateCustomerRequest) 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -216,7 +216,7 @@ func (a *CustomersAPIService) CreateCustomerExecute(r ApiCreateCustomerRequest) 
 }
 
 type ApiListCustomersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService CustomersAPI
 }
 
@@ -227,25 +227,24 @@ func (r ApiListCustomersRequest) Execute() ([]Customer, *http.Response, error) {
 /*
 ListCustomers Get a list of customers
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiListCustomersRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiListCustomersRequest
 */
 func (a *CustomersAPIService) ListCustomers(ctx context.Context) ApiListCustomersRequest {
 	return ApiListCustomersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []Customer
+//  @return []Customer
 func (a *CustomersAPIService) ListCustomersExecute(r ApiListCustomersRequest) ([]Customer, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []Customer
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []Customer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersAPIService.ListCustomers")
@@ -319,8 +318,8 @@ func (a *CustomersAPIService) ListCustomersExecute(r ApiListCustomersRequest) ([
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -330,8 +329,8 @@ func (a *CustomersAPIService) ListCustomersExecute(r ApiListCustomersRequest) ([
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -341,8 +340,8 @@ func (a *CustomersAPIService) ListCustomersExecute(r ApiListCustomersRequest) ([
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

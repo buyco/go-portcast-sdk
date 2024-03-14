@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetApiV1EtaBillOfLadingBookmarksTerminals
 
-> PortTerminalAddOn GetApiV1EtaBillOfLadingBookmarksTerminals(ctx, bookmarkId).XCustomer(xCustomer).Execute()
+> PortTerminalAddOn GetApiV1EtaBillOfLadingBookmarksTerminals(ctx, bookmarkId).XCustomer(xCustomer).Body(body).Execute()
 
 Fetch terminal data by Bookmark ID
 
@@ -31,10 +31,11 @@ import (
 func main() {
 	bookmarkId := "4cbcd8ba-584e-4f76-aca7-ff388dc3e57b" // string | Bill of Lading Bookmark ID
 	xCustomer := "customer-ABC" // string | [Enterprise Customers] Customer Name to indicate which org to get tracking data from (optional)
+	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SubAPIsAPI.GetApiV1EtaBillOfLadingBookmarksTerminals(context.Background(), bookmarkId).XCustomer(xCustomer).Execute()
+	resp, r, err := apiClient.SubAPIsAPI.GetApiV1EtaBillOfLadingBookmarksTerminals(context.Background(), bookmarkId).XCustomer(xCustomer).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubAPIsAPI.GetApiV1EtaBillOfLadingBookmarksTerminals``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xCustomer** | **string** | [Enterprise Customers] Customer Name to indicate which org to get tracking data from | 
+ **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -20,7 +20,7 @@ var _ MappedNullable = &GetApiV1EtaBillOfLadingBookmarks404Response{}
 
 // GetApiV1EtaBillOfLadingBookmarks404Response struct for GetApiV1EtaBillOfLadingBookmarks404Response
 type GetApiV1EtaBillOfLadingBookmarks404Response struct {
-	Error   *string `json:"error,omitempty"`
+	Error *string `json:"error,omitempty"`
 	Message *string `json:"message,omitempty"`
 }
 
@@ -114,7 +114,7 @@ func (o *GetApiV1EtaBillOfLadingBookmarks404Response) SetMessage(v string) {
 }
 
 func (o GetApiV1EtaBillOfLadingBookmarks404Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,3 +167,5 @@ func (v *NullableGetApiV1EtaBillOfLadingBookmarks404Response) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

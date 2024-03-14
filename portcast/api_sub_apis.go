@@ -20,22 +20,23 @@ import (
 	"strings"
 )
 
+
 type SubAPIsAPI interface {
 
 	/*
-		GetApiV1EtaBillOfLadingBookmarksTerminals Fetch terminal data by Bookmark ID
+	GetApiV1EtaBillOfLadingBookmarksTerminals Fetch terminal data by Bookmark ID
 
-		Enhance your supply chain visibility by ingesting terminal-specific data.
+	Enhance your supply chain visibility by ingesting terminal-specific data. 
 
-	Once you upload your container into Portcast system, use the Bill of Lading Bookmark ID to fetch terminal data for that container.
+Once you upload your container into Portcast system, use the Bill of Lading Bookmark ID to fetch terminal data for that container. 
 
-	Refer to this [coverage sheet](https://docs.google.com/spreadsheets/d/1l7eA1brGaEZwhUS1_xwq1puyK35maPN0T-DWwNJvnhI/edit#gid=118367482) for a detailed overview of the supported fields and the latest terminal coverage.
+Refer to this [coverage sheet](https://docs.google.com/spreadsheets/d/1l7eA1brGaEZwhUS1_xwq1puyK35maPN0T-DWwNJvnhI/edit#gid=118367482) for a detailed overview of the supported fields and the latest terminal coverage.
 
-	To enable this add-on, contact us at support@portcast.io.
+To enable this add-on, contact us at support@portcast.io. 
 
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bookmarkId Bill of Lading Bookmark ID
-		@return ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bookmarkId Bill of Lading Bookmark ID
+	@return ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
 	*/
 	GetApiV1EtaBillOfLadingBookmarksTerminals(ctx context.Context, bookmarkId string) ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
 
@@ -48,15 +49,21 @@ type SubAPIsAPI interface {
 type SubAPIsAPIService service
 
 type ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService SubAPIsAPI
 	bookmarkId string
-	xCustomer  *string
+	xCustomer *string
+	body *map[string]interface{}
 }
 
 // [Enterprise Customers] Customer Name to indicate which org to get tracking data from
 func (r ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest) XCustomer(xCustomer string) ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest {
 	r.xCustomer = &xCustomer
+	return r
+}
+
+func (r ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest) Body(body map[string]interface{}) ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest {
+	r.body = &body
 	return r
 }
 
@@ -67,35 +74,34 @@ func (r ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest) Execute() (*PortTer
 /*
 GetApiV1EtaBillOfLadingBookmarksTerminals Fetch terminal data by Bookmark ID
 
-Enhance your supply chain visibility by ingesting terminal-specific data.
+Enhance your supply chain visibility by ingesting terminal-specific data. 
 
-Once you upload your container into Portcast system, use the Bill of Lading Bookmark ID to fetch terminal data for that container.
+Once you upload your container into Portcast system, use the Bill of Lading Bookmark ID to fetch terminal data for that container. 
 
 Refer to this [coverage sheet](https://docs.google.com/spreadsheets/d/1l7eA1brGaEZwhUS1_xwq1puyK35maPN0T-DWwNJvnhI/edit#gid=118367482) for a detailed overview of the supported fields and the latest terminal coverage.
 
-To enable this add-on, contact us at support@portcast.io.
+To enable this add-on, contact us at support@portcast.io. 
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param bookmarkId Bill of Lading Bookmark ID
-	@return ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bookmarkId Bill of Lading Bookmark ID
+ @return ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest
 */
 func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminals(ctx context.Context, bookmarkId string) ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest {
 	return ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		bookmarkId: bookmarkId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return PortTerminalAddOn
+//  @return PortTerminalAddOn
 func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r ApiGetApiV1EtaBillOfLadingBookmarksTerminalsRequest) (*PortTerminalAddOn, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PortTerminalAddOn
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PortTerminalAddOn
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubAPIsAPIService.GetApiV1EtaBillOfLadingBookmarksTerminals")
@@ -111,7 +117,7 @@ func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r A
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -130,6 +136,8 @@ func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r A
 	if r.xCustomer != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "x-customer", r.xCustomer, "")
 	}
+	// body params
+	localVarPostBody = r.body
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -173,8 +181,8 @@ func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -184,8 +192,8 @@ func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -195,8 +203,8 @@ func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -206,8 +214,8 @@ func (a *SubAPIsAPIService) GetApiV1EtaBillOfLadingBookmarksTerminalsExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-			newErr.model = v
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

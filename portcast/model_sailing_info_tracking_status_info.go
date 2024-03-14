@@ -21,7 +21,7 @@ var _ MappedNullable = &SailingInfoTrackingStatusInfo{}
 // SailingInfoTrackingStatusInfo Status Defination for Vessel Schedules and Portcast Predictions for this leg of the journey
 type SailingInfoTrackingStatusInfo struct {
 	Prediction *SailingInfoTrackingStatusInfoPrediction `json:"prediction,omitempty"`
-	Vessel     *SailingInfoTrackingStatusInfoVessel     `json:"vessel,omitempty"`
+	Vessel *SailingInfoTrackingStatusInfoVessel `json:"vessel,omitempty"`
 }
 
 // NewSailingInfoTrackingStatusInfo instantiates a new SailingInfoTrackingStatusInfo object
@@ -106,7 +106,7 @@ func (o *SailingInfoTrackingStatusInfo) SetVessel(v SailingInfoTrackingStatusInf
 }
 
 func (o SailingInfoTrackingStatusInfo) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,3 +159,5 @@ func (v *NullableSailingInfoTrackingStatusInfo) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

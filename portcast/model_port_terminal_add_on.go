@@ -25,7 +25,7 @@ type PortTerminalAddOn struct {
 	// Container number
 	CntrNo *string `json:"cntr_no,omitempty"`
 	// Bill of Lading or Booking Number
-	BlNo       *string                      `json:"bl_no,omitempty"`
+	BlNo *string `json:"bl_no,omitempty"`
 	ExportPlan *PortTerminalAddOnExportPlan `json:"export_plan,omitempty"`
 	ImportPlan *PortTerminalAddOnImportPlan `json:"import_plan,omitempty"`
 }
@@ -208,7 +208,7 @@ func (o *PortTerminalAddOn) SetImportPlan(v PortTerminalAddOnImportPlan) {
 }
 
 func (o PortTerminalAddOn) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,3 +270,5 @@ func (v *NullablePortTerminalAddOn) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

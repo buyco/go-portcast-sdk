@@ -18,7 +18,7 @@ import (
 
 // SailingInfoTrackingStatusInfoPrediction - Status Defination related to the [Prediction Engine](docs/Portcast-Status-Codes.md)
 type SailingInfoTrackingStatusInfoPrediction struct {
-	SailingInfoTrackingStatusInfoPredictionOneOf  *SailingInfoTrackingStatusInfoPredictionOneOf
+	SailingInfoTrackingStatusInfoPredictionOneOf *SailingInfoTrackingStatusInfoPredictionOneOf
 	SailingInfoTrackingStatusInfoPredictionOneOf1 *SailingInfoTrackingStatusInfoPredictionOneOf1
 	SailingInfoTrackingStatusInfoPredictionOneOf2 *SailingInfoTrackingStatusInfoPredictionOneOf2
 	SailingInfoTrackingStatusInfoPredictionOneOf3 *SailingInfoTrackingStatusInfoPredictionOneOf3
@@ -51,6 +51,7 @@ func SailingInfoTrackingStatusInfoPredictionOneOf3AsSailingInfoTrackingStatusInf
 		SailingInfoTrackingStatusInfoPredictionOneOf3: v,
 	}
 }
+
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SailingInfoTrackingStatusInfoPrediction) UnmarshalJSON(data []byte) error {
@@ -145,7 +146,7 @@ func (src SailingInfoTrackingStatusInfoPrediction) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *SailingInfoTrackingStatusInfoPrediction) GetActualInstance() interface{} {
+func (obj *SailingInfoTrackingStatusInfoPrediction) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
@@ -204,3 +205,5 @@ func (v *NullableSailingInfoTrackingStatusInfoPrediction) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

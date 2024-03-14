@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **FacilityName** | Pointer to **string** | Export port terminal name | [optional] 
 **VesselName** | Pointer to **string** | Vessel name of the vessel associated with the export location. | [optional] 
 **VoyageNo** | Pointer to **string** | Voyage Number associated with the export journey, as reported by the Terminal. | [optional] 
-**ErdStandard** | Pointer to **time.Time** | Earliest Receipt Date (ERD) for a standard container, as reported by the terminal - Local Time. | [optional] [default to "2023-06-24T14:15:22Z"]
+**ErdStandard** | Pointer to **time.Time** | Earliest Receipt Date (ERD) for a standard container, as reported by the terminal - Local Time. | [optional] 
 **ErdReefer** | Pointer to **time.Time** | Earliest Receipt Date (ERD) for a reefer container, as reported by the terminal - Local Time. | [optional] 
 **GateInDate** | Pointer to **time.Time** | Date a container was received at the terminal through the gate, as reported by the terminal - Local Time. | [optional] 
 **PortCutoffStandard** | Pointer to **time.Time** | Last possible date and time for gating-in standard container at the export terminal, as reported by the Terminal - Local Time. | [optional] 

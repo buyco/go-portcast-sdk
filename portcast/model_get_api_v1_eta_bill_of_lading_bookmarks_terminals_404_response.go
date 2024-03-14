@@ -20,7 +20,7 @@ var _ MappedNullable = &GetApiV1EtaBillOfLadingBookmarksTerminals404Response{}
 
 // GetApiV1EtaBillOfLadingBookmarksTerminals404Response struct for GetApiV1EtaBillOfLadingBookmarksTerminals404Response
 type GetApiV1EtaBillOfLadingBookmarksTerminals404Response struct {
-	Error   *string        `json:"error,omitempty"`
+	Error *string `json:"error,omitempty"`
 	Message NullableString `json:"message,omitempty"`
 }
 
@@ -105,7 +105,6 @@ func (o *GetApiV1EtaBillOfLadingBookmarksTerminals404Response) HasMessage() bool
 func (o *GetApiV1EtaBillOfLadingBookmarksTerminals404Response) SetMessage(v string) {
 	o.Message.Set(&v)
 }
-
 // SetMessageNil sets the value for Message to be an explicit nil
 func (o *GetApiV1EtaBillOfLadingBookmarksTerminals404Response) SetMessageNil() {
 	o.Message.Set(nil)
@@ -117,7 +116,7 @@ func (o *GetApiV1EtaBillOfLadingBookmarksTerminals404Response) UnsetMessage() {
 }
 
 func (o GetApiV1EtaBillOfLadingBookmarksTerminals404Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,3 +169,5 @@ func (v *NullableGetApiV1EtaBillOfLadingBookmarksTerminals404Response) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

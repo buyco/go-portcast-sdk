@@ -20,9 +20,9 @@ var _ MappedNullable = &SailingInfoTracking{}
 
 // SailingInfoTracking Schema for Sailing Info Tracking
 type SailingInfoTracking struct {
-	Ais         *SailingInfoTrackingAis         `json:"ais,omitempty"`
+	Ais *SailingInfoTrackingAis `json:"ais,omitempty"`
 	SailingInfo *SailingInfoTrackingSailingInfo `json:"sailing_info,omitempty"`
-	StatusInfo  *SailingInfoTrackingStatusInfo  `json:"status_info,omitempty"`
+	StatusInfo *SailingInfoTrackingStatusInfo `json:"status_info,omitempty"`
 	// Sailing Schedule for the vessel between the starting and target port of this specific leg of the journey
 	VoyageDetails []VoyageDetails `json:"voyage_details,omitempty"`
 	// Details on AIS Data fetch
@@ -245,7 +245,7 @@ func (o *SailingInfoTracking) SetSuccess(v bool) {
 }
 
 func (o SailingInfoTracking) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -310,3 +310,5 @@ func (v *NullableSailingInfoTracking) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

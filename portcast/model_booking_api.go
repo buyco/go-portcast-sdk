@@ -28,7 +28,7 @@ type BookingAPI struct {
 	Message *string `json:"message,omitempty"`
 	// Bill of Lading Bookmarks Created List
 	Response []BookingAPIResponseInner `json:"response,omitempty"`
-	Route    *BookingAPIRoute          `json:"route,omitempty"`
+	Route *BookingAPIRoute `json:"route,omitempty"`
 	// List of Locations the booking will visit
 	Locations []BookingAPILocationsInner `json:"locations,omitempty"`
 	// List of Vessels the booking will operate on
@@ -277,7 +277,7 @@ func (o *BookingAPI) SetVessels(v []BookingAPIVesselsInner) {
 }
 
 func (o BookingAPI) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -345,3 +345,5 @@ func (v *NullableBookingAPI) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

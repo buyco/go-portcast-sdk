@@ -20,14 +20,15 @@ var _ MappedNullable = &PortcastAPI{}
 
 // PortcastAPI Portcast Container Visibility API
 type PortcastAPI struct {
-	BillOfLading *PortcastAPIBillOfLading `json:"bill_of_lading,omitempty"`
+	// Summary of the shipment's Predicted, Scheduled and Actual Events that happen at the POL and POD
+	BillOfLading *BillOfLading `json:"bill_of_lading,omitempty"`
 	// Summary of the Bookmark ID Metadata
 	BillOfLadingBookmark *BillOfLadingBookmark `json:"bill_of_lading_bookmark,omitempty"`
 	// Container Events List for the tracked shipment
-	ContainerEventList []ContainerEvent         `json:"container_event_list,omitempty"`
-	ContainerMetadata  *ContainerMetadata       `json:"container_metadata,omitempty"`
-	Co2Emissions       *PortcastAPICo2Emissions `json:"co2_emissions,omitempty"`
-	DelayLists         []DelayReasons           `json:"delay_lists,omitempty"`
+	ContainerEventList []ContainerEvent `json:"container_event_list,omitempty"`
+	ContainerMetadata *ContainerMetadata `json:"container_metadata,omitempty"`
+	Co2Emissions *PortcastAPICo2Emissions `json:"co2_emissions,omitempty"`
+	DelayLists []DelayReasons `json:"delay_lists,omitempty"`
 	// Unique ID for the API response generated
 	ResponseId *string `json:"response_id,omitempty"`
 	// Tracking Status Message
@@ -35,8 +36,8 @@ type PortcastAPI struct {
 	// Customer Org (Flow) to which the bookmark ID is uploaded too
 	OrgId *string `json:"org_id,omitempty"`
 	// Detailed Tracking Information for each leg of the journey
-	SailingInfoTracking []SailingInfoTracking  `json:"sailing_info_tracking,omitempty"`
-	StatusInfo          *PortcastAPIStatusInfo `json:"status_info,omitempty"`
+	SailingInfoTracking []SailingInfoTracking `json:"sailing_info_tracking,omitempty"`
+	StatusInfo *PortcastAPIStatusInfo `json:"status_info,omitempty"`
 	// Tracking Status
 	Success *bool `json:"success,omitempty"`
 }
@@ -59,9 +60,9 @@ func NewPortcastAPIWithDefaults() *PortcastAPI {
 }
 
 // GetBillOfLading returns the BillOfLading field value if set, zero value otherwise.
-func (o *PortcastAPI) GetBillOfLading() PortcastAPIBillOfLading {
+func (o *PortcastAPI) GetBillOfLading() BillOfLading {
 	if o == nil || IsNil(o.BillOfLading) {
-		var ret PortcastAPIBillOfLading
+		var ret BillOfLading
 		return ret
 	}
 	return *o.BillOfLading
@@ -69,7 +70,7 @@ func (o *PortcastAPI) GetBillOfLading() PortcastAPIBillOfLading {
 
 // GetBillOfLadingOk returns a tuple with the BillOfLading field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortcastAPI) GetBillOfLadingOk() (*PortcastAPIBillOfLading, bool) {
+func (o *PortcastAPI) GetBillOfLadingOk() (*BillOfLading, bool) {
 	if o == nil || IsNil(o.BillOfLading) {
 		return nil, false
 	}
@@ -85,8 +86,8 @@ func (o *PortcastAPI) HasBillOfLading() bool {
 	return false
 }
 
-// SetBillOfLading gets a reference to the given PortcastAPIBillOfLading and assigns it to the BillOfLading field.
-func (o *PortcastAPI) SetBillOfLading(v PortcastAPIBillOfLading) {
+// SetBillOfLading gets a reference to the given BillOfLading and assigns it to the BillOfLading field.
+func (o *PortcastAPI) SetBillOfLading(v BillOfLading) {
 	o.BillOfLading = &v
 }
 
@@ -443,7 +444,7 @@ func (o *PortcastAPI) SetSuccess(v bool) {
 }
 
 func (o PortcastAPI) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -526,3 +527,5 @@ func (v *NullablePortcastAPI) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

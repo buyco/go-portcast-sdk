@@ -31,7 +31,7 @@ type VoyageDetails struct {
 	ActualDepartureLt NullableTime `json:"actual_departure_lt,omitempty"`
 	// Actual Time of Departure - UTC Adjusted Time
 	ActualDepartureUtc NullableTime `json:"actual_departure_utc,omitempty"`
-	DelayReasons       []string     `json:"delay_reasons,omitempty"`
+	DelayReasons []string `json:"delay_reasons,omitempty"`
 	// Unique Identifier for the Voyage Detail
 	Id *string `json:"id,omitempty"`
 	// Index of the Journey Position
@@ -117,7 +117,6 @@ func (o *VoyageDetails) HasActiveScac() bool {
 func (o *VoyageDetails) SetActiveScac(v string) {
 	o.ActiveScac.Set(&v)
 }
-
 // SetActiveScacNil sets the value for ActiveScac to be an explicit nil
 func (o *VoyageDetails) SetActiveScacNil() {
 	o.ActiveScac.Set(nil)
@@ -160,7 +159,6 @@ func (o *VoyageDetails) HasActualArrivalLt() bool {
 func (o *VoyageDetails) SetActualArrivalLt(v time.Time) {
 	o.ActualArrivalLt.Set(&v)
 }
-
 // SetActualArrivalLtNil sets the value for ActualArrivalLt to be an explicit nil
 func (o *VoyageDetails) SetActualArrivalLtNil() {
 	o.ActualArrivalLt.Set(nil)
@@ -203,7 +201,6 @@ func (o *VoyageDetails) HasActualArrivalUtc() bool {
 func (o *VoyageDetails) SetActualArrivalUtc(v time.Time) {
 	o.ActualArrivalUtc.Set(&v)
 }
-
 // SetActualArrivalUtcNil sets the value for ActualArrivalUtc to be an explicit nil
 func (o *VoyageDetails) SetActualArrivalUtcNil() {
 	o.ActualArrivalUtc.Set(nil)
@@ -246,7 +243,6 @@ func (o *VoyageDetails) HasActualDepartureLt() bool {
 func (o *VoyageDetails) SetActualDepartureLt(v time.Time) {
 	o.ActualDepartureLt.Set(&v)
 }
-
 // SetActualDepartureLtNil sets the value for ActualDepartureLt to be an explicit nil
 func (o *VoyageDetails) SetActualDepartureLtNil() {
 	o.ActualDepartureLt.Set(nil)
@@ -289,7 +285,6 @@ func (o *VoyageDetails) HasActualDepartureUtc() bool {
 func (o *VoyageDetails) SetActualDepartureUtc(v time.Time) {
 	o.ActualDepartureUtc.Set(&v)
 }
-
 // SetActualDepartureUtcNil sets the value for ActualDepartureUtc to be an explicit nil
 func (o *VoyageDetails) SetActualDepartureUtcNil() {
 	o.ActualDepartureUtc.Set(nil)
@@ -556,7 +551,6 @@ func (o *VoyageDetails) HasPredictedArrivalLt() bool {
 func (o *VoyageDetails) SetPredictedArrivalLt(v time.Time) {
 	o.PredictedArrivalLt.Set(&v)
 }
-
 // SetPredictedArrivalLtNil sets the value for PredictedArrivalLt to be an explicit nil
 func (o *VoyageDetails) SetPredictedArrivalLtNil() {
 	o.PredictedArrivalLt.Set(nil)
@@ -599,7 +593,6 @@ func (o *VoyageDetails) HasPredictedArrivalUtc() bool {
 func (o *VoyageDetails) SetPredictedArrivalUtc(v time.Time) {
 	o.PredictedArrivalUtc.Set(&v)
 }
-
 // SetPredictedArrivalUtcNil sets the value for PredictedArrivalUtc to be an explicit nil
 func (o *VoyageDetails) SetPredictedArrivalUtcNil() {
 	o.PredictedArrivalUtc.Set(nil)
@@ -642,7 +635,6 @@ func (o *VoyageDetails) HasPredictedDepartureLt() bool {
 func (o *VoyageDetails) SetPredictedDepartureLt(v time.Time) {
 	o.PredictedDepartureLt.Set(&v)
 }
-
 // SetPredictedDepartureLtNil sets the value for PredictedDepartureLt to be an explicit nil
 func (o *VoyageDetails) SetPredictedDepartureLtNil() {
 	o.PredictedDepartureLt.Set(nil)
@@ -685,7 +677,6 @@ func (o *VoyageDetails) HasPredictedDepartureUtc() bool {
 func (o *VoyageDetails) SetPredictedDepartureUtc(v time.Time) {
 	o.PredictedDepartureUtc.Set(&v)
 }
-
 // SetPredictedDepartureUtcNil sets the value for PredictedDepartureUtc to be an explicit nil
 func (o *VoyageDetails) SetPredictedDepartureUtcNil() {
 	o.PredictedDepartureUtc.Set(nil)
@@ -728,7 +719,6 @@ func (o *VoyageDetails) HasPredictionTimeUtc() bool {
 func (o *VoyageDetails) SetPredictionTimeUtc(v time.Time) {
 	o.PredictionTimeUtc.Set(&v)
 }
-
 // SetPredictionTimeUtcNil sets the value for PredictionTimeUtc to be an explicit nil
 func (o *VoyageDetails) SetPredictionTimeUtcNil() {
 	o.PredictionTimeUtc.Set(nil)
@@ -771,7 +761,6 @@ func (o *VoyageDetails) HasScheduledArrivalLt() bool {
 func (o *VoyageDetails) SetScheduledArrivalLt(v time.Time) {
 	o.ScheduledArrivalLt.Set(&v)
 }
-
 // SetScheduledArrivalLtNil sets the value for ScheduledArrivalLt to be an explicit nil
 func (o *VoyageDetails) SetScheduledArrivalLtNil() {
 	o.ScheduledArrivalLt.Set(nil)
@@ -814,7 +803,6 @@ func (o *VoyageDetails) HasScheduledArrivalUtc() bool {
 func (o *VoyageDetails) SetScheduledArrivalUtc(v time.Time) {
 	o.ScheduledArrivalUtc.Set(&v)
 }
-
 // SetScheduledArrivalUtcNil sets the value for ScheduledArrivalUtc to be an explicit nil
 func (o *VoyageDetails) SetScheduledArrivalUtcNil() {
 	o.ScheduledArrivalUtc.Set(nil)
@@ -857,7 +845,6 @@ func (o *VoyageDetails) HasScheduledDepartureLt() bool {
 func (o *VoyageDetails) SetScheduledDepartureLt(v time.Time) {
 	o.ScheduledDepartureLt.Set(&v)
 }
-
 // SetScheduledDepartureLtNil sets the value for ScheduledDepartureLt to be an explicit nil
 func (o *VoyageDetails) SetScheduledDepartureLtNil() {
 	o.ScheduledDepartureLt.Set(nil)
@@ -900,7 +887,6 @@ func (o *VoyageDetails) HasScheduledDepartureUtc() bool {
 func (o *VoyageDetails) SetScheduledDepartureUtc(v time.Time) {
 	o.ScheduledDepartureUtc.Set(&v)
 }
-
 // SetScheduledDepartureUtcNil sets the value for ScheduledDepartureUtc to be an explicit nil
 func (o *VoyageDetails) SetScheduledDepartureUtcNil() {
 	o.ScheduledDepartureUtc.Set(nil)
@@ -943,7 +929,6 @@ func (o *VoyageDetails) HasTimezone() bool {
 func (o *VoyageDetails) SetTimezone(v string) {
 	o.Timezone.Set(&v)
 }
-
 // SetTimezoneNil sets the value for Timezone to be an explicit nil
 func (o *VoyageDetails) SetTimezoneNil() {
 	o.Timezone.Set(nil)
@@ -987,7 +972,7 @@ func (o *VoyageDetails) SetVoyageNoList(v []string) {
 }
 
 func (o VoyageDetails) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1103,3 +1088,5 @@ func (v *NullableVoyageDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

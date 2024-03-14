@@ -11,10 +11,10 @@ package portcast
 
 import (
 	"context"
-	openapiclient "github.com/buyco/go-portcast-sdk/portcast"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/buyco/go-portcast-sdk/portcast"
 )
 
 func Test_portcast_CustomersAPIService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_portcast_CustomersAPIService(t *testing.T) {
 
 	t.Run("Test CustomersAPIService CreateCustomer", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CustomersAPI.CreateCustomer(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_portcast_CustomersAPIService(t *testing.T) {
 
 	t.Run("Test CustomersAPIService ListCustomers", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.CustomersAPI.ListCustomers(context.Background()).Execute()
 

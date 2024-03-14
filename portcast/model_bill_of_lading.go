@@ -468,7 +468,6 @@ func (o *BillOfLading) HasPodActualArrivalLt() bool {
 func (o *BillOfLading) SetPodActualArrivalLt(v time.Time) {
 	o.PodActualArrivalLt.Set(&v)
 }
-
 // SetPodActualArrivalLtNil sets the value for PodActualArrivalLt to be an explicit nil
 func (o *BillOfLading) SetPodActualArrivalLtNil() {
 	o.PodActualArrivalLt.Set(nil)
@@ -511,7 +510,6 @@ func (o *BillOfLading) HasPodActualArrivalLtFromAis() bool {
 func (o *BillOfLading) SetPodActualArrivalLtFromAis(v time.Time) {
 	o.PodActualArrivalLtFromAis.Set(&v)
 }
-
 // SetPodActualArrivalLtFromAisNil sets the value for PodActualArrivalLtFromAis to be an explicit nil
 func (o *BillOfLading) SetPodActualArrivalLtFromAisNil() {
 	o.PodActualArrivalLtFromAis.Set(nil)
@@ -554,7 +552,6 @@ func (o *BillOfLading) HasPodActualDepartureLtFromAis() bool {
 func (o *BillOfLading) SetPodActualDepartureLtFromAis(v time.Time) {
 	o.PodActualDepartureLtFromAis.Set(&v)
 }
-
 // SetPodActualDepartureLtFromAisNil sets the value for PodActualDepartureLtFromAis to be an explicit nil
 func (o *BillOfLading) SetPodActualDepartureLtFromAisNil() {
 	o.PodActualDepartureLtFromAis.Set(nil)
@@ -597,7 +594,6 @@ func (o *BillOfLading) HasPodActualDischargeLt() bool {
 func (o *BillOfLading) SetPodActualDischargeLt(v time.Time) {
 	o.PodActualDischargeLt.Set(&v)
 }
-
 // SetPodActualDischargeLtNil sets the value for PodActualDischargeLt to be an explicit nil
 func (o *BillOfLading) SetPodActualDischargeLtNil() {
 	o.PodActualDischargeLt.Set(nil)
@@ -672,7 +668,6 @@ func (o *BillOfLading) HasPodPredictedArrivalLt() bool {
 func (o *BillOfLading) SetPodPredictedArrivalLt(v time.Time) {
 	o.PodPredictedArrivalLt.Set(&v)
 }
-
 // SetPodPredictedArrivalLtNil sets the value for PodPredictedArrivalLt to be an explicit nil
 func (o *BillOfLading) SetPodPredictedArrivalLtNil() {
 	o.PodPredictedArrivalLt.Set(nil)
@@ -715,7 +710,6 @@ func (o *BillOfLading) HasPodPredictedDepartureLt() bool {
 func (o *BillOfLading) SetPodPredictedDepartureLt(v time.Time) {
 	o.PodPredictedDepartureLt.Set(&v)
 }
-
 // SetPodPredictedDepartureLtNil sets the value for PodPredictedDepartureLt to be an explicit nil
 func (o *BillOfLading) SetPodPredictedDepartureLtNil() {
 	o.PodPredictedDepartureLt.Set(nil)
@@ -758,7 +752,6 @@ func (o *BillOfLading) HasPodScheduledArrivalLt() bool {
 func (o *BillOfLading) SetPodScheduledArrivalLt(v time.Time) {
 	o.PodScheduledArrivalLt.Set(&v)
 }
-
 // SetPodScheduledArrivalLtNil sets the value for PodScheduledArrivalLt to be an explicit nil
 func (o *BillOfLading) SetPodScheduledArrivalLtNil() {
 	o.PodScheduledArrivalLt.Set(nil)
@@ -801,7 +794,6 @@ func (o *BillOfLading) HasPodScheduledArrivalLtFirstSeen() bool {
 func (o *BillOfLading) SetPodScheduledArrivalLtFirstSeen(v time.Time) {
 	o.PodScheduledArrivalLtFirstSeen.Set(&v)
 }
-
 // SetPodScheduledArrivalLtFirstSeenNil sets the value for PodScheduledArrivalLtFirstSeen to be an explicit nil
 func (o *BillOfLading) SetPodScheduledArrivalLtFirstSeenNil() {
 	o.PodScheduledArrivalLtFirstSeen.Set(nil)
@@ -844,7 +836,6 @@ func (o *BillOfLading) HasPodScheduledArrivalLtFromSchedule() bool {
 func (o *BillOfLading) SetPodScheduledArrivalLtFromSchedule(v time.Time) {
 	o.PodScheduledArrivalLtFromSchedule.Set(&v)
 }
-
 // SetPodScheduledArrivalLtFromScheduleNil sets the value for PodScheduledArrivalLtFromSchedule to be an explicit nil
 func (o *BillOfLading) SetPodScheduledArrivalLtFromScheduleNil() {
 	o.PodScheduledArrivalLtFromSchedule.Set(nil)
@@ -887,7 +878,6 @@ func (o *BillOfLading) HasPodScheduledDepartureLtFromSchedule() bool {
 func (o *BillOfLading) SetPodScheduledDepartureLtFromSchedule(v time.Time) {
 	o.PodScheduledDepartureLtFromSchedule.Set(&v)
 }
-
 // SetPodScheduledDepartureLtFromScheduleNil sets the value for PodScheduledDepartureLtFromSchedule to be an explicit nil
 func (o *BillOfLading) SetPodScheduledDepartureLtFromScheduleNil() {
 	o.PodScheduledDepartureLtFromSchedule.Set(nil)
@@ -930,7 +920,6 @@ func (o *BillOfLading) HasPodScheduledDischargeLt() bool {
 func (o *BillOfLading) SetPodScheduledDischargeLt(v time.Time) {
 	o.PodScheduledDischargeLt.Set(&v)
 }
-
 // SetPodScheduledDischargeLtNil sets the value for PodScheduledDischargeLt to be an explicit nil
 func (o *BillOfLading) SetPodScheduledDischargeLtNil() {
 	o.PodScheduledDischargeLt.Set(nil)
@@ -1037,7 +1026,6 @@ func (o *BillOfLading) HasPolActualArrivalLtFromAis() bool {
 func (o *BillOfLading) SetPolActualArrivalLtFromAis(v time.Time) {
 	o.PolActualArrivalLtFromAis.Set(&v)
 }
-
 // SetPolActualArrivalLtFromAisNil sets the value for PolActualArrivalLtFromAis to be an explicit nil
 func (o *BillOfLading) SetPolActualArrivalLtFromAisNil() {
 	o.PolActualArrivalLtFromAis.Set(nil)
@@ -1080,7 +1068,6 @@ func (o *BillOfLading) HasPolActualDepartureLt() bool {
 func (o *BillOfLading) SetPolActualDepartureLt(v time.Time) {
 	o.PolActualDepartureLt.Set(&v)
 }
-
 // SetPolActualDepartureLtNil sets the value for PolActualDepartureLt to be an explicit nil
 func (o *BillOfLading) SetPolActualDepartureLtNil() {
 	o.PolActualDepartureLt.Set(nil)
@@ -1123,7 +1110,6 @@ func (o *BillOfLading) HasPolActualDepartureLtFromAis() bool {
 func (o *BillOfLading) SetPolActualDepartureLtFromAis(v time.Time) {
 	o.PolActualDepartureLtFromAis.Set(&v)
 }
-
 // SetPolActualDepartureLtFromAisNil sets the value for PolActualDepartureLtFromAis to be an explicit nil
 func (o *BillOfLading) SetPolActualDepartureLtFromAisNil() {
 	o.PolActualDepartureLtFromAis.Set(nil)
@@ -1166,7 +1152,6 @@ func (o *BillOfLading) HasPolActualLoadingLt() bool {
 func (o *BillOfLading) SetPolActualLoadingLt(v time.Time) {
 	o.PolActualLoadingLt.Set(&v)
 }
-
 // SetPolActualLoadingLtNil sets the value for PolActualLoadingLt to be an explicit nil
 func (o *BillOfLading) SetPolActualLoadingLtNil() {
 	o.PolActualLoadingLt.Set(nil)
@@ -1241,7 +1226,6 @@ func (o *BillOfLading) HasPolPredictedArrivalLt() bool {
 func (o *BillOfLading) SetPolPredictedArrivalLt(v time.Time) {
 	o.PolPredictedArrivalLt.Set(&v)
 }
-
 // SetPolPredictedArrivalLtNil sets the value for PolPredictedArrivalLt to be an explicit nil
 func (o *BillOfLading) SetPolPredictedArrivalLtNil() {
 	o.PolPredictedArrivalLt.Set(nil)
@@ -1284,7 +1268,6 @@ func (o *BillOfLading) HasPolPredictedDepartureLt() bool {
 func (o *BillOfLading) SetPolPredictedDepartureLt(v time.Time) {
 	o.PolPredictedDepartureLt.Set(&v)
 }
-
 // SetPolPredictedDepartureLtNil sets the value for PolPredictedDepartureLt to be an explicit nil
 func (o *BillOfLading) SetPolPredictedDepartureLtNil() {
 	o.PolPredictedDepartureLt.Set(nil)
@@ -1327,7 +1310,6 @@ func (o *BillOfLading) HasPolScheduledArrivalLtFromSchedule() bool {
 func (o *BillOfLading) SetPolScheduledArrivalLtFromSchedule(v time.Time) {
 	o.PolScheduledArrivalLtFromSchedule.Set(&v)
 }
-
 // SetPolScheduledArrivalLtFromScheduleNil sets the value for PolScheduledArrivalLtFromSchedule to be an explicit nil
 func (o *BillOfLading) SetPolScheduledArrivalLtFromScheduleNil() {
 	o.PolScheduledArrivalLtFromSchedule.Set(nil)
@@ -1370,7 +1352,6 @@ func (o *BillOfLading) HasPolScheduledDepartureLt() bool {
 func (o *BillOfLading) SetPolScheduledDepartureLt(v time.Time) {
 	o.PolScheduledDepartureLt.Set(&v)
 }
-
 // SetPolScheduledDepartureLtNil sets the value for PolScheduledDepartureLt to be an explicit nil
 func (o *BillOfLading) SetPolScheduledDepartureLtNil() {
 	o.PolScheduledDepartureLt.Set(nil)
@@ -1413,7 +1394,6 @@ func (o *BillOfLading) HasPolScheduledDepartureLtFirstSeen() bool {
 func (o *BillOfLading) SetPolScheduledDepartureLtFirstSeen(v time.Time) {
 	o.PolScheduledDepartureLtFirstSeen.Set(&v)
 }
-
 // SetPolScheduledDepartureLtFirstSeenNil sets the value for PolScheduledDepartureLtFirstSeen to be an explicit nil
 func (o *BillOfLading) SetPolScheduledDepartureLtFirstSeenNil() {
 	o.PolScheduledDepartureLtFirstSeen.Set(nil)
@@ -1456,7 +1436,6 @@ func (o *BillOfLading) HasPolScheduledDepartureLtFromSchedule() bool {
 func (o *BillOfLading) SetPolScheduledDepartureLtFromSchedule(v time.Time) {
 	o.PolScheduledDepartureLtFromSchedule.Set(&v)
 }
-
 // SetPolScheduledDepartureLtFromScheduleNil sets the value for PolScheduledDepartureLtFromSchedule to be an explicit nil
 func (o *BillOfLading) SetPolScheduledDepartureLtFromScheduleNil() {
 	o.PolScheduledDepartureLtFromSchedule.Set(nil)
@@ -1499,7 +1478,6 @@ func (o *BillOfLading) HasPolScheduledLoadingLt() bool {
 func (o *BillOfLading) SetPolScheduledLoadingLt(v time.Time) {
 	o.PolScheduledLoadingLt.Set(&v)
 }
-
 // SetPolScheduledLoadingLtNil sets the value for PolScheduledLoadingLt to be an explicit nil
 func (o *BillOfLading) SetPolScheduledLoadingLtNil() {
 	o.PolScheduledLoadingLt.Set(nil)
@@ -1575,7 +1553,7 @@ func (o *BillOfLading) SetUpdated(v time.Time) {
 }
 
 func (o BillOfLading) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1736,3 +1714,5 @@ func (v *NullableBillOfLading) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

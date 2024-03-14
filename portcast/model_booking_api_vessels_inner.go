@@ -115,7 +115,6 @@ func (o *BookingAPIVesselsInner) HasName() bool {
 func (o *BookingAPIVesselsInner) SetName(v string) {
 	o.Name.Set(&v)
 }
-
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *BookingAPIVesselsInner) SetNameNil() {
 	o.Name.Set(nil)
@@ -158,7 +157,6 @@ func (o *BookingAPIVesselsInner) HasImo() bool {
 func (o *BookingAPIVesselsInner) SetImo(v int32) {
 	o.Imo.Set(&v)
 }
-
 // SetImoNil sets the value for Imo to be an explicit nil
 func (o *BookingAPIVesselsInner) SetImoNil() {
 	o.Imo.Set(nil)
@@ -201,7 +199,6 @@ func (o *BookingAPIVesselsInner) HasCallSign() bool {
 func (o *BookingAPIVesselsInner) SetCallSign(v string) {
 	o.CallSign.Set(&v)
 }
-
 // SetCallSignNil sets the value for CallSign to be an explicit nil
 func (o *BookingAPIVesselsInner) SetCallSignNil() {
 	o.CallSign.Set(nil)
@@ -244,7 +241,6 @@ func (o *BookingAPIVesselsInner) HasMmsi() bool {
 func (o *BookingAPIVesselsInner) SetMmsi(v int32) {
 	o.Mmsi.Set(&v)
 }
-
 // SetMmsiNil sets the value for Mmsi to be an explicit nil
 func (o *BookingAPIVesselsInner) SetMmsiNil() {
 	o.Mmsi.Set(nil)
@@ -287,7 +283,6 @@ func (o *BookingAPIVesselsInner) HasFlag() bool {
 func (o *BookingAPIVesselsInner) SetFlag(v string) {
 	o.Flag.Set(&v)
 }
-
 // SetFlagNil sets the value for Flag to be an explicit nil
 func (o *BookingAPIVesselsInner) SetFlagNil() {
 	o.Flag.Set(nil)
@@ -299,7 +294,7 @@ func (o *BookingAPIVesselsInner) UnsetFlag() {
 }
 
 func (o BookingAPIVesselsInner) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -364,3 +359,5 @@ func (v *NullableBookingAPIVesselsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

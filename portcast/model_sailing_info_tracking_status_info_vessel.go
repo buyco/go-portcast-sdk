@@ -18,7 +18,7 @@ import (
 
 // SailingInfoTrackingStatusInfoVessel - Status Defination related to the [Vessel Schedules](docs/Portcast-Status-Codes.md)
 type SailingInfoTrackingStatusInfoVessel struct {
-	SailingInfoTrackingStatusInfoVesselOneOf  *SailingInfoTrackingStatusInfoVesselOneOf
+	SailingInfoTrackingStatusInfoVesselOneOf *SailingInfoTrackingStatusInfoVesselOneOf
 	SailingInfoTrackingStatusInfoVesselOneOf1 *SailingInfoTrackingStatusInfoVesselOneOf1
 	SailingInfoTrackingStatusInfoVesselOneOf2 *SailingInfoTrackingStatusInfoVesselOneOf2
 }
@@ -43,6 +43,7 @@ func SailingInfoTrackingStatusInfoVesselOneOf2AsSailingInfoTrackingStatusInfoVes
 		SailingInfoTrackingStatusInfoVesselOneOf2: v,
 	}
 }
+
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SailingInfoTrackingStatusInfoVessel) UnmarshalJSON(data []byte) error {
@@ -119,7 +120,7 @@ func (src SailingInfoTrackingStatusInfoVessel) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SailingInfoTrackingStatusInfoVessel) GetActualInstance() interface{} {
+func (obj *SailingInfoTrackingStatusInfoVessel) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
@@ -174,3 +175,5 @@ func (v *NullableSailingInfoTrackingStatusInfoVessel) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

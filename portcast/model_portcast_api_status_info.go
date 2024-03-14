@@ -18,7 +18,7 @@ import (
 
 // PortcastAPIStatusInfo - Status Defination Object for the [API Response](docs/Portcast-Status-Codes.md)
 type PortcastAPIStatusInfo struct {
-	PortcastAPIStatusInfoOneOf  *PortcastAPIStatusInfoOneOf
+	PortcastAPIStatusInfoOneOf *PortcastAPIStatusInfoOneOf
 	PortcastAPIStatusInfoOneOf1 *PortcastAPIStatusInfoOneOf1
 	PortcastAPIStatusInfoOneOf2 *PortcastAPIStatusInfoOneOf2
 }
@@ -43,6 +43,7 @@ func PortcastAPIStatusInfoOneOf2AsPortcastAPIStatusInfo(v *PortcastAPIStatusInfo
 		PortcastAPIStatusInfoOneOf2: v,
 	}
 }
+
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PortcastAPIStatusInfo) UnmarshalJSON(data []byte) error {
@@ -119,7 +120,7 @@ func (src PortcastAPIStatusInfo) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PortcastAPIStatusInfo) GetActualInstance() interface{} {
+func (obj *PortcastAPIStatusInfo) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
@@ -174,3 +175,5 @@ func (v *NullablePortcastAPIStatusInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

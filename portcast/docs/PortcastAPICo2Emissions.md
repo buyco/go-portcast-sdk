@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Total** | Pointer to **NullableInt32** | Total emissions for each container:   (gm/ TEU)    Sum of the emissions derived from WTT and TTW analyses. This offers the carbon footprint associated with the entire lifecycle of the shipped goods.   | [optional] 
 **Wtt** | Pointer to **NullableInt32** | Well-to-Tank (WTT) monitoring:   (gm/ TEU)    Measurement of carbon emissions across the entire fuel supply chain; that is, the energy required to extract, produce, and transport a fuel from its source.   | [optional] 
 **Ttw** | Pointer to **NullableInt32** | Tank-to-Wheels (TTW) monitoring:   (gm/ TEU)    Measurement of emissions generated during the actual vessel operation, providing a real-time understanding of carbon output during voyages.   | [optional] 
-**Intensity** | Pointer to **NullableInt32** | Co2e intensity:   (kg/ ton-km)    Signifies the carbon efficiency for each container, thus empowering stakeholders to define actions on reducing emissions.   | [optional] 
+**Intensity** | Pointer to **NullableFloat32** | Co2e intensity:   (kg/ ton-km)    Signifies the carbon efficiency for each container, thus empowering stakeholders to define actions on reducing emissions.   | [optional] 
 
 ## Methods
 
@@ -135,20 +135,20 @@ HasTtw returns a boolean if a field has been set.
 UnsetTtw ensures that no value is present for Ttw, not even an explicit nil
 ### GetIntensity
 
-`func (o *PortcastAPICo2Emissions) GetIntensity() int32`
+`func (o *PortcastAPICo2Emissions) GetIntensity() float32`
 
 GetIntensity returns the Intensity field if non-nil, zero value otherwise.
 
 ### GetIntensityOk
 
-`func (o *PortcastAPICo2Emissions) GetIntensityOk() (*int32, bool)`
+`func (o *PortcastAPICo2Emissions) GetIntensityOk() (*float32, bool)`
 
 GetIntensityOk returns a tuple with the Intensity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIntensity
 
-`func (o *PortcastAPICo2Emissions) SetIntensity(v int32)`
+`func (o *PortcastAPICo2Emissions) SetIntensity(v float32)`
 
 SetIntensity sets Intensity field to given value.
 

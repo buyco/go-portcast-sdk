@@ -21,7 +21,7 @@ var _ MappedNullable = &ListApiV1EtaBillOfLadingBookmarks200Response{}
 // ListApiV1EtaBillOfLadingBookmarks200Response struct for ListApiV1EtaBillOfLadingBookmarks200Response
 type ListApiV1EtaBillOfLadingBookmarks200Response struct {
 	EndedAt NullableString `json:"_ended_at,omitempty"`
-	ObjList []PortcastAPI  `json:"obj_list,omitempty"`
+	ObjList []PortcastAPI `json:"obj_list,omitempty"`
 }
 
 // NewListApiV1EtaBillOfLadingBookmarks200Response instantiates a new ListApiV1EtaBillOfLadingBookmarks200Response object
@@ -73,7 +73,6 @@ func (o *ListApiV1EtaBillOfLadingBookmarks200Response) HasEndedAt() bool {
 func (o *ListApiV1EtaBillOfLadingBookmarks200Response) SetEndedAt(v string) {
 	o.EndedAt.Set(&v)
 }
-
 // SetEndedAtNil sets the value for EndedAt to be an explicit nil
 func (o *ListApiV1EtaBillOfLadingBookmarks200Response) SetEndedAtNil() {
 	o.EndedAt.Set(nil)
@@ -117,7 +116,7 @@ func (o *ListApiV1EtaBillOfLadingBookmarks200Response) SetObjList(v []PortcastAP
 }
 
 func (o ListApiV1EtaBillOfLadingBookmarks200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,3 +169,5 @@ func (v *NullableListApiV1EtaBillOfLadingBookmarks200Response) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+
