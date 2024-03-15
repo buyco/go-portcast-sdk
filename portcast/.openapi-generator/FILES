@@ -55,9 +55,6 @@ docs/PortTerminalAddOnImportPlan.md
 docs/PortcastAPI.md
 docs/PortcastAPICo2Emissions.md
 docs/PortcastAPIStatusInfo.md
-docs/PortcastAPIStatusInfoOneOf.md
-docs/PortcastAPIStatusInfoOneOf1.md
-docs/PortcastAPIStatusInfoOneOf2.md
 docs/PostBooking400Response.md
 docs/PostBooking422Response.md
 docs/PostBookingRequest.md
@@ -123,9 +120,6 @@ model_port_terminal_add_on_import_plan.go
 model_portcast_api.go
 model_portcast_api_co2_emissions.go
 model_portcast_api_status_info.go
-model_portcast_api_status_info_one_of.go
-model_portcast_api_status_info_one_of_1.go
-model_portcast_api_status_info_one_of_2.go
 model_post_booking_400_response.go
 model_post_booking_422_response.go
 model_post_booking_request.go

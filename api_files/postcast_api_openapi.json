@@ -1393,87 +1393,33 @@
                             "id": "arup3aoagntg7"
                         },
                         "description": "Status Defination Object for the [API Response](docs/Portcast-Status-Codes.md)",
-                        "oneOf": [
-                            {
-                                "properties": {
-                                    "code": {
-                                        "x-stoplight": {
-                                            "id": "h7chcbg29ylb6"
-                                        },
-                                        "type": "string",
-                                        "default": "SUCCESS",
-                                        "description": "We didn't encounter any warnings or errors in any of Container Status Code Status, Vessel Status Code and Predictions Status Code or while generating the API Response"
-                                    },
-                                    "metadata": {
-                                        "type": "array",
-                                        "x-stoplight": {
-                                            "id": "xztimkd6uyaem"
-                                        },
-                                        "maxItems": 0,
-                                        "items": {
-                                            "x-stoplight": {
-                                                "id": "jmix4d2mysusl"
-                                            },
-                                            "enum": []
-                                        }
-                                    }
-                                }
+                        "properties": {
+                            "code": {
+                                "x-stoplight": {
+                                    "id": "h7chcbg29ylb6"
+                                },
+                                "type": "string",
+                                "default": "SUCCESS"
                             },
-                            {
-                                "properties": {
-                                    "code": {
-                                        "x-stoplight": {
-                                            "id": "0si4mhe6q8omz"
-                                        },
-                                        "type": "string",
-                                        "default": "WARNING",
-                                        "description": "We had a WARNING in one or more of Vessel Status Code and/or Predictions Status Code or no data due to bad input information"
+                            "metadata": {
+                                "type": "array",
+                                "x-stoplight": {
+                                    "id": "xztimkd6uyaem"
+                                },
+                                "minItems": 0,
+                                "items": {
+                                    "x-stoplight": {
+                                        "id": "jmix4d2mysusl"
                                     },
-                                    "metadata": {
-                                        "type": "array",
-                                        "x-stoplight": {
-                                            "id": "yspsjfny8ti38"
-                                        },
-                                        "items": {
-                                            "x-stoplight": {
-                                                "id": "m6mggtt9lvcdx"
-                                            },
-                                            "enum": [
-                                                "LATEST_PREDICTIONS_WARNING",
-                                                "LATEST_PREDICTIONS_FAILED",
-                                                "SAILING_INFO_TRACKING_FAILED",
-                                                "BILL_OF_LADING_BOOKMARK_WARNING"
-                                            ]
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "properties": {
-                                    "code": {
-                                        "x-stoplight": {
-                                            "id": "2kkhdqaulytlu"
-                                        },
-                                        "type": "string",
-                                        "default": "FAILED",
-                                        "description": "Internal Error in generating the API response"
-                                    },
-                                    "metadata": {
-                                        "type": "array",
-                                        "x-stoplight": {
-                                            "id": "9hgwb15to3hhs"
-                                        },
-                                        "maxItems": 0,
-                                        "items": {
-                                            "x-stoplight": {
-                                                "id": "v7dnyk1hiaq2k"
-                                            },
-                                            "enum": []
-                                        }
-                                    }
+                                    "enum": [
+                                        "LATEST_PREDICTIONS_WARNING",
+                                        "LATEST_PREDICTIONS_FAILED",
+                                        "SAILING_INFO_TRACKING_FAILED",
+                                        "BILL_OF_LADING_BOOKMARK_WARNING"
+                                    ]
                                 }
                             }
-                        ],
+                        },
                         "type": "object"
                     },
                     "success": {

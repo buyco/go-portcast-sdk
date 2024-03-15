@@ -1188,7 +1188,9 @@ components:
         org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
         success: true
         status_info:
-          metadata: []
+          metadata:
+          - LATEST_PREDICTIONS_WARNING
+          - LATEST_PREDICTIONS_WARNING
           code: SUCCESS
         bill_of_lading:
           bl_no: COSU6349613240
@@ -2876,7 +2878,9 @@ components:
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
           status_info:
-            metadata: []
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
           bill_of_lading:
             bl_no: COSU6349613240
@@ -3267,7 +3271,9 @@ components:
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
           status_info:
-            metadata: []
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
           bill_of_lading:
             bl_no: COSU6349613240
@@ -3658,7 +3664,9 @@ components:
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
           status_info:
-            metadata: []
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
           bill_of_lading:
             bl_no: COSU6349613240
@@ -4049,7 +4057,9 @@ components:
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
           status_info:
-            metadata: []
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
           bill_of_lading:
             bl_no: COSU6349613240
@@ -4440,7 +4450,9 @@ components:
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
           status_info:
-            metadata: []
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
           bill_of_lading:
             bl_no: COSU6349613240
@@ -4859,7 +4871,9 @@ components:
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
           status_info:
-            metadata: []
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
           bill_of_lading:
             bl_no: COSU6349613240
@@ -5155,37 +5169,19 @@ components:
             id: 13c31rl3hsfff
       x-stoplight:
         id: v6dt88xf7y680
-    Portcast_API_status_info_oneOf:
+    Portcast_API_status_info:
+      description: "Status Defination Object for the [API Response](docs/Portcast-Status-Codes.md)"
       example:
-        metadata: []
+        metadata:
+        - LATEST_PREDICTIONS_WARNING
+        - LATEST_PREDICTIONS_WARNING
         code: SUCCESS
       properties:
         code:
           default: SUCCESS
-          description: "We didn't encounter any warnings or errors in any of Container\
-            \ Status Code Status, Vessel Status Code and Predictions Status Code or\
-            \ while generating the API Response"
           type: string
           x-stoplight:
             id: h7chcbg29ylb6
-        metadata:
-          items:
-            type: string
-            x-stoplight:
-              id: jmix4d2mysusl
-          maxItems: 0
-          type: array
-          x-stoplight:
-            id: xztimkd6uyaem
-    Portcast_API_status_info_oneOf_1:
-      properties:
-        code:
-          default: WARNING
-          description: We had a WARNING in one or more of Vessel Status Code and/or
-            Predictions Status Code or no data due to bad input information
-          type: string
-          x-stoplight:
-            id: 0si4mhe6q8omz
         metadata:
           items:
             enum:
@@ -5195,33 +5191,11 @@ components:
             - BILL_OF_LADING_BOOKMARK_WARNING
             type: string
             x-stoplight:
-              id: m6mggtt9lvcdx
+              id: jmix4d2mysusl
+          minItems: 0
           type: array
           x-stoplight:
-            id: yspsjfny8ti38
-    Portcast_API_status_info_oneOf_2:
-      properties:
-        code:
-          default: FAILED
-          description: Internal Error in generating the API response
-          type: string
-          x-stoplight:
-            id: 2kkhdqaulytlu
-        metadata:
-          items:
-            type: string
-            x-stoplight:
-              id: v7dnyk1hiaq2k
-          maxItems: 0
-          type: array
-          x-stoplight:
-            id: 9hgwb15to3hhs
-    Portcast_API_status_info:
-      description: "Status Defination Object for the [API Response](docs/Portcast-Status-Codes.md)"
-      oneOf:
-      - $ref: '#/components/schemas/Portcast_API_status_info_oneOf'
-      - $ref: '#/components/schemas/Portcast_API_status_info_oneOf_1'
-      - $ref: '#/components/schemas/Portcast_API_status_info_oneOf_2'
+            id: xztimkd6uyaem
       x-stoplight:
         id: arup3aoagntg7
     Bill_of_Lading_Bookmark_status_info:

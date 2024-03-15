@@ -13,131 +13,119 @@ package portcast
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// PortcastAPIStatusInfo - Status Defination Object for the [API Response](docs/Portcast-Status-Codes.md)
+// checks if the PortcastAPIStatusInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PortcastAPIStatusInfo{}
+
+// PortcastAPIStatusInfo Status Defination Object for the [API Response](docs/Portcast-Status-Codes.md)
 type PortcastAPIStatusInfo struct {
-	PortcastAPIStatusInfoOneOf *PortcastAPIStatusInfoOneOf
-	PortcastAPIStatusInfoOneOf1 *PortcastAPIStatusInfoOneOf1
-	PortcastAPIStatusInfoOneOf2 *PortcastAPIStatusInfoOneOf2
+	Code *string `json:"code,omitempty"`
+	Metadata []string `json:"metadata,omitempty"`
 }
 
-// PortcastAPIStatusInfoOneOfAsPortcastAPIStatusInfo is a convenience function that returns PortcastAPIStatusInfoOneOf wrapped in PortcastAPIStatusInfo
-func PortcastAPIStatusInfoOneOfAsPortcastAPIStatusInfo(v *PortcastAPIStatusInfoOneOf) PortcastAPIStatusInfo {
-	return PortcastAPIStatusInfo{
-		PortcastAPIStatusInfoOneOf: v,
-	}
+// NewPortcastAPIStatusInfo instantiates a new PortcastAPIStatusInfo object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewPortcastAPIStatusInfo() *PortcastAPIStatusInfo {
+	this := PortcastAPIStatusInfo{}
+	var code string = "SUCCESS"
+	this.Code = &code
+	return &this
 }
 
-// PortcastAPIStatusInfoOneOf1AsPortcastAPIStatusInfo is a convenience function that returns PortcastAPIStatusInfoOneOf1 wrapped in PortcastAPIStatusInfo
-func PortcastAPIStatusInfoOneOf1AsPortcastAPIStatusInfo(v *PortcastAPIStatusInfoOneOf1) PortcastAPIStatusInfo {
-	return PortcastAPIStatusInfo{
-		PortcastAPIStatusInfoOneOf1: v,
-	}
+// NewPortcastAPIStatusInfoWithDefaults instantiates a new PortcastAPIStatusInfo object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewPortcastAPIStatusInfoWithDefaults() *PortcastAPIStatusInfo {
+	this := PortcastAPIStatusInfo{}
+	var code string = "SUCCESS"
+	this.Code = &code
+	return &this
 }
 
-// PortcastAPIStatusInfoOneOf2AsPortcastAPIStatusInfo is a convenience function that returns PortcastAPIStatusInfoOneOf2 wrapped in PortcastAPIStatusInfo
-func PortcastAPIStatusInfoOneOf2AsPortcastAPIStatusInfo(v *PortcastAPIStatusInfoOneOf2) PortcastAPIStatusInfo {
-	return PortcastAPIStatusInfo{
-		PortcastAPIStatusInfoOneOf2: v,
+// GetCode returns the Code field value if set, zero value otherwise.
+func (o *PortcastAPIStatusInfo) GetCode() string {
+	if o == nil || IsNil(o.Code) {
+		var ret string
+		return ret
 	}
+	return *o.Code
 }
 
-
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *PortcastAPIStatusInfo) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into PortcastAPIStatusInfoOneOf
-	err = newStrictDecoder(data).Decode(&dst.PortcastAPIStatusInfoOneOf)
-	if err == nil {
-		jsonPortcastAPIStatusInfoOneOf, _ := json.Marshal(dst.PortcastAPIStatusInfoOneOf)
-		if string(jsonPortcastAPIStatusInfoOneOf) == "{}" { // empty struct
-			dst.PortcastAPIStatusInfoOneOf = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.PortcastAPIStatusInfoOneOf = nil
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortcastAPIStatusInfo) GetCodeOk() (*string, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
 	}
-
-	// try to unmarshal data into PortcastAPIStatusInfoOneOf1
-	err = newStrictDecoder(data).Decode(&dst.PortcastAPIStatusInfoOneOf1)
-	if err == nil {
-		jsonPortcastAPIStatusInfoOneOf1, _ := json.Marshal(dst.PortcastAPIStatusInfoOneOf1)
-		if string(jsonPortcastAPIStatusInfoOneOf1) == "{}" { // empty struct
-			dst.PortcastAPIStatusInfoOneOf1 = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.PortcastAPIStatusInfoOneOf1 = nil
-	}
-
-	// try to unmarshal data into PortcastAPIStatusInfoOneOf2
-	err = newStrictDecoder(data).Decode(&dst.PortcastAPIStatusInfoOneOf2)
-	if err == nil {
-		jsonPortcastAPIStatusInfoOneOf2, _ := json.Marshal(dst.PortcastAPIStatusInfoOneOf2)
-		if string(jsonPortcastAPIStatusInfoOneOf2) == "{}" { // empty struct
-			dst.PortcastAPIStatusInfoOneOf2 = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.PortcastAPIStatusInfoOneOf2 = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.PortcastAPIStatusInfoOneOf = nil
-		dst.PortcastAPIStatusInfoOneOf1 = nil
-		dst.PortcastAPIStatusInfoOneOf2 = nil
-
-		return fmt.Errorf("data matches more than one schema in oneOf(PortcastAPIStatusInfo)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(PortcastAPIStatusInfo)")
-	}
+	return o.Code, true
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src PortcastAPIStatusInfo) MarshalJSON() ([]byte, error) {
-	if src.PortcastAPIStatusInfoOneOf != nil {
-		return json.Marshal(&src.PortcastAPIStatusInfoOneOf)
+// HasCode returns a boolean if a field has been set.
+func (o *PortcastAPIStatusInfo) HasCode() bool {
+	if o != nil && !IsNil(o.Code) {
+		return true
 	}
 
-	if src.PortcastAPIStatusInfoOneOf1 != nil {
-		return json.Marshal(&src.PortcastAPIStatusInfoOneOf1)
-	}
-
-	if src.PortcastAPIStatusInfoOneOf2 != nil {
-		return json.Marshal(&src.PortcastAPIStatusInfoOneOf2)
-	}
-
-	return nil, nil // no data in oneOf schemas
+	return false
 }
 
-// Get the actual instance
-func (obj *PortcastAPIStatusInfo) GetActualInstance() (interface{}) {
-	if obj == nil {
-		return nil
+// SetCode gets a reference to the given string and assigns it to the Code field.
+func (o *PortcastAPIStatusInfo) SetCode(v string) {
+	o.Code = &v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *PortcastAPIStatusInfo) GetMetadata() []string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret []string
+		return ret
 	}
-	if obj.PortcastAPIStatusInfoOneOf != nil {
-		return obj.PortcastAPIStatusInfoOneOf
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortcastAPIStatusInfo) GetMetadataOk() ([]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *PortcastAPIStatusInfo) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
 	}
 
-	if obj.PortcastAPIStatusInfoOneOf1 != nil {
-		return obj.PortcastAPIStatusInfoOneOf1
-	}
+	return false
+}
 
-	if obj.PortcastAPIStatusInfoOneOf2 != nil {
-		return obj.PortcastAPIStatusInfoOneOf2
-	}
+// SetMetadata gets a reference to the given []string and assigns it to the Metadata field.
+func (o *PortcastAPIStatusInfo) SetMetadata(v []string) {
+	o.Metadata = v
+}
 
-	// all schemas are nil
-	return nil
+func (o PortcastAPIStatusInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PortcastAPIStatusInfo) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Code) {
+		toSerialize["code"] = o.Code
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
+	return toSerialize, nil
 }
 
 type NullablePortcastAPIStatusInfo struct {
