@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | Pointer to **interface{}** | Predictions NOT generated for the vessel in this leg | [optional] [default to FAILED]
-**Metadata** | Pointer to **interface{}** |  | [optional] 
+**Code** | Pointer to **string** |  | [optional] [default to "INIT"]
+**Metadata** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCode
 
-`func (o *SailingInfoTrackingStatusInfoPrediction) GetCode() interface{}`
+`func (o *SailingInfoTrackingStatusInfoPrediction) GetCode() string`
 
 GetCode returns the Code field if non-nil, zero value otherwise.
 
 ### GetCodeOk
 
-`func (o *SailingInfoTrackingStatusInfoPrediction) GetCodeOk() (*interface{}, bool)`
+`func (o *SailingInfoTrackingStatusInfoPrediction) GetCodeOk() (*string, bool)`
 
 GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCode
 
-`func (o *SailingInfoTrackingStatusInfoPrediction) SetCode(v interface{})`
+`func (o *SailingInfoTrackingStatusInfoPrediction) SetCode(v string)`
 
 SetCode sets Code field to given value.
 
@@ -51,32 +51,22 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
-### SetCodeNil
-
-`func (o *SailingInfoTrackingStatusInfoPrediction) SetCodeNil(b bool)`
-
- SetCodeNil sets the value for Code to be an explicit nil
-
-### UnsetCode
-`func (o *SailingInfoTrackingStatusInfoPrediction) UnsetCode()`
-
-UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetMetadata
 
-`func (o *SailingInfoTrackingStatusInfoPrediction) GetMetadata() interface{}`
+`func (o *SailingInfoTrackingStatusInfoPrediction) GetMetadata() []string`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *SailingInfoTrackingStatusInfoPrediction) GetMetadataOk() (*interface{}, bool)`
+`func (o *SailingInfoTrackingStatusInfoPrediction) GetMetadataOk() (*[]string, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *SailingInfoTrackingStatusInfoPrediction) SetMetadata(v interface{})`
+`func (o *SailingInfoTrackingStatusInfoPrediction) SetMetadata(v []string)`
 
 SetMetadata sets Metadata field to given value.
 
@@ -86,16 +76,6 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
-### SetMetadataNil
-
-`func (o *SailingInfoTrackingStatusInfoPrediction) SetMetadataNil(b bool)`
-
- SetMetadataNil sets the value for Metadata to be an explicit nil
-
-### UnsetMetadata
-`func (o *SailingInfoTrackingStatusInfoPrediction) UnsetMetadata()`
-
-UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

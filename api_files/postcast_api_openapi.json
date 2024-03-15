@@ -2603,129 +2603,35 @@
                                 "x-stoplight": {
                                     "id": "4s904e3usktti"
                                 },
-                                "oneOf": [
-                                    {
-                                        "additionalProperties": false,
-                                        "properties": {
-                                            "code": {
-                                                "type": [
-                                                    "string"
-                                                ],
-                                                "x-stoplight": {
-                                                    "id": "72xnxv9dt0gcn"
-                                                },
-                                                "default": "INIT",
-                                                "description": "No status code is assigned yet ~ Vessel hasn't gone through the prediction engine yet."
-                                            },
-                                            "metadata": {
-                                                "type": "array",
-                                                "x-stoplight": {
-                                                    "id": "qtm9h92e3yz9s"
-                                                },
-                                                "maxItems": 0,
-                                                "items": {
-                                                    "x-stoplight": {
-                                                        "id": "hfkcywi00x1j4"
-                                                    },
-                                                    "enum": []
-                                                }
-                                            }
-                                        }
+                                "additionalProperties": false,
+                                "properties": {
+                                    "code": {
+                                        "type": [
+                                            "string"
+                                        ],
+                                        "x-stoplight": {
+                                            "id": "72xnxv9dt0gcn"
+                                        },
+                                        "default": "INIT"
                                     },
-                                    {
-                                        "additionalProperties": false,
-                                        "properties": {
-                                            "code": {
-                                                "type": [
-                                                    "string"
-                                                ],
-                                                "x-stoplight": {
-                                                    "id": "j9k6wbwsq4iiq"
-                                                },
-                                                "default": "SUCCESS",
-                                                "description": "Generated predictions without any issues and/or warnings"
+                                    "metadata": {
+                                        "type": "array",
+                                        "x-stoplight": {
+                                            "id": "qtm9h92e3yz9s"
+                                        },
+                                        "minItems": 0,
+                                        "items": {
+                                            "x-stoplight": {
+                                                "id": "hfkcywi00x1j4"
                                             },
-                                            "metadata": {
-                                                "type": "array",
-                                                "x-stoplight": {
-                                                    "id": "0mrd745dph2d0"
-                                                },
-                                                "minItems": 0,
-                                                "items": {
-                                                    "x-stoplight": {
-                                                        "id": "wg4irnhqbair5"
-                                                    },
-                                                    "example": "PREDICTIONS_NOT_ENABLED",
-                                                    "enum": [
-                                                        "PREDICTIONS_NOT_ENABLED"
-                                                    ]
-                                                }
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "additionalProperties": false,
-                                        "properties": {
-                                            "code": {
-                                                "type": [
-                                                    "string"
-                                                ],
-                                                "x-stoplight": {
-                                                    "id": "n3yig6tglqybw"
-                                                },
-                                                "default": "WARNING",
-                                                "description": "Warning with regards to potentially stale predictions"
-                                            },
-                                            "metadata": {
-                                                "type": "array",
-                                                "x-stoplight": {
-                                                    "id": "9ys5zxv1jds9c"
-                                                },
-                                                "minItems": 1,
-                                                "items": {
-                                                    "x-stoplight": {
-                                                        "id": "hgcdu73wk646g"
-                                                    },
-                                                    "example": "POSSIBLE_LAG_IN_PORTCALL_CAPTURE",
-                                                    "enum": [
-                                                        "POSSIBLE_LAG_IN_PORTCALL_CAPTURE"
-                                                    ]
-                                                }
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "additionalProperties": false,
-                                        "properties": {
-                                            "code": {
-                                                "type": [
-                                                    "string"
-                                                ],
-                                                "x-stoplight": {
-                                                    "id": "6hhxa8z10vrc5"
-                                                },
-                                                "default": "FAILED",
-                                                "description": "Predictions NOT generated for the vessel in this leg"
-                                            },
-                                            "metadata": {
-                                                "type": "array",
-                                                "x-stoplight": {
-                                                    "id": "u0afadplmc5vi"
-                                                },
-                                                "minItems": 1,
-                                                "items": {
-                                                    "x-stoplight": {
-                                                        "id": "1xd917w2bg47g"
-                                                    },
-                                                    "example": "INTERNAL_ERROR",
-                                                    "enum": [
-                                                        "INTERNAL_ERROR"
-                                                    ]
-                                                }
-                                            }
+                                            "enum": [
+                                                "PREDICTIONS_NOT_ENABLED",
+                                                "POSSIBLE_LAG_IN_PORTCALL_CAPTURE",
+                                                "INTERNAL_ERROR"
+                                            ]
                                         }
                                     }
-                                ],
+                                },
                                 "description": "Status Defination related to the [Prediction Engine](docs/Portcast-Status-Codes.md)",
                                 "type": "object"
                             },
@@ -2733,95 +2639,32 @@
                                 "x-stoplight": {
                                     "id": "qxnlerb3a0kma"
                                 },
-                                "oneOf": [
-                                    {
+                                "properties": {
+                                    "code": {
+                                        "type": "string",
                                         "x-stoplight": {
-                                            "id": "b70q2pk0mhsr3"
+                                            "id": "0741auyzciqte"
                                         },
-                                        "properties": {
-                                            "code": {
-                                                "type": "string",
-                                                "x-stoplight": {
-                                                    "id": "0741auyzciqte"
-                                                },
-                                                "default": "INIT",
-                                                "description": "No status code is assigned yet ~ Vessel Information not yet fetched."
-                                            },
-                                            "metadata": {
-                                                "type": "array",
-                                                "x-stoplight": {
-                                                    "id": "k5s451f4qmtw8"
-                                                },
-                                                "maxItems": 0,
-                                                "items": {
-                                                    "x-stoplight": {
-                                                        "id": "x0d6l8ekb3zyu"
-                                                    },
-                                                    "enum": []
-                                                }
-                                            }
-                                        }
+                                        "default": "INIT"
                                     },
-                                    {
+                                    "metadata": {
+                                        "type": "array",
                                         "x-stoplight": {
-                                            "id": "qcnz8gbk1zqvn"
+                                            "id": "k5s451f4qmtw8"
                                         },
-                                        "properties": {
-                                            "code": {
-                                                "type": "string",
-                                                "x-stoplight": {
-                                                    "id": "u8q04gabxldux"
-                                                },
-                                                "default": "SUCCESS",
-                                                "description": "Vessel related data (schedules and vessel AIS data) successfully fetched"
+                                        "minItems": 0,
+                                        "items": {
+                                            "x-stoplight": {
+                                                "id": "x0d6l8ekb3zyu"
                                             },
-                                            "metadata": {
-                                                "type": "array",
-                                                "x-stoplight": {
-                                                    "id": "7l1xcdz8olubr"
-                                                },
-                                                "maxItems": 0,
-                                                "items": {
-                                                    "x-stoplight": {
-                                                        "id": "jq9djvoxyohge"
-                                                    },
-                                                    "enum": []
-                                                }
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "x-stoplight": {
-                                            "id": "nwrlacxdlntgl"
-                                        },
-                                        "properties": {
-                                            "code": {
-                                                "type": "string",
-                                                "x-stoplight": {
-                                                    "id": "rvt618t8s45a7"
-                                                },
-                                                "default": "FAILED",
-                                                "description": "Vessel related data NOT fetched (vessel schedules and/or vessel AIS data)"
-                                            },
-                                            "metadata": {
-                                                "type": "array",
-                                                "x-stoplight": {
-                                                    "id": "bs13zs3y9iyy9"
-                                                },
-                                                "items": {
-                                                    "x-stoplight": {
-                                                        "id": "x66k6xkpxnfv4"
-                                                    },
-                                                    "enum": [
-                                                        "LATEST_VESSEL_PORTCALLS_NOT_FOUND",
-                                                        "LATEST_VESSEL_AIS_NOT_FOUND",
-                                                        "LATEST_VESSEL_SCHEDULE_NOT_FOUND"
-                                                    ]
-                                                }
-                                            }
+                                            "enum": [
+                                                "LATEST_VESSEL_PORTCALLS_NOT_FOUND",
+                                                "LATEST_VESSEL_AIS_NOT_FOUND",
+                                                "LATEST_VESSEL_SCHEDULE_NOT_FOUND"
+                                            ]
                                         }
                                     }
-                                ],
+                                },
                                 "description": "Status Defination related to the [Vessel Schedules](docs/Portcast-Status-Codes.md)",
                                 "type": "object"
                             }

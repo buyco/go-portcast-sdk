@@ -13,131 +13,119 @@ package portcast
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// SailingInfoTrackingStatusInfoVessel - Status Defination related to the [Vessel Schedules](docs/Portcast-Status-Codes.md)
+// checks if the SailingInfoTrackingStatusInfoVessel type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SailingInfoTrackingStatusInfoVessel{}
+
+// SailingInfoTrackingStatusInfoVessel Status Defination related to the [Vessel Schedules](docs/Portcast-Status-Codes.md)
 type SailingInfoTrackingStatusInfoVessel struct {
-	SailingInfoTrackingStatusInfoVesselOneOf *SailingInfoTrackingStatusInfoVesselOneOf
-	SailingInfoTrackingStatusInfoVesselOneOf1 *SailingInfoTrackingStatusInfoVesselOneOf1
-	SailingInfoTrackingStatusInfoVesselOneOf2 *SailingInfoTrackingStatusInfoVesselOneOf2
+	Code *string `json:"code,omitempty"`
+	Metadata []string `json:"metadata,omitempty"`
 }
 
-// SailingInfoTrackingStatusInfoVesselOneOfAsSailingInfoTrackingStatusInfoVessel is a convenience function that returns SailingInfoTrackingStatusInfoVesselOneOf wrapped in SailingInfoTrackingStatusInfoVessel
-func SailingInfoTrackingStatusInfoVesselOneOfAsSailingInfoTrackingStatusInfoVessel(v *SailingInfoTrackingStatusInfoVesselOneOf) SailingInfoTrackingStatusInfoVessel {
-	return SailingInfoTrackingStatusInfoVessel{
-		SailingInfoTrackingStatusInfoVesselOneOf: v,
-	}
+// NewSailingInfoTrackingStatusInfoVessel instantiates a new SailingInfoTrackingStatusInfoVessel object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewSailingInfoTrackingStatusInfoVessel() *SailingInfoTrackingStatusInfoVessel {
+	this := SailingInfoTrackingStatusInfoVessel{}
+	var code string = "INIT"
+	this.Code = &code
+	return &this
 }
 
-// SailingInfoTrackingStatusInfoVesselOneOf1AsSailingInfoTrackingStatusInfoVessel is a convenience function that returns SailingInfoTrackingStatusInfoVesselOneOf1 wrapped in SailingInfoTrackingStatusInfoVessel
-func SailingInfoTrackingStatusInfoVesselOneOf1AsSailingInfoTrackingStatusInfoVessel(v *SailingInfoTrackingStatusInfoVesselOneOf1) SailingInfoTrackingStatusInfoVessel {
-	return SailingInfoTrackingStatusInfoVessel{
-		SailingInfoTrackingStatusInfoVesselOneOf1: v,
-	}
+// NewSailingInfoTrackingStatusInfoVesselWithDefaults instantiates a new SailingInfoTrackingStatusInfoVessel object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewSailingInfoTrackingStatusInfoVesselWithDefaults() *SailingInfoTrackingStatusInfoVessel {
+	this := SailingInfoTrackingStatusInfoVessel{}
+	var code string = "INIT"
+	this.Code = &code
+	return &this
 }
 
-// SailingInfoTrackingStatusInfoVesselOneOf2AsSailingInfoTrackingStatusInfoVessel is a convenience function that returns SailingInfoTrackingStatusInfoVesselOneOf2 wrapped in SailingInfoTrackingStatusInfoVessel
-func SailingInfoTrackingStatusInfoVesselOneOf2AsSailingInfoTrackingStatusInfoVessel(v *SailingInfoTrackingStatusInfoVesselOneOf2) SailingInfoTrackingStatusInfoVessel {
-	return SailingInfoTrackingStatusInfoVessel{
-		SailingInfoTrackingStatusInfoVesselOneOf2: v,
+// GetCode returns the Code field value if set, zero value otherwise.
+func (o *SailingInfoTrackingStatusInfoVessel) GetCode() string {
+	if o == nil || IsNil(o.Code) {
+		var ret string
+		return ret
 	}
+	return *o.Code
 }
 
-
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *SailingInfoTrackingStatusInfoVessel) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into SailingInfoTrackingStatusInfoVesselOneOf
-	err = newStrictDecoder(data).Decode(&dst.SailingInfoTrackingStatusInfoVesselOneOf)
-	if err == nil {
-		jsonSailingInfoTrackingStatusInfoVesselOneOf, _ := json.Marshal(dst.SailingInfoTrackingStatusInfoVesselOneOf)
-		if string(jsonSailingInfoTrackingStatusInfoVesselOneOf) == "{}" { // empty struct
-			dst.SailingInfoTrackingStatusInfoVesselOneOf = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.SailingInfoTrackingStatusInfoVesselOneOf = nil
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SailingInfoTrackingStatusInfoVessel) GetCodeOk() (*string, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
 	}
-
-	// try to unmarshal data into SailingInfoTrackingStatusInfoVesselOneOf1
-	err = newStrictDecoder(data).Decode(&dst.SailingInfoTrackingStatusInfoVesselOneOf1)
-	if err == nil {
-		jsonSailingInfoTrackingStatusInfoVesselOneOf1, _ := json.Marshal(dst.SailingInfoTrackingStatusInfoVesselOneOf1)
-		if string(jsonSailingInfoTrackingStatusInfoVesselOneOf1) == "{}" { // empty struct
-			dst.SailingInfoTrackingStatusInfoVesselOneOf1 = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.SailingInfoTrackingStatusInfoVesselOneOf1 = nil
-	}
-
-	// try to unmarshal data into SailingInfoTrackingStatusInfoVesselOneOf2
-	err = newStrictDecoder(data).Decode(&dst.SailingInfoTrackingStatusInfoVesselOneOf2)
-	if err == nil {
-		jsonSailingInfoTrackingStatusInfoVesselOneOf2, _ := json.Marshal(dst.SailingInfoTrackingStatusInfoVesselOneOf2)
-		if string(jsonSailingInfoTrackingStatusInfoVesselOneOf2) == "{}" { // empty struct
-			dst.SailingInfoTrackingStatusInfoVesselOneOf2 = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.SailingInfoTrackingStatusInfoVesselOneOf2 = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.SailingInfoTrackingStatusInfoVesselOneOf = nil
-		dst.SailingInfoTrackingStatusInfoVesselOneOf1 = nil
-		dst.SailingInfoTrackingStatusInfoVesselOneOf2 = nil
-
-		return fmt.Errorf("data matches more than one schema in oneOf(SailingInfoTrackingStatusInfoVessel)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(SailingInfoTrackingStatusInfoVessel)")
-	}
+	return o.Code, true
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src SailingInfoTrackingStatusInfoVessel) MarshalJSON() ([]byte, error) {
-	if src.SailingInfoTrackingStatusInfoVesselOneOf != nil {
-		return json.Marshal(&src.SailingInfoTrackingStatusInfoVesselOneOf)
+// HasCode returns a boolean if a field has been set.
+func (o *SailingInfoTrackingStatusInfoVessel) HasCode() bool {
+	if o != nil && !IsNil(o.Code) {
+		return true
 	}
 
-	if src.SailingInfoTrackingStatusInfoVesselOneOf1 != nil {
-		return json.Marshal(&src.SailingInfoTrackingStatusInfoVesselOneOf1)
-	}
-
-	if src.SailingInfoTrackingStatusInfoVesselOneOf2 != nil {
-		return json.Marshal(&src.SailingInfoTrackingStatusInfoVesselOneOf2)
-	}
-
-	return nil, nil // no data in oneOf schemas
+	return false
 }
 
-// Get the actual instance
-func (obj *SailingInfoTrackingStatusInfoVessel) GetActualInstance() (interface{}) {
-	if obj == nil {
-		return nil
+// SetCode gets a reference to the given string and assigns it to the Code field.
+func (o *SailingInfoTrackingStatusInfoVessel) SetCode(v string) {
+	o.Code = &v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *SailingInfoTrackingStatusInfoVessel) GetMetadata() []string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret []string
+		return ret
 	}
-	if obj.SailingInfoTrackingStatusInfoVesselOneOf != nil {
-		return obj.SailingInfoTrackingStatusInfoVesselOneOf
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SailingInfoTrackingStatusInfoVessel) GetMetadataOk() ([]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *SailingInfoTrackingStatusInfoVessel) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
 	}
 
-	if obj.SailingInfoTrackingStatusInfoVesselOneOf1 != nil {
-		return obj.SailingInfoTrackingStatusInfoVesselOneOf1
-	}
+	return false
+}
 
-	if obj.SailingInfoTrackingStatusInfoVesselOneOf2 != nil {
-		return obj.SailingInfoTrackingStatusInfoVesselOneOf2
-	}
+// SetMetadata gets a reference to the given []string and assigns it to the Metadata field.
+func (o *SailingInfoTrackingStatusInfoVessel) SetMetadata(v []string) {
+	o.Metadata = v
+}
 
-	// all schemas are nil
-	return nil
+func (o SailingInfoTrackingStatusInfoVessel) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SailingInfoTrackingStatusInfoVessel) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Code) {
+		toSerialize["code"] = o.Code
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
+	return toSerialize, nil
 }
 
 type NullableSailingInfoTrackingStatusInfoVessel struct {

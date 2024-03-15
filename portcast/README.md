@@ -155,14 +155,7 @@ Class | Method | HTTP request | Description
  - [SailingInfoTrackingSailingInfo](docs/SailingInfoTrackingSailingInfo.md)
  - [SailingInfoTrackingStatusInfo](docs/SailingInfoTrackingStatusInfo.md)
  - [SailingInfoTrackingStatusInfoPrediction](docs/SailingInfoTrackingStatusInfoPrediction.md)
- - [SailingInfoTrackingStatusInfoPredictionOneOf](docs/SailingInfoTrackingStatusInfoPredictionOneOf.md)
- - [SailingInfoTrackingStatusInfoPredictionOneOf1](docs/SailingInfoTrackingStatusInfoPredictionOneOf1.md)
- - [SailingInfoTrackingStatusInfoPredictionOneOf2](docs/SailingInfoTrackingStatusInfoPredictionOneOf2.md)
- - [SailingInfoTrackingStatusInfoPredictionOneOf3](docs/SailingInfoTrackingStatusInfoPredictionOneOf3.md)
  - [SailingInfoTrackingStatusInfoVessel](docs/SailingInfoTrackingStatusInfoVessel.md)
- - [SailingInfoTrackingStatusInfoVesselOneOf](docs/SailingInfoTrackingStatusInfoVesselOneOf.md)
- - [SailingInfoTrackingStatusInfoVesselOneOf1](docs/SailingInfoTrackingStatusInfoVesselOneOf1.md)
- - [SailingInfoTrackingStatusInfoVesselOneOf2](docs/SailingInfoTrackingStatusInfoVesselOneOf2.md)
  - [VoyageDetails](docs/VoyageDetails.md)
 
 
