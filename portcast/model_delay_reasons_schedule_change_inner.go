@@ -13,7 +13,6 @@ package portcast
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the DelayReasonsScheduleChangeInner type satisfies the MappedNullable interface at compile time
@@ -26,9 +25,9 @@ type DelayReasonsScheduleChangeInner struct {
 	// Defines if the change is happening at the POL, POT or POD
 	LocationTypeCode *string `json:"location_type_code,omitempty"`
 	// Latest changed datetime information - port local time
-	NewDate *time.Time `json:"new_date,omitempty"`
+	NewDate *string `json:"new_date,omitempty"`
 	// Last recorded datetime information - port local time
-	OldDate *time.Time `json:"old_date,omitempty"`
+	OldDate *string `json:"old_date,omitempty"`
 }
 
 // NewDelayReasonsScheduleChangeInner instantiates a new DelayReasonsScheduleChangeInner object
@@ -113,9 +112,9 @@ func (o *DelayReasonsScheduleChangeInner) SetLocationTypeCode(v string) {
 }
 
 // GetNewDate returns the NewDate field value if set, zero value otherwise.
-func (o *DelayReasonsScheduleChangeInner) GetNewDate() time.Time {
+func (o *DelayReasonsScheduleChangeInner) GetNewDate() string {
 	if o == nil || IsNil(o.NewDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.NewDate
@@ -123,7 +122,7 @@ func (o *DelayReasonsScheduleChangeInner) GetNewDate() time.Time {
 
 // GetNewDateOk returns a tuple with the NewDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DelayReasonsScheduleChangeInner) GetNewDateOk() (*time.Time, bool) {
+func (o *DelayReasonsScheduleChangeInner) GetNewDateOk() (*string, bool) {
 	if o == nil || IsNil(o.NewDate) {
 		return nil, false
 	}
@@ -139,15 +138,15 @@ func (o *DelayReasonsScheduleChangeInner) HasNewDate() bool {
 	return false
 }
 
-// SetNewDate gets a reference to the given time.Time and assigns it to the NewDate field.
-func (o *DelayReasonsScheduleChangeInner) SetNewDate(v time.Time) {
+// SetNewDate gets a reference to the given string and assigns it to the NewDate field.
+func (o *DelayReasonsScheduleChangeInner) SetNewDate(v string) {
 	o.NewDate = &v
 }
 
 // GetOldDate returns the OldDate field value if set, zero value otherwise.
-func (o *DelayReasonsScheduleChangeInner) GetOldDate() time.Time {
+func (o *DelayReasonsScheduleChangeInner) GetOldDate() string {
 	if o == nil || IsNil(o.OldDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.OldDate
@@ -155,7 +154,7 @@ func (o *DelayReasonsScheduleChangeInner) GetOldDate() time.Time {
 
 // GetOldDateOk returns a tuple with the OldDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DelayReasonsScheduleChangeInner) GetOldDateOk() (*time.Time, bool) {
+func (o *DelayReasonsScheduleChangeInner) GetOldDateOk() (*string, bool) {
 	if o == nil || IsNil(o.OldDate) {
 		return nil, false
 	}
@@ -171,8 +170,8 @@ func (o *DelayReasonsScheduleChangeInner) HasOldDate() bool {
 	return false
 }
 
-// SetOldDate gets a reference to the given time.Time and assigns it to the OldDate field.
-func (o *DelayReasonsScheduleChangeInner) SetOldDate(v time.Time) {
+// SetOldDate gets a reference to the given string and assigns it to the OldDate field.
+func (o *DelayReasonsScheduleChangeInner) SetOldDate(v string) {
 	o.OldDate = &v
 }
 

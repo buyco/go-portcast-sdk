@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -137,9 +136,4 @@ model_sailing_info_tracking_status_info_prediction.go
 model_sailing_info_tracking_status_info_vessel.go
 model_voyage_details.go
 response.go
-test/api_customers_test.go
-test/api_get_tracking_data_for_uploaded_containers_test.go
-test/api_sub_apis_test.go
-test/api_supporting_api_test.go
-test/api_upload_containers_for_tracking_test.go
 utils.go

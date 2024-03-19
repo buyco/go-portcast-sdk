@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EventTypeCode** | Pointer to **string** | Defines if it&#39;s a loading, departure or arrival event | [optional] 
 **LocationTypeCode** | Pointer to **string** | Defines if the change is happening at the POL, POT or POD | [optional] 
-**NewDate** | Pointer to **time.Time** | Latest changed datetime information - port local time | [optional] 
-**OldDate** | Pointer to **time.Time** | Last recorded datetime information - port local time | [optional] 
+**NewDate** | Pointer to **string** | Latest changed datetime information - port local time | [optional] 
+**OldDate** | Pointer to **string** | Last recorded datetime information - port local time | [optional] 
 
 ## Methods
 
@@ -80,20 +80,20 @@ HasLocationTypeCode returns a boolean if a field has been set.
 
 ### GetNewDate
 
-`func (o *DelayReasonsScheduleChangeInner) GetNewDate() time.Time`
+`func (o *DelayReasonsScheduleChangeInner) GetNewDate() string`
 
 GetNewDate returns the NewDate field if non-nil, zero value otherwise.
 
 ### GetNewDateOk
 
-`func (o *DelayReasonsScheduleChangeInner) GetNewDateOk() (*time.Time, bool)`
+`func (o *DelayReasonsScheduleChangeInner) GetNewDateOk() (*string, bool)`
 
 GetNewDateOk returns a tuple with the NewDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNewDate
 
-`func (o *DelayReasonsScheduleChangeInner) SetNewDate(v time.Time)`
+`func (o *DelayReasonsScheduleChangeInner) SetNewDate(v string)`
 
 SetNewDate sets NewDate field to given value.
 
@@ -105,20 +105,20 @@ HasNewDate returns a boolean if a field has been set.
 
 ### GetOldDate
 
-`func (o *DelayReasonsScheduleChangeInner) GetOldDate() time.Time`
+`func (o *DelayReasonsScheduleChangeInner) GetOldDate() string`
 
 GetOldDate returns the OldDate field if non-nil, zero value otherwise.
 
 ### GetOldDateOk
 
-`func (o *DelayReasonsScheduleChangeInner) GetOldDateOk() (*time.Time, bool)`
+`func (o *DelayReasonsScheduleChangeInner) GetOldDateOk() (*string, bool)`
 
 GetOldDateOk returns a tuple with the OldDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOldDate
 
-`func (o *DelayReasonsScheduleChangeInner) SetOldDate(v time.Time)`
+`func (o *DelayReasonsScheduleChangeInner) SetOldDate(v string)`
 
 SetOldDate sets OldDate field to given value.
 

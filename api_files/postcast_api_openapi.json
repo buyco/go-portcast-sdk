@@ -2149,12 +2149,10 @@
                                 },
                                 "new_date": {
                                     "type": "string",
-                                    "format": "date-time",
                                     "description": "Latest changed datetime information - port local time"
                                 },
                                 "old_date": {
                                     "type": "string",
-                                    "format": "date-time",
                                     "description": "Last recorded datetime information - port local time"
                                 }
                             }

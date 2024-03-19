@@ -1236,13 +1236,13 @@ components:
           reason_code: RLV
           delay_description: Container rolled over to another vessel at POL
           schedule_change:
-          - old_date: 2000-01-23T04:56:07.000+00:00
+          - old_date: old_date
             event_type_code: ARRIVE
-            new_date: 2000-01-23T04:56:07.000+00:00
+            new_date: new_date
             location_type_code: POL
-          - old_date: 2000-01-23T04:56:07.000+00:00
+          - old_date: old_date
             event_type_code: ARRIVE
-            new_date: 2000-01-23T04:56:07.000+00:00
+            new_date: new_date
             location_type_code: POL
           rotation_change:
             comparison_schedule:
@@ -1261,13 +1261,13 @@ components:
           reason_code: RLV
           delay_description: Container rolled over to another vessel at POL
           schedule_change:
-          - old_date: 2000-01-23T04:56:07.000+00:00
+          - old_date: old_date
             event_type_code: ARRIVE
-            new_date: 2000-01-23T04:56:07.000+00:00
+            new_date: new_date
             location_type_code: POL
-          - old_date: 2000-01-23T04:56:07.000+00:00
+          - old_date: old_date
             event_type_code: ARRIVE
-            new_date: 2000-01-23T04:56:07.000+00:00
+            new_date: new_date
             location_type_code: POL
           rotation_change:
             comparison_schedule:
@@ -1858,13 +1858,13 @@ components:
         reason_code: RLV
         delay_description: Container rolled over to another vessel at POL
         schedule_change:
-        - old_date: 2000-01-23T04:56:07.000+00:00
+        - old_date: old_date
           event_type_code: ARRIVE
-          new_date: 2000-01-23T04:56:07.000+00:00
+          new_date: new_date
           location_type_code: POL
-        - old_date: 2000-01-23T04:56:07.000+00:00
+        - old_date: old_date
           event_type_code: ARRIVE
-          new_date: 2000-01-23T04:56:07.000+00:00
+          new_date: new_date
           location_type_code: POL
         rotation_change:
           comparison_schedule:
@@ -2926,406 +2926,13 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            rotation_change:
-              comparison_schedule:
-              - CNSHG
-              - CNSHG
-              updated_schedule:
-              - CNYTN
-              - CNYTN
-            vessel_change:
-              updated_vessel: 9604108
-              comparison_vessel: 9839208
-            created: 2000-01-23T04:56:07.000+00:00
-            location_type_code: POL
-            port_code: CNXMG
-          - port_name: XIAMEN
-            reason_code: RLV
-            delay_description: Container rolled over to another vessel at POL
-            schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            rotation_change:
-              comparison_schedule:
-              - CNSHG
-              - CNSHG
-              updated_schedule:
-              - CNYTN
-              - CNYTN
-            vessel_change:
-              updated_vessel: 9604108
-              comparison_vessel: 9839208
-            created: 2000-01-23T04:56:07.000+00:00
-            location_type_code: POL
-            port_code: CNXMG
-          co2_emissions:
-            intensity: 5.962133916683182
-            total: 0
-            wtt: 6
-            ttw: 1
-        - msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
-          container_event_list:
-          - created: 2000-01-23T04:56:07.000+00:00
-            event_raw: Empty container pick-up
-            vessel_imo: 9751107
-            event_time_estimated: 2023-12-29T00:00:00
-            event_type_code: PICKUP
-            terminal_details:
-              terminal_code_source: BIC
-              terminal_name: XIAMEN OCEAN GATE TERMINAL
-              terminal_code: XOGT
-            vessel_name: GEMLIK EXPRESS
-            event_type_name: Empty container pick-up
-            mode_of_transport: TRUCK
-            port_name: XIAMEN
-            location_raw: Xiamen
-            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
-            location_type_name: Place of receipt
-            location_type_code: POR
-            updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2023-12-29T00:00:00
-            port_code: CNXMG
-          - created: 2000-01-23T04:56:07.000+00:00
-            event_raw: Empty container pick-up
-            vessel_imo: 9751107
-            event_time_estimated: 2023-12-29T00:00:00
-            event_type_code: PICKUP
-            terminal_details:
-              terminal_code_source: BIC
-              terminal_name: XIAMEN OCEAN GATE TERMINAL
-              terminal_code: XOGT
-            vessel_name: GEMLIK EXPRESS
-            event_type_name: Empty container pick-up
-            mode_of_transport: TRUCK
-            port_name: XIAMEN
-            location_raw: Xiamen
-            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
-            location_type_name: Place of receipt
-            location_type_code: POR
-            updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2023-12-29T00:00:00
-            port_code: CNXMG
-          sailing_info_tracking:
-          - msg: AIS successfully fetched
-            success: true
-            sailing_info:
-              vessel_flag: SG
-              voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
-              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              vessel_leg: 1
-              is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              created: 2000-01-23T04:56:07.000+00:00
-              vessel_name: MAERSK PUELO
-              pol_name: HOUSTON
-              pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
-              carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            status_info:
-              vessel:
-                metadata:
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                code: INIT
-              prediction:
-                metadata:
-                - PREDICTIONS_NOT_ENABLED
-                - PREDICTIONS_NOT_ENABLED
-                code: INIT
-            ais:
-              timestamp_utc: 2000-01-23T04:56:07.000+00:00
-              course: 154
-              imo: "9306172"
-              lon: -78.766
-              lat: 26.527666
-              speed_nm: 8.2
-              status: 0
-            voyage_details:
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-          - msg: AIS successfully fetched
-            success: true
-            sailing_info:
-              vessel_flag: SG
-              voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
-              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              vessel_leg: 1
-              is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              created: 2000-01-23T04:56:07.000+00:00
-              vessel_name: MAERSK PUELO
-              pol_name: HOUSTON
-              pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
-              carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            status_info:
-              vessel:
-                metadata:
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                code: INIT
-              prediction:
-                metadata:
-                - PREDICTIONS_NOT_ENABLED
-                - PREDICTIONS_NOT_ENABLED
-                code: INIT
-            ais:
-              timestamp_utc: 2000-01-23T04:56:07.000+00:00
-              course: 154
-              imo: "9306172"
-              lon: -78.766
-              lat: 26.527666
-              speed_nm: 8.2
-              status: 0
-            voyage_details:
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
-          response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
-          org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
-          success: true
-          status_info:
-            metadata:
-            - LATEST_PREDICTIONS_WARNING
-            - LATEST_PREDICTIONS_WARNING
-            code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-          delay_lists:
-          - port_name: XIAMEN
-            reason_code: RLV
-            delay_description: Container rolled over to another vessel at POL
-            schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -3344,13 +2951,13 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -3712,406 +3319,13 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            rotation_change:
-              comparison_schedule:
-              - CNSHG
-              - CNSHG
-              updated_schedule:
-              - CNYTN
-              - CNYTN
-            vessel_change:
-              updated_vessel: 9604108
-              comparison_vessel: 9839208
-            created: 2000-01-23T04:56:07.000+00:00
-            location_type_code: POL
-            port_code: CNXMG
-          - port_name: XIAMEN
-            reason_code: RLV
-            delay_description: Container rolled over to another vessel at POL
-            schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            rotation_change:
-              comparison_schedule:
-              - CNSHG
-              - CNSHG
-              updated_schedule:
-              - CNYTN
-              - CNYTN
-            vessel_change:
-              updated_vessel: 9604108
-              comparison_vessel: 9839208
-            created: 2000-01-23T04:56:07.000+00:00
-            location_type_code: POL
-            port_code: CNXMG
-          co2_emissions:
-            intensity: 5.962133916683182
-            total: 0
-            wtt: 6
-            ttw: 1
-        - msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
-          container_event_list:
-          - created: 2000-01-23T04:56:07.000+00:00
-            event_raw: Empty container pick-up
-            vessel_imo: 9751107
-            event_time_estimated: 2023-12-29T00:00:00
-            event_type_code: PICKUP
-            terminal_details:
-              terminal_code_source: BIC
-              terminal_name: XIAMEN OCEAN GATE TERMINAL
-              terminal_code: XOGT
-            vessel_name: GEMLIK EXPRESS
-            event_type_name: Empty container pick-up
-            mode_of_transport: TRUCK
-            port_name: XIAMEN
-            location_raw: Xiamen
-            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
-            location_type_name: Place of receipt
-            location_type_code: POR
-            updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2023-12-29T00:00:00
-            port_code: CNXMG
-          - created: 2000-01-23T04:56:07.000+00:00
-            event_raw: Empty container pick-up
-            vessel_imo: 9751107
-            event_time_estimated: 2023-12-29T00:00:00
-            event_type_code: PICKUP
-            terminal_details:
-              terminal_code_source: BIC
-              terminal_name: XIAMEN OCEAN GATE TERMINAL
-              terminal_code: XOGT
-            vessel_name: GEMLIK EXPRESS
-            event_type_name: Empty container pick-up
-            mode_of_transport: TRUCK
-            port_name: XIAMEN
-            location_raw: Xiamen
-            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
-            location_type_name: Place of receipt
-            location_type_code: POR
-            updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2023-12-29T00:00:00
-            port_code: CNXMG
-          sailing_info_tracking:
-          - msg: AIS successfully fetched
-            success: true
-            sailing_info:
-              vessel_flag: SG
-              voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
-              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              vessel_leg: 1
-              is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              created: 2000-01-23T04:56:07.000+00:00
-              vessel_name: MAERSK PUELO
-              pol_name: HOUSTON
-              pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
-              carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            status_info:
-              vessel:
-                metadata:
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                code: INIT
-              prediction:
-                metadata:
-                - PREDICTIONS_NOT_ENABLED
-                - PREDICTIONS_NOT_ENABLED
-                code: INIT
-            ais:
-              timestamp_utc: 2000-01-23T04:56:07.000+00:00
-              course: 154
-              imo: "9306172"
-              lon: -78.766
-              lat: 26.527666
-              speed_nm: 8.2
-              status: 0
-            voyage_details:
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-          - msg: AIS successfully fetched
-            success: true
-            sailing_info:
-              vessel_flag: SG
-              voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
-              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              vessel_leg: 1
-              is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              created: 2000-01-23T04:56:07.000+00:00
-              vessel_name: MAERSK PUELO
-              pol_name: HOUSTON
-              pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
-              carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            status_info:
-              vessel:
-                metadata:
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                code: INIT
-              prediction:
-                metadata:
-                - PREDICTIONS_NOT_ENABLED
-                - PREDICTIONS_NOT_ENABLED
-                code: INIT
-            ais:
-              timestamp_utc: 2000-01-23T04:56:07.000+00:00
-              course: 154
-              imo: "9306172"
-              lon: -78.766
-              lat: 26.527666
-              speed_nm: 8.2
-              status: 0
-            voyage_details:
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
-          response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
-          org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
-          success: true
-          status_info:
-            metadata:
-            - LATEST_PREDICTIONS_WARNING
-            - LATEST_PREDICTIONS_WARNING
-            code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
-          delay_lists:
-          - port_name: XIAMEN
-            reason_code: RLV
-            delay_description: Container rolled over to another vessel at POL
-            schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
-              location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
-              event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -4130,13 +3344,13 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -4498,13 +3712,13 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -4523,13 +3737,799 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
+              location_type_code: POL
+            rotation_change:
+              comparison_schedule:
+              - CNSHG
+              - CNSHG
+              updated_schedule:
+              - CNYTN
+              - CNYTN
+            vessel_change:
+              updated_vessel: 9604108
+              comparison_vessel: 9839208
+            created: 2000-01-23T04:56:07.000+00:00
+            location_type_code: POL
+            port_code: CNXMG
+          co2_emissions:
+            intensity: 5.962133916683182
+            total: 0
+            wtt: 6
+            ttw: 1
+        - msg: Obtained latest bill of lading and container tracking information
+          bill_of_lading_bookmark:
+            bl_no: ONEYANRB31646600
+            cntr_no: TLLU1181321
+            deleted: false
+            status_code: status_code
+            created: 2000-01-23T04:56:07.000+00:00
+            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
+            status_info:
+              metadata: []
+              code: UPLOADED
+            carrier_no: ONEY
+            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
+            system_deleted: false
+            updated: 2000-01-23T04:56:07.000+00:00
+            status: status
+          container_event_list:
+          - created: 2000-01-23T04:56:07.000+00:00
+            event_raw: Empty container pick-up
+            vessel_imo: 9751107
+            event_time_estimated: 2023-12-29T00:00:00
+            event_type_code: PICKUP
+            terminal_details:
+              terminal_code_source: BIC
+              terminal_name: XIAMEN OCEAN GATE TERMINAL
+              terminal_code: XOGT
+            vessel_name: GEMLIK EXPRESS
+            event_type_name: Empty container pick-up
+            mode_of_transport: TRUCK
+            port_name: XIAMEN
+            location_raw: Xiamen
+            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
+            location_type_name: Place of receipt
+            location_type_code: POR
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
+            port_code: CNXMG
+          - created: 2000-01-23T04:56:07.000+00:00
+            event_raw: Empty container pick-up
+            vessel_imo: 9751107
+            event_time_estimated: 2023-12-29T00:00:00
+            event_type_code: PICKUP
+            terminal_details:
+              terminal_code_source: BIC
+              terminal_name: XIAMEN OCEAN GATE TERMINAL
+              terminal_code: XOGT
+            vessel_name: GEMLIK EXPRESS
+            event_type_name: Empty container pick-up
+            mode_of_transport: TRUCK
+            port_name: XIAMEN
+            location_raw: Xiamen
+            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
+            location_type_name: Place of receipt
+            location_type_code: POR
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
+            port_code: CNXMG
+          sailing_info_tracking:
+          - msg: AIS successfully fetched
+            success: true
+            sailing_info:
+              vessel_flag: SG
+              voyage_no: CG303R
+              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod: ESBCN
+              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              imo: "9306172"
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: USHOU
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
+              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              vessel_leg: 1
+              is_active: true
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
+              vessel_name: MAERSK PUELO
+              pol_name: HOUSTON
+              pod_name: BARCELONA
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_terminal_name: BAYPORT TERMINAL
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              carrier_no: CMDU
+              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              updated: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            status_info:
+              vessel:
+                metadata:
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                code: INIT
+              prediction:
+                metadata:
+                - PREDICTIONS_NOT_ENABLED
+                - PREDICTIONS_NOT_ENABLED
+                code: INIT
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 154
+              imo: "9306172"
+              lon: -78.766
+              lat: 26.527666
+              speed_nm: 8.2
+              status: 0
+            voyage_details:
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+          - msg: AIS successfully fetched
+            success: true
+            sailing_info:
+              vessel_flag: SG
+              voyage_no: CG303R
+              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod: ESBCN
+              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              imo: "9306172"
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: USHOU
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
+              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              vessel_leg: 1
+              is_active: true
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
+              vessel_name: MAERSK PUELO
+              pol_name: HOUSTON
+              pod_name: BARCELONA
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_terminal_name: BAYPORT TERMINAL
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              carrier_no: CMDU
+              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              updated: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            status_info:
+              vessel:
+                metadata:
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                code: INIT
+              prediction:
+                metadata:
+                - PREDICTIONS_NOT_ENABLED
+                - PREDICTIONS_NOT_ENABLED
+                code: INIT
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 154
+              imo: "9306172"
+              lon: -78.766
+              lat: 26.527666
+              speed_nm: 8.2
+              status: 0
+            voyage_details:
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+          container_metadata:
+            external_width_ft: 7.99
+            cntr_no: TLLU1181321
+            detail_st: 42G1
+            external_height_ft: 8.51
+            external_length_ft: 40
+          response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
+          org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
+          success: true
+          status_info:
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
+            code: SUCCESS
+          bill_of_lading:
+            bl_no: COSU6349613240
+            cntr_no: BMOU1589176
+            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod: GHTEM
+            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            place_of_delivery_name: NORFOLK
+            place_of_receipt_name: TEMA
+            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol: USORF
+            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
+            id: 16caa040-f582-4c15-88c9-2e80437e7916
+            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            place_of_delivery: USORF
+            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            created: 2000-01-23T04:56:07.000+00:00
+            pol_name: NORFOLK
+            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_name: TEMA
+            place_of_receipt: GHTEM
+            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_terminal_name: PPCY EMPTY DEPOT
+            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            carrier_no: COSU
+            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            updated: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          delay_lists:
+          - port_name: XIAMEN
+            reason_code: RLV
+            delay_description: Container rolled over to another vessel at POL
+            schedule_change:
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
+              location_type_code: POL
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
+              location_type_code: POL
+            rotation_change:
+              comparison_schedule:
+              - CNSHG
+              - CNSHG
+              updated_schedule:
+              - CNYTN
+              - CNYTN
+            vessel_change:
+              updated_vessel: 9604108
+              comparison_vessel: 9839208
+            created: 2000-01-23T04:56:07.000+00:00
+            location_type_code: POL
+            port_code: CNXMG
+          - port_name: XIAMEN
+            reason_code: RLV
+            delay_description: Container rolled over to another vessel at POL
+            schedule_change:
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
+              location_type_code: POL
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
+              location_type_code: POL
+            rotation_change:
+              comparison_schedule:
+              - CNSHG
+              - CNSHG
+              updated_schedule:
+              - CNYTN
+              - CNYTN
+            vessel_change:
+              updated_vessel: 9604108
+              comparison_vessel: 9839208
+            created: 2000-01-23T04:56:07.000+00:00
+            location_type_code: POL
+            port_code: CNXMG
+          co2_emissions:
+            intensity: 5.962133916683182
+            total: 0
+            wtt: 6
+            ttw: 1
+        - msg: Obtained latest bill of lading and container tracking information
+          bill_of_lading_bookmark:
+            bl_no: ONEYANRB31646600
+            cntr_no: TLLU1181321
+            deleted: false
+            status_code: status_code
+            created: 2000-01-23T04:56:07.000+00:00
+            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
+            status_info:
+              metadata: []
+              code: UPLOADED
+            carrier_no: ONEY
+            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
+            system_deleted: false
+            updated: 2000-01-23T04:56:07.000+00:00
+            status: status
+          container_event_list:
+          - created: 2000-01-23T04:56:07.000+00:00
+            event_raw: Empty container pick-up
+            vessel_imo: 9751107
+            event_time_estimated: 2023-12-29T00:00:00
+            event_type_code: PICKUP
+            terminal_details:
+              terminal_code_source: BIC
+              terminal_name: XIAMEN OCEAN GATE TERMINAL
+              terminal_code: XOGT
+            vessel_name: GEMLIK EXPRESS
+            event_type_name: Empty container pick-up
+            mode_of_transport: TRUCK
+            port_name: XIAMEN
+            location_raw: Xiamen
+            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
+            location_type_name: Place of receipt
+            location_type_code: POR
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
+            port_code: CNXMG
+          - created: 2000-01-23T04:56:07.000+00:00
+            event_raw: Empty container pick-up
+            vessel_imo: 9751107
+            event_time_estimated: 2023-12-29T00:00:00
+            event_type_code: PICKUP
+            terminal_details:
+              terminal_code_source: BIC
+              terminal_name: XIAMEN OCEAN GATE TERMINAL
+              terminal_code: XOGT
+            vessel_name: GEMLIK EXPRESS
+            event_type_name: Empty container pick-up
+            mode_of_transport: TRUCK
+            port_name: XIAMEN
+            location_raw: Xiamen
+            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
+            location_type_name: Place of receipt
+            location_type_code: POR
+            updated: 2000-01-23T04:56:07.000+00:00
+            event_time: 2023-12-29T00:00:00
+            port_code: CNXMG
+          sailing_info_tracking:
+          - msg: AIS successfully fetched
+            success: true
+            sailing_info:
+              vessel_flag: SG
+              voyage_no: CG303R
+              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod: ESBCN
+              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              imo: "9306172"
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: USHOU
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
+              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              vessel_leg: 1
+              is_active: true
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
+              vessel_name: MAERSK PUELO
+              pol_name: HOUSTON
+              pod_name: BARCELONA
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_terminal_name: BAYPORT TERMINAL
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              carrier_no: CMDU
+              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              updated: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            status_info:
+              vessel:
+                metadata:
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                code: INIT
+              prediction:
+                metadata:
+                - PREDICTIONS_NOT_ENABLED
+                - PREDICTIONS_NOT_ENABLED
+                code: INIT
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 154
+              imo: "9306172"
+              lon: -78.766
+              lat: 26.527666
+              speed_nm: 8.2
+              status: 0
+            voyage_details:
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+          - msg: AIS successfully fetched
+            success: true
+            sailing_info:
+              vessel_flag: SG
+              voyage_no: CG303R
+              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod: ESBCN
+              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              imo: "9306172"
+              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol: USHOU
+              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
+              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
+              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              vessel_leg: 1
+              is_active: true
+              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              created: 2000-01-23T04:56:07.000+00:00
+              vessel_name: MAERSK PUELO
+              pol_name: HOUSTON
+              pod_name: BARCELONA
+              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_terminal_name: BAYPORT TERMINAL
+              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              carrier_no: CMDU
+              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              updated: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            status_info:
+              vessel:
+                metadata:
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
+                code: INIT
+              prediction:
+                metadata:
+                - PREDICTIONS_NOT_ENABLED
+                - PREDICTIONS_NOT_ENABLED
+                code: INIT
+            ais:
+              timestamp_utc: 2000-01-23T04:56:07.000+00:00
+              course: 154
+              imo: "9306172"
+              lon: -78.766
+              lat: 26.527666
+              speed_nm: 8.2
+              status: 0
+            voyage_details:
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              timezone: UTC +2
+              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              index: 1
+              lon: 15.901825
+              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              port_name: GIOIA TAURO
+              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
+              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
+              voyage_no_list:
+              - CG303R
+              - CG303R
+              delay_reasons:
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              - Expected waiting time at port NORFOLK is 26.91 hours
+              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
+              active_scac: CMDU
+              lat: 38.45494
+              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
+              port_code: ITGIT
+          container_metadata:
+            external_width_ft: 7.99
+            cntr_no: TLLU1181321
+            detail_st: 42G1
+            external_height_ft: 8.51
+            external_length_ft: 40
+          response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
+          org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
+          success: true
+          status_info:
+            metadata:
+            - LATEST_PREDICTIONS_WARNING
+            - LATEST_PREDICTIONS_WARNING
+            code: SUCCESS
+          bill_of_lading:
+            bl_no: COSU6349613240
+            cntr_no: BMOU1589176
+            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod: GHTEM
+            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            place_of_delivery_name: NORFOLK
+            place_of_receipt_name: TEMA
+            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol: USORF
+            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
+            id: 16caa040-f582-4c15-88c9-2e80437e7916
+            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            place_of_delivery: USORF
+            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            created: 2000-01-23T04:56:07.000+00:00
+            pol_name: NORFOLK
+            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_name: TEMA
+            place_of_receipt: GHTEM
+            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_terminal_name: PPCY EMPTY DEPOT
+            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            carrier_no: COSU
+            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            updated: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          delay_lists:
+          - port_name: XIAMEN
+            reason_code: RLV
+            delay_description: Container rolled over to another vessel at POL
+            schedule_change:
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
+              location_type_code: POL
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
+              location_type_code: POL
+            rotation_change:
+              comparison_schedule:
+              - CNSHG
+              - CNSHG
+              updated_schedule:
+              - CNYTN
+              - CNYTN
+            vessel_change:
+              updated_vessel: 9604108
+              comparison_vessel: 9839208
+            created: 2000-01-23T04:56:07.000+00:00
+            location_type_code: POL
+            port_code: CNXMG
+          - port_name: XIAMEN
+            reason_code: RLV
+            delay_description: Container rolled over to another vessel at POL
+            schedule_change:
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
+              location_type_code: POL
+            - old_date: old_date
+              event_type_code: ARRIVE
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -4919,13 +4919,13 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -4944,13 +4944,13 @@ components:
             reason_code: RLV
             delay_description: Container rolled over to another vessel at POL
             schedule_change:
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
-            - old_date: 2000-01-23T04:56:07.000+00:00
+            - old_date: old_date
               event_type_code: ARRIVE
-              new_date: 2000-01-23T04:56:07.000+00:00
+              new_date: new_date
               location_type_code: POL
             rotation_change:
               comparison_schedule:
@@ -5283,9 +5283,9 @@ components:
     Delay_Reasons_schedule_change_inner:
       additionalProperties: false
       example:
-        old_date: 2000-01-23T04:56:07.000+00:00
+        old_date: old_date
         event_type_code: ARRIVE
-        new_date: 2000-01-23T04:56:07.000+00:00
+        new_date: new_date
         location_type_code: POL
       minProperties: 1
       properties:
@@ -5309,11 +5309,9 @@ components:
             id: p6y637wtmgjjl
         new_date:
           description: Latest changed datetime information - port local time
-          format: date-time
           type: string
         old_date:
           description: Last recorded datetime information - port local time
-          format: date-time
           type: string
     Delay_Reasons_vessel_change:
       description: Detailed view into the change in vessels
