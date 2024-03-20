@@ -1211,13 +1211,13 @@ components:
           id: 16caa040-f582-4c15-88c9-2e80437e7916
           pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
           pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
           place_of_delivery: USORF
           pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
           pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
           created: 2000-01-23T04:56:07.000+00:00
           pol_name: NORFOLK
-          pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
           pod_name: TEMA
           place_of_receipt: GHTEM
           pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -1357,13 +1357,13 @@ components:
         id: 16caa040-f582-4c15-88c9-2e80437e7916
         pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
         pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
         place_of_delivery: USORF
         pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
         pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
         created: 2000-01-23T04:56:07.000+00:00
         pol_name: NORFOLK
-        pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
         pod_name: TEMA
         place_of_receipt: GHTEM
         pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -1474,7 +1474,6 @@ components:
         pod_scheduled_arrival_lt_first_seen:
           description: First Recorded Scheduled Time of Arrival for the Final Vessel
             at the Port of Discharge (POD) as per carrier T&T - Local Time
-          format: date-time
           nullable: true
           type: string
           x-stoplight:
@@ -1562,7 +1561,6 @@ components:
         pol_scheduled_departure_lt_first_seen:
           description: First Recorded Scheduled Time of Departure for the First Vessel
             at the Port of Loading (POL) as per carrier T&T - Local Time
-          format: date-time
           nullable: true
           type: string
           x-stoplight:
@@ -2226,7 +2224,7 @@ components:
             actual: true
             location: 1
           postpod:
-            date: 2000-01-23T04:56:07.000+00:00
+            date: date
             actual: true
             location: 1
           pol:
@@ -2901,13 +2899,13 @@ components:
             id: 16caa040-f582-4c15-88c9-2e80437e7916
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -3294,13 +3292,13 @@ components:
             id: 16caa040-f582-4c15-88c9-2e80437e7916
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -3687,13 +3685,13 @@ components:
             id: 16caa040-f582-4c15-88c9-2e80437e7916
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -4080,13 +4078,13 @@ components:
             id: 16caa040-f582-4c15-88c9-2e80437e7916
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -4473,13 +4471,13 @@ components:
             id: 16caa040-f582-4c15-88c9-2e80437e7916
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -4894,13 +4892,13 @@ components:
             id: 16caa040-f582-4c15-88c9-2e80437e7916
             pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pol_scheduled_departure_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
             pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
             pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
             pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
@@ -5822,7 +5820,7 @@ components:
     Booking_API_route_postpod:
       description: Post-POD is the location where the container is destuffed
       example:
-        date: 2000-01-23T04:56:07.000+00:00
+        date: date
         actual: true
         location: 1
       properties:
@@ -5833,7 +5831,6 @@ components:
           type: integer
         date:
           description: Timestamp on when the first event takes place at the post-POD
-          format: date-time
           nullable: true
           type: string
         actual:
@@ -5848,7 +5845,7 @@ components:
           actual: true
           location: 1
         postpod:
-          date: 2000-01-23T04:56:07.000+00:00
+          date: date
           actual: true
           location: 1
         pol:
@@ -6028,7 +6025,6 @@ components:
           description: "Date a container was received at the terminal through the\
             \ gate, as reported by the terminal - Local Time."
           example: 2023-06-21T14:15:22Z
-          format: date-time
           type: string
         port_cutoff_standard:
           description: "Last possible date and time for gating-in standard container\
@@ -6171,7 +6167,6 @@ components:
           description: "Date and time when container is scheduled to be picked up\
             \ from the port, as reported by the Terminal - Local Time. "
           example: 2023-08-21T14:15:22Z
-          format: date-time
           type: string
   securitySchemes:
     x-api-key:

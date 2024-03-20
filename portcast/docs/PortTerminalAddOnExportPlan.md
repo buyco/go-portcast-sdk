@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **VoyageNo** | Pointer to **string** | Voyage Number associated with the export journey, as reported by the Terminal. | [optional] 
 **ErdStandard** | Pointer to **time.Time** | Earliest Receipt Date (ERD) for a standard container, as reported by the terminal - Local Time. | [optional] 
 **ErdReefer** | Pointer to **time.Time** | Earliest Receipt Date (ERD) for a reefer container, as reported by the terminal - Local Time. | [optional] 
-**GateInDate** | Pointer to **time.Time** | Date a container was received at the terminal through the gate, as reported by the terminal - Local Time. | [optional] 
+**GateInDate** | Pointer to **string** | Date a container was received at the terminal through the gate, as reported by the terminal - Local Time. | [optional] 
 **PortCutoffStandard** | Pointer to **time.Time** | Last possible date and time for gating-in standard container at the export terminal, as reported by the Terminal - Local Time. | [optional] 
 **PortCutoffReefer** | Pointer to **time.Time** | Last possible date and time for gating-in reefer container at the export terminal, as reported by the terminal - Local Time. | [optional] 
 **LatestEta** | Pointer to **time.Time** | Latest vessel ETA to the export port, as reported by the terminal - Local Time. | [optional] 
@@ -293,20 +293,20 @@ HasErdReefer returns a boolean if a field has been set.
 
 ### GetGateInDate
 
-`func (o *PortTerminalAddOnExportPlan) GetGateInDate() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetGateInDate() string`
 
 GetGateInDate returns the GateInDate field if non-nil, zero value otherwise.
 
 ### GetGateInDateOk
 
-`func (o *PortTerminalAddOnExportPlan) GetGateInDateOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetGateInDateOk() (*string, bool)`
 
 GetGateInDateOk returns a tuple with the GateInDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateInDate
 
-`func (o *PortTerminalAddOnExportPlan) SetGateInDate(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetGateInDate(v string)`
 
 SetGateInDate sets GateInDate field to given value.
 

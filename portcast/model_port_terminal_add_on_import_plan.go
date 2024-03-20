@@ -58,7 +58,7 @@ type PortTerminalAddOnImportPlan struct {
 	// Confirms if the pick up appointment has been set.
 	AppointmentSet *string `json:"appointment_set,omitempty"`
 	// Date and time when container is scheduled to be picked up from the port, as reported by the Terminal - Local Time. 
-	PickupAppointmentDate *time.Time `json:"pickup_appointment_date,omitempty"`
+	PickupAppointmentDate *string `json:"pickup_appointment_date,omitempty"`
 }
 
 // NewPortTerminalAddOnImportPlan instantiates a new PortTerminalAddOnImportPlan object
@@ -655,9 +655,9 @@ func (o *PortTerminalAddOnImportPlan) SetAppointmentSet(v string) {
 }
 
 // GetPickupAppointmentDate returns the PickupAppointmentDate field value if set, zero value otherwise.
-func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDate() time.Time {
+func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDate() string {
 	if o == nil || IsNil(o.PickupAppointmentDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.PickupAppointmentDate
@@ -665,7 +665,7 @@ func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDate() time.Time {
 
 // GetPickupAppointmentDateOk returns a tuple with the PickupAppointmentDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDateOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDateOk() (*string, bool) {
 	if o == nil || IsNil(o.PickupAppointmentDate) {
 		return nil, false
 	}
@@ -681,8 +681,8 @@ func (o *PortTerminalAddOnImportPlan) HasPickupAppointmentDate() bool {
 	return false
 }
 
-// SetPickupAppointmentDate gets a reference to the given time.Time and assigns it to the PickupAppointmentDate field.
-func (o *PortTerminalAddOnImportPlan) SetPickupAppointmentDate(v time.Time) {
+// SetPickupAppointmentDate gets a reference to the given string and assigns it to the PickupAppointmentDate field.
+func (o *PortTerminalAddOnImportPlan) SetPickupAppointmentDate(v string) {
 	o.PickupAppointmentDate = &v
 }
 

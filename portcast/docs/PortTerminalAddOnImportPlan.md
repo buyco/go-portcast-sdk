@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **LatestEta** | Pointer to **string** | Latest vessel ETA, as reported by the Terminal - Local Time. | [optional] 
 **ReadyForDelivery** | Pointer to **string** | Confirms if the container is ready for delivery. | [optional] 
 **AppointmentSet** | Pointer to **string** | Confirms if the pick up appointment has been set. | [optional] 
-**PickupAppointmentDate** | Pointer to **time.Time** | Date and time when container is scheduled to be picked up from the port, as reported by the Terminal - Local Time.  | [optional] 
+**PickupAppointmentDate** | Pointer to **string** | Date and time when container is scheduled to be picked up from the port, as reported by the Terminal - Local Time.  | [optional] 
 
 ## Methods
 
@@ -495,20 +495,20 @@ HasAppointmentSet returns a boolean if a field has been set.
 
 ### GetPickupAppointmentDate
 
-`func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDate() time.Time`
+`func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDate() string`
 
 GetPickupAppointmentDate returns the PickupAppointmentDate field if non-nil, zero value otherwise.
 
 ### GetPickupAppointmentDateOk
 
-`func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDateOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnImportPlan) GetPickupAppointmentDateOk() (*string, bool)`
 
 GetPickupAppointmentDateOk returns a tuple with the PickupAppointmentDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPickupAppointmentDate
 
-`func (o *PortTerminalAddOnImportPlan) SetPickupAppointmentDate(v time.Time)`
+`func (o *PortTerminalAddOnImportPlan) SetPickupAppointmentDate(v string)`
 
 SetPickupAppointmentDate sets PickupAppointmentDate field to given value.
 

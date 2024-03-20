@@ -58,7 +58,7 @@ type BillOfLading struct {
 	// Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&T - Local Time
 	PodScheduledArrivalLt NullableTime `json:"pod_scheduled_arrival_lt,omitempty"`
 	// First Recorded Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&T - Local Time
-	PodScheduledArrivalLtFirstSeen NullableTime `json:"pod_scheduled_arrival_lt_first_seen,omitempty"`
+	PodScheduledArrivalLtFirstSeen NullableString `json:"pod_scheduled_arrival_lt_first_seen,omitempty"`
 	// Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per vessel schedule - Local Time
 	PodScheduledArrivalLtFromSchedule NullableTime `json:"pod_scheduled_arrival_lt_from_schedule,omitempty"`
 	// Scheduled Time of Departure for the Final Vessel from the Port of Discharge (POD) as per vessel schedule - Local Time
@@ -88,7 +88,7 @@ type BillOfLading struct {
 	// Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Container T&T - Local Time
 	PolScheduledDepartureLt NullableTime `json:"pol_scheduled_departure_lt,omitempty"`
 	// First Recorded Scheduled Time of Departure for the First Vessel at the Port of Loading (POL) as per carrier T&T - Local Time
-	PolScheduledDepartureLtFirstSeen NullableTime `json:"pol_scheduled_departure_lt_first_seen,omitempty"`
+	PolScheduledDepartureLtFirstSeen NullableString `json:"pol_scheduled_departure_lt_first_seen,omitempty"`
 	// Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Vessel Schedule - Local Time
 	PolScheduledDepartureLtFromSchedule NullableTime `json:"pol_scheduled_departure_lt_from_schedule,omitempty"`
 	// Carrier Scheduled Container Loading Time on First Vessel at the Port of Loading (POL) - Local Time
@@ -763,9 +763,9 @@ func (o *BillOfLading) UnsetPodScheduledArrivalLt() {
 }
 
 // GetPodScheduledArrivalLtFirstSeen returns the PodScheduledArrivalLtFirstSeen field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeen() time.Time {
+func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeen() string {
 	if o == nil || IsNil(o.PodScheduledArrivalLtFirstSeen.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.PodScheduledArrivalLtFirstSeen.Get()
@@ -774,7 +774,7 @@ func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeen() time.Time {
 // GetPodScheduledArrivalLtFirstSeenOk returns a tuple with the PodScheduledArrivalLtFirstSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeenOk() (*time.Time, bool) {
+func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeenOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -790,8 +790,8 @@ func (o *BillOfLading) HasPodScheduledArrivalLtFirstSeen() bool {
 	return false
 }
 
-// SetPodScheduledArrivalLtFirstSeen gets a reference to the given NullableTime and assigns it to the PodScheduledArrivalLtFirstSeen field.
-func (o *BillOfLading) SetPodScheduledArrivalLtFirstSeen(v time.Time) {
+// SetPodScheduledArrivalLtFirstSeen gets a reference to the given NullableString and assigns it to the PodScheduledArrivalLtFirstSeen field.
+func (o *BillOfLading) SetPodScheduledArrivalLtFirstSeen(v string) {
 	o.PodScheduledArrivalLtFirstSeen.Set(&v)
 }
 // SetPodScheduledArrivalLtFirstSeenNil sets the value for PodScheduledArrivalLtFirstSeen to be an explicit nil
@@ -1363,9 +1363,9 @@ func (o *BillOfLading) UnsetPolScheduledDepartureLt() {
 }
 
 // GetPolScheduledDepartureLtFirstSeen returns the PolScheduledDepartureLtFirstSeen field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeen() time.Time {
+func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeen() string {
 	if o == nil || IsNil(o.PolScheduledDepartureLtFirstSeen.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.PolScheduledDepartureLtFirstSeen.Get()
@@ -1374,7 +1374,7 @@ func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeen() time.Time {
 // GetPolScheduledDepartureLtFirstSeenOk returns a tuple with the PolScheduledDepartureLtFirstSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeenOk() (*time.Time, bool) {
+func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeenOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1390,8 +1390,8 @@ func (o *BillOfLading) HasPolScheduledDepartureLtFirstSeen() bool {
 	return false
 }
 
-// SetPolScheduledDepartureLtFirstSeen gets a reference to the given NullableTime and assigns it to the PolScheduledDepartureLtFirstSeen field.
-func (o *BillOfLading) SetPolScheduledDepartureLtFirstSeen(v time.Time) {
+// SetPolScheduledDepartureLtFirstSeen gets a reference to the given NullableString and assigns it to the PolScheduledDepartureLtFirstSeen field.
+func (o *BillOfLading) SetPolScheduledDepartureLtFirstSeen(v string) {
 	o.PolScheduledDepartureLtFirstSeen.Set(&v)
 }
 // SetPolScheduledDepartureLtFirstSeenNil sets the value for PolScheduledDepartureLtFirstSeen to be an explicit nil

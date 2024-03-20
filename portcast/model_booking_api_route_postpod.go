@@ -13,7 +13,6 @@ package portcast
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the BookingAPIRoutePostpod type satisfies the MappedNullable interface at compile time
@@ -24,7 +23,7 @@ type BookingAPIRoutePostpod struct {
 	// Location ID - Refer to location obj for details
 	Location NullableInt32 `json:"location,omitempty"`
 	// Timestamp on when the first event takes place at the post-POD
-	Date NullableTime `json:"date,omitempty"`
+	Date NullableString `json:"date,omitempty"`
 	// actual or estimated boolean
 	Actual NullableBool `json:"actual,omitempty"`
 }
@@ -89,9 +88,9 @@ func (o *BookingAPIRoutePostpod) UnsetLocation() {
 }
 
 // GetDate returns the Date field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BookingAPIRoutePostpod) GetDate() time.Time {
+func (o *BookingAPIRoutePostpod) GetDate() string {
 	if o == nil || IsNil(o.Date.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.Date.Get()
@@ -100,7 +99,7 @@ func (o *BookingAPIRoutePostpod) GetDate() time.Time {
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BookingAPIRoutePostpod) GetDateOk() (*time.Time, bool) {
+func (o *BookingAPIRoutePostpod) GetDateOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -116,8 +115,8 @@ func (o *BookingAPIRoutePostpod) HasDate() bool {
 	return false
 }
 
-// SetDate gets a reference to the given NullableTime and assigns it to the Date field.
-func (o *BookingAPIRoutePostpod) SetDate(v time.Time) {
+// SetDate gets a reference to the given NullableString and assigns it to the Date field.
+func (o *BookingAPIRoutePostpod) SetDate(v string) {
 	o.Date.Set(&v)
 }
 // SetDateNil sets the value for Date to be an explicit nil

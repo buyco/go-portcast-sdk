@@ -3096,8 +3096,7 @@
                                             "string",
                                             "null"
                                         ],
-                                        "description": "Timestamp on when the first event takes place at the post-POD",
-                                        "format": "date-time"
+                                        "description": "Timestamp on when the first event takes place at the post-POD"
                                     },
                                     "actual": {
                                         "type": [
@@ -3367,7 +3366,6 @@
                             "gate_in_date": {
                                 "type": "string",
                                 "description": "Date a container was received at the terminal through the gate, as reported by the terminal - Local Time.",
-                                "format": "date-time",
                                 "example": "2023-06-21T14:15:22Z"
                             },
                             "port_cutoff_standard": {
@@ -3504,7 +3502,6 @@
                             },
                             "pickup_appointment_date": {
                                 "type": "string",
-                                "format": "date-time",
                                 "example": "2023-08-21T14:15:22Z",
                                 "description": "Date and time when container is scheduled to be picked up from the port, as reported by the Terminal - Local Time. "
                             }

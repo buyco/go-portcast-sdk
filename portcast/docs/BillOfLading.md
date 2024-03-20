@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **PodPredictedArrivalLt** | Pointer to **NullableTime** | Portcast Predicted Time of Arrival for the Final Vessel at the Port of Discharge (POD) - Local Time [Most Reliable Source of ETA] | [optional] 
 **PodPredictedDepartureLt** | Pointer to **NullableTime** | Portcast Predicted Time of Departure for the Final Vessel from the Port of Discharge (POD) - Local Time | [optional] 
 **PodScheduledArrivalLt** | Pointer to **NullableTime** | Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&amp;T - Local Time | [optional] 
-**PodScheduledArrivalLtFirstSeen** | Pointer to **NullableTime** | First Recorded Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&amp;T - Local Time | [optional] 
+**PodScheduledArrivalLtFirstSeen** | Pointer to **NullableString** | First Recorded Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&amp;T - Local Time | [optional] 
 **PodScheduledArrivalLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per vessel schedule - Local Time | [optional] 
 **PodScheduledDepartureLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Departure for the Final Vessel from the Port of Discharge (POD) as per vessel schedule - Local Time | [optional] 
 **PodScheduledDischargeLt** | Pointer to **NullableTime** | Carrier Scheduled Container Discharge Time from Final Vessel at the Port of Discharge (POD) - Local Time | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **PolPredictedDepartureLt** | Pointer to **NullableTime** | Portcast Predicted Time of Departure for the First Vessel from the Port of Loading (POL) - Local Time [Most Reliable Source of ETD] | [optional] 
 **PolScheduledArrivalLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Arrival for the First Vessel at the Port of Loading (POL) as per Vessel Schedule - Local Time | [optional] 
 **PolScheduledDepartureLt** | Pointer to **NullableTime** | Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Container T&amp;T - Local Time | [optional] 
-**PolScheduledDepartureLtFirstSeen** | Pointer to **NullableTime** | First Recorded Scheduled Time of Departure for the First Vessel at the Port of Loading (POL) as per carrier T&amp;T - Local Time | [optional] 
+**PolScheduledDepartureLtFirstSeen** | Pointer to **NullableString** | First Recorded Scheduled Time of Departure for the First Vessel at the Port of Loading (POL) as per carrier T&amp;T - Local Time | [optional] 
 **PolScheduledDepartureLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Vessel Schedule - Local Time | [optional] 
 **PolScheduledLoadingLt** | Pointer to **NullableTime** | Carrier Scheduled Container Loading Time on First Vessel at the Port of Loading (POL) - Local Time | [optional] 
 **PolTerminalName** | Pointer to **string** | Terminal Name for the Port of Loading (POL) | [optional] 
@@ -584,20 +584,20 @@ HasPodScheduledArrivalLt returns a boolean if a field has been set.
 UnsetPodScheduledArrivalLt ensures that no value is present for PodScheduledArrivalLt, not even an explicit nil
 ### GetPodScheduledArrivalLtFirstSeen
 
-`func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeen() time.Time`
+`func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeen() string`
 
 GetPodScheduledArrivalLtFirstSeen returns the PodScheduledArrivalLtFirstSeen field if non-nil, zero value otherwise.
 
 ### GetPodScheduledArrivalLtFirstSeenOk
 
-`func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeenOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodScheduledArrivalLtFirstSeenOk() (*string, bool)`
 
 GetPodScheduledArrivalLtFirstSeenOk returns a tuple with the PodScheduledArrivalLtFirstSeen field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodScheduledArrivalLtFirstSeen
 
-`func (o *BillOfLading) SetPodScheduledArrivalLtFirstSeen(v time.Time)`
+`func (o *BillOfLading) SetPodScheduledArrivalLtFirstSeen(v string)`
 
 SetPodScheduledArrivalLtFirstSeen sets PodScheduledArrivalLtFirstSeen field to given value.
 
@@ -1079,20 +1079,20 @@ HasPolScheduledDepartureLt returns a boolean if a field has been set.
 UnsetPolScheduledDepartureLt ensures that no value is present for PolScheduledDepartureLt, not even an explicit nil
 ### GetPolScheduledDepartureLtFirstSeen
 
-`func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeen() time.Time`
+`func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeen() string`
 
 GetPolScheduledDepartureLtFirstSeen returns the PolScheduledDepartureLtFirstSeen field if non-nil, zero value otherwise.
 
 ### GetPolScheduledDepartureLtFirstSeenOk
 
-`func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeenOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolScheduledDepartureLtFirstSeenOk() (*string, bool)`
 
 GetPolScheduledDepartureLtFirstSeenOk returns a tuple with the PolScheduledDepartureLtFirstSeen field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolScheduledDepartureLtFirstSeen
 
-`func (o *BillOfLading) SetPolScheduledDepartureLtFirstSeen(v time.Time)`
+`func (o *BillOfLading) SetPolScheduledDepartureLtFirstSeen(v string)`
 
 SetPolScheduledDepartureLtFirstSeen sets PolScheduledDepartureLtFirstSeen field to given value.
 

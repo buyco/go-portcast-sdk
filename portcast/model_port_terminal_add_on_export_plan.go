@@ -42,7 +42,7 @@ type PortTerminalAddOnExportPlan struct {
 	// Earliest Receipt Date (ERD) for a reefer container, as reported by the terminal - Local Time.
 	ErdReefer *time.Time `json:"erd_reefer,omitempty"`
 	// Date a container was received at the terminal through the gate, as reported by the terminal - Local Time.
-	GateInDate *time.Time `json:"gate_in_date,omitempty"`
+	GateInDate *string `json:"gate_in_date,omitempty"`
 	// Last possible date and time for gating-in standard container at the export terminal, as reported by the Terminal - Local Time.
 	PortCutoffStandard *time.Time `json:"port_cutoff_standard,omitempty"`
 	// Last possible date and time for gating-in reefer container at the export terminal, as reported by the terminal - Local Time.
@@ -395,9 +395,9 @@ func (o *PortTerminalAddOnExportPlan) SetErdReefer(v time.Time) {
 }
 
 // GetGateInDate returns the GateInDate field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetGateInDate() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetGateInDate() string {
 	if o == nil || IsNil(o.GateInDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.GateInDate
@@ -405,7 +405,7 @@ func (o *PortTerminalAddOnExportPlan) GetGateInDate() time.Time {
 
 // GetGateInDateOk returns a tuple with the GateInDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetGateInDateOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetGateInDateOk() (*string, bool) {
 	if o == nil || IsNil(o.GateInDate) {
 		return nil, false
 	}
@@ -421,8 +421,8 @@ func (o *PortTerminalAddOnExportPlan) HasGateInDate() bool {
 	return false
 }
 
-// SetGateInDate gets a reference to the given time.Time and assigns it to the GateInDate field.
-func (o *PortTerminalAddOnExportPlan) SetGateInDate(v time.Time) {
+// SetGateInDate gets a reference to the given string and assigns it to the GateInDate field.
+func (o *PortTerminalAddOnExportPlan) SetGateInDate(v string) {
 	o.GateInDate = &v
 }
 
