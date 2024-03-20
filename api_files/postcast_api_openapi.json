@@ -1554,7 +1554,6 @@
                             "string",
                             "null"
                         ],
-                        "format": "date-time",
                         "description": "First Recorded Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&T - Local Time",
                         "x-stoplight": {
                             "id": "dwxjh6jwpij3r"
@@ -1669,7 +1668,6 @@
                             "string",
                             "null"
                         ],
-                        "format": "date-time",
                         "description": "First Recorded Scheduled Time of Departure for the First Vessel at the Port of Loading (POL) as per carrier T&T - Local Time",
                         "x-stoplight": {
                             "id": "b9kix8ldlsfgd"
