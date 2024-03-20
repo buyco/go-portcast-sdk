@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Location** | Pointer to **NullableInt32** | Location ID - Refer to location obj for details | [optional] 
-**Date** | Pointer to **NullableTime** | Timestamp on when the first event takes place at the pre-POL | [optional] 
+**Date** | Pointer to **NullableString** | Timestamp on when the first event takes place at the pre-POL | [optional] 
 **Actual** | Pointer to **NullableBool** | actual or estimated boolean | [optional] 
 
 ## Methods
@@ -64,20 +64,20 @@ HasLocation returns a boolean if a field has been set.
 UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetDate
 
-`func (o *BookingAPIRoutePrepol) GetDate() time.Time`
+`func (o *BookingAPIRoutePrepol) GetDate() string`
 
 GetDate returns the Date field if non-nil, zero value otherwise.
 
 ### GetDateOk
 
-`func (o *BookingAPIRoutePrepol) GetDateOk() (*time.Time, bool)`
+`func (o *BookingAPIRoutePrepol) GetDateOk() (*string, bool)`
 
 GetDateOk returns a tuple with the Date field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDate
 
-`func (o *BookingAPIRoutePrepol) SetDate(v time.Time)`
+`func (o *BookingAPIRoutePrepol) SetDate(v string)`
 
 SetDate sets Date field to given value.
 

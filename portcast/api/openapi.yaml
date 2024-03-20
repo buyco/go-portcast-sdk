@@ -2222,7 +2222,7 @@ components:
       example:
         route:
           pod:
-            date: 2000-01-23T04:56:07.000+00:00
+            date: date
             actual: true
             location: 1
           postpod:
@@ -2230,11 +2230,11 @@ components:
             actual: true
             location: 1
           pol:
-            date: 2000-01-23T04:56:07.000+00:00
+            date: date
             actual: true
             location: 1
           prepol:
-            date: 2000-01-23T04:56:07.000+00:00
+            date: date
             actual: true
             location: 1
         response:
@@ -5760,7 +5760,7 @@ components:
     Booking_API_route_prepol:
       description: Pre-POL is the location where the container is stuffed
       example:
-        date: 2000-01-23T04:56:07.000+00:00
+        date: date
         actual: true
         location: 1
       properties:
@@ -5771,7 +5771,6 @@ components:
           type: integer
         date:
           description: Timestamp on when the first event takes place at the pre-POL
-          format: date-time
           nullable: true
           type: string
         actual:
@@ -5782,7 +5781,7 @@ components:
       description: POL is the location where the container is loaded on the vessel
         where it starts it's journey
       example:
-        date: 2000-01-23T04:56:07.000+00:00
+        date: date
         actual: true
         location: 1
       properties:
@@ -5793,7 +5792,6 @@ components:
           type: integer
         date:
           description: Timestamp on when the first event takes place at the POL
-          format: date-time
           nullable: true
           type: string
         actual:
@@ -5804,7 +5802,7 @@ components:
       description: POD is the location where the container is unloaded from the vessel
         at the final destination port
       example:
-        date: 2000-01-23T04:56:07.000+00:00
+        date: date
         actual: true
         location: 1
       properties:
@@ -5815,7 +5813,6 @@ components:
           type: integer
         date:
           description: Timestamp on when the first event takes place at the POD
-          format: date-time
           nullable: true
           type: string
         actual:
@@ -5847,7 +5844,7 @@ components:
       description: POL & POD Route Summary
       example:
         pod:
-          date: 2000-01-23T04:56:07.000+00:00
+          date: date
           actual: true
           location: 1
         postpod:
@@ -5855,11 +5852,11 @@ components:
           actual: true
           location: 1
         pol:
-          date: 2000-01-23T04:56:07.000+00:00
+          date: date
           actual: true
           location: 1
         prepol:
-          date: 2000-01-23T04:56:07.000+00:00
+          date: date
           actual: true
           location: 1
       properties:

@@ -3014,8 +3014,7 @@
                                             "string",
                                             "null"
                                         ],
-                                        "description": "Timestamp on when the first event takes place at the pre-POL",
-                                        "format": "date-time"
+                                        "description": "Timestamp on when the first event takes place at the pre-POL"
                                     },
                                     "actual": {
                                         "type": [
@@ -3043,8 +3042,7 @@
                                             "string",
                                             "null"
                                         ],
-                                        "description": "Timestamp on when the first event takes place at the POL",
-                                        "format": "date-time"
+                                        "description": "Timestamp on when the first event takes place at the POL"
                                     },
                                     "actual": {
                                         "type": [
@@ -3072,8 +3070,7 @@
                                             "string",
                                             "null"
                                         ],
-                                        "description": "Timestamp on when the first event takes place at the POD",
-                                        "format": "date-time"
+                                        "description": "Timestamp on when the first event takes place at the POD"
                                     },
                                     "actual": {
                                         "type": [
