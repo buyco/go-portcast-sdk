@@ -14,32 +14,32 @@ Name | Type | Description | Notes
 **PlaceOfReceipt** | Pointer to **string** | UNLOCODE for the Location of Container Receipt (Before the POL) | [optional] 
 **PlaceOfReceiptName** | Pointer to **string** | Name for the Location of Container Receipt (Before the POL) | [optional] 
 **Pod** | Pointer to **string** | UNLOCODE for the Port of Discharge | [optional] 
-**PodActualArrivalLt** | Pointer to **NullableTime** | Actual Time of Arrival for the Final Vessel at the Port of Discharge (POD) - Local Time | [optional] 
-**PodActualArrivalLtFromAis** | Pointer to **NullableTime** | Actual Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per AIS Data- Local Time | [optional] 
-**PodActualDepartureLtFromAis** | Pointer to **NullableTime** | Actual Time of Departure for the Final Vessel from the Port of Discharge (POD) as per AIS Data - Local Time | [optional] 
-**PodActualDischargeLt** | Pointer to **NullableTime** | Actual Container Discharge Time from Final Vessel at the Port of Discharge (POD) - Local Time | [optional] 
+**PodActualArrivalLt** | Pointer to **NullableString** | Actual Time of Arrival for the Final Vessel at the Port of Discharge (POD) - Local Time | [optional] 
+**PodActualArrivalLtFromAis** | Pointer to **NullableString** | Actual Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per AIS Data- Local Time | [optional] 
+**PodActualDepartureLtFromAis** | Pointer to **NullableString** | Actual Time of Departure for the Final Vessel from the Port of Discharge (POD) as per AIS Data - Local Time | [optional] 
+**PodActualDischargeLt** | Pointer to **NullableString** | Actual Container Discharge Time from Final Vessel at the Port of Discharge (POD) - Local Time | [optional] 
 **PodName** | Pointer to **string** | Port of Discharge Name | [optional] 
-**PodPredictedArrivalLt** | Pointer to **NullableTime** | Portcast Predicted Time of Arrival for the Final Vessel at the Port of Discharge (POD) - Local Time [Most Reliable Source of ETA] | [optional] 
-**PodPredictedDepartureLt** | Pointer to **NullableTime** | Portcast Predicted Time of Departure for the Final Vessel from the Port of Discharge (POD) - Local Time | [optional] 
-**PodScheduledArrivalLt** | Pointer to **NullableTime** | Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&amp;T - Local Time | [optional] 
+**PodPredictedArrivalLt** | Pointer to **NullableString** | Portcast Predicted Time of Arrival for the Final Vessel at the Port of Discharge (POD) - Local Time [Most Reliable Source of ETA] | [optional] 
+**PodPredictedDepartureLt** | Pointer to **NullableString** | Portcast Predicted Time of Departure for the Final Vessel from the Port of Discharge (POD) - Local Time | [optional] 
+**PodScheduledArrivalLt** | Pointer to **NullableString** | Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&amp;T - Local Time | [optional] 
 **PodScheduledArrivalLtFirstSeen** | Pointer to **NullableString** | First Recorded Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per carrier T&amp;T - Local Time | [optional] 
-**PodScheduledArrivalLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per vessel schedule - Local Time | [optional] 
-**PodScheduledDepartureLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Departure for the Final Vessel from the Port of Discharge (POD) as per vessel schedule - Local Time | [optional] 
-**PodScheduledDischargeLt** | Pointer to **NullableTime** | Carrier Scheduled Container Discharge Time from Final Vessel at the Port of Discharge (POD) - Local Time | [optional] 
+**PodScheduledArrivalLtFromSchedule** | Pointer to **NullableString** | Scheduled Time of Arrival for the Final Vessel at the Port of Discharge (POD) as per vessel schedule - Local Time | [optional] 
+**PodScheduledDepartureLtFromSchedule** | Pointer to **NullableString** | Scheduled Time of Departure for the Final Vessel from the Port of Discharge (POD) as per vessel schedule - Local Time | [optional] 
+**PodScheduledDischargeLt** | Pointer to **NullableString** | Carrier Scheduled Container Discharge Time from Final Vessel at the Port of Discharge (POD) - Local Time | [optional] 
 **PodTerminalName** | Pointer to **string** | Terminal Name for the Port of Discharge (POD) | [optional] 
 **Pol** | Pointer to **string** | UNLOCODE for the Port of Loading | [optional] 
-**PolActualArrivalLtFromAis** | Pointer to **NullableTime** | Actual Time of Arrival for the First Vessel at the Port of Loading (POL) as per AIS Data - Local Time | [optional] 
-**PolActualDepartureLt** | Pointer to **NullableTime** | Actual Time of Departure for the First Vessel from the Port of Loading (POL) - Local Time | [optional] 
-**PolActualDepartureLtFromAis** | Pointer to **NullableTime** | Actual Time of Departure for the First Vessel from the Port of Loading (POL) as per AIS Data - Local Time | [optional] 
-**PolActualLoadingLt** | Pointer to **NullableTime** | Actual Container Loading Time on First Vessel at the Port of Loading (POL) - Local Time | [optional] 
+**PolActualArrivalLtFromAis** | Pointer to **NullableString** | Actual Time of Arrival for the First Vessel at the Port of Loading (POL) as per AIS Data - Local Time | [optional] 
+**PolActualDepartureLt** | Pointer to **NullableString** | Actual Time of Departure for the First Vessel from the Port of Loading (POL) - Local Time | [optional] 
+**PolActualDepartureLtFromAis** | Pointer to **NullableString** | Actual Time of Departure for the First Vessel from the Port of Loading (POL) as per AIS Data - Local Time | [optional] 
+**PolActualLoadingLt** | Pointer to **NullableString** | Actual Container Loading Time on First Vessel at the Port of Loading (POL) - Local Time | [optional] 
 **PolName** | Pointer to **string** | Port of Loading Name | [optional] 
-**PolPredictedArrivalLt** | Pointer to **NullableTime** | Portcast Predicted Time of Arrival for the First Vessel at the Port of Loading (POL) - Local Time | [optional] 
-**PolPredictedDepartureLt** | Pointer to **NullableTime** | Portcast Predicted Time of Departure for the First Vessel from the Port of Loading (POL) - Local Time [Most Reliable Source of ETD] | [optional] 
-**PolScheduledArrivalLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Arrival for the First Vessel at the Port of Loading (POL) as per Vessel Schedule - Local Time | [optional] 
-**PolScheduledDepartureLt** | Pointer to **NullableTime** | Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Container T&amp;T - Local Time | [optional] 
+**PolPredictedArrivalLt** | Pointer to **NullableString** | Portcast Predicted Time of Arrival for the First Vessel at the Port of Loading (POL) - Local Time | [optional] 
+**PolPredictedDepartureLt** | Pointer to **NullableString** | Portcast Predicted Time of Departure for the First Vessel from the Port of Loading (POL) - Local Time [Most Reliable Source of ETD] | [optional] 
+**PolScheduledArrivalLtFromSchedule** | Pointer to **NullableString** | Scheduled Time of Arrival for the First Vessel at the Port of Loading (POL) as per Vessel Schedule - Local Time | [optional] 
+**PolScheduledDepartureLt** | Pointer to **NullableString** | Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Container T&amp;T - Local Time | [optional] 
 **PolScheduledDepartureLtFirstSeen** | Pointer to **NullableString** | First Recorded Scheduled Time of Departure for the First Vessel at the Port of Loading (POL) as per carrier T&amp;T - Local Time | [optional] 
-**PolScheduledDepartureLtFromSchedule** | Pointer to **NullableTime** | Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Vessel Schedule - Local Time | [optional] 
-**PolScheduledLoadingLt** | Pointer to **NullableTime** | Carrier Scheduled Container Loading Time on First Vessel at the Port of Loading (POL) - Local Time | [optional] 
+**PolScheduledDepartureLtFromSchedule** | Pointer to **NullableString** | Scheduled Time of Departure for the First Vessel from the Port of Loading (POL) as per Vessel Schedule - Local Time | [optional] 
+**PolScheduledLoadingLt** | Pointer to **NullableString** | Carrier Scheduled Container Loading Time on First Vessel at the Port of Loading (POL) - Local Time | [optional] 
 **PolTerminalName** | Pointer to **string** | Terminal Name for the Port of Loading (POL) | [optional] 
 **Updated** | Pointer to **time.Time** | Bill of Lading Object Updated Date | [optional] 
 
@@ -314,20 +314,20 @@ HasPod returns a boolean if a field has been set.
 
 ### GetPodActualArrivalLt
 
-`func (o *BillOfLading) GetPodActualArrivalLt() time.Time`
+`func (o *BillOfLading) GetPodActualArrivalLt() string`
 
 GetPodActualArrivalLt returns the PodActualArrivalLt field if non-nil, zero value otherwise.
 
 ### GetPodActualArrivalLtOk
 
-`func (o *BillOfLading) GetPodActualArrivalLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodActualArrivalLtOk() (*string, bool)`
 
 GetPodActualArrivalLtOk returns a tuple with the PodActualArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodActualArrivalLt
 
-`func (o *BillOfLading) SetPodActualArrivalLt(v time.Time)`
+`func (o *BillOfLading) SetPodActualArrivalLt(v string)`
 
 SetPodActualArrivalLt sets PodActualArrivalLt field to given value.
 
@@ -349,20 +349,20 @@ HasPodActualArrivalLt returns a boolean if a field has been set.
 UnsetPodActualArrivalLt ensures that no value is present for PodActualArrivalLt, not even an explicit nil
 ### GetPodActualArrivalLtFromAis
 
-`func (o *BillOfLading) GetPodActualArrivalLtFromAis() time.Time`
+`func (o *BillOfLading) GetPodActualArrivalLtFromAis() string`
 
 GetPodActualArrivalLtFromAis returns the PodActualArrivalLtFromAis field if non-nil, zero value otherwise.
 
 ### GetPodActualArrivalLtFromAisOk
 
-`func (o *BillOfLading) GetPodActualArrivalLtFromAisOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodActualArrivalLtFromAisOk() (*string, bool)`
 
 GetPodActualArrivalLtFromAisOk returns a tuple with the PodActualArrivalLtFromAis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodActualArrivalLtFromAis
 
-`func (o *BillOfLading) SetPodActualArrivalLtFromAis(v time.Time)`
+`func (o *BillOfLading) SetPodActualArrivalLtFromAis(v string)`
 
 SetPodActualArrivalLtFromAis sets PodActualArrivalLtFromAis field to given value.
 
@@ -384,20 +384,20 @@ HasPodActualArrivalLtFromAis returns a boolean if a field has been set.
 UnsetPodActualArrivalLtFromAis ensures that no value is present for PodActualArrivalLtFromAis, not even an explicit nil
 ### GetPodActualDepartureLtFromAis
 
-`func (o *BillOfLading) GetPodActualDepartureLtFromAis() time.Time`
+`func (o *BillOfLading) GetPodActualDepartureLtFromAis() string`
 
 GetPodActualDepartureLtFromAis returns the PodActualDepartureLtFromAis field if non-nil, zero value otherwise.
 
 ### GetPodActualDepartureLtFromAisOk
 
-`func (o *BillOfLading) GetPodActualDepartureLtFromAisOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodActualDepartureLtFromAisOk() (*string, bool)`
 
 GetPodActualDepartureLtFromAisOk returns a tuple with the PodActualDepartureLtFromAis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodActualDepartureLtFromAis
 
-`func (o *BillOfLading) SetPodActualDepartureLtFromAis(v time.Time)`
+`func (o *BillOfLading) SetPodActualDepartureLtFromAis(v string)`
 
 SetPodActualDepartureLtFromAis sets PodActualDepartureLtFromAis field to given value.
 
@@ -419,20 +419,20 @@ HasPodActualDepartureLtFromAis returns a boolean if a field has been set.
 UnsetPodActualDepartureLtFromAis ensures that no value is present for PodActualDepartureLtFromAis, not even an explicit nil
 ### GetPodActualDischargeLt
 
-`func (o *BillOfLading) GetPodActualDischargeLt() time.Time`
+`func (o *BillOfLading) GetPodActualDischargeLt() string`
 
 GetPodActualDischargeLt returns the PodActualDischargeLt field if non-nil, zero value otherwise.
 
 ### GetPodActualDischargeLtOk
 
-`func (o *BillOfLading) GetPodActualDischargeLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodActualDischargeLtOk() (*string, bool)`
 
 GetPodActualDischargeLtOk returns a tuple with the PodActualDischargeLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodActualDischargeLt
 
-`func (o *BillOfLading) SetPodActualDischargeLt(v time.Time)`
+`func (o *BillOfLading) SetPodActualDischargeLt(v string)`
 
 SetPodActualDischargeLt sets PodActualDischargeLt field to given value.
 
@@ -479,20 +479,20 @@ HasPodName returns a boolean if a field has been set.
 
 ### GetPodPredictedArrivalLt
 
-`func (o *BillOfLading) GetPodPredictedArrivalLt() time.Time`
+`func (o *BillOfLading) GetPodPredictedArrivalLt() string`
 
 GetPodPredictedArrivalLt returns the PodPredictedArrivalLt field if non-nil, zero value otherwise.
 
 ### GetPodPredictedArrivalLtOk
 
-`func (o *BillOfLading) GetPodPredictedArrivalLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodPredictedArrivalLtOk() (*string, bool)`
 
 GetPodPredictedArrivalLtOk returns a tuple with the PodPredictedArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodPredictedArrivalLt
 
-`func (o *BillOfLading) SetPodPredictedArrivalLt(v time.Time)`
+`func (o *BillOfLading) SetPodPredictedArrivalLt(v string)`
 
 SetPodPredictedArrivalLt sets PodPredictedArrivalLt field to given value.
 
@@ -514,20 +514,20 @@ HasPodPredictedArrivalLt returns a boolean if a field has been set.
 UnsetPodPredictedArrivalLt ensures that no value is present for PodPredictedArrivalLt, not even an explicit nil
 ### GetPodPredictedDepartureLt
 
-`func (o *BillOfLading) GetPodPredictedDepartureLt() time.Time`
+`func (o *BillOfLading) GetPodPredictedDepartureLt() string`
 
 GetPodPredictedDepartureLt returns the PodPredictedDepartureLt field if non-nil, zero value otherwise.
 
 ### GetPodPredictedDepartureLtOk
 
-`func (o *BillOfLading) GetPodPredictedDepartureLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodPredictedDepartureLtOk() (*string, bool)`
 
 GetPodPredictedDepartureLtOk returns a tuple with the PodPredictedDepartureLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodPredictedDepartureLt
 
-`func (o *BillOfLading) SetPodPredictedDepartureLt(v time.Time)`
+`func (o *BillOfLading) SetPodPredictedDepartureLt(v string)`
 
 SetPodPredictedDepartureLt sets PodPredictedDepartureLt field to given value.
 
@@ -549,20 +549,20 @@ HasPodPredictedDepartureLt returns a boolean if a field has been set.
 UnsetPodPredictedDepartureLt ensures that no value is present for PodPredictedDepartureLt, not even an explicit nil
 ### GetPodScheduledArrivalLt
 
-`func (o *BillOfLading) GetPodScheduledArrivalLt() time.Time`
+`func (o *BillOfLading) GetPodScheduledArrivalLt() string`
 
 GetPodScheduledArrivalLt returns the PodScheduledArrivalLt field if non-nil, zero value otherwise.
 
 ### GetPodScheduledArrivalLtOk
 
-`func (o *BillOfLading) GetPodScheduledArrivalLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodScheduledArrivalLtOk() (*string, bool)`
 
 GetPodScheduledArrivalLtOk returns a tuple with the PodScheduledArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodScheduledArrivalLt
 
-`func (o *BillOfLading) SetPodScheduledArrivalLt(v time.Time)`
+`func (o *BillOfLading) SetPodScheduledArrivalLt(v string)`
 
 SetPodScheduledArrivalLt sets PodScheduledArrivalLt field to given value.
 
@@ -619,20 +619,20 @@ HasPodScheduledArrivalLtFirstSeen returns a boolean if a field has been set.
 UnsetPodScheduledArrivalLtFirstSeen ensures that no value is present for PodScheduledArrivalLtFirstSeen, not even an explicit nil
 ### GetPodScheduledArrivalLtFromSchedule
 
-`func (o *BillOfLading) GetPodScheduledArrivalLtFromSchedule() time.Time`
+`func (o *BillOfLading) GetPodScheduledArrivalLtFromSchedule() string`
 
 GetPodScheduledArrivalLtFromSchedule returns the PodScheduledArrivalLtFromSchedule field if non-nil, zero value otherwise.
 
 ### GetPodScheduledArrivalLtFromScheduleOk
 
-`func (o *BillOfLading) GetPodScheduledArrivalLtFromScheduleOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodScheduledArrivalLtFromScheduleOk() (*string, bool)`
 
 GetPodScheduledArrivalLtFromScheduleOk returns a tuple with the PodScheduledArrivalLtFromSchedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodScheduledArrivalLtFromSchedule
 
-`func (o *BillOfLading) SetPodScheduledArrivalLtFromSchedule(v time.Time)`
+`func (o *BillOfLading) SetPodScheduledArrivalLtFromSchedule(v string)`
 
 SetPodScheduledArrivalLtFromSchedule sets PodScheduledArrivalLtFromSchedule field to given value.
 
@@ -654,20 +654,20 @@ HasPodScheduledArrivalLtFromSchedule returns a boolean if a field has been set.
 UnsetPodScheduledArrivalLtFromSchedule ensures that no value is present for PodScheduledArrivalLtFromSchedule, not even an explicit nil
 ### GetPodScheduledDepartureLtFromSchedule
 
-`func (o *BillOfLading) GetPodScheduledDepartureLtFromSchedule() time.Time`
+`func (o *BillOfLading) GetPodScheduledDepartureLtFromSchedule() string`
 
 GetPodScheduledDepartureLtFromSchedule returns the PodScheduledDepartureLtFromSchedule field if non-nil, zero value otherwise.
 
 ### GetPodScheduledDepartureLtFromScheduleOk
 
-`func (o *BillOfLading) GetPodScheduledDepartureLtFromScheduleOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodScheduledDepartureLtFromScheduleOk() (*string, bool)`
 
 GetPodScheduledDepartureLtFromScheduleOk returns a tuple with the PodScheduledDepartureLtFromSchedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodScheduledDepartureLtFromSchedule
 
-`func (o *BillOfLading) SetPodScheduledDepartureLtFromSchedule(v time.Time)`
+`func (o *BillOfLading) SetPodScheduledDepartureLtFromSchedule(v string)`
 
 SetPodScheduledDepartureLtFromSchedule sets PodScheduledDepartureLtFromSchedule field to given value.
 
@@ -689,20 +689,20 @@ HasPodScheduledDepartureLtFromSchedule returns a boolean if a field has been set
 UnsetPodScheduledDepartureLtFromSchedule ensures that no value is present for PodScheduledDepartureLtFromSchedule, not even an explicit nil
 ### GetPodScheduledDischargeLt
 
-`func (o *BillOfLading) GetPodScheduledDischargeLt() time.Time`
+`func (o *BillOfLading) GetPodScheduledDischargeLt() string`
 
 GetPodScheduledDischargeLt returns the PodScheduledDischargeLt field if non-nil, zero value otherwise.
 
 ### GetPodScheduledDischargeLtOk
 
-`func (o *BillOfLading) GetPodScheduledDischargeLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPodScheduledDischargeLtOk() (*string, bool)`
 
 GetPodScheduledDischargeLtOk returns a tuple with the PodScheduledDischargeLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPodScheduledDischargeLt
 
-`func (o *BillOfLading) SetPodScheduledDischargeLt(v time.Time)`
+`func (o *BillOfLading) SetPodScheduledDischargeLt(v string)`
 
 SetPodScheduledDischargeLt sets PodScheduledDischargeLt field to given value.
 
@@ -774,20 +774,20 @@ HasPol returns a boolean if a field has been set.
 
 ### GetPolActualArrivalLtFromAis
 
-`func (o *BillOfLading) GetPolActualArrivalLtFromAis() time.Time`
+`func (o *BillOfLading) GetPolActualArrivalLtFromAis() string`
 
 GetPolActualArrivalLtFromAis returns the PolActualArrivalLtFromAis field if non-nil, zero value otherwise.
 
 ### GetPolActualArrivalLtFromAisOk
 
-`func (o *BillOfLading) GetPolActualArrivalLtFromAisOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolActualArrivalLtFromAisOk() (*string, bool)`
 
 GetPolActualArrivalLtFromAisOk returns a tuple with the PolActualArrivalLtFromAis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolActualArrivalLtFromAis
 
-`func (o *BillOfLading) SetPolActualArrivalLtFromAis(v time.Time)`
+`func (o *BillOfLading) SetPolActualArrivalLtFromAis(v string)`
 
 SetPolActualArrivalLtFromAis sets PolActualArrivalLtFromAis field to given value.
 
@@ -809,20 +809,20 @@ HasPolActualArrivalLtFromAis returns a boolean if a field has been set.
 UnsetPolActualArrivalLtFromAis ensures that no value is present for PolActualArrivalLtFromAis, not even an explicit nil
 ### GetPolActualDepartureLt
 
-`func (o *BillOfLading) GetPolActualDepartureLt() time.Time`
+`func (o *BillOfLading) GetPolActualDepartureLt() string`
 
 GetPolActualDepartureLt returns the PolActualDepartureLt field if non-nil, zero value otherwise.
 
 ### GetPolActualDepartureLtOk
 
-`func (o *BillOfLading) GetPolActualDepartureLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolActualDepartureLtOk() (*string, bool)`
 
 GetPolActualDepartureLtOk returns a tuple with the PolActualDepartureLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolActualDepartureLt
 
-`func (o *BillOfLading) SetPolActualDepartureLt(v time.Time)`
+`func (o *BillOfLading) SetPolActualDepartureLt(v string)`
 
 SetPolActualDepartureLt sets PolActualDepartureLt field to given value.
 
@@ -844,20 +844,20 @@ HasPolActualDepartureLt returns a boolean if a field has been set.
 UnsetPolActualDepartureLt ensures that no value is present for PolActualDepartureLt, not even an explicit nil
 ### GetPolActualDepartureLtFromAis
 
-`func (o *BillOfLading) GetPolActualDepartureLtFromAis() time.Time`
+`func (o *BillOfLading) GetPolActualDepartureLtFromAis() string`
 
 GetPolActualDepartureLtFromAis returns the PolActualDepartureLtFromAis field if non-nil, zero value otherwise.
 
 ### GetPolActualDepartureLtFromAisOk
 
-`func (o *BillOfLading) GetPolActualDepartureLtFromAisOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolActualDepartureLtFromAisOk() (*string, bool)`
 
 GetPolActualDepartureLtFromAisOk returns a tuple with the PolActualDepartureLtFromAis field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolActualDepartureLtFromAis
 
-`func (o *BillOfLading) SetPolActualDepartureLtFromAis(v time.Time)`
+`func (o *BillOfLading) SetPolActualDepartureLtFromAis(v string)`
 
 SetPolActualDepartureLtFromAis sets PolActualDepartureLtFromAis field to given value.
 
@@ -879,20 +879,20 @@ HasPolActualDepartureLtFromAis returns a boolean if a field has been set.
 UnsetPolActualDepartureLtFromAis ensures that no value is present for PolActualDepartureLtFromAis, not even an explicit nil
 ### GetPolActualLoadingLt
 
-`func (o *BillOfLading) GetPolActualLoadingLt() time.Time`
+`func (o *BillOfLading) GetPolActualLoadingLt() string`
 
 GetPolActualLoadingLt returns the PolActualLoadingLt field if non-nil, zero value otherwise.
 
 ### GetPolActualLoadingLtOk
 
-`func (o *BillOfLading) GetPolActualLoadingLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolActualLoadingLtOk() (*string, bool)`
 
 GetPolActualLoadingLtOk returns a tuple with the PolActualLoadingLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolActualLoadingLt
 
-`func (o *BillOfLading) SetPolActualLoadingLt(v time.Time)`
+`func (o *BillOfLading) SetPolActualLoadingLt(v string)`
 
 SetPolActualLoadingLt sets PolActualLoadingLt field to given value.
 
@@ -939,20 +939,20 @@ HasPolName returns a boolean if a field has been set.
 
 ### GetPolPredictedArrivalLt
 
-`func (o *BillOfLading) GetPolPredictedArrivalLt() time.Time`
+`func (o *BillOfLading) GetPolPredictedArrivalLt() string`
 
 GetPolPredictedArrivalLt returns the PolPredictedArrivalLt field if non-nil, zero value otherwise.
 
 ### GetPolPredictedArrivalLtOk
 
-`func (o *BillOfLading) GetPolPredictedArrivalLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolPredictedArrivalLtOk() (*string, bool)`
 
 GetPolPredictedArrivalLtOk returns a tuple with the PolPredictedArrivalLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolPredictedArrivalLt
 
-`func (o *BillOfLading) SetPolPredictedArrivalLt(v time.Time)`
+`func (o *BillOfLading) SetPolPredictedArrivalLt(v string)`
 
 SetPolPredictedArrivalLt sets PolPredictedArrivalLt field to given value.
 
@@ -974,20 +974,20 @@ HasPolPredictedArrivalLt returns a boolean if a field has been set.
 UnsetPolPredictedArrivalLt ensures that no value is present for PolPredictedArrivalLt, not even an explicit nil
 ### GetPolPredictedDepartureLt
 
-`func (o *BillOfLading) GetPolPredictedDepartureLt() time.Time`
+`func (o *BillOfLading) GetPolPredictedDepartureLt() string`
 
 GetPolPredictedDepartureLt returns the PolPredictedDepartureLt field if non-nil, zero value otherwise.
 
 ### GetPolPredictedDepartureLtOk
 
-`func (o *BillOfLading) GetPolPredictedDepartureLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolPredictedDepartureLtOk() (*string, bool)`
 
 GetPolPredictedDepartureLtOk returns a tuple with the PolPredictedDepartureLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolPredictedDepartureLt
 
-`func (o *BillOfLading) SetPolPredictedDepartureLt(v time.Time)`
+`func (o *BillOfLading) SetPolPredictedDepartureLt(v string)`
 
 SetPolPredictedDepartureLt sets PolPredictedDepartureLt field to given value.
 
@@ -1009,20 +1009,20 @@ HasPolPredictedDepartureLt returns a boolean if a field has been set.
 UnsetPolPredictedDepartureLt ensures that no value is present for PolPredictedDepartureLt, not even an explicit nil
 ### GetPolScheduledArrivalLtFromSchedule
 
-`func (o *BillOfLading) GetPolScheduledArrivalLtFromSchedule() time.Time`
+`func (o *BillOfLading) GetPolScheduledArrivalLtFromSchedule() string`
 
 GetPolScheduledArrivalLtFromSchedule returns the PolScheduledArrivalLtFromSchedule field if non-nil, zero value otherwise.
 
 ### GetPolScheduledArrivalLtFromScheduleOk
 
-`func (o *BillOfLading) GetPolScheduledArrivalLtFromScheduleOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolScheduledArrivalLtFromScheduleOk() (*string, bool)`
 
 GetPolScheduledArrivalLtFromScheduleOk returns a tuple with the PolScheduledArrivalLtFromSchedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolScheduledArrivalLtFromSchedule
 
-`func (o *BillOfLading) SetPolScheduledArrivalLtFromSchedule(v time.Time)`
+`func (o *BillOfLading) SetPolScheduledArrivalLtFromSchedule(v string)`
 
 SetPolScheduledArrivalLtFromSchedule sets PolScheduledArrivalLtFromSchedule field to given value.
 
@@ -1044,20 +1044,20 @@ HasPolScheduledArrivalLtFromSchedule returns a boolean if a field has been set.
 UnsetPolScheduledArrivalLtFromSchedule ensures that no value is present for PolScheduledArrivalLtFromSchedule, not even an explicit nil
 ### GetPolScheduledDepartureLt
 
-`func (o *BillOfLading) GetPolScheduledDepartureLt() time.Time`
+`func (o *BillOfLading) GetPolScheduledDepartureLt() string`
 
 GetPolScheduledDepartureLt returns the PolScheduledDepartureLt field if non-nil, zero value otherwise.
 
 ### GetPolScheduledDepartureLtOk
 
-`func (o *BillOfLading) GetPolScheduledDepartureLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolScheduledDepartureLtOk() (*string, bool)`
 
 GetPolScheduledDepartureLtOk returns a tuple with the PolScheduledDepartureLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolScheduledDepartureLt
 
-`func (o *BillOfLading) SetPolScheduledDepartureLt(v time.Time)`
+`func (o *BillOfLading) SetPolScheduledDepartureLt(v string)`
 
 SetPolScheduledDepartureLt sets PolScheduledDepartureLt field to given value.
 
@@ -1114,20 +1114,20 @@ HasPolScheduledDepartureLtFirstSeen returns a boolean if a field has been set.
 UnsetPolScheduledDepartureLtFirstSeen ensures that no value is present for PolScheduledDepartureLtFirstSeen, not even an explicit nil
 ### GetPolScheduledDepartureLtFromSchedule
 
-`func (o *BillOfLading) GetPolScheduledDepartureLtFromSchedule() time.Time`
+`func (o *BillOfLading) GetPolScheduledDepartureLtFromSchedule() string`
 
 GetPolScheduledDepartureLtFromSchedule returns the PolScheduledDepartureLtFromSchedule field if non-nil, zero value otherwise.
 
 ### GetPolScheduledDepartureLtFromScheduleOk
 
-`func (o *BillOfLading) GetPolScheduledDepartureLtFromScheduleOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolScheduledDepartureLtFromScheduleOk() (*string, bool)`
 
 GetPolScheduledDepartureLtFromScheduleOk returns a tuple with the PolScheduledDepartureLtFromSchedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolScheduledDepartureLtFromSchedule
 
-`func (o *BillOfLading) SetPolScheduledDepartureLtFromSchedule(v time.Time)`
+`func (o *BillOfLading) SetPolScheduledDepartureLtFromSchedule(v string)`
 
 SetPolScheduledDepartureLtFromSchedule sets PolScheduledDepartureLtFromSchedule field to given value.
 
@@ -1149,20 +1149,20 @@ HasPolScheduledDepartureLtFromSchedule returns a boolean if a field has been set
 UnsetPolScheduledDepartureLtFromSchedule ensures that no value is present for PolScheduledDepartureLtFromSchedule, not even an explicit nil
 ### GetPolScheduledLoadingLt
 
-`func (o *BillOfLading) GetPolScheduledLoadingLt() time.Time`
+`func (o *BillOfLading) GetPolScheduledLoadingLt() string`
 
 GetPolScheduledLoadingLt returns the PolScheduledLoadingLt field if non-nil, zero value otherwise.
 
 ### GetPolScheduledLoadingLtOk
 
-`func (o *BillOfLading) GetPolScheduledLoadingLtOk() (*time.Time, bool)`
+`func (o *BillOfLading) GetPolScheduledLoadingLtOk() (*string, bool)`
 
 GetPolScheduledLoadingLtOk returns a tuple with the PolScheduledLoadingLt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolScheduledLoadingLt
 
-`func (o *BillOfLading) SetPolScheduledLoadingLt(v time.Time)`
+`func (o *BillOfLading) SetPolScheduledLoadingLt(v string)`
 
 SetPolScheduledLoadingLt sets PolScheduledLoadingLt field to given value.
 

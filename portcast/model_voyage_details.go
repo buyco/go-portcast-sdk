@@ -24,11 +24,11 @@ type VoyageDetails struct {
 	// Vessel Schedule Provider SCAC
 	ActiveScac NullableString `json:"active_scac,omitempty"`
 	// Actual Time of Arrival - Local Time
-	ActualArrivalLt NullableTime `json:"actual_arrival_lt,omitempty"`
+	ActualArrivalLt NullableString `json:"actual_arrival_lt,omitempty"`
 	// Actual Time of Arrival - UTC Adjusted Time
 	ActualArrivalUtc NullableTime `json:"actual_arrival_utc,omitempty"`
 	// Actual Time of Departure - Local Time
-	ActualDepartureLt NullableTime `json:"actual_departure_lt,omitempty"`
+	ActualDepartureLt NullableString `json:"actual_departure_lt,omitempty"`
 	// Actual Time of Departure - UTC Adjusted Time
 	ActualDepartureUtc NullableTime `json:"actual_departure_utc,omitempty"`
 	DelayReasons []string `json:"delay_reasons,omitempty"`
@@ -45,21 +45,21 @@ type VoyageDetails struct {
 	// Port Location Name
 	PortName *string `json:"port_name,omitempty"`
 	// Portcast Predicted Arrival Time - Local Time
-	PredictedArrivalLt NullableTime `json:"predicted_arrival_lt,omitempty"`
+	PredictedArrivalLt NullableString `json:"predicted_arrival_lt,omitempty"`
 	// Portcast Predicted Arrival Time - UTC Adjusted
 	PredictedArrivalUtc NullableTime `json:"predicted_arrival_utc,omitempty"`
 	// Portcast Predicted Departure Time - Local Time
-	PredictedDepartureLt NullableTime `json:"predicted_departure_lt,omitempty"`
+	PredictedDepartureLt NullableString `json:"predicted_departure_lt,omitempty"`
 	// Portcast Predicted Departure Time - UTC Adjusted Time
 	PredictedDepartureUtc NullableTime `json:"predicted_departure_utc,omitempty"`
 	// Prediction Generation Timestamp
 	PredictionTimeUtc NullableTime `json:"prediction_time_utc,omitempty"`
 	// Vessel Scheduled Arrival Time - Local Time
-	ScheduledArrivalLt NullableTime `json:"scheduled_arrival_lt,omitempty"`
+	ScheduledArrivalLt NullableString `json:"scheduled_arrival_lt,omitempty"`
 	// Vessel Scheduled Arrival Time - UTC Adjusted Time
 	ScheduledArrivalUtc NullableTime `json:"scheduled_arrival_utc,omitempty"`
 	// Vessel Scheduled Departure Time - Local Time
-	ScheduledDepartureLt NullableTime `json:"scheduled_departure_lt,omitempty"`
+	ScheduledDepartureLt NullableString `json:"scheduled_departure_lt,omitempty"`
 	// Vessel Scheduled Departure Time - Departure Time
 	ScheduledDepartureUtc NullableTime `json:"scheduled_departure_utc,omitempty"`
 	// Timezone of the Port Location
@@ -128,9 +128,9 @@ func (o *VoyageDetails) UnsetActiveScac() {
 }
 
 // GetActualArrivalLt returns the ActualArrivalLt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VoyageDetails) GetActualArrivalLt() time.Time {
+func (o *VoyageDetails) GetActualArrivalLt() string {
 	if o == nil || IsNil(o.ActualArrivalLt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ActualArrivalLt.Get()
@@ -139,7 +139,7 @@ func (o *VoyageDetails) GetActualArrivalLt() time.Time {
 // GetActualArrivalLtOk returns a tuple with the ActualArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VoyageDetails) GetActualArrivalLtOk() (*time.Time, bool) {
+func (o *VoyageDetails) GetActualArrivalLtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -155,8 +155,8 @@ func (o *VoyageDetails) HasActualArrivalLt() bool {
 	return false
 }
 
-// SetActualArrivalLt gets a reference to the given NullableTime and assigns it to the ActualArrivalLt field.
-func (o *VoyageDetails) SetActualArrivalLt(v time.Time) {
+// SetActualArrivalLt gets a reference to the given NullableString and assigns it to the ActualArrivalLt field.
+func (o *VoyageDetails) SetActualArrivalLt(v string) {
 	o.ActualArrivalLt.Set(&v)
 }
 // SetActualArrivalLtNil sets the value for ActualArrivalLt to be an explicit nil
@@ -212,9 +212,9 @@ func (o *VoyageDetails) UnsetActualArrivalUtc() {
 }
 
 // GetActualDepartureLt returns the ActualDepartureLt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VoyageDetails) GetActualDepartureLt() time.Time {
+func (o *VoyageDetails) GetActualDepartureLt() string {
 	if o == nil || IsNil(o.ActualDepartureLt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ActualDepartureLt.Get()
@@ -223,7 +223,7 @@ func (o *VoyageDetails) GetActualDepartureLt() time.Time {
 // GetActualDepartureLtOk returns a tuple with the ActualDepartureLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VoyageDetails) GetActualDepartureLtOk() (*time.Time, bool) {
+func (o *VoyageDetails) GetActualDepartureLtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -239,8 +239,8 @@ func (o *VoyageDetails) HasActualDepartureLt() bool {
 	return false
 }
 
-// SetActualDepartureLt gets a reference to the given NullableTime and assigns it to the ActualDepartureLt field.
-func (o *VoyageDetails) SetActualDepartureLt(v time.Time) {
+// SetActualDepartureLt gets a reference to the given NullableString and assigns it to the ActualDepartureLt field.
+func (o *VoyageDetails) SetActualDepartureLt(v string) {
 	o.ActualDepartureLt.Set(&v)
 }
 // SetActualDepartureLtNil sets the value for ActualDepartureLt to be an explicit nil
@@ -520,9 +520,9 @@ func (o *VoyageDetails) SetPortName(v string) {
 }
 
 // GetPredictedArrivalLt returns the PredictedArrivalLt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VoyageDetails) GetPredictedArrivalLt() time.Time {
+func (o *VoyageDetails) GetPredictedArrivalLt() string {
 	if o == nil || IsNil(o.PredictedArrivalLt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.PredictedArrivalLt.Get()
@@ -531,7 +531,7 @@ func (o *VoyageDetails) GetPredictedArrivalLt() time.Time {
 // GetPredictedArrivalLtOk returns a tuple with the PredictedArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VoyageDetails) GetPredictedArrivalLtOk() (*time.Time, bool) {
+func (o *VoyageDetails) GetPredictedArrivalLtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -547,8 +547,8 @@ func (o *VoyageDetails) HasPredictedArrivalLt() bool {
 	return false
 }
 
-// SetPredictedArrivalLt gets a reference to the given NullableTime and assigns it to the PredictedArrivalLt field.
-func (o *VoyageDetails) SetPredictedArrivalLt(v time.Time) {
+// SetPredictedArrivalLt gets a reference to the given NullableString and assigns it to the PredictedArrivalLt field.
+func (o *VoyageDetails) SetPredictedArrivalLt(v string) {
 	o.PredictedArrivalLt.Set(&v)
 }
 // SetPredictedArrivalLtNil sets the value for PredictedArrivalLt to be an explicit nil
@@ -604,9 +604,9 @@ func (o *VoyageDetails) UnsetPredictedArrivalUtc() {
 }
 
 // GetPredictedDepartureLt returns the PredictedDepartureLt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VoyageDetails) GetPredictedDepartureLt() time.Time {
+func (o *VoyageDetails) GetPredictedDepartureLt() string {
 	if o == nil || IsNil(o.PredictedDepartureLt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.PredictedDepartureLt.Get()
@@ -615,7 +615,7 @@ func (o *VoyageDetails) GetPredictedDepartureLt() time.Time {
 // GetPredictedDepartureLtOk returns a tuple with the PredictedDepartureLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VoyageDetails) GetPredictedDepartureLtOk() (*time.Time, bool) {
+func (o *VoyageDetails) GetPredictedDepartureLtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -631,8 +631,8 @@ func (o *VoyageDetails) HasPredictedDepartureLt() bool {
 	return false
 }
 
-// SetPredictedDepartureLt gets a reference to the given NullableTime and assigns it to the PredictedDepartureLt field.
-func (o *VoyageDetails) SetPredictedDepartureLt(v time.Time) {
+// SetPredictedDepartureLt gets a reference to the given NullableString and assigns it to the PredictedDepartureLt field.
+func (o *VoyageDetails) SetPredictedDepartureLt(v string) {
 	o.PredictedDepartureLt.Set(&v)
 }
 // SetPredictedDepartureLtNil sets the value for PredictedDepartureLt to be an explicit nil
@@ -730,9 +730,9 @@ func (o *VoyageDetails) UnsetPredictionTimeUtc() {
 }
 
 // GetScheduledArrivalLt returns the ScheduledArrivalLt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VoyageDetails) GetScheduledArrivalLt() time.Time {
+func (o *VoyageDetails) GetScheduledArrivalLt() string {
 	if o == nil || IsNil(o.ScheduledArrivalLt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ScheduledArrivalLt.Get()
@@ -741,7 +741,7 @@ func (o *VoyageDetails) GetScheduledArrivalLt() time.Time {
 // GetScheduledArrivalLtOk returns a tuple with the ScheduledArrivalLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VoyageDetails) GetScheduledArrivalLtOk() (*time.Time, bool) {
+func (o *VoyageDetails) GetScheduledArrivalLtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -757,8 +757,8 @@ func (o *VoyageDetails) HasScheduledArrivalLt() bool {
 	return false
 }
 
-// SetScheduledArrivalLt gets a reference to the given NullableTime and assigns it to the ScheduledArrivalLt field.
-func (o *VoyageDetails) SetScheduledArrivalLt(v time.Time) {
+// SetScheduledArrivalLt gets a reference to the given NullableString and assigns it to the ScheduledArrivalLt field.
+func (o *VoyageDetails) SetScheduledArrivalLt(v string) {
 	o.ScheduledArrivalLt.Set(&v)
 }
 // SetScheduledArrivalLtNil sets the value for ScheduledArrivalLt to be an explicit nil
@@ -814,9 +814,9 @@ func (o *VoyageDetails) UnsetScheduledArrivalUtc() {
 }
 
 // GetScheduledDepartureLt returns the ScheduledDepartureLt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VoyageDetails) GetScheduledDepartureLt() time.Time {
+func (o *VoyageDetails) GetScheduledDepartureLt() string {
 	if o == nil || IsNil(o.ScheduledDepartureLt.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ScheduledDepartureLt.Get()
@@ -825,7 +825,7 @@ func (o *VoyageDetails) GetScheduledDepartureLt() time.Time {
 // GetScheduledDepartureLtOk returns a tuple with the ScheduledDepartureLt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VoyageDetails) GetScheduledDepartureLtOk() (*time.Time, bool) {
+func (o *VoyageDetails) GetScheduledDepartureLtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -841,8 +841,8 @@ func (o *VoyageDetails) HasScheduledDepartureLt() bool {
 	return false
 }
 
-// SetScheduledDepartureLt gets a reference to the given NullableTime and assigns it to the ScheduledDepartureLt field.
-func (o *VoyageDetails) SetScheduledDepartureLt(v time.Time) {
+// SetScheduledDepartureLt gets a reference to the given NullableString and assigns it to the ScheduledDepartureLt field.
+func (o *VoyageDetails) SetScheduledDepartureLt(v string) {
 	o.ScheduledDepartureLt.Set(&v)
 }
 // SetScheduledDepartureLtNil sets the value for ScheduledDepartureLt to be an explicit nil
