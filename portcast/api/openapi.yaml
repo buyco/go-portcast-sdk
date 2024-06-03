@@ -957,40 +957,40 @@ components:
           sailing_info:
             vessel_flag: SG
             voyage_no: CG303R
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: ESBCN
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
             imo: "9306172"
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USHOU
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
             id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             vessel_leg: 1
             is_active: true
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             vessel_name: MAERSK PUELO
             pol_name: HOUSTON
             pod_name: BARCELONA
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: BAYPORT TERMINAL
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: CMDU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           status_info:
             vessel:
               metadata:
@@ -1013,19 +1013,19 @@ components:
           voyage_details:
           - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             timezone: UTC +2
-            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_departure_lt: predicted_departure_lt
             index: 1
             lon: 15.901825
-            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: scheduled_arrival_lt
+            actual_departure_lt: actual_departure_lt
             port_name: GIOIA TAURO
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
             prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            actual_arrival_lt: actual_arrival_lt
             predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_lt: scheduled_departure_lt
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             voyage_no_list:
             - CG303R
@@ -1040,19 +1040,19 @@ components:
             port_code: ITGIT
           - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             timezone: UTC +2
-            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_departure_lt: predicted_departure_lt
             index: 1
             lon: 15.901825
-            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: scheduled_arrival_lt
+            actual_departure_lt: actual_departure_lt
             port_name: GIOIA TAURO
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
             prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            actual_arrival_lt: actual_arrival_lt
             predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_lt: scheduled_departure_lt
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             voyage_no_list:
             - CG303R
@@ -1070,40 +1070,40 @@ components:
           sailing_info:
             vessel_flag: SG
             voyage_no: CG303R
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: ESBCN
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
             imo: "9306172"
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USHOU
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
             id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             vessel_leg: 1
             is_active: true
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             vessel_name: MAERSK PUELO
             pol_name: HOUSTON
             pod_name: BARCELONA
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: BAYPORT TERMINAL
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: CMDU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           status_info:
             vessel:
               metadata:
@@ -1126,19 +1126,19 @@ components:
           voyage_details:
           - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             timezone: UTC +2
-            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_departure_lt: predicted_departure_lt
             index: 1
             lon: 15.901825
-            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: scheduled_arrival_lt
+            actual_departure_lt: actual_departure_lt
             port_name: GIOIA TAURO
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
             prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            actual_arrival_lt: actual_arrival_lt
             predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_lt: scheduled_departure_lt
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             voyage_no_list:
             - CG303R
@@ -1153,19 +1153,19 @@ components:
             port_code: ITGIT
           - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
             timezone: UTC +2
-            predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_departure_lt: predicted_departure_lt
             index: 1
             lon: 15.901825
-            predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            predicted_arrival_lt: predicted_arrival_lt
+            scheduled_arrival_lt: scheduled_arrival_lt
+            actual_departure_lt: actual_departure_lt
             port_name: GIOIA TAURO
             scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
             prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-            actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            actual_arrival_lt: actual_arrival_lt
             predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
             scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-            scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+            scheduled_departure_lt: scheduled_departure_lt
             actual_departure_utc: 2000-01-23T04:56:07.000+00:00
             voyage_no_list:
             - CG303R
@@ -1195,42 +1195,42 @@ components:
         bill_of_lading:
           bl_no: COSU6349613240
           cntr_no: BMOU1589176
-          pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
           pod: GHTEM
-          pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
           place_of_delivery_name: NORFOLK
           place_of_receipt_name: TEMA
-          pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-          pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+          pol_actual_departure_lt: pol_actual_departure_lt
           pol: USORF
-          pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-          pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-          pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_departure_lt: pol_scheduled_departure_lt
+          pod_actual_arrival_lt: pod_actual_arrival_lt
+          pod_actual_discharge_lt: pod_actual_discharge_lt
+          pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
           pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
           id: 16caa040-f582-4c15-88c9-2e80437e7916
-          pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pol_predicted_arrival_lt: pol_predicted_arrival_lt
+          pod_predicted_arrival_lt: pod_predicted_arrival_lt
           pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
           place_of_delivery: USORF
-          pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+          pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
           created: 2000-01-23T04:56:07.000+00:00
           pol_name: NORFOLK
           pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
           pod_name: TEMA
           place_of_receipt: GHTEM
-          pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pod_predicted_departure_lt: pod_predicted_departure_lt
           pol_terminal_name: PPCY EMPTY DEPOT
-          pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_loading_lt: pol_scheduled_loading_lt
           carrier_no: COSU
-          pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-          pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-          pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+          pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+          pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
           updated: 2000-01-23T04:56:07.000+00:00
-          pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-          pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-          pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+          pol_actual_loading_lt: pol_actual_loading_lt
+          pol_predicted_departure_lt: pol_predicted_departure_lt
         delay_lists:
         - port_name: XIAMEN
           reason_code: RLV
@@ -1341,42 +1341,42 @@ components:
       example:
         bl_no: COSU6349613240
         cntr_no: BMOU1589176
-        pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
         pod: GHTEM
-        pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
         place_of_delivery_name: NORFOLK
         place_of_receipt_name: TEMA
-        pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-        pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+        pol_actual_departure_lt: pol_actual_departure_lt
         pol: USORF
-        pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-        pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-        pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_departure_lt: pol_scheduled_departure_lt
+        pod_actual_arrival_lt: pod_actual_arrival_lt
+        pod_actual_discharge_lt: pod_actual_discharge_lt
+        pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
         pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
         id: 16caa040-f582-4c15-88c9-2e80437e7916
-        pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pol_predicted_arrival_lt: pol_predicted_arrival_lt
+        pod_predicted_arrival_lt: pod_predicted_arrival_lt
         pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
         place_of_delivery: USORF
-        pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+        pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
         created: 2000-01-23T04:56:07.000+00:00
         pol_name: NORFOLK
         pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
         pod_name: TEMA
         place_of_receipt: GHTEM
-        pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pod_predicted_departure_lt: pod_predicted_departure_lt
         pol_terminal_name: PPCY EMPTY DEPOT
-        pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_loading_lt: pol_scheduled_loading_lt
         carrier_no: COSU
-        pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-        pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-        pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+        pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+        pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
         updated: 2000-01-23T04:56:07.000+00:00
-        pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-        pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-        pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+        pol_actual_loading_lt: pol_actual_loading_lt
+        pol_predicted_departure_lt: pol_predicted_departure_lt
       properties:
         bl_no:
           description: Bill of Lading or Booking Number
@@ -1428,25 +1428,21 @@ components:
         pod_actual_arrival_lt:
           description: Actual Time of Arrival for the Final Vessel at the Port of
             Discharge (POD) - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_actual_arrival_lt_from_ais:
           description: Actual Time of Arrival for the Final Vessel at the Port of
             Discharge (POD) as per AIS Data- Local Time
-          format: date-time
           nullable: true
           type: string
         pod_actual_departure_lt_from_ais:
           description: Actual Time of Departure for the Final Vessel from the Port
             of Discharge (POD) as per AIS Data - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_actual_discharge_lt:
           description: Actual Container Discharge Time from Final Vessel at the Port
             of Discharge (POD) - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_name:
@@ -1456,19 +1452,16 @@ components:
         pod_predicted_arrival_lt:
           description: "Portcast Predicted Time of Arrival for the Final Vessel at\
             \ the Port of Discharge (POD) - Local Time [Most Reliable Source of ETA]"
-          format: date-time
           nullable: true
           type: string
         pod_predicted_departure_lt:
           description: Portcast Predicted Time of Departure for the Final Vessel from
             the Port of Discharge (POD) - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_arrival_lt:
           description: Scheduled Time of Arrival for the Final Vessel at the Port
             of Discharge (POD) as per carrier T&T - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_arrival_lt_first_seen:
@@ -1481,19 +1474,16 @@ components:
         pod_scheduled_arrival_lt_from_schedule:
           description: Scheduled Time of Arrival for the Final Vessel at the Port
             of Discharge (POD) as per vessel schedule - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_departure_lt_from_schedule:
           description: Scheduled Time of Departure for the Final Vessel from the Port
             of Discharge (POD) as per vessel schedule - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_discharge_lt:
           description: Carrier Scheduled Container Discharge Time from Final Vessel
             at the Port of Discharge (POD) - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_terminal_name:
@@ -1508,25 +1498,21 @@ components:
         pol_actual_arrival_lt_from_ais:
           description: Actual Time of Arrival for the First Vessel at the Port of
             Loading (POL) as per AIS Data - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_actual_departure_lt:
           description: Actual Time of Departure for the First Vessel from the Port
             of Loading (POL) - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_actual_departure_lt_from_ais:
           description: Actual Time of Departure for the First Vessel from the Port
             of Loading (POL) as per AIS Data - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_actual_loading_lt:
           description: Actual Container Loading Time on First Vessel at the Port of
             Loading (POL) - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_name:
@@ -1536,26 +1522,22 @@ components:
         pol_predicted_arrival_lt:
           description: Portcast Predicted Time of Arrival for the First Vessel at
             the Port of Loading (POL) - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_predicted_departure_lt:
           description: "Portcast Predicted Time of Departure for the First Vessel\
             \ from the Port of Loading (POL) - Local Time [Most Reliable Source of\
             \ ETD]"
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_arrival_lt_from_schedule:
           description: Scheduled Time of Arrival for the First Vessel at the Port
             of Loading (POL) as per Vessel Schedule - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_departure_lt:
           description: Scheduled Time of Departure for the First Vessel from the Port
             of Loading (POL) as per Container T&T - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_departure_lt_first_seen:
@@ -1568,13 +1550,11 @@ components:
         pol_scheduled_departure_lt_from_schedule:
           description: Scheduled Time of Departure for the First Vessel from the Port
             of Loading (POL) as per Vessel Schedule - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_loading_lt:
           description: Carrier Scheduled Container Loading Time on First Vessel at
             the Port of Loading (POL) - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_terminal_name:
@@ -1935,40 +1915,40 @@ components:
         sailing_info:
           vessel_flag: SG
           voyage_no: CG303R
-          pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
           pod: ESBCN
-          pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-          pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+          pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
           imo: "9306172"
-          pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol_actual_departure_lt: pol_actual_departure_lt
           pol: USHOU
-          pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-          pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-          pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_departure_lt: pol_scheduled_departure_lt
+          pod_actual_arrival_lt: pod_actual_arrival_lt
+          pod_actual_discharge_lt: pod_actual_discharge_lt
+          pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
           pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
           id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-          pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          pol_predicted_arrival_lt: pol_predicted_arrival_lt
+          pod_predicted_arrival_lt: pod_predicted_arrival_lt
           vessel_leg: 1
           is_active: true
-          pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+          pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+          pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
           created: 2000-01-23T04:56:07.000+00:00
           vessel_name: MAERSK PUELO
           pol_name: HOUSTON
           pod_name: BARCELONA
-          pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pod_predicted_departure_lt: pod_predicted_departure_lt
           pol_terminal_name: BAYPORT TERMINAL
-          pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_loading_lt: pol_scheduled_loading_lt
           carrier_no: CMDU
-          pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-          pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-          pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+          pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+          pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+          pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
           updated: 2000-01-23T04:56:07.000+00:00
-          pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-          pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-          pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+          pol_actual_loading_lt: pol_actual_loading_lt
+          pol_predicted_departure_lt: pol_predicted_departure_lt
         status_info:
           vessel:
             metadata:
@@ -1991,19 +1971,19 @@ components:
         voyage_details:
         - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
           timezone: UTC +2
-          predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          predicted_departure_lt: predicted_departure_lt
           index: 1
           lon: 15.901825
-          predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          predicted_arrival_lt: predicted_arrival_lt
+          scheduled_arrival_lt: scheduled_arrival_lt
+          actual_departure_lt: actual_departure_lt
           port_name: GIOIA TAURO
           scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
           prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-          actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          actual_arrival_lt: actual_arrival_lt
           predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-          scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_departure_lt: scheduled_departure_lt
           actual_departure_utc: 2000-01-23T04:56:07.000+00:00
           voyage_no_list:
           - CG303R
@@ -2018,19 +1998,19 @@ components:
           port_code: ITGIT
         - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
           timezone: UTC +2
-          predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+          predicted_departure_lt: predicted_departure_lt
           index: 1
           lon: 15.901825
-          predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-          actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+          predicted_arrival_lt: predicted_arrival_lt
+          scheduled_arrival_lt: scheduled_arrival_lt
+          actual_departure_lt: actual_departure_lt
           port_name: GIOIA TAURO
           scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
           prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-          actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+          actual_arrival_lt: actual_arrival_lt
           predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
           scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-          scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+          scheduled_departure_lt: scheduled_departure_lt
           actual_departure_utc: 2000-01-23T04:56:07.000+00:00
           voyage_no_list:
           - CG303R
@@ -2072,19 +2052,19 @@ components:
       example:
         actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
         timezone: UTC +2
-        predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+        predicted_departure_lt: predicted_departure_lt
         index: 1
         lon: 15.901825
-        predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        predicted_arrival_lt: predicted_arrival_lt
+        scheduled_arrival_lt: scheduled_arrival_lt
+        actual_departure_lt: actual_departure_lt
         port_name: GIOIA TAURO
         scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
         prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-        actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        actual_arrival_lt: actual_arrival_lt
         predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
         scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-        scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+        scheduled_departure_lt: scheduled_departure_lt
         actual_departure_utc: 2000-01-23T04:56:07.000+00:00
         voyage_no_list:
         - CG303R
@@ -2105,7 +2085,6 @@ components:
           type: string
         actual_arrival_lt:
           description: Actual Time of Arrival - Local Time
-          format: date-time
           nullable: true
           type: string
         actual_arrival_utc:
@@ -2115,7 +2094,6 @@ components:
           type: string
         actual_departure_lt:
           description: Actual Time of Departure - Local Time
-          format: date-time
           nullable: true
           type: string
         actual_departure_utc:
@@ -2156,7 +2134,6 @@ components:
           type: string
         predicted_arrival_lt:
           description: Portcast Predicted Arrival Time - Local Time
-          format: date-time
           nullable: true
           type: string
         predicted_arrival_utc:
@@ -2166,7 +2143,6 @@ components:
           type: string
         predicted_departure_lt:
           description: Portcast Predicted Departure Time - Local Time
-          format: date-time
           nullable: true
           type: string
         predicted_departure_utc:
@@ -2181,7 +2157,6 @@ components:
           type: string
         scheduled_arrival_lt:
           description: Vessel Scheduled Arrival Time - Local Time
-          format: date-time
           nullable: true
           type: string
         scheduled_arrival_utc:
@@ -2191,7 +2166,6 @@ components:
           type: string
         scheduled_departure_lt:
           description: Vessel Scheduled Departure Time - Local Time
-          format: date-time
           nullable: true
           type: string
         scheduled_departure_utc:
@@ -2370,7 +2344,7 @@ components:
           gate_in_date: 2023-06-21T14:15:22Z
           port_cutoff_standard: 2023-06-23T14:15:22Z
           erd_reefer: 2023-06-24T14:15:22Z
-          actual_departure: 2000-01-23T04:56:07.000+00:00
+          actual_departure: actual_departure
           id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           updated: 2000-01-23T04:56:07.000+00:00
           port_code: SGSIN
@@ -2645,40 +2619,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -2701,19 +2675,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -2728,19 +2702,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -2758,40 +2732,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -2814,19 +2788,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -2841,19 +2815,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -2883,42 +2857,42 @@ components:
           bill_of_lading:
             bl_no: COSU6349613240
             cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
             place_of_delivery_name: NORFOLK
             place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
             id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
             pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -3038,40 +3012,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -3094,19 +3068,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3121,19 +3095,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3151,40 +3125,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -3207,19 +3181,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3234,19 +3208,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3276,42 +3250,42 @@ components:
           bill_of_lading:
             bl_no: COSU6349613240
             cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
             place_of_delivery_name: NORFOLK
             place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
             id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
             pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -3431,40 +3405,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -3487,19 +3461,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3514,19 +3488,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3544,40 +3518,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -3600,19 +3574,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3627,19 +3601,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3669,42 +3643,42 @@ components:
           bill_of_lading:
             bl_no: COSU6349613240
             cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
             place_of_delivery_name: NORFOLK
             place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
             id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
             pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -3824,40 +3798,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -3880,19 +3854,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3907,19 +3881,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -3937,40 +3911,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -3993,19 +3967,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4020,19 +3994,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4062,42 +4036,42 @@ components:
           bill_of_lading:
             bl_no: COSU6349613240
             cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
             place_of_delivery_name: NORFOLK
             place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
             id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
             pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -4217,40 +4191,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -4273,19 +4247,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4300,19 +4274,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4330,40 +4304,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -4386,19 +4360,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4413,19 +4387,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4455,42 +4429,42 @@ components:
           bill_of_lading:
             bl_no: COSU6349613240
             cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
             place_of_delivery_name: NORFOLK
             place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
             id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
             pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -4638,40 +4612,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -4694,19 +4668,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4721,19 +4695,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4751,40 +4725,40 @@ components:
             sailing_info:
               vessel_flag: SG
               voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
               pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
               imo: "9306172"
-              pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_departure_lt: pol_actual_departure_lt
               pol: USHOU
-              pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-              pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt: pol_scheduled_departure_lt
+              pod_actual_arrival_lt: pod_actual_arrival_lt
+              pod_actual_discharge_lt: pod_actual_discharge_lt
+              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
               pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
               id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              pol_predicted_arrival_lt: pol_predicted_arrival_lt
+              pod_predicted_arrival_lt: pod_predicted_arrival_lt
               vessel_leg: 1
               is_active: true
-              pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
               created: 2000-01-23T04:56:07.000+00:00
               vessel_name: MAERSK PUELO
               pol_name: HOUSTON
               pod_name: BARCELONA
-              pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pod_predicted_departure_lt: pod_predicted_departure_lt
               pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_loading_lt: pol_scheduled_loading_lt
               carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-              pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
               updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-              pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-              pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+              pol_actual_loading_lt: pol_actual_loading_lt
+              pol_predicted_departure_lt: pol_predicted_departure_lt
             status_info:
               vessel:
                 metadata:
@@ -4807,19 +4781,19 @@ components:
             voyage_details:
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4834,19 +4808,19 @@ components:
               port_code: ITGIT
             - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
               timezone: UTC +2
-              predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_departure_lt: predicted_departure_lt
               index: 1
               lon: 15.901825
-              predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-              actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+              predicted_arrival_lt: predicted_arrival_lt
+              scheduled_arrival_lt: scheduled_arrival_lt
+              actual_departure_lt: actual_departure_lt
               port_name: GIOIA TAURO
               scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
               prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
+              actual_arrival_lt: actual_arrival_lt
               predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
               scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
+              scheduled_departure_lt: scheduled_departure_lt
               actual_departure_utc: 2000-01-23T04:56:07.000+00:00
               voyage_no_list:
               - CG303R
@@ -4876,42 +4850,42 @@ components:
           bill_of_lading:
             bl_no: COSU6349613240
             cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
             pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
             place_of_delivery_name: NORFOLK
             place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
+            pol_actual_departure_lt: pol_actual_departure_lt
             pol: USORF
-            pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-            pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt: pol_scheduled_departure_lt
+            pod_actual_arrival_lt: pod_actual_arrival_lt
+            pod_actual_discharge_lt: pod_actual_discharge_lt
+            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
             pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
             id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+            pol_predicted_arrival_lt: pol_predicted_arrival_lt
+            pod_predicted_arrival_lt: pod_predicted_arrival_lt
             pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
             place_of_delivery: USORF
-            pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-            pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
             created: 2000-01-23T04:56:07.000+00:00
             pol_name: NORFOLK
             pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
             pod_name: TEMA
             place_of_receipt: GHTEM
-            pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pod_predicted_departure_lt: pod_predicted_departure_lt
             pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_loading_lt: pol_scheduled_loading_lt
             carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-            pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
             updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-            pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-            pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+            pol_actual_loading_lt: pol_actual_loading_lt
+            pol_predicted_departure_lt: pol_predicted_departure_lt
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -5378,40 +5352,40 @@ components:
       example:
         vessel_flag: SG
         voyage_no: CG303R
-        pol_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
         pod: ESBCN
-        pod_scheduled_arrival_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-        pod_scheduled_discharge_lt: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
+        pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
         imo: "9306172"
-        pol_actual_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol_actual_departure_lt: pol_actual_departure_lt
         pol: USHOU
-        pol_scheduled_departure_lt: 2000-01-23T04:56:07.000+00:00
-        pod_actual_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pod_actual_discharge_lt: 2000-01-23T04:56:07.000+00:00
-        pol_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_departure_lt: pol_scheduled_departure_lt
+        pod_actual_arrival_lt: pod_actual_arrival_lt
+        pod_actual_discharge_lt: pod_actual_discharge_lt
+        pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
         pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
         id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-        pol_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pod_predicted_arrival_lt: 2000-01-23T04:56:07.000+00:00
+        pol_predicted_arrival_lt: pol_predicted_arrival_lt
+        pod_predicted_arrival_lt: pod_predicted_arrival_lt
         vessel_leg: 1
         is_active: true
-        pod_scheduled_arrival_lt: 2000-01-23T04:56:07.000+00:00
-        pod_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
+        pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
+        pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
         created: 2000-01-23T04:56:07.000+00:00
         vessel_name: MAERSK PUELO
         pol_name: HOUSTON
         pod_name: BARCELONA
-        pod_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pod_predicted_departure_lt: pod_predicted_departure_lt
         pol_terminal_name: BAYPORT TERMINAL
-        pol_scheduled_loading_lt: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_loading_lt: pol_scheduled_loading_lt
         carrier_no: CMDU
-        pol_scheduled_departure_lt_from_schedule: 2000-01-23T04:56:07.000+00:00
-        pod_actual_departure_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-        pod_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
+        pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
+        pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
+        pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
         updated: 2000-01-23T04:56:07.000+00:00
-        pol_actual_arrival_lt_from_ais: 2000-01-23T04:56:07.000+00:00
-        pol_actual_loading_lt: 2000-01-23T04:56:07.000+00:00
-        pol_predicted_departure_lt: 2000-01-23T04:56:07.000+00:00
+        pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
+        pol_actual_loading_lt: pol_actual_loading_lt
+        pol_predicted_departure_lt: pol_predicted_departure_lt
       properties:
         carrier_no:
           description: Carrier SCAC Code
@@ -5444,25 +5418,21 @@ components:
           type: string
         pod_actual_arrival_lt:
           description: Actual Arrival Time at the target port location - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_actual_arrival_lt_from_ais:
           description: Actual Arrival Time at the target port location as per AIS
             Data - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_actual_departure_lt_from_ais:
           description: Actual Departure Time from the target port location as per
             AIS Data - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_actual_discharge_lt:
           description: Actual Time of Discharge at the target port location - Local
             Time
-          format: date-time
           nullable: true
           type: string
         pod_name:
@@ -5473,37 +5443,31 @@ components:
         pod_predicted_arrival_lt:
           description: Portcast Predicted Time of Arrival at the target port location
             - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_predicted_departure_lt:
           description: Portcast Predicted Time of Departure from the target port location
             - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_arrival_lt:
           description: Scheduled Time of Arrival at the target port location - Local
             Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_arrival_lt_from_schedule:
           description: Scheduled Time of Arrival at the target port location as per
             Vessel Schedule - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_departure_lt_from_schedule:
           description: Scheduled Time of Departure from the target port location as
             per Vessel Schedule - Local Time
-          format: date-time
           nullable: true
           type: string
         pod_scheduled_discharge_lt:
           description: Scheduled Discharge Time at the target port location - Local
             Time
-          format: date-time
           nullable: true
           type: string
         pod_terminal_name:
@@ -5520,24 +5484,20 @@ components:
         pol_actual_arrival_lt_from_ais:
           description: Actual Time of Arrival at the starting port location as per
             AIS Data - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_actual_departure_lt:
           description: Actual Time of Departure from the starting port location -
             Local Time
-          format: date-time
           nullable: true
           type: string
         pol_actual_departure_lt_from_ais:
           description: Actual Time of Departure from the starting port location as
             per AIS Data - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_actual_loading_lt:
           description: Actual Loading Time at the starting port location - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_name:
@@ -5548,37 +5508,31 @@ components:
         pol_predicted_arrival_lt:
           description: Portcast Predicted Time of Arrival at the starting port location
             - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_predicted_departure_lt:
           description: Portcast Predicted Time of Departure from the starting port
             location - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_arrival_lt_from_schedule:
           description: Scheduled Time of Arrival at the starting port location as
             per Vessel Schedule- Local Time
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_departure_lt:
           description: Scheduled Time of Departure from the starting port location
             - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_departure_lt_from_schedule:
           description: Scheduled Time of Departure from the starting port location
             as per Vessel Schedule - Local Time
-          format: date-time
           nullable: true
           type: string
         pol_scheduled_loading_lt:
           description: Scheduled Loading Time at the starting port location - Local
             Time
-          format: date-time
           nullable: true
           type: string
         pol_terminal_name:
@@ -5970,7 +5924,7 @@ components:
         gate_in_date: 2023-06-21T14:15:22Z
         port_cutoff_standard: 2023-06-23T14:15:22Z
         erd_reefer: 2023-06-24T14:15:22Z
-        actual_departure: 2000-01-23T04:56:07.000+00:00
+        actual_departure: actual_departure
         id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         updated: 2000-01-23T04:56:07.000+00:00
         port_code: SGSIN
@@ -6013,13 +5967,11 @@ components:
           description: "Earliest Receipt Date (ERD) for a standard container, as reported\
             \ by the terminal - Local Time."
           example: 2023-06-24T14:15:22Z
-          format: date-time
           type: string
         erd_reefer:
           description: "Earliest Receipt Date (ERD) for a reefer container, as reported\
             \ by the terminal - Local Time."
           example: 2023-06-24T14:15:22Z
-          format: date-time
           type: string
         gate_in_date:
           description: "Date a container was received at the terminal through the\
@@ -6030,36 +5982,30 @@ components:
           description: "Last possible date and time for gating-in standard container\
             \ at the export terminal, as reported by the Terminal - Local Time."
           example: 2023-06-23T14:15:22Z
-          format: date-time
           type: string
         port_cutoff_reefer:
           description: "Last possible date and time for gating-in reefer container\
             \ at the export terminal, as reported by the terminal - Local Time."
           example: 2023-06-23T14:15:22Z
-          format: date-time
           type: string
         latest_eta:
           description: "Latest vessel ETA to the export port, as reported by the terminal\
             \ - Local Time."
           example: 2023-06-24T14:15:22Z
-          format: date-time
           type: string
         actual_arrival:
           description: "Actual vessel time of arrival, as reported by the terminal\
             \ - Local Time."
           example: 2023-06-24T14:15:22Z
-          format: date-time
           type: string
         latest_etd:
           description: "Latest vessel ETD from the export port, as reported by the\
             \ terminal - Local Time."
           example: 2023-06-26T14:15:22Z
-          format: date-time
           type: string
         actual_departure:
           description: "Actual vessel time of departure from the export port, as reported\
             \ by the terminal - Local Time."
-          format: date-time
           pattern: 2023-06-26T14:15:22Z
           type: string
     Port_Terminal_Add_On_import_plan:

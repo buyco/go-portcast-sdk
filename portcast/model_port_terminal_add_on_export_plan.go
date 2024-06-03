@@ -38,23 +38,23 @@ type PortTerminalAddOnExportPlan struct {
 	// Voyage Number associated with the export journey, as reported by the Terminal.
 	VoyageNo *string `json:"voyage_no,omitempty"`
 	// Earliest Receipt Date (ERD) for a standard container, as reported by the terminal - Local Time.
-	ErdStandard *time.Time `json:"erd_standard,omitempty"`
+	ErdStandard *string `json:"erd_standard,omitempty"`
 	// Earliest Receipt Date (ERD) for a reefer container, as reported by the terminal - Local Time.
-	ErdReefer *time.Time `json:"erd_reefer,omitempty"`
+	ErdReefer *string `json:"erd_reefer,omitempty"`
 	// Date a container was received at the terminal through the gate, as reported by the terminal - Local Time.
 	GateInDate *string `json:"gate_in_date,omitempty"`
 	// Last possible date and time for gating-in standard container at the export terminal, as reported by the Terminal - Local Time.
-	PortCutoffStandard *time.Time `json:"port_cutoff_standard,omitempty"`
+	PortCutoffStandard *string `json:"port_cutoff_standard,omitempty"`
 	// Last possible date and time for gating-in reefer container at the export terminal, as reported by the terminal - Local Time.
-	PortCutoffReefer *time.Time `json:"port_cutoff_reefer,omitempty"`
+	PortCutoffReefer *string `json:"port_cutoff_reefer,omitempty"`
 	// Latest vessel ETA to the export port, as reported by the terminal - Local Time.
-	LatestEta *time.Time `json:"latest_eta,omitempty"`
+	LatestEta *string `json:"latest_eta,omitempty"`
 	// Actual vessel time of arrival, as reported by the terminal - Local Time.
-	ActualArrival *time.Time `json:"actual_arrival,omitempty"`
+	ActualArrival *string `json:"actual_arrival,omitempty"`
 	// Latest vessel ETD from the export port, as reported by the terminal - Local Time.
-	LatestEtd *time.Time `json:"latest_etd,omitempty"`
+	LatestEtd *string `json:"latest_etd,omitempty"`
 	// Actual vessel time of departure from the export port, as reported by the terminal - Local Time.
-	ActualDeparture *time.Time `json:"actual_departure,omitempty"`
+	ActualDeparture *string `json:"actual_departure,omitempty"`
 }
 
 // NewPortTerminalAddOnExportPlan instantiates a new PortTerminalAddOnExportPlan object
@@ -331,9 +331,9 @@ func (o *PortTerminalAddOnExportPlan) SetVoyageNo(v string) {
 }
 
 // GetErdStandard returns the ErdStandard field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetErdStandard() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetErdStandard() string {
 	if o == nil || IsNil(o.ErdStandard) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ErdStandard
@@ -341,7 +341,7 @@ func (o *PortTerminalAddOnExportPlan) GetErdStandard() time.Time {
 
 // GetErdStandardOk returns a tuple with the ErdStandard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetErdStandardOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetErdStandardOk() (*string, bool) {
 	if o == nil || IsNil(o.ErdStandard) {
 		return nil, false
 	}
@@ -357,15 +357,15 @@ func (o *PortTerminalAddOnExportPlan) HasErdStandard() bool {
 	return false
 }
 
-// SetErdStandard gets a reference to the given time.Time and assigns it to the ErdStandard field.
-func (o *PortTerminalAddOnExportPlan) SetErdStandard(v time.Time) {
+// SetErdStandard gets a reference to the given string and assigns it to the ErdStandard field.
+func (o *PortTerminalAddOnExportPlan) SetErdStandard(v string) {
 	o.ErdStandard = &v
 }
 
 // GetErdReefer returns the ErdReefer field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetErdReefer() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetErdReefer() string {
 	if o == nil || IsNil(o.ErdReefer) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ErdReefer
@@ -373,7 +373,7 @@ func (o *PortTerminalAddOnExportPlan) GetErdReefer() time.Time {
 
 // GetErdReeferOk returns a tuple with the ErdReefer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetErdReeferOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetErdReeferOk() (*string, bool) {
 	if o == nil || IsNil(o.ErdReefer) {
 		return nil, false
 	}
@@ -389,8 +389,8 @@ func (o *PortTerminalAddOnExportPlan) HasErdReefer() bool {
 	return false
 }
 
-// SetErdReefer gets a reference to the given time.Time and assigns it to the ErdReefer field.
-func (o *PortTerminalAddOnExportPlan) SetErdReefer(v time.Time) {
+// SetErdReefer gets a reference to the given string and assigns it to the ErdReefer field.
+func (o *PortTerminalAddOnExportPlan) SetErdReefer(v string) {
 	o.ErdReefer = &v
 }
 
@@ -427,9 +427,9 @@ func (o *PortTerminalAddOnExportPlan) SetGateInDate(v string) {
 }
 
 // GetPortCutoffStandard returns the PortCutoffStandard field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandard() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandard() string {
 	if o == nil || IsNil(o.PortCutoffStandard) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.PortCutoffStandard
@@ -437,7 +437,7 @@ func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandard() time.Time {
 
 // GetPortCutoffStandardOk returns a tuple with the PortCutoffStandard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandardOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandardOk() (*string, bool) {
 	if o == nil || IsNil(o.PortCutoffStandard) {
 		return nil, false
 	}
@@ -453,15 +453,15 @@ func (o *PortTerminalAddOnExportPlan) HasPortCutoffStandard() bool {
 	return false
 }
 
-// SetPortCutoffStandard gets a reference to the given time.Time and assigns it to the PortCutoffStandard field.
-func (o *PortTerminalAddOnExportPlan) SetPortCutoffStandard(v time.Time) {
+// SetPortCutoffStandard gets a reference to the given string and assigns it to the PortCutoffStandard field.
+func (o *PortTerminalAddOnExportPlan) SetPortCutoffStandard(v string) {
 	o.PortCutoffStandard = &v
 }
 
 // GetPortCutoffReefer returns the PortCutoffReefer field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetPortCutoffReefer() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetPortCutoffReefer() string {
 	if o == nil || IsNil(o.PortCutoffReefer) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.PortCutoffReefer
@@ -469,7 +469,7 @@ func (o *PortTerminalAddOnExportPlan) GetPortCutoffReefer() time.Time {
 
 // GetPortCutoffReeferOk returns a tuple with the PortCutoffReefer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetPortCutoffReeferOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetPortCutoffReeferOk() (*string, bool) {
 	if o == nil || IsNil(o.PortCutoffReefer) {
 		return nil, false
 	}
@@ -485,15 +485,15 @@ func (o *PortTerminalAddOnExportPlan) HasPortCutoffReefer() bool {
 	return false
 }
 
-// SetPortCutoffReefer gets a reference to the given time.Time and assigns it to the PortCutoffReefer field.
-func (o *PortTerminalAddOnExportPlan) SetPortCutoffReefer(v time.Time) {
+// SetPortCutoffReefer gets a reference to the given string and assigns it to the PortCutoffReefer field.
+func (o *PortTerminalAddOnExportPlan) SetPortCutoffReefer(v string) {
 	o.PortCutoffReefer = &v
 }
 
 // GetLatestEta returns the LatestEta field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetLatestEta() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetLatestEta() string {
 	if o == nil || IsNil(o.LatestEta) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.LatestEta
@@ -501,7 +501,7 @@ func (o *PortTerminalAddOnExportPlan) GetLatestEta() time.Time {
 
 // GetLatestEtaOk returns a tuple with the LatestEta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetLatestEtaOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetLatestEtaOk() (*string, bool) {
 	if o == nil || IsNil(o.LatestEta) {
 		return nil, false
 	}
@@ -517,15 +517,15 @@ func (o *PortTerminalAddOnExportPlan) HasLatestEta() bool {
 	return false
 }
 
-// SetLatestEta gets a reference to the given time.Time and assigns it to the LatestEta field.
-func (o *PortTerminalAddOnExportPlan) SetLatestEta(v time.Time) {
+// SetLatestEta gets a reference to the given string and assigns it to the LatestEta field.
+func (o *PortTerminalAddOnExportPlan) SetLatestEta(v string) {
 	o.LatestEta = &v
 }
 
 // GetActualArrival returns the ActualArrival field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetActualArrival() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetActualArrival() string {
 	if o == nil || IsNil(o.ActualArrival) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ActualArrival
@@ -533,7 +533,7 @@ func (o *PortTerminalAddOnExportPlan) GetActualArrival() time.Time {
 
 // GetActualArrivalOk returns a tuple with the ActualArrival field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetActualArrivalOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetActualArrivalOk() (*string, bool) {
 	if o == nil || IsNil(o.ActualArrival) {
 		return nil, false
 	}
@@ -549,15 +549,15 @@ func (o *PortTerminalAddOnExportPlan) HasActualArrival() bool {
 	return false
 }
 
-// SetActualArrival gets a reference to the given time.Time and assigns it to the ActualArrival field.
-func (o *PortTerminalAddOnExportPlan) SetActualArrival(v time.Time) {
+// SetActualArrival gets a reference to the given string and assigns it to the ActualArrival field.
+func (o *PortTerminalAddOnExportPlan) SetActualArrival(v string) {
 	o.ActualArrival = &v
 }
 
 // GetLatestEtd returns the LatestEtd field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetLatestEtd() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetLatestEtd() string {
 	if o == nil || IsNil(o.LatestEtd) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.LatestEtd
@@ -565,7 +565,7 @@ func (o *PortTerminalAddOnExportPlan) GetLatestEtd() time.Time {
 
 // GetLatestEtdOk returns a tuple with the LatestEtd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetLatestEtdOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetLatestEtdOk() (*string, bool) {
 	if o == nil || IsNil(o.LatestEtd) {
 		return nil, false
 	}
@@ -581,15 +581,15 @@ func (o *PortTerminalAddOnExportPlan) HasLatestEtd() bool {
 	return false
 }
 
-// SetLatestEtd gets a reference to the given time.Time and assigns it to the LatestEtd field.
-func (o *PortTerminalAddOnExportPlan) SetLatestEtd(v time.Time) {
+// SetLatestEtd gets a reference to the given string and assigns it to the LatestEtd field.
+func (o *PortTerminalAddOnExportPlan) SetLatestEtd(v string) {
 	o.LatestEtd = &v
 }
 
 // GetActualDeparture returns the ActualDeparture field value if set, zero value otherwise.
-func (o *PortTerminalAddOnExportPlan) GetActualDeparture() time.Time {
+func (o *PortTerminalAddOnExportPlan) GetActualDeparture() string {
 	if o == nil || IsNil(o.ActualDeparture) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ActualDeparture
@@ -597,7 +597,7 @@ func (o *PortTerminalAddOnExportPlan) GetActualDeparture() time.Time {
 
 // GetActualDepartureOk returns a tuple with the ActualDeparture field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortTerminalAddOnExportPlan) GetActualDepartureOk() (*time.Time, bool) {
+func (o *PortTerminalAddOnExportPlan) GetActualDepartureOk() (*string, bool) {
 	if o == nil || IsNil(o.ActualDeparture) {
 		return nil, false
 	}
@@ -613,8 +613,8 @@ func (o *PortTerminalAddOnExportPlan) HasActualDeparture() bool {
 	return false
 }
 
-// SetActualDeparture gets a reference to the given time.Time and assigns it to the ActualDeparture field.
-func (o *PortTerminalAddOnExportPlan) SetActualDeparture(v time.Time) {
+// SetActualDeparture gets a reference to the given string and assigns it to the ActualDeparture field.
+func (o *PortTerminalAddOnExportPlan) SetActualDeparture(v string) {
 	o.ActualDeparture = &v
 }
 

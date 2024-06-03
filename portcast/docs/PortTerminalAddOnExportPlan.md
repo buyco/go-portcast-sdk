@@ -12,15 +12,15 @@ Name | Type | Description | Notes
 **FacilityName** | Pointer to **string** | Export port terminal name | [optional] 
 **VesselName** | Pointer to **string** | Vessel name of the vessel associated with the export location. | [optional] 
 **VoyageNo** | Pointer to **string** | Voyage Number associated with the export journey, as reported by the Terminal. | [optional] 
-**ErdStandard** | Pointer to **time.Time** | Earliest Receipt Date (ERD) for a standard container, as reported by the terminal - Local Time. | [optional] 
-**ErdReefer** | Pointer to **time.Time** | Earliest Receipt Date (ERD) for a reefer container, as reported by the terminal - Local Time. | [optional] 
+**ErdStandard** | Pointer to **string** | Earliest Receipt Date (ERD) for a standard container, as reported by the terminal - Local Time. | [optional] 
+**ErdReefer** | Pointer to **string** | Earliest Receipt Date (ERD) for a reefer container, as reported by the terminal - Local Time. | [optional] 
 **GateInDate** | Pointer to **string** | Date a container was received at the terminal through the gate, as reported by the terminal - Local Time. | [optional] 
-**PortCutoffStandard** | Pointer to **time.Time** | Last possible date and time for gating-in standard container at the export terminal, as reported by the Terminal - Local Time. | [optional] 
-**PortCutoffReefer** | Pointer to **time.Time** | Last possible date and time for gating-in reefer container at the export terminal, as reported by the terminal - Local Time. | [optional] 
-**LatestEta** | Pointer to **time.Time** | Latest vessel ETA to the export port, as reported by the terminal - Local Time. | [optional] 
-**ActualArrival** | Pointer to **time.Time** | Actual vessel time of arrival, as reported by the terminal - Local Time. | [optional] 
-**LatestEtd** | Pointer to **time.Time** | Latest vessel ETD from the export port, as reported by the terminal - Local Time. | [optional] 
-**ActualDeparture** | Pointer to **time.Time** | Actual vessel time of departure from the export port, as reported by the terminal - Local Time. | [optional] 
+**PortCutoffStandard** | Pointer to **string** | Last possible date and time for gating-in standard container at the export terminal, as reported by the Terminal - Local Time. | [optional] 
+**PortCutoffReefer** | Pointer to **string** | Last possible date and time for gating-in reefer container at the export terminal, as reported by the terminal - Local Time. | [optional] 
+**LatestEta** | Pointer to **string** | Latest vessel ETA to the export port, as reported by the terminal - Local Time. | [optional] 
+**ActualArrival** | Pointer to **string** | Actual vessel time of arrival, as reported by the terminal - Local Time. | [optional] 
+**LatestEtd** | Pointer to **string** | Latest vessel ETD from the export port, as reported by the terminal - Local Time. | [optional] 
+**ActualDeparture** | Pointer to **string** | Actual vessel time of departure from the export port, as reported by the terminal - Local Time. | [optional] 
 
 ## Methods
 
@@ -243,20 +243,20 @@ HasVoyageNo returns a boolean if a field has been set.
 
 ### GetErdStandard
 
-`func (o *PortTerminalAddOnExportPlan) GetErdStandard() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetErdStandard() string`
 
 GetErdStandard returns the ErdStandard field if non-nil, zero value otherwise.
 
 ### GetErdStandardOk
 
-`func (o *PortTerminalAddOnExportPlan) GetErdStandardOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetErdStandardOk() (*string, bool)`
 
 GetErdStandardOk returns a tuple with the ErdStandard field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErdStandard
 
-`func (o *PortTerminalAddOnExportPlan) SetErdStandard(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetErdStandard(v string)`
 
 SetErdStandard sets ErdStandard field to given value.
 
@@ -268,20 +268,20 @@ HasErdStandard returns a boolean if a field has been set.
 
 ### GetErdReefer
 
-`func (o *PortTerminalAddOnExportPlan) GetErdReefer() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetErdReefer() string`
 
 GetErdReefer returns the ErdReefer field if non-nil, zero value otherwise.
 
 ### GetErdReeferOk
 
-`func (o *PortTerminalAddOnExportPlan) GetErdReeferOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetErdReeferOk() (*string, bool)`
 
 GetErdReeferOk returns a tuple with the ErdReefer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErdReefer
 
-`func (o *PortTerminalAddOnExportPlan) SetErdReefer(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetErdReefer(v string)`
 
 SetErdReefer sets ErdReefer field to given value.
 
@@ -318,20 +318,20 @@ HasGateInDate returns a boolean if a field has been set.
 
 ### GetPortCutoffStandard
 
-`func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandard() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandard() string`
 
 GetPortCutoffStandard returns the PortCutoffStandard field if non-nil, zero value otherwise.
 
 ### GetPortCutoffStandardOk
 
-`func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandardOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetPortCutoffStandardOk() (*string, bool)`
 
 GetPortCutoffStandardOk returns a tuple with the PortCutoffStandard field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPortCutoffStandard
 
-`func (o *PortTerminalAddOnExportPlan) SetPortCutoffStandard(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetPortCutoffStandard(v string)`
 
 SetPortCutoffStandard sets PortCutoffStandard field to given value.
 
@@ -343,20 +343,20 @@ HasPortCutoffStandard returns a boolean if a field has been set.
 
 ### GetPortCutoffReefer
 
-`func (o *PortTerminalAddOnExportPlan) GetPortCutoffReefer() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetPortCutoffReefer() string`
 
 GetPortCutoffReefer returns the PortCutoffReefer field if non-nil, zero value otherwise.
 
 ### GetPortCutoffReeferOk
 
-`func (o *PortTerminalAddOnExportPlan) GetPortCutoffReeferOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetPortCutoffReeferOk() (*string, bool)`
 
 GetPortCutoffReeferOk returns a tuple with the PortCutoffReefer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPortCutoffReefer
 
-`func (o *PortTerminalAddOnExportPlan) SetPortCutoffReefer(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetPortCutoffReefer(v string)`
 
 SetPortCutoffReefer sets PortCutoffReefer field to given value.
 
@@ -368,20 +368,20 @@ HasPortCutoffReefer returns a boolean if a field has been set.
 
 ### GetLatestEta
 
-`func (o *PortTerminalAddOnExportPlan) GetLatestEta() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetLatestEta() string`
 
 GetLatestEta returns the LatestEta field if non-nil, zero value otherwise.
 
 ### GetLatestEtaOk
 
-`func (o *PortTerminalAddOnExportPlan) GetLatestEtaOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetLatestEtaOk() (*string, bool)`
 
 GetLatestEtaOk returns a tuple with the LatestEta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLatestEta
 
-`func (o *PortTerminalAddOnExportPlan) SetLatestEta(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetLatestEta(v string)`
 
 SetLatestEta sets LatestEta field to given value.
 
@@ -393,20 +393,20 @@ HasLatestEta returns a boolean if a field has been set.
 
 ### GetActualArrival
 
-`func (o *PortTerminalAddOnExportPlan) GetActualArrival() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetActualArrival() string`
 
 GetActualArrival returns the ActualArrival field if non-nil, zero value otherwise.
 
 ### GetActualArrivalOk
 
-`func (o *PortTerminalAddOnExportPlan) GetActualArrivalOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetActualArrivalOk() (*string, bool)`
 
 GetActualArrivalOk returns a tuple with the ActualArrival field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualArrival
 
-`func (o *PortTerminalAddOnExportPlan) SetActualArrival(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetActualArrival(v string)`
 
 SetActualArrival sets ActualArrival field to given value.
 
@@ -418,20 +418,20 @@ HasActualArrival returns a boolean if a field has been set.
 
 ### GetLatestEtd
 
-`func (o *PortTerminalAddOnExportPlan) GetLatestEtd() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetLatestEtd() string`
 
 GetLatestEtd returns the LatestEtd field if non-nil, zero value otherwise.
 
 ### GetLatestEtdOk
 
-`func (o *PortTerminalAddOnExportPlan) GetLatestEtdOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetLatestEtdOk() (*string, bool)`
 
 GetLatestEtdOk returns a tuple with the LatestEtd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLatestEtd
 
-`func (o *PortTerminalAddOnExportPlan) SetLatestEtd(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetLatestEtd(v string)`
 
 SetLatestEtd sets LatestEtd field to given value.
 
@@ -443,20 +443,20 @@ HasLatestEtd returns a boolean if a field has been set.
 
 ### GetActualDeparture
 
-`func (o *PortTerminalAddOnExportPlan) GetActualDeparture() time.Time`
+`func (o *PortTerminalAddOnExportPlan) GetActualDeparture() string`
 
 GetActualDeparture returns the ActualDeparture field if non-nil, zero value otherwise.
 
 ### GetActualDepartureOk
 
-`func (o *PortTerminalAddOnExportPlan) GetActualDepartureOk() (*time.Time, bool)`
+`func (o *PortTerminalAddOnExportPlan) GetActualDepartureOk() (*string, bool)`
 
 GetActualDepartureOk returns a tuple with the ActualDeparture field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActualDeparture
 
-`func (o *PortTerminalAddOnExportPlan) SetActualDeparture(v time.Time)`
+`func (o *PortTerminalAddOnExportPlan) SetActualDeparture(v string)`
 
 SetActualDeparture sets ActualDeparture field to given value.
 
