@@ -5150,7 +5150,7 @@ components:
         actual_departure:
           description: "Actual vessel time of departure from the export port, as reported\
             \ by the terminal - Local Time."
-          pattern: 2023-06-26T14:15:22Z
+          example: 2023-06-26T14:15:22Z
           type: string
     Port_Terminal_Add_On_import_plan:
       description: Summry of key temrinal events and statuses at the import Port of

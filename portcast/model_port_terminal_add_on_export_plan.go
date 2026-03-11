@@ -54,7 +54,7 @@ type PortTerminalAddOnExportPlan struct {
 	// Latest vessel ETD from the export port, as reported by the terminal - Local Time.
 	LatestEtd *string `json:"latest_etd,omitempty"`
 	// Actual vessel time of departure from the export port, as reported by the terminal - Local Time.
-	ActualDeparture *string `json:"actual_departure,omitempty" validate:"regexp=2023-06-26T14:15:22Z"`
+	ActualDeparture *string `json:"actual_departure,omitempty"`
 }
 
 // NewPortTerminalAddOnExportPlan instantiates a new PortTerminalAddOnExportPlan object

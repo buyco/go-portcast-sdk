@@ -3354,7 +3354,7 @@
                             "actual_departure": {
                                 "type": "string",
                                 "description": "Actual vessel time of departure from the export port, as reported by the terminal - Local Time.",
-                                "pattern": "2023-06-26T14:15:22Z"
+                                "example": "2023-06-26T14:15:22Z"
                             }
                         }
                     },
