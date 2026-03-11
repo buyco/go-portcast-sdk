@@ -29,7 +29,8 @@ type PostEtaBillOfLadingBookmarksRequest struct {
 	// Container Number (ISO6346)
 	CntrNo string `json:"cntr_no"`
 	// A https endpoint for Portcast to push the json object whenever there are updates.
-	CallbackUrl *string `json:"callback_url,omitempty"`
+	CallbackUrl  *string           `json:"callback_url,omitempty"`
+	CustomFields map[string]string `json:"custom_fields,omitempty"`
 }
 
 type _PostEtaBillOfLadingBookmarksRequest PostEtaBillOfLadingBookmarksRequest
@@ -165,6 +166,38 @@ func (o *PostEtaBillOfLadingBookmarksRequest) SetCallbackUrl(v string) {
 	o.CallbackUrl = &v
 }
 
+// GetCustomFields returns the CustomFields field value if set, zero value otherwise.
+func (o *PostEtaBillOfLadingBookmarksRequest) GetCustomFields() map[string]string {
+	if o == nil || IsNil(o.CustomFields) {
+		var ret map[string]string
+		return ret
+	}
+	return o.CustomFields
+}
+
+// GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PostEtaBillOfLadingBookmarksRequest) GetCustomFieldsOk() (map[string]string, bool) {
+	if o == nil || IsNil(o.CustomFields) {
+		return map[string]string{}, false
+	}
+	return o.CustomFields, true
+}
+
+// HasCustomFields returns a boolean if a field has been set.
+func (o *PostEtaBillOfLadingBookmarksRequest) HasCustomFields() bool {
+	if o != nil && !IsNil(o.CustomFields) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *PostEtaBillOfLadingBookmarksRequest) SetCustomFields(v map[string]string) {
+	o.CustomFields = v
+}
+
 func (o PostEtaBillOfLadingBookmarksRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -182,6 +215,9 @@ func (o PostEtaBillOfLadingBookmarksRequest) ToMap() (map[string]interface{}, er
 	toSerialize["cntr_no"] = o.CntrNo
 	if !IsNil(o.CallbackUrl) {
 		toSerialize["callback_url"] = o.CallbackUrl
+	}
+	if !IsNil(o.CustomFields) {
+		toSerialize["custom_fields"] = o.CustomFields
 	}
 	return toSerialize, nil
 }

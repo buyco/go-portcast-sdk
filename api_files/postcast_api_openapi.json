@@ -356,6 +356,12 @@
                                     "callback_url": {
                                         "type": "string",
                                         "description": "A https endpoint for Portcast to push the json object whenever there are updates."
+                                    },
+                                    "custom_fields": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        }
                                     }
                                 },
                                 "required": [

@@ -2288,6 +2288,9 @@ components:
           description: A https endpoint for Portcast to push the json object whenever
             there are updates.
           type: string
+        custom_fields:
+          additionalProperties:
+            type: string
       required:
       - carrier_no
       - cntr_no
