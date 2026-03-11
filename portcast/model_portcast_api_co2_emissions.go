@@ -20,13 +20,13 @@ var _ MappedNullable = &PortcastAPICo2Emissions{}
 
 // PortcastAPICo2Emissions Carbon Dioxide Emmissions Details
 type PortcastAPICo2Emissions struct {
-	// Total emissions for each container:   (gm/ TEU)    Sum of the emissions derived from WTT and TTW analyses. This offers the carbon footprint associated with the entire lifecycle of the shipped goods.  
+	// Total emissions for each container:   (gm/ TEU)    Sum of the emissions derived from WTT and TTW analyses. This offers the carbon footprint associated with the entire lifecycle of the shipped goods.
 	Total NullableInt32 `json:"total,omitempty"`
-	// Well-to-Tank (WTT) monitoring:   (gm/ TEU)    Measurement of carbon emissions across the entire fuel supply chain; that is, the energy required to extract, produce, and transport a fuel from its source.  
+	// Well-to-Tank (WTT) monitoring:   (gm/ TEU)    Measurement of carbon emissions across the entire fuel supply chain; that is, the energy required to extract, produce, and transport a fuel from its source.
 	Wtt NullableInt32 `json:"wtt,omitempty"`
-	// Tank-to-Wheels (TTW) monitoring:   (gm/ TEU)    Measurement of emissions generated during the actual vessel operation, providing a real-time understanding of carbon output during voyages.  
+	// Tank-to-Wheels (TTW) monitoring:   (gm/ TEU)    Measurement of emissions generated during the actual vessel operation, providing a real-time understanding of carbon output during voyages.
 	Ttw NullableInt32 `json:"ttw,omitempty"`
-	// Co2e intensity:   (kg/ ton-km)    Signifies the carbon efficiency for each container, thus empowering stakeholders to define actions on reducing emissions.  
+	// Co2e intensity:   (kg/ ton-km)    Signifies the carbon efficiency for each container, thus empowering stakeholders to define actions on reducing emissions.
 	Intensity NullableFloat32 `json:"intensity,omitempty"`
 }
 
@@ -79,6 +79,7 @@ func (o *PortcastAPICo2Emissions) HasTotal() bool {
 func (o *PortcastAPICo2Emissions) SetTotal(v int32) {
 	o.Total.Set(&v)
 }
+
 // SetTotalNil sets the value for Total to be an explicit nil
 func (o *PortcastAPICo2Emissions) SetTotalNil() {
 	o.Total.Set(nil)
@@ -121,6 +122,7 @@ func (o *PortcastAPICo2Emissions) HasWtt() bool {
 func (o *PortcastAPICo2Emissions) SetWtt(v int32) {
 	o.Wtt.Set(&v)
 }
+
 // SetWttNil sets the value for Wtt to be an explicit nil
 func (o *PortcastAPICo2Emissions) SetWttNil() {
 	o.Wtt.Set(nil)
@@ -163,6 +165,7 @@ func (o *PortcastAPICo2Emissions) HasTtw() bool {
 func (o *PortcastAPICo2Emissions) SetTtw(v int32) {
 	o.Ttw.Set(&v)
 }
+
 // SetTtwNil sets the value for Ttw to be an explicit nil
 func (o *PortcastAPICo2Emissions) SetTtwNil() {
 	o.Ttw.Set(nil)
@@ -205,6 +208,7 @@ func (o *PortcastAPICo2Emissions) HasIntensity() bool {
 func (o *PortcastAPICo2Emissions) SetIntensity(v float32) {
 	o.Intensity.Set(&v)
 }
+
 // SetIntensityNil sets the value for Intensity to be an explicit nil
 func (o *PortcastAPICo2Emissions) SetIntensityNil() {
 	o.Intensity.Set(nil)
@@ -216,7 +220,7 @@ func (o *PortcastAPICo2Emissions) UnsetIntensity() {
 }
 
 func (o PortcastAPICo2Emissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,5 +279,3 @@ func (v *NullablePortcastAPICo2Emissions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,7 +20,7 @@ var _ MappedNullable = &SailingInfoTrackingStatusInfoPrediction{}
 
 // SailingInfoTrackingStatusInfoPrediction Status Defination related to the [Prediction Engine](docs/Portcast-Status-Codes.md)
 type SailingInfoTrackingStatusInfoPrediction struct {
-	Code *string `json:"code,omitempty"`
+	Code     *string  `json:"code,omitempty"`
 	Metadata []string `json:"metadata,omitempty"`
 }
 
@@ -110,7 +110,7 @@ func (o *SailingInfoTrackingStatusInfoPrediction) SetMetadata(v []string) {
 }
 
 func (o SailingInfoTrackingStatusInfoPrediction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,5 +163,3 @@ func (v *NullableSailingInfoTrackingStatusInfoPrediction) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

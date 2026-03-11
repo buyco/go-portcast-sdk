@@ -86,6 +86,7 @@ func (o *SailingInfoTrackingAis) HasCourse() bool {
 func (o *SailingInfoTrackingAis) SetCourse(v float32) {
 	o.Course.Set(&v)
 }
+
 // SetCourseNil sets the value for Course to be an explicit nil
 func (o *SailingInfoTrackingAis) SetCourseNil() {
 	o.Course.Set(nil)
@@ -128,6 +129,7 @@ func (o *SailingInfoTrackingAis) HasImo() bool {
 func (o *SailingInfoTrackingAis) SetImo(v string) {
 	o.Imo.Set(&v)
 }
+
 // SetImoNil sets the value for Imo to be an explicit nil
 func (o *SailingInfoTrackingAis) SetImoNil() {
 	o.Imo.Set(nil)
@@ -170,6 +172,7 @@ func (o *SailingInfoTrackingAis) HasLat() bool {
 func (o *SailingInfoTrackingAis) SetLat(v float32) {
 	o.Lat.Set(&v)
 }
+
 // SetLatNil sets the value for Lat to be an explicit nil
 func (o *SailingInfoTrackingAis) SetLatNil() {
 	o.Lat.Set(nil)
@@ -212,6 +215,7 @@ func (o *SailingInfoTrackingAis) HasLon() bool {
 func (o *SailingInfoTrackingAis) SetLon(v float32) {
 	o.Lon.Set(&v)
 }
+
 // SetLonNil sets the value for Lon to be an explicit nil
 func (o *SailingInfoTrackingAis) SetLonNil() {
 	o.Lon.Set(nil)
@@ -254,6 +258,7 @@ func (o *SailingInfoTrackingAis) HasSpeedNm() bool {
 func (o *SailingInfoTrackingAis) SetSpeedNm(v float32) {
 	o.SpeedNm.Set(&v)
 }
+
 // SetSpeedNmNil sets the value for SpeedNm to be an explicit nil
 func (o *SailingInfoTrackingAis) SetSpeedNmNil() {
 	o.SpeedNm.Set(nil)
@@ -296,6 +301,7 @@ func (o *SailingInfoTrackingAis) HasStatus() bool {
 func (o *SailingInfoTrackingAis) SetStatus(v int32) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *SailingInfoTrackingAis) SetStatusNil() {
 	o.Status.Set(nil)
@@ -338,6 +344,7 @@ func (o *SailingInfoTrackingAis) HasTimestampUtc() bool {
 func (o *SailingInfoTrackingAis) SetTimestampUtc(v time.Time) {
 	o.TimestampUtc.Set(&v)
 }
+
 // SetTimestampUtcNil sets the value for TimestampUtc to be an explicit nil
 func (o *SailingInfoTrackingAis) SetTimestampUtcNil() {
 	o.TimestampUtc.Set(nil)
@@ -349,7 +356,7 @@ func (o *SailingInfoTrackingAis) UnsetTimestampUtc() {
 }
 
 func (o SailingInfoTrackingAis) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -417,5 +424,3 @@ func (v *NullableSailingInfoTrackingAis) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

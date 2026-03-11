@@ -86,6 +86,16 @@ SetObjList sets ObjList field to given value.
 
 HasObjList returns a boolean if a field has been set.
 
+### SetObjListNil
+
+`func (o *ListApiV1EtaBillOfLadingBookmarks200Response) SetObjListNil(b bool)`
+
+ SetObjListNil sets the value for ObjList to be an explicit nil
+
+### UnsetObjList
+`func (o *ListApiV1EtaBillOfLadingBookmarks200Response) UnsetObjList()`
+
+UnsetObjList ensures that no value is present for ObjList, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,8 +12,8 @@ Contact: support@portcast.io
 package portcast
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -29,7 +29,8 @@ type PostBookingRequest struct {
 	// Document number type: BK (Booking) or BL (Bill of Lading)
 	DocType string `json:"doc_type"`
 	// A https endpoint for Portcast to push the json object whenever there are updates.
-	CallbackUrl *string `json:"callback_url,omitempty"`
+	CallbackUrl  *string           `json:"callback_url,omitempty"`
+	CustomFields map[string]string `json:"custom_fields,omitempty"`
 }
 
 type _PostBookingRequest PostBookingRequest
@@ -158,8 +159,40 @@ func (o *PostBookingRequest) SetCallbackUrl(v string) {
 	o.CallbackUrl = &v
 }
 
+// GetCustomFields returns the CustomFields field value if set, zero value otherwise.
+func (o *PostBookingRequest) GetCustomFields() map[string]string {
+	if o == nil || IsNil(o.CustomFields) {
+		var ret map[string]string
+		return ret
+	}
+	return o.CustomFields
+}
+
+// GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PostBookingRequest) GetCustomFieldsOk() (map[string]string, bool) {
+	if o == nil || IsNil(o.CustomFields) {
+		return map[string]string{}, false
+	}
+	return o.CustomFields, true
+}
+
+// HasCustomFields returns a boolean if a field has been set.
+func (o *PostBookingRequest) HasCustomFields() bool {
+	if o != nil && !IsNil(o.CustomFields) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *PostBookingRequest) SetCustomFields(v map[string]string) {
+	o.CustomFields = v
+}
+
 func (o PostBookingRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -173,6 +206,9 @@ func (o PostBookingRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["doc_type"] = o.DocType
 	if !IsNil(o.CallbackUrl) {
 		toSerialize["callback_url"] = o.CallbackUrl
+	}
+	if !IsNil(o.CustomFields) {
+		toSerialize["custom_fields"] = o.CustomFields
 	}
 	return toSerialize, nil
 }
@@ -192,10 +228,10 @@ func (o *PostBookingRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -251,5 +287,3 @@ func (v *NullablePostBookingRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

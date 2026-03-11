@@ -38,25 +38,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CustomersResponse'
+                $ref: "#/components/schemas/CustomersResponse"
           description: Successful response
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthError'
+                $ref: "#/components/schemas/AuthError"
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MessageModel'
+                $ref: "#/components/schemas/MessageModel"
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MessageModel'
+                $ref: "#/components/schemas/MessageModel"
           description: Internal server error / Unexpected error
       security:
       - x-api-key: []
@@ -69,38 +69,38 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CustomerRequest'
+              $ref: "#/components/schemas/CustomerRequest"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Customer'
+                $ref: "#/components/schemas/Customer"
           description: Successful response
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MessageModel'
+                $ref: "#/components/schemas/MessageModel"
           description: Bad Request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthError'
+                $ref: "#/components/schemas/AuthError"
           description: Invalid API key
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MessageModel'
+                $ref: "#/components/schemas/MessageModel"
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MessageModel'
+                $ref: "#/components/schemas/MessageModel"
           description: Internal server error / Unexpect error
       security:
       - x-api-key: []
@@ -139,7 +139,7 @@ paths:
                   bl_no: MXO0630199
                   cntr_no: SEKU5684297
             schema:
-              $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_request'
+              $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_request"
         description: Upload Parameters
       responses:
         "200":
@@ -147,7 +147,7 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_200_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_200_response"
           description: |-
             #### Upload Successful
 
@@ -176,7 +176,7 @@ paths:
                   value:
                     message: Invalid Carrier Number
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_400_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_400_response"
           description: |-
             #### Bad Request
 
@@ -198,7 +198,7 @@ paths:
                   value:
                     error: Not authorized
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response"
           description: |-
             #### Unauthorized Access
             You've provided an incorrect API Key. <br>
@@ -213,7 +213,7 @@ paths:
                   value:
                     message: API Quota Exceeded
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_403_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_403_response"
           description: |-
             #### API Quota Exceeded
 
@@ -231,7 +231,7 @@ paths:
                     previous_ids:
                     - c7ca3acb-aa73-40c8-884d-928b9a5aceac
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_409_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_409_response"
           description: |-
             #### Duplicate Upload ~ Record Already Exists
 
@@ -285,14 +285,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/post_booking_request'
+              $ref: "#/components/schemas/post_booking_request"
         description: Upload Parameters
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Booking_API'
+                $ref: "#/components/schemas/Booking_API"
           description: |-
             #### Upload Successful
 
@@ -315,7 +315,7 @@ paths:
                     message: "invalid payload, please refer to the detailed schema\
                       \ in documentation"
               schema:
-                $ref: '#/components/schemas/post_booking_400_response'
+                $ref: "#/components/schemas/post_booking_400_response"
           description: |-
             #### Bad Request
 
@@ -337,7 +337,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_403_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_403_response"
           description: |-
             #### API Quota Exceeded
 
@@ -353,7 +353,7 @@ paths:
                   value:
                     message: Master org is not allowed to perform this action
               schema:
-                $ref: '#/components/schemas/post_booking_422_response'
+                $ref: "#/components/schemas/post_booking_422_response"
           description: |-
             #### [Enterprise customers] Action not available for Master Orgs
 
@@ -441,7 +441,7 @@ paths:
             application/json:
               examples: {}
               schema:
-                $ref: '#/components/schemas/list_api_v1_eta_bill_of_lading_bookmarks_200_response'
+                $ref: "#/components/schemas/list_api_v1_eta_bill_of_lading_bookmarks_200_response"
           description: |-
             #### Successfully queried for Tracking Data
 
@@ -452,7 +452,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/list_api_v1_eta_bill_of_lading_bookmarks_400_response'
+                $ref: "#/components/schemas/list_api_v1_eta_bill_of_lading_bookmarks_400_response"
           description: |-
             #### Bad Request
 
@@ -470,7 +470,7 @@ paths:
                   value:
                     error: Not authorized
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response"
           description: |-
             #### Unauthorized Access
             You've provided an incorrect API Key. <br>
@@ -515,7 +515,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_200_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_200_response"
           description: "#### Successfully retreived the tracking data\nThe API result\
             \ consists of 4 major parts:\n1. Bill of Lading Bookmark: Summary of the\
             \ Bookmark ID metadata\n2. Bill of Lading: Summary of major events that\
@@ -529,7 +529,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_400_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_400_response"
           description: |-
             #### Bad Request
 
@@ -548,7 +548,7 @@ paths:
                   value:
                     error: Not authorized
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response"
           description: |-
             #### Unauthorized Access
             You've provided an incorrect API Key. <br>
@@ -559,7 +559,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_404_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_404_response"
           description: |-
             #### Bill of Lading ID not Found
 
@@ -625,7 +625,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Port_Terminal_Add_On'
+                allOf:
+                - $ref: "#/components/schemas/Port_Terminal_Add_On"
+                description: Portcast Tracking Data
           description: |-
             #### Successfully retreived the tracking data
             The API result consists of two major parts:
@@ -635,7 +637,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_400_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_400_response"
           description: |-
             #### Bad Request
 
@@ -654,7 +656,7 @@ paths:
                   value:
                     error: Not authorized
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response"
           description: |-
             #### Unauthorized Access
             You've provided an incorrect API Key. <br>
@@ -665,7 +667,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_403_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_403_response"
           description: "Forbidden: Access to this feature is not granted to the customer.\r\
             \n\r\nPlease reach out to your account manager or support@portcast.io\
             \ to have this feature enabled."
@@ -673,7 +675,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_404_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_404_response"
           description: |-
             #### Bill of Lading ID not Found
 
@@ -750,7 +752,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/delete_tracking_bill_of_lading_bookmarks_bookmark_id_200_response'
+                $ref: "#/components/schemas/delete_tracking_bill_of_lading_bookmarks_bookmark_id_200_response"
           description: |-
             ## Successful Operation
 
@@ -759,7 +761,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_400_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_400_response"
           description: |-
             #### Bad Request
 
@@ -778,7 +780,7 @@ paths:
                   value:
                     error: Not authorized
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response"
           description: |-
             #### Unauthorized Access
             You've provided an incorrect API Key. <br>
@@ -789,7 +791,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_404_response'
+                $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_404_response"
           description: |-
             #### Bill of Lading ID not Found
 
@@ -827,7 +829,7 @@ paths:
               examples: {}
               schema:
                 items:
-                  $ref: '#/components/schemas/get_scac_200_response_inner'
+                  $ref: "#/components/schemas/get_scac_200_response_inner"
                 type: array
           description: Successfully responded with the supported SCAC codes
         "401":
@@ -838,7 +840,7 @@ paths:
                   value:
                     error: Not authorized
               schema:
-                $ref: '#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response'
+                $ref: "#/components/schemas/post_eta_bill_of_lading_bookmarks_401_response"
           description: |-
             #### Unauthorized Access
             You've provided an incorrect API Key. <br>
@@ -881,7 +883,7 @@ components:
       - name
     CustomersResponse:
       items:
-        $ref: '#/components/schemas/Customer'
+        $ref: "#/components/schemas/Customer"
       type: array
     CustomerRequest:
       example:
@@ -895,21 +897,7 @@ components:
       description: Portcast Container Visibility API
       example:
         msg: Obtained latest bill of lading and container tracking information
-        bill_of_lading_bookmark:
-          bl_no: ONEYANRB31646600
-          cntr_no: TLLU1181321
-          deleted: false
-          status_code: status_code
-          created: 2000-01-23T04:56:07.000+00:00
-          org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-          status_info:
-            metadata: []
-            code: UPLOADED
-          carrier_no: ONEY
-          id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-          system_deleted: false
-          updated: 2000-01-23T04:56:07.000+00:00
-          status: status
+        bill_of_lading_bookmark: ""
         container_event_list:
         - created: 2000-01-23T04:56:07.000+00:00
           event_raw: Empty container pick-up
@@ -1178,12 +1166,7 @@ components:
             lat: 38.45494
             predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
             port_code: ITGIT
-        container_metadata:
-          external_width_ft: 7.99
-          cntr_no: TLLU1181321
-          detail_st: 42G1
-          external_height_ft: 8.51
-          external_length_ft: 40
+        container_metadata: ""
         response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
         org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
         success: true
@@ -1192,45 +1175,7 @@ components:
           - LATEST_PREDICTIONS_WARNING
           - LATEST_PREDICTIONS_WARNING
           code: SUCCESS
-        bill_of_lading:
-          bl_no: COSU6349613240
-          cntr_no: BMOU1589176
-          pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-          pod: GHTEM
-          pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-          place_of_delivery_name: NORFOLK
-          place_of_receipt_name: TEMA
-          pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-          pol_actual_departure_lt: pol_actual_departure_lt
-          pol: USORF
-          pol_scheduled_departure_lt: pol_scheduled_departure_lt
-          pod_actual_arrival_lt: pod_actual_arrival_lt
-          pod_actual_discharge_lt: pod_actual_discharge_lt
-          pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-          pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-          id: 16caa040-f582-4c15-88c9-2e80437e7916
-          pol_predicted_arrival_lt: pol_predicted_arrival_lt
-          pod_predicted_arrival_lt: pod_predicted_arrival_lt
-          pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-          place_of_delivery: USORF
-          pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-          pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-          created: 2000-01-23T04:56:07.000+00:00
-          pol_name: NORFOLK
-          pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-          pod_name: TEMA
-          place_of_receipt: GHTEM
-          pod_predicted_departure_lt: pod_predicted_departure_lt
-          pol_terminal_name: PPCY EMPTY DEPOT
-          pol_scheduled_loading_lt: pol_scheduled_loading_lt
-          carrier_no: COSU
-          pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-          pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-          pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-          updated: 2000-01-23T04:56:07.000+00:00
-          pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-          pol_actual_loading_lt: pol_actual_loading_lt
-          pol_predicted_departure_lt: pol_predicted_departure_lt
+        bill_of_lading: ""
         delay_lists:
         - port_name: XIAMEN
           reason_code: RLV
@@ -1289,21 +1234,29 @@ components:
           ttw: 1
       properties:
         bill_of_lading:
-          $ref: '#/components/schemas/Bill_of_Lading'
+          allOf:
+          - $ref: "#/components/schemas/Bill_of_Lading"
+          description: "Summary of the shipment's Predicted, Scheduled and Actual\
+            \ Events that happen at the POL and POD"
         bill_of_lading_bookmark:
-          $ref: '#/components/schemas/Bill_of_Lading_Bookmark'
+          allOf:
+          - $ref: "#/components/schemas/Bill_of_Lading_Bookmark"
+          description: Summary of the Bookmark ID Metadata
         container_event_list:
           description: Container Events List for the tracked shipment
           items:
-            $ref: '#/components/schemas/Container_Event'
+            $ref: "#/components/schemas/Container_Event"
           type: array
         container_metadata:
-          $ref: '#/components/schemas/Container_Metadata'
+          allOf:
+          - $ref: "#/components/schemas/Container_Metadata"
+          x-stoplight:
+            id: u26iyhpqljsjv
         co2_emissions:
-          $ref: '#/components/schemas/Portcast_API_co2_emissions'
+          $ref: "#/components/schemas/Portcast_API_co2_emissions"
         delay_lists:
           items:
-            $ref: '#/components/schemas/Delay_Reasons'
+            $ref: "#/components/schemas/Delay_Reasons"
           type: array
           x-stoplight:
             id: i6ufoxjznqd8e
@@ -1326,10 +1279,10 @@ components:
         sailing_info_tracking:
           description: Detailed Tracking Information for each leg of the journey
           items:
-            $ref: '#/components/schemas/Sailing_Info_Tracking'
+            $ref: "#/components/schemas/Sailing_Info_Tracking"
           type: array
         status_info:
-          $ref: '#/components/schemas/Portcast_API_status_info'
+          $ref: "#/components/schemas/Portcast_API_status_info"
         success:
           description: Tracking Status
           type: boolean
@@ -1338,45 +1291,6 @@ components:
         id: 9afab104cb311
     Bill_of_Lading:
       description: Schema for Bill of Lading Object
-      example:
-        bl_no: COSU6349613240
-        cntr_no: BMOU1589176
-        pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-        pod: GHTEM
-        pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-        place_of_delivery_name: NORFOLK
-        place_of_receipt_name: TEMA
-        pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-        pol_actual_departure_lt: pol_actual_departure_lt
-        pol: USORF
-        pol_scheduled_departure_lt: pol_scheduled_departure_lt
-        pod_actual_arrival_lt: pod_actual_arrival_lt
-        pod_actual_discharge_lt: pod_actual_discharge_lt
-        pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-        pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-        id: 16caa040-f582-4c15-88c9-2e80437e7916
-        pol_predicted_arrival_lt: pol_predicted_arrival_lt
-        pod_predicted_arrival_lt: pod_predicted_arrival_lt
-        pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-        place_of_delivery: USORF
-        pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-        pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-        created: 2000-01-23T04:56:07.000+00:00
-        pol_name: NORFOLK
-        pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-        pod_name: TEMA
-        place_of_receipt: GHTEM
-        pod_predicted_departure_lt: pod_predicted_departure_lt
-        pol_terminal_name: PPCY EMPTY DEPOT
-        pol_scheduled_loading_lt: pol_scheduled_loading_lt
-        carrier_no: COSU
-        pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-        pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-        pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-        updated: 2000-01-23T04:56:07.000+00:00
-        pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-        pol_actual_loading_lt: pol_actual_loading_lt
-        pol_predicted_departure_lt: pol_predicted_departure_lt
       properties:
         bl_no:
           description: Bill of Lading or Booking Number
@@ -1625,7 +1539,7 @@ components:
           description: "[Depricated] Old Status codes - Not supported"
           type: string
         status_info:
-          $ref: '#/components/schemas/Bill_of_Lading_Bookmark_status_info'
+          $ref: "#/components/schemas/Bill_of_Lading_Bookmark_status_info"
         system_deleted:
           default: false
           description: System Deletion Status of the bookmark
@@ -1771,7 +1685,7 @@ components:
           nullable: true
           type: string
         terminal_details:
-          $ref: '#/components/schemas/Container_Event_terminal_details'
+          $ref: "#/components/schemas/Container_Event_terminal_details"
         updated:
           description: Container Event Object Updated Date
           format: date-time
@@ -1789,12 +1703,6 @@ components:
       title: Container Event
     Container_Metadata:
       description: Schema for container metadata information
-      example:
-        external_width_ft: 7.99
-        cntr_no: TLLU1181321
-        detail_st: 42G1
-        external_height_ft: 8.51
-        external_length_ft: 40
       properties:
         cntr_no:
           description: Container Number
@@ -1897,15 +1805,15 @@ components:
           - PRC
           type: string
         rotation_change:
-          $ref: '#/components/schemas/Delay_Reasons_rotation_change'
+          $ref: "#/components/schemas/Delay_Reasons_rotation_change"
         schedule_change:
           description: "Detailed view into impact of delay incidents into the container's\
             \ arrival at POD, loading and departure events."
           items:
-            $ref: '#/components/schemas/Delay_Reasons_schedule_change_inner'
+            $ref: "#/components/schemas/Delay_Reasons_schedule_change_inner"
           type: array
         vessel_change:
-          $ref: '#/components/schemas/Delay_Reasons_vessel_change'
+          $ref: "#/components/schemas/Delay_Reasons_vessel_change"
       title: Delay Reasons
     Sailing_Info_Tracking:
       description: Schema for Sailing Info Tracking
@@ -2025,17 +1933,18 @@ components:
           port_code: ITGIT
       properties:
         ais:
-          $ref: '#/components/schemas/Sailing_Info_Tracking_ais'
+          $ref: "#/components/schemas/Sailing_Info_Tracking_ais"
         sailing_info:
-          $ref: '#/components/schemas/Sailing_Info_Tracking_sailing_info'
+          $ref: "#/components/schemas/Sailing_Info_Tracking_sailing_info"
         status_info:
-          $ref: '#/components/schemas/Sailing_Info_Tracking_status_info'
+          $ref: "#/components/schemas/Sailing_Info_Tracking_status_info"
         voyage_details:
           description: Sailing Schedule for the vessel between the starting and target
             port of this specific leg of the journey
           items:
-            $ref: '#/components/schemas/Voyage_Details'
+            $ref: "#/components/schemas/Voyage_Details"
           type: array
+          uniqueItems: true
         msg:
           description: Details on AIS Data fetch
           enum:
@@ -2211,38 +2120,10 @@ components:
             location: 1
         response:
         - container: container
-          obj:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
+          obj: ""
           status: status
         - container: container
-          obj:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
+          obj: ""
           status: status
         containers:
         - TLLU1181321
@@ -2310,65 +2191,23 @@ components:
         response:
           description: Bill of Lading Bookmarks Created List
           items:
-            $ref: '#/components/schemas/Booking_API_response_inner'
+            $ref: "#/components/schemas/Booking_API_response_inner"
           type: array
         route:
-          $ref: '#/components/schemas/Booking_API_route'
+          $ref: "#/components/schemas/Booking_API_route"
         locations:
           description: List of Locations the booking will visit
           items:
-            $ref: '#/components/schemas/Booking_API_locations_inner'
+            $ref: "#/components/schemas/Booking_API_locations_inner"
           type: array
         vessels:
           description: List of Vessels the booking will operate on
           items:
-            $ref: '#/components/schemas/Booking_API_vessels_inner'
+            $ref: "#/components/schemas/Booking_API_vessels_inner"
           type: array
       title: Booking Upload API
     Port_Terminal_Add_On:
       description: Portcast Port Terminal Data Add On
-      example:
-        bl_no: COSU6349613240
-        cntr_no: BMOU1589176
-        export_plan:
-          voyage_no: CG303R
-          port_cutoff_reefer: 2023-06-23T14:15:22Z
-          erd_standard: 2023-06-24T14:15:22Z
-          latest_etd: 2023-06-26T14:15:22Z
-          facility_code: PSAPP1
-          vessel_name: GEMLIK EXPRESS
-          facility_name: Pasir Panjang Terminal 1
-          latest_eta: 2023-06-24T14:15:22Z
-          port_name: Port of Singapore
-          actual_arrival: 2023-06-24T14:15:22Z
-          gate_in_date: 2023-06-21T14:15:22Z
-          port_cutoff_standard: 2023-06-23T14:15:22Z
-          erd_reefer: 2023-06-24T14:15:22Z
-          actual_departure: actual_departure
-          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          updated: 2000-01-23T04:56:07.000+00:00
-          port_code: SGSIN
-        bill_of_lading_bookmark_id: 16caa040-f582-4c15-88c9-2e80437e7916
-        import_plan:
-          yard_location: Yard Grounded (TIS-2A16543)
-          last_free_day: 2023-08-20
-          voyage_no: CG304E
-          discharge_date: 2023-08-14T14:15:22Z
-          pickup_appointment_date: 2023-08-21T14:15:22Z
-          facility_code: RWG
-          vessel_name: MAERSK EMERALD
-          facility_name: Rotterdam World Gateway
-          gate_out_date: 2023-08-21T14:15:22Z
-          latest_eta: 2023-08-15T14:15:22Z
-          ready_for_delivery: "TRUE"
-          port_name: Port of Rotterdam
-          container_holds: "CTF,CUSTOMS,LINE,TMF"
-          container_status: Yard
-          demurrage_owed: "1,200"
-          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          updated: 2000-01-23T04:56:07.000+00:00
-          port_code: NLRTM
-          appointment_set: "TRUE"
       properties:
         bill_of_lading_bookmark_id:
           description: "Unique Identifier called Bill of Lading Bookmark ID [Primary\
@@ -2385,9 +2224,9 @@ components:
           example: COSU6349613240
           type: string
         export_plan:
-          $ref: '#/components/schemas/Port_Terminal_Add_On_export_plan'
+          $ref: "#/components/schemas/Port_Terminal_Add_On_export_plan"
         import_plan:
-          $ref: '#/components/schemas/Port_Terminal_Add_On_import_plan'
+          $ref: "#/components/schemas/Port_Terminal_Add_On_import_plan"
       title: Terminal Data Add-on
       x-examples:
         Example 1:
@@ -2471,7 +2310,7 @@ components:
           status: status
       properties:
         obj:
-          $ref: '#/components/schemas/Bill_of_Lading_Bookmark'
+          $ref: "#/components/schemas/Bill_of_Lading_Bookmark"
     post_eta_bill_of_lading_bookmarks_400_response:
       example:
         message: "invalid payload, please refer to the detailed schema in documentation"
@@ -2515,6 +2354,7 @@ components:
             type: string
           minItems: 1
           type: array
+          uniqueItems: true
     post_booking_request:
       properties:
         carrier_no:
@@ -2533,6 +2373,9 @@ components:
           description: A https endpoint for Portcast to push the json object whenever
             there are updates.
           type: string
+        custom_fields:
+          additionalProperties:
+            type: string
       required:
       - carrier_no
       - doc_no
@@ -2557,21 +2400,7 @@ components:
       example:
         obj_list:
         - msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
+          bill_of_lading_bookmark: ""
           container_event_list:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
@@ -2840,12 +2669,7 @@ components:
               lat: 38.45494
               predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
+          container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
@@ -2854,45 +2678,7 @@ components:
             - LATEST_PREDICTIONS_WARNING
             - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-            pol_actual_departure_lt: pol_actual_departure_lt
-            pol: USORF
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
-            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-            pol_actual_loading_lt: pol_actual_loading_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+          bill_of_lading: ""
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -2950,21 +2736,7 @@ components:
             wtt: 6
             ttw: 1
         - msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
+          bill_of_lading_bookmark: ""
           container_event_list:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
@@ -3233,12 +3005,7 @@ components:
               lat: 38.45494
               predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
+          container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
@@ -3247,45 +3014,7 @@ components:
             - LATEST_PREDICTIONS_WARNING
             - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-            pol_actual_departure_lt: pol_actual_departure_lt
-            pol: USORF
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
-            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-            pol_actual_loading_lt: pol_actual_loading_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+          bill_of_lading: ""
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -3343,21 +3072,7 @@ components:
             wtt: 6
             ttw: 1
         - msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
+          bill_of_lading_bookmark: ""
           container_event_list:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
@@ -3626,12 +3341,7 @@ components:
               lat: 38.45494
               predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
+          container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
@@ -3640,45 +3350,7 @@ components:
             - LATEST_PREDICTIONS_WARNING
             - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-            pol_actual_departure_lt: pol_actual_departure_lt
-            pol: USORF
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
-            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-            pol_actual_loading_lt: pol_actual_loading_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+          bill_of_lading: ""
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -3736,21 +3408,7 @@ components:
             wtt: 6
             ttw: 1
         - msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
+          bill_of_lading_bookmark: ""
           container_event_list:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
@@ -4019,12 +3677,7 @@ components:
               lat: 38.45494
               predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
+          container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
@@ -4033,45 +3686,7 @@ components:
             - LATEST_PREDICTIONS_WARNING
             - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-            pol_actual_departure_lt: pol_actual_departure_lt
-            pol: USORF
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
-            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-            pol_actual_loading_lt: pol_actual_loading_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+          bill_of_lading: ""
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -4129,21 +3744,7 @@ components:
             wtt: 6
             ttw: 1
         - msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
+          bill_of_lading_bookmark: ""
           container_event_list:
           - created: 2000-01-23T04:56:07.000+00:00
             event_raw: Empty container pick-up
@@ -4412,12 +4013,7 @@ components:
               lat: 38.45494
               predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
               port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
+          container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
           success: true
@@ -4426,45 +4022,7 @@ components:
             - LATEST_PREDICTIONS_WARNING
             - LATEST_PREDICTIONS_WARNING
             code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-            pol_actual_departure_lt: pol_actual_departure_lt
-            pol: USORF
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
-            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-            pol_actual_loading_lt: pol_actual_loading_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
+          bill_of_lading: ""
           delay_lists:
           - port_name: XIAMEN
             reason_code: RLV
@@ -4530,10 +4088,12 @@ components:
           type: string
         obj_list:
           items:
-            $ref: '#/components/schemas/Portcast_API'
+            $ref: "#/components/schemas/Portcast_API"
           maxItems: 5
           minItems: 0
+          nullable: true
           type: array
+          uniqueItems: true
       x-examples:
         Example 1:
           _ended_at: 023c1c44-ff6d-4140-a8ff-7c75f8baa99c
@@ -4548,403 +4108,13 @@ components:
     get_api_v1_eta_bill_of_lading_bookmarks_200_response:
       description: Portcast Tracking Data
       example:
-        obj:
-          msg: Obtained latest bill of lading and container tracking information
-          bill_of_lading_bookmark:
-            bl_no: ONEYANRB31646600
-            cntr_no: TLLU1181321
-            deleted: false
-            status_code: status_code
-            created: 2000-01-23T04:56:07.000+00:00
-            org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            status_info:
-              metadata: []
-              code: UPLOADED
-            carrier_no: ONEY
-            id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-            system_deleted: false
-            updated: 2000-01-23T04:56:07.000+00:00
-            status: status
-          container_event_list:
-          - created: 2000-01-23T04:56:07.000+00:00
-            event_raw: Empty container pick-up
-            vessel_imo: 9751107
-            event_time_estimated: 2023-12-29T00:00:00
-            event_type_code: PICKUP
-            terminal_details:
-              terminal_code_source: BIC
-              terminal_name: XIAMEN OCEAN GATE TERMINAL
-              terminal_code: XOGT
-            vessel_name: GEMLIK EXPRESS
-            event_type_name: Empty container pick-up
-            mode_of_transport: TRUCK
-            port_name: XIAMEN
-            location_raw: Xiamen
-            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
-            location_type_name: Place of receipt
-            location_type_code: POR
-            updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2023-12-29T00:00:00
-            port_code: CNXMG
-          - created: 2000-01-23T04:56:07.000+00:00
-            event_raw: Empty container pick-up
-            vessel_imo: 9751107
-            event_time_estimated: 2023-12-29T00:00:00
-            event_type_code: PICKUP
-            terminal_details:
-              terminal_code_source: BIC
-              terminal_name: XIAMEN OCEAN GATE TERMINAL
-              terminal_code: XOGT
-            vessel_name: GEMLIK EXPRESS
-            event_type_name: Empty container pick-up
-            mode_of_transport: TRUCK
-            port_name: XIAMEN
-            location_raw: Xiamen
-            id: c5f7acd1-28e6-4d98-996f-c214418adcc3
-            location_type_name: Place of receipt
-            location_type_code: POR
-            updated: 2000-01-23T04:56:07.000+00:00
-            event_time: 2023-12-29T00:00:00
-            port_code: CNXMG
-          sailing_info_tracking:
-          - msg: AIS successfully fetched
-            success: true
-            sailing_info:
-              vessel_flag: SG
-              voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-              pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-              imo: "9306172"
-              pol_actual_departure_lt: pol_actual_departure_lt
-              pol: USHOU
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
-              pod_actual_arrival_lt: pod_actual_arrival_lt
-              pod_actual_discharge_lt: pod_actual_discharge_lt
-              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
-              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 1
-              is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-              created: 2000-01-23T04:56:07.000+00:00
-              vessel_name: MAERSK PUELO
-              pol_name: HOUSTON
-              pod_name: BARCELONA
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
-              carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-              updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-              pol_actual_loading_lt: pol_actual_loading_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
-            status_info:
-              vessel:
-                metadata:
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                code: INIT
-              prediction:
-                metadata:
-                - PREDICTIONS_NOT_ENABLED
-                - PREDICTIONS_NOT_ENABLED
-                code: INIT
-            ais:
-              timestamp_utc: 2000-01-23T04:56:07.000+00:00
-              course: 154
-              imo: "9306172"
-              lon: -78.766
-              lat: 26.527666
-              speed_nm: 8.2
-              status: 0
-            voyage_details:
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: predicted_departure_lt
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: predicted_arrival_lt
-              scheduled_arrival_lt: scheduled_arrival_lt
-              actual_departure_lt: actual_departure_lt
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: actual_arrival_lt
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: scheduled_departure_lt
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: predicted_departure_lt
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: predicted_arrival_lt
-              scheduled_arrival_lt: scheduled_arrival_lt
-              actual_departure_lt: actual_departure_lt
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: actual_arrival_lt
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: scheduled_departure_lt
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-          - msg: AIS successfully fetched
-            success: true
-            sailing_info:
-              vessel_flag: SG
-              voyage_no: CG303R
-              pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-              pod: ESBCN
-              pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-              pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-              imo: "9306172"
-              pol_actual_departure_lt: pol_actual_departure_lt
-              pol: USHOU
-              pol_scheduled_departure_lt: pol_scheduled_departure_lt
-              pod_actual_arrival_lt: pod_actual_arrival_lt
-              pod_actual_discharge_lt: pod_actual_discharge_lt
-              pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-              pod_terminal_name: BARCELONA EUROPE SOUTH TERMINAL
-              id: 94e3dc60-2039-4a54-a88c-7c5885fd7988
-              pol_predicted_arrival_lt: pol_predicted_arrival_lt
-              pod_predicted_arrival_lt: pod_predicted_arrival_lt
-              vessel_leg: 1
-              is_active: true
-              pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-              pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-              created: 2000-01-23T04:56:07.000+00:00
-              vessel_name: MAERSK PUELO
-              pol_name: HOUSTON
-              pod_name: BARCELONA
-              pod_predicted_departure_lt: pod_predicted_departure_lt
-              pol_terminal_name: BAYPORT TERMINAL
-              pol_scheduled_loading_lt: pol_scheduled_loading_lt
-              carrier_no: CMDU
-              pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-              pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-              pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-              updated: 2000-01-23T04:56:07.000+00:00
-              pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-              pol_actual_loading_lt: pol_actual_loading_lt
-              pol_predicted_departure_lt: pol_predicted_departure_lt
-            status_info:
-              vessel:
-                metadata:
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                - LATEST_VESSEL_PORTCALLS_NOT_FOUND
-                code: INIT
-              prediction:
-                metadata:
-                - PREDICTIONS_NOT_ENABLED
-                - PREDICTIONS_NOT_ENABLED
-                code: INIT
-            ais:
-              timestamp_utc: 2000-01-23T04:56:07.000+00:00
-              course: 154
-              imo: "9306172"
-              lon: -78.766
-              lat: 26.527666
-              speed_nm: 8.2
-              status: 0
-            voyage_details:
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: predicted_departure_lt
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: predicted_arrival_lt
-              scheduled_arrival_lt: scheduled_arrival_lt
-              actual_departure_lt: actual_departure_lt
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: actual_arrival_lt
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: scheduled_departure_lt
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-            - actual_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              timezone: UTC +2
-              predicted_departure_lt: predicted_departure_lt
-              index: 1
-              lon: 15.901825
-              predicted_arrival_lt: predicted_arrival_lt
-              scheduled_arrival_lt: scheduled_arrival_lt
-              actual_departure_lt: actual_departure_lt
-              port_name: GIOIA TAURO
-              scheduled_departure_utc: 2000-01-23T04:56:07.000+00:00
-              prediction_time_utc: 2000-01-23T04:56:07.000+00:00
-              actual_arrival_lt: actual_arrival_lt
-              predicted_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_arrival_utc: 2000-01-23T04:56:07.000+00:00
-              scheduled_departure_lt: scheduled_departure_lt
-              actual_departure_utc: 2000-01-23T04:56:07.000+00:00
-              voyage_no_list:
-              - CG303R
-              - CG303R
-              delay_reasons:
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              - Expected waiting time at port NORFOLK is 26.91 hours
-              id: 7c0a95b4-dbad-5178-9c1f-01ad9da1e3ee
-              active_scac: CMDU
-              lat: 38.45494
-              predicted_departure_utc: 2000-01-23T04:56:07.000+00:00
-              port_code: ITGIT
-          container_metadata:
-            external_width_ft: 7.99
-            cntr_no: TLLU1181321
-            detail_st: 42G1
-            external_height_ft: 8.51
-            external_length_ft: 40
-          response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
-          org_id: d241d181-ef3d-5407-9a7e-56739dd7ae2f
-          success: true
-          status_info:
-            metadata:
-            - LATEST_PREDICTIONS_WARNING
-            - LATEST_PREDICTIONS_WARNING
-            code: SUCCESS
-          bill_of_lading:
-            bl_no: COSU6349613240
-            cntr_no: BMOU1589176
-            pol_scheduled_arrival_lt_from_schedule: pol_scheduled_arrival_lt_from_schedule
-            pod: GHTEM
-            pod_scheduled_arrival_lt_from_schedule: pod_scheduled_arrival_lt_from_schedule
-            place_of_delivery_name: NORFOLK
-            place_of_receipt_name: TEMA
-            pod_scheduled_discharge_lt: pod_scheduled_discharge_lt
-            pol_actual_departure_lt: pol_actual_departure_lt
-            pol: USORF
-            pol_scheduled_departure_lt: pol_scheduled_departure_lt
-            pod_actual_arrival_lt: pod_actual_arrival_lt
-            pod_actual_discharge_lt: pod_actual_discharge_lt
-            pol_actual_departure_lt_from_ais: pol_actual_departure_lt_from_ais
-            pod_terminal_name: MERIDIAN PORT SERVICE LIMITED
-            id: 16caa040-f582-4c15-88c9-2e80437e7916
-            pol_predicted_arrival_lt: pol_predicted_arrival_lt
-            pod_predicted_arrival_lt: pod_predicted_arrival_lt
-            pol_scheduled_departure_lt_first_seen: pol_scheduled_departure_lt_first_seen
-            place_of_delivery: USORF
-            pod_scheduled_arrival_lt: pod_scheduled_arrival_lt
-            pod_scheduled_departure_lt_from_schedule: pod_scheduled_departure_lt_from_schedule
-            created: 2000-01-23T04:56:07.000+00:00
-            pol_name: NORFOLK
-            pod_scheduled_arrival_lt_first_seen: pod_scheduled_arrival_lt_first_seen
-            pod_name: TEMA
-            place_of_receipt: GHTEM
-            pod_predicted_departure_lt: pod_predicted_departure_lt
-            pol_terminal_name: PPCY EMPTY DEPOT
-            pol_scheduled_loading_lt: pol_scheduled_loading_lt
-            carrier_no: COSU
-            pol_scheduled_departure_lt_from_schedule: pol_scheduled_departure_lt_from_schedule
-            pod_actual_departure_lt_from_ais: pod_actual_departure_lt_from_ais
-            pod_actual_arrival_lt_from_ais: pod_actual_arrival_lt_from_ais
-            updated: 2000-01-23T04:56:07.000+00:00
-            pol_actual_arrival_lt_from_ais: pol_actual_arrival_lt_from_ais
-            pol_actual_loading_lt: pol_actual_loading_lt
-            pol_predicted_departure_lt: pol_predicted_departure_lt
-          delay_lists:
-          - port_name: XIAMEN
-            reason_code: RLV
-            delay_description: Container rolled over to another vessel at POL
-            schedule_change:
-            - old_date: old_date
-              event_type_code: ARRIVE
-              new_date: new_date
-              location_type_code: POL
-            - old_date: old_date
-              event_type_code: ARRIVE
-              new_date: new_date
-              location_type_code: POL
-            rotation_change:
-              comparison_schedule:
-              - CNSHG
-              - CNSHG
-              updated_schedule:
-              - CNYTN
-              - CNYTN
-            vessel_change:
-              updated_vessel: 9604108
-              comparison_vessel: 9839208
-            created: 2000-01-23T04:56:07.000+00:00
-            location_type_code: POL
-            port_code: CNXMG
-          - port_name: XIAMEN
-            reason_code: RLV
-            delay_description: Container rolled over to another vessel at POL
-            schedule_change:
-            - old_date: old_date
-              event_type_code: ARRIVE
-              new_date: new_date
-              location_type_code: POL
-            - old_date: old_date
-              event_type_code: ARRIVE
-              new_date: new_date
-              location_type_code: POL
-            rotation_change:
-              comparison_schedule:
-              - CNSHG
-              - CNSHG
-              updated_schedule:
-              - CNYTN
-              - CNYTN
-            vessel_change:
-              updated_vessel: 9604108
-              comparison_vessel: 9839208
-            created: 2000-01-23T04:56:07.000+00:00
-            location_type_code: POL
-            port_code: CNXMG
-          co2_emissions:
-            intensity: 5.962133916683182
-            total: 0
-            wtt: 6
-            ttw: 1
+        obj: ""
       properties:
         obj:
-          $ref: '#/components/schemas/Portcast_API'
+          allOf:
+          - $ref: "#/components/schemas/Portcast_API"
+          x-stoplight:
+            id: d05h1kcdtdya4
     get_api_v1_eta_bill_of_lading_bookmarks_400_response:
       example:
         message: Invalid bookmark id
@@ -5003,8 +4173,8 @@ components:
         id: 0s5ojvqi2r9zv
     get_api_v1_eta_bill_of_lading_bookmarks_terminals_400_response:
       anyOf:
-      - $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_400_response_anyOf'
-      - $ref: '#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_400_response_anyOf_1'
+      - $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_400_response_anyOf"
+      - $ref: "#/components/schemas/get_api_v1_eta_bill_of_lading_bookmarks_terminals_400_response_anyOf_1"
       x-examples:
         Example 1:
           message: Invalid bookmark id
@@ -5242,6 +4412,7 @@ components:
             x-stoplight:
               id: itzx8245omagz
           minItems: 2
+          nullable: true
           type: array
         updated_schedule:
           description: Latest changed schedule information - Ports Order
@@ -5251,6 +4422,7 @@ components:
             x-stoplight:
               id: vjmmo7iawmpx7
           minItems: 2
+          nullable: true
           type: array
     Delay_Reasons_schedule_change_inner:
       additionalProperties: false
@@ -5643,34 +4815,24 @@ components:
           code: INIT
       properties:
         prediction:
-          $ref: '#/components/schemas/Sailing_Info_Tracking_status_info_prediction'
+          $ref: "#/components/schemas/Sailing_Info_Tracking_status_info_prediction"
         vessel:
-          $ref: '#/components/schemas/Sailing_Info_Tracking_status_info_vessel'
+          $ref: "#/components/schemas/Sailing_Info_Tracking_status_info_vessel"
       x-stoplight:
         id: 5joky6i8almsv
     Booking_API_response_inner_anyOf:
       description: Bill of Lading Bookmark Object
       example:
         container: container
-        obj:
-          bl_no: ONEYANRB31646600
-          cntr_no: TLLU1181321
-          deleted: false
-          status_code: status_code
-          created: 2000-01-23T04:56:07.000+00:00
-          org_id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-          status_info:
-            metadata: []
-            code: UPLOADED
-          carrier_no: ONEY
-          id: 9cc66661-b0f3-4d4d-8e48-bc4bc45a4f27
-          system_deleted: false
-          updated: 2000-01-23T04:56:07.000+00:00
-          status: status
+        obj: ""
         status: status
       properties:
         obj:
-          $ref: '#/components/schemas/Bill_of_Lading_Bookmark'
+          allOf:
+          - $ref: "#/components/schemas/Bill_of_Lading_Bookmark"
+          description: Bill of Lading Bookmark Object
+          x-stoplight:
+            id: 9azoaoj8h6yjj
         status:
           description: Status of the individual container upload
           type: string
@@ -5707,8 +4869,8 @@ components:
           type: string
     Booking_API_response_inner:
       anyOf:
-      - $ref: '#/components/schemas/Booking_API_response_inner_anyOf'
-      - $ref: '#/components/schemas/Booking_API_response_inner_anyOf_1'
+      - $ref: "#/components/schemas/Booking_API_response_inner_anyOf"
+      - $ref: "#/components/schemas/Booking_API_response_inner_anyOf_1"
     Booking_API_route_prepol:
       description: Pre-POL is the location where the container is stuffed
       example:
@@ -5812,13 +4974,13 @@ components:
           location: 1
       properties:
         prepol:
-          $ref: '#/components/schemas/Booking_API_route_prepol'
+          $ref: "#/components/schemas/Booking_API_route_prepol"
         pol:
-          $ref: '#/components/schemas/Booking_API_route_pol'
+          $ref: "#/components/schemas/Booking_API_route_pol"
         pod:
-          $ref: '#/components/schemas/Booking_API_route_pod'
+          $ref: "#/components/schemas/Booking_API_route_pod"
         postpod:
-          $ref: '#/components/schemas/Booking_API_route_postpod'
+          $ref: "#/components/schemas/Booking_API_route_postpod"
     Booking_API_locations_inner:
       example:
         country: United States
@@ -5910,24 +5072,6 @@ components:
     Port_Terminal_Add_On_export_plan:
       description: Summry of key temrinal events and milestones at the export Port
         of Loading (POL).
-      example:
-        voyage_no: CG303R
-        port_cutoff_reefer: 2023-06-23T14:15:22Z
-        erd_standard: 2023-06-24T14:15:22Z
-        latest_etd: 2023-06-26T14:15:22Z
-        facility_code: PSAPP1
-        vessel_name: GEMLIK EXPRESS
-        facility_name: Pasir Panjang Terminal 1
-        latest_eta: 2023-06-24T14:15:22Z
-        port_name: Port of Singapore
-        actual_arrival: 2023-06-24T14:15:22Z
-        gate_in_date: 2023-06-21T14:15:22Z
-        port_cutoff_standard: 2023-06-23T14:15:22Z
-        erd_reefer: 2023-06-24T14:15:22Z
-        actual_departure: actual_departure
-        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        updated: 2000-01-23T04:56:07.000+00:00
-        port_code: SGSIN
       properties:
         id:
           description: Unique Identifier for the Export Plan Object.
@@ -6011,26 +5155,6 @@ components:
     Port_Terminal_Add_On_import_plan:
       description: Summry of key temrinal events and statuses at the import Port of
         Discharge (POD).
-      example:
-        yard_location: Yard Grounded (TIS-2A16543)
-        last_free_day: 2023-08-20
-        voyage_no: CG304E
-        discharge_date: 2023-08-14T14:15:22Z
-        pickup_appointment_date: 2023-08-21T14:15:22Z
-        facility_code: RWG
-        vessel_name: MAERSK EMERALD
-        facility_name: Rotterdam World Gateway
-        gate_out_date: 2023-08-21T14:15:22Z
-        latest_eta: 2023-08-15T14:15:22Z
-        ready_for_delivery: "TRUE"
-        port_name: Port of Rotterdam
-        container_holds: "CTF,CUSTOMS,LINE,TMF"
-        container_status: Yard
-        demurrage_owed: "1,200"
-        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        updated: 2000-01-23T04:56:07.000+00:00
-        port_code: NLRTM
-        appointment_set: "TRUE"
       properties:
         id:
           description: Unique Identifier for the Import Plan Object.

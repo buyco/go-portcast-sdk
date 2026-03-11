@@ -20,7 +20,7 @@ var _ MappedNullable = &PortcastAPIStatusInfo{}
 
 // PortcastAPIStatusInfo Status Defination Object for the [API Response](docs/Portcast-Status-Codes.md)
 type PortcastAPIStatusInfo struct {
-	Code *string `json:"code,omitempty"`
+	Code     *string  `json:"code,omitempty"`
 	Metadata []string `json:"metadata,omitempty"`
 }
 
@@ -110,7 +110,7 @@ func (o *PortcastAPIStatusInfo) SetMetadata(v []string) {
 }
 
 func (o PortcastAPIStatusInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,5 +163,3 @@ func (v *NullablePortcastAPIStatusInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

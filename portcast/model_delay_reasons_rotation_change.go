@@ -43,9 +43,9 @@ func NewDelayReasonsRotationChangeWithDefaults() *DelayReasonsRotationChange {
 	return &this
 }
 
-// GetComparisonSchedule returns the ComparisonSchedule field value if set, zero value otherwise.
+// GetComparisonSchedule returns the ComparisonSchedule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DelayReasonsRotationChange) GetComparisonSchedule() []string {
-	if o == nil || IsNil(o.ComparisonSchedule) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -54,6 +54,7 @@ func (o *DelayReasonsRotationChange) GetComparisonSchedule() []string {
 
 // GetComparisonScheduleOk returns a tuple with the ComparisonSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DelayReasonsRotationChange) GetComparisonScheduleOk() ([]string, bool) {
 	if o == nil || IsNil(o.ComparisonSchedule) {
 		return nil, false
@@ -75,9 +76,9 @@ func (o *DelayReasonsRotationChange) SetComparisonSchedule(v []string) {
 	o.ComparisonSchedule = v
 }
 
-// GetUpdatedSchedule returns the UpdatedSchedule field value if set, zero value otherwise.
+// GetUpdatedSchedule returns the UpdatedSchedule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DelayReasonsRotationChange) GetUpdatedSchedule() []string {
-	if o == nil || IsNil(o.UpdatedSchedule) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -86,6 +87,7 @@ func (o *DelayReasonsRotationChange) GetUpdatedSchedule() []string {
 
 // GetUpdatedScheduleOk returns a tuple with the UpdatedSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DelayReasonsRotationChange) GetUpdatedScheduleOk() ([]string, bool) {
 	if o == nil || IsNil(o.UpdatedSchedule) {
 		return nil, false
@@ -108,7 +110,7 @@ func (o *DelayReasonsRotationChange) SetUpdatedSchedule(v []string) {
 }
 
 func (o DelayReasonsRotationChange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -117,10 +119,10 @@ func (o DelayReasonsRotationChange) MarshalJSON() ([]byte, error) {
 
 func (o DelayReasonsRotationChange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ComparisonSchedule) {
+	if o.ComparisonSchedule != nil {
 		toSerialize["comparison_schedule"] = o.ComparisonSchedule
 	}
-	if !IsNil(o.UpdatedSchedule) {
+	if o.UpdatedSchedule != nil {
 		toSerialize["updated_schedule"] = o.UpdatedSchedule
 	}
 	return toSerialize, nil
@@ -161,5 +163,3 @@ func (v *NullableDelayReasonsRotationChange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

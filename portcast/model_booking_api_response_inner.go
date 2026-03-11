@@ -18,7 +18,7 @@ import (
 
 // BookingAPIResponseInner struct for BookingAPIResponseInner
 type BookingAPIResponseInner struct {
-	BookingAPIResponseInnerAnyOf *BookingAPIResponseInnerAnyOf
+	BookingAPIResponseInnerAnyOf  *BookingAPIResponseInnerAnyOf
 	BookingAPIResponseInnerAnyOf1 *BookingAPIResponseInnerAnyOf1
 }
 
@@ -26,7 +26,7 @@ type BookingAPIResponseInner struct {
 func (dst *BookingAPIResponseInner) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into BookingAPIResponseInnerAnyOf
-	err = json.Unmarshal(data, &dst.BookingAPIResponseInnerAnyOf);
+	err = json.Unmarshal(data, &dst.BookingAPIResponseInnerAnyOf)
 	if err == nil {
 		jsonBookingAPIResponseInnerAnyOf, _ := json.Marshal(dst.BookingAPIResponseInnerAnyOf)
 		if string(jsonBookingAPIResponseInnerAnyOf) == "{}" { // empty struct
@@ -39,7 +39,7 @@ func (dst *BookingAPIResponseInner) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into BookingAPIResponseInnerAnyOf1
-	err = json.Unmarshal(data, &dst.BookingAPIResponseInnerAnyOf1);
+	err = json.Unmarshal(data, &dst.BookingAPIResponseInnerAnyOf1)
 	if err == nil {
 		jsonBookingAPIResponseInnerAnyOf1, _ := json.Marshal(dst.BookingAPIResponseInnerAnyOf1)
 		if string(jsonBookingAPIResponseInnerAnyOf1) == "{}" { // empty struct
@@ -55,7 +55,7 @@ func (dst *BookingAPIResponseInner) UnmarshalJSON(data []byte) error {
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src *BookingAPIResponseInner) MarshalJSON() ([]byte, error) {
+func (src BookingAPIResponseInner) MarshalJSON() ([]byte, error) {
 	if src.BookingAPIResponseInnerAnyOf != nil {
 		return json.Marshal(&src.BookingAPIResponseInnerAnyOf)
 	}
@@ -102,5 +102,3 @@ func (v *NullableBookingAPIResponseInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

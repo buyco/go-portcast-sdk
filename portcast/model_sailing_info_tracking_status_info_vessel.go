@@ -20,7 +20,7 @@ var _ MappedNullable = &SailingInfoTrackingStatusInfoVessel{}
 
 // SailingInfoTrackingStatusInfoVessel Status Defination related to the [Vessel Schedules](docs/Portcast-Status-Codes.md)
 type SailingInfoTrackingStatusInfoVessel struct {
-	Code *string `json:"code,omitempty"`
+	Code     *string  `json:"code,omitempty"`
 	Metadata []string `json:"metadata,omitempty"`
 }
 
@@ -110,7 +110,7 @@ func (o *SailingInfoTrackingStatusInfoVessel) SetMetadata(v []string) {
 }
 
 func (o SailingInfoTrackingStatusInfoVessel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,5 +163,3 @@ func (v *NullableSailingInfoTrackingStatusInfoVessel) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

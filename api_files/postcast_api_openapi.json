@@ -505,6 +505,12 @@
                                     "callback_url": {
                                         "type": "string",
                                         "description": "A https endpoint for Portcast to push the json object whenever there are updates."
+                                    },
+                                    "custom_fields": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        }
                                     }
                                 },
                                 "required": [
@@ -1223,12 +1229,12 @@
             "AuthError": {
                 "type": "object",
                 "properties": {
-                  "Error": {
-                    "type": "string",
-                    "example": "API Key is Invalid"
-                  }
+                    "Error": {
+                        "type": "string",
+                        "example": "API Key is Invalid"
+                    }
                 }
-              },
+            },
             "MessageModel": {
                 "type": "object",
                 "properties": {

@@ -54,7 +54,7 @@ type PortTerminalAddOnExportPlan struct {
 	// Latest vessel ETD from the export port, as reported by the terminal - Local Time.
 	LatestEtd *string `json:"latest_etd,omitempty"`
 	// Actual vessel time of departure from the export port, as reported by the terminal - Local Time.
-	ActualDeparture *string `json:"actual_departure,omitempty"`
+	ActualDeparture *string `json:"actual_departure,omitempty" validate:"regexp=2023-06-26T14:15:22Z"`
 }
 
 // NewPortTerminalAddOnExportPlan instantiates a new PortTerminalAddOnExportPlan object
@@ -619,7 +619,7 @@ func (o *PortTerminalAddOnExportPlan) SetActualDeparture(v string) {
 }
 
 func (o PortTerminalAddOnExportPlan) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -717,5 +717,3 @@ func (v *NullablePortTerminalAddOnExportPlan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

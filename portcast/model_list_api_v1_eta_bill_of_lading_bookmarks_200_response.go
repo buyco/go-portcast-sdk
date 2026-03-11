@@ -21,7 +21,7 @@ var _ MappedNullable = &ListApiV1EtaBillOfLadingBookmarks200Response{}
 // ListApiV1EtaBillOfLadingBookmarks200Response struct for ListApiV1EtaBillOfLadingBookmarks200Response
 type ListApiV1EtaBillOfLadingBookmarks200Response struct {
 	EndedAt NullableString `json:"_ended_at,omitempty"`
-	ObjList []PortcastAPI `json:"obj_list,omitempty"`
+	ObjList []PortcastAPI  `json:"obj_list,omitempty"`
 }
 
 // NewListApiV1EtaBillOfLadingBookmarks200Response instantiates a new ListApiV1EtaBillOfLadingBookmarks200Response object
@@ -73,6 +73,7 @@ func (o *ListApiV1EtaBillOfLadingBookmarks200Response) HasEndedAt() bool {
 func (o *ListApiV1EtaBillOfLadingBookmarks200Response) SetEndedAt(v string) {
 	o.EndedAt.Set(&v)
 }
+
 // SetEndedAtNil sets the value for EndedAt to be an explicit nil
 func (o *ListApiV1EtaBillOfLadingBookmarks200Response) SetEndedAtNil() {
 	o.EndedAt.Set(nil)
@@ -83,9 +84,9 @@ func (o *ListApiV1EtaBillOfLadingBookmarks200Response) UnsetEndedAt() {
 	o.EndedAt.Unset()
 }
 
-// GetObjList returns the ObjList field value if set, zero value otherwise.
+// GetObjList returns the ObjList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListApiV1EtaBillOfLadingBookmarks200Response) GetObjList() []PortcastAPI {
-	if o == nil || IsNil(o.ObjList) {
+	if o == nil {
 		var ret []PortcastAPI
 		return ret
 	}
@@ -94,6 +95,7 @@ func (o *ListApiV1EtaBillOfLadingBookmarks200Response) GetObjList() []PortcastAP
 
 // GetObjListOk returns a tuple with the ObjList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListApiV1EtaBillOfLadingBookmarks200Response) GetObjListOk() ([]PortcastAPI, bool) {
 	if o == nil || IsNil(o.ObjList) {
 		return nil, false
@@ -116,7 +118,7 @@ func (o *ListApiV1EtaBillOfLadingBookmarks200Response) SetObjList(v []PortcastAP
 }
 
 func (o ListApiV1EtaBillOfLadingBookmarks200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -128,7 +130,7 @@ func (o ListApiV1EtaBillOfLadingBookmarks200Response) ToMap() (map[string]interf
 	if o.EndedAt.IsSet() {
 		toSerialize["_ended_at"] = o.EndedAt.Get()
 	}
-	if !IsNil(o.ObjList) {
+	if o.ObjList != nil {
 		toSerialize["obj_list"] = o.ObjList
 	}
 	return toSerialize, nil
@@ -169,5 +171,3 @@ func (v *NullableListApiV1EtaBillOfLadingBookmarks200Response) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
