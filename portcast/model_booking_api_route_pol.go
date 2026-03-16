@@ -77,6 +77,7 @@ func (o *BookingAPIRoutePol) HasLocation() bool {
 func (o *BookingAPIRoutePol) SetLocation(v int32) {
 	o.Location.Set(&v)
 }
+
 // SetLocationNil sets the value for Location to be an explicit nil
 func (o *BookingAPIRoutePol) SetLocationNil() {
 	o.Location.Set(nil)
@@ -119,6 +120,7 @@ func (o *BookingAPIRoutePol) HasDate() bool {
 func (o *BookingAPIRoutePol) SetDate(v string) {
 	o.Date.Set(&v)
 }
+
 // SetDateNil sets the value for Date to be an explicit nil
 func (o *BookingAPIRoutePol) SetDateNil() {
 	o.Date.Set(nil)
@@ -161,6 +163,7 @@ func (o *BookingAPIRoutePol) HasActual() bool {
 func (o *BookingAPIRoutePol) SetActual(v bool) {
 	o.Actual.Set(&v)
 }
+
 // SetActualNil sets the value for Actual to be an explicit nil
 func (o *BookingAPIRoutePol) SetActualNil() {
 	o.Actual.Set(nil)
@@ -172,7 +175,7 @@ func (o *BookingAPIRoutePol) UnsetActual() {
 }
 
 func (o BookingAPIRoutePol) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -228,5 +231,3 @@ func (v *NullableBookingAPIRoutePol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -51,6 +51,16 @@ SetComparisonSchedule sets ComparisonSchedule field to given value.
 
 HasComparisonSchedule returns a boolean if a field has been set.
 
+### SetComparisonScheduleNil
+
+`func (o *DelayReasonsRotationChange) SetComparisonScheduleNil(b bool)`
+
+ SetComparisonScheduleNil sets the value for ComparisonSchedule to be an explicit nil
+
+### UnsetComparisonSchedule
+`func (o *DelayReasonsRotationChange) UnsetComparisonSchedule()`
+
+UnsetComparisonSchedule ensures that no value is present for ComparisonSchedule, not even an explicit nil
 ### GetUpdatedSchedule
 
 `func (o *DelayReasonsRotationChange) GetUpdatedSchedule() []string`
@@ -76,6 +86,16 @@ SetUpdatedSchedule sets UpdatedSchedule field to given value.
 
 HasUpdatedSchedule returns a boolean if a field has been set.
 
+### SetUpdatedScheduleNil
+
+`func (o *DelayReasonsRotationChange) SetUpdatedScheduleNil(b bool)`
+
+ SetUpdatedScheduleNil sets the value for UpdatedSchedule to be an explicit nil
+
+### UnsetUpdatedSchedule
+`func (o *DelayReasonsRotationChange) UnsetUpdatedSchedule()`
+
+UnsetUpdatedSchedule ensures that no value is present for UpdatedSchedule, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

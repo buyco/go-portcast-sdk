@@ -20,19 +20,18 @@ import (
 	"strings"
 )
 
-
 type GetTrackingDataForUploadedContainersAPI interface {
 
 	/*
-	DeleteTrackingBillOfLadingBookmarksBookmarkId Archive Bookmark ID
+			DeleteTrackingBillOfLadingBookmarksBookmarkId Archive Bookmark ID
 
-	Archive a container Bookmark to stop tracking it.
+			Archive a container Bookmark to stop tracking it.
 
-This will remove the container from the refresh processes and archive the shipment.
+		This will remove the container from the refresh processes and archive the shipment.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param bookmarkId Bill of Lading Bookmark ID
-	@return ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
+			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+			@param bookmarkId Bill of Lading Bookmark ID
+			@return ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
 	*/
 	DeleteTrackingBillOfLadingBookmarksBookmarkId(ctx context.Context, bookmarkId string) ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
 
@@ -41,13 +40,13 @@ This will remove the container from the refresh processes and archive the shipme
 	DeleteTrackingBillOfLadingBookmarksBookmarkIdExecute(r ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest) (*DeleteTrackingBillOfLadingBookmarksBookmarkId200Response, *http.Response, error)
 
 	/*
-	GetApiV1EtaBillOfLadingBookmarks Fetch tracking data by Bookmark ID
+		GetApiV1EtaBillOfLadingBookmarks Fetch tracking data by Bookmark ID
 
-	Fetch the tracking data using the Bookmark ID.
+		Fetch the tracking data using the Bookmark ID.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param bookmarkId Bill of Lading Bookmark ID
-	@return ApiGetApiV1EtaBillOfLadingBookmarksRequest
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param bookmarkId Bill of Lading Bookmark ID
+		@return ApiGetApiV1EtaBillOfLadingBookmarksRequest
 	*/
 	GetApiV1EtaBillOfLadingBookmarks(ctx context.Context, bookmarkId string) ApiGetApiV1EtaBillOfLadingBookmarksRequest
 
@@ -56,14 +55,14 @@ This will remove the container from the refresh processes and archive the shipme
 	GetApiV1EtaBillOfLadingBookmarksExecute(r ApiGetApiV1EtaBillOfLadingBookmarksRequest) (*GetApiV1EtaBillOfLadingBookmarks200Response, *http.Response, error)
 
 	/*
-	ListApiV1EtaBillOfLadingBookmarks List Tracking data by Container, Bill of Lading or Carrier
+			ListApiV1EtaBillOfLadingBookmarks List Tracking data by Container, Bill of Lading or Carrier
 
-	Returns a list of your Tracking Data for the Bookmarks based on your query. The tracking requests are returned sorted by creation date, with the most recent tracking request appearing first. 
+			Returns a list of your Tracking Data for the Bookmarks based on your query. The tracking requests are returned sorted by creation date, with the most recent tracking request appearing first.
 
-The list API doesn't return tracking data for more than 5 bookmarks, hence there's pagination which is applied on the same!
+		The list API doesn't return tracking data for more than 5 bookmarks, hence there's pagination which is applied on the same!
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiListApiV1EtaBillOfLadingBookmarksRequest
+			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+			@return ApiListApiV1EtaBillOfLadingBookmarksRequest
 	*/
 	ListApiV1EtaBillOfLadingBookmarks(ctx context.Context) ApiListApiV1EtaBillOfLadingBookmarksRequest
 
@@ -76,11 +75,11 @@ The list API doesn't return tracking data for more than 5 bookmarks, hence there
 type GetTrackingDataForUploadedContainersAPIService service
 
 type ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService GetTrackingDataForUploadedContainersAPI
 	bookmarkId string
-	xCustomer *string
-	body *map[string]interface{}
+	xCustomer  *string
+	body       *map[string]interface{}
 }
 
 // [Enterprise Customers] Customer Name to indicate which org the bookmark belongs to
@@ -105,26 +104,27 @@ Archive a container Bookmark to stop tracking it.
 
 This will remove the container from the refresh processes and archive the shipment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bookmarkId Bill of Lading Bookmark ID
- @return ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bookmarkId Bill of Lading Bookmark ID
+	@return ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest
 */
 func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLadingBookmarksBookmarkId(ctx context.Context, bookmarkId string) ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest {
 	return ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		bookmarkId: bookmarkId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteTrackingBillOfLadingBookmarksBookmarkId200Response
+//
+//	@return DeleteTrackingBillOfLadingBookmarksBookmarkId200Response
 func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLadingBookmarksBookmarkIdExecute(r ApiDeleteTrackingBillOfLadingBookmarksBookmarkIdRequest) (*DeleteTrackingBillOfLadingBookmarksBookmarkId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteTrackingBillOfLadingBookmarksBookmarkId200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteTrackingBillOfLadingBookmarksBookmarkId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GetTrackingDataForUploadedContainersAPIService.DeleteTrackingBillOfLadingBookmarksBookmarkId")
@@ -157,7 +157,7 @@ func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLad
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.xCustomer != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "x-customer", r.xCustomer, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "x-customer", r.xCustomer, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.body
@@ -204,8 +204,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLad
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -215,8 +215,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLad
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -226,8 +226,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLad
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -245,11 +245,11 @@ func (a *GetTrackingDataForUploadedContainersAPIService) DeleteTrackingBillOfLad
 }
 
 type ApiGetApiV1EtaBillOfLadingBookmarksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService GetTrackingDataForUploadedContainersAPI
 	bookmarkId string
-	xCustomer *string
-	body *map[string]interface{}
+	xCustomer  *string
+	body       *map[string]interface{}
 }
 
 // [Enterprise Customers] Customer Name to indicate which org to get tracking data from
@@ -272,26 +272,27 @@ GetApiV1EtaBillOfLadingBookmarks Fetch tracking data by Bookmark ID
 
 Fetch the tracking data using the Bookmark ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bookmarkId Bill of Lading Bookmark ID
- @return ApiGetApiV1EtaBillOfLadingBookmarksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bookmarkId Bill of Lading Bookmark ID
+	@return ApiGetApiV1EtaBillOfLadingBookmarksRequest
 */
 func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLadingBookmarks(ctx context.Context, bookmarkId string) ApiGetApiV1EtaBillOfLadingBookmarksRequest {
 	return ApiGetApiV1EtaBillOfLadingBookmarksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		bookmarkId: bookmarkId,
 	}
 }
 
 // Execute executes the request
-//  @return GetApiV1EtaBillOfLadingBookmarks200Response
+//
+//	@return GetApiV1EtaBillOfLadingBookmarks200Response
 func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLadingBookmarksExecute(r ApiGetApiV1EtaBillOfLadingBookmarksRequest) (*GetApiV1EtaBillOfLadingBookmarks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApiV1EtaBillOfLadingBookmarks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApiV1EtaBillOfLadingBookmarks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GetTrackingDataForUploadedContainersAPIService.GetApiV1EtaBillOfLadingBookmarks")
@@ -324,7 +325,7 @@ func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLading
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.xCustomer != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "x-customer", r.xCustomer, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "x-customer", r.xCustomer, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.body
@@ -371,8 +372,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLading
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -382,8 +383,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLading
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -393,8 +394,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLading
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -412,14 +413,14 @@ func (a *GetTrackingDataForUploadedContainersAPIService) GetApiV1EtaBillOfLading
 }
 
 type ApiListApiV1EtaBillOfLadingBookmarksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService GetTrackingDataForUploadedContainersAPI
-	carrierNo *string
-	blNo *string
-	cntrNo *string
+	carrierNo  *string
+	blNo       *string
+	cntrNo     *string
 	startAfter *string
-	xCustomer *string
-	body *map[string]interface{}
+	xCustomer  *string
+	body       *map[string]interface{}
 }
 
 // Carrier SCAC Code
@@ -464,28 +465,29 @@ func (r ApiListApiV1EtaBillOfLadingBookmarksRequest) Execute() (*ListApiV1EtaBil
 /*
 ListApiV1EtaBillOfLadingBookmarks List Tracking data by Container, Bill of Lading or Carrier
 
-Returns a list of your Tracking Data for the Bookmarks based on your query. The tracking requests are returned sorted by creation date, with the most recent tracking request appearing first. 
+Returns a list of your Tracking Data for the Bookmarks based on your query. The tracking requests are returned sorted by creation date, with the most recent tracking request appearing first.
 
 The list API doesn't return tracking data for more than 5 bookmarks, hence there's pagination which is applied on the same!
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1EtaBillOfLadingBookmarksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListApiV1EtaBillOfLadingBookmarksRequest
 */
 func (a *GetTrackingDataForUploadedContainersAPIService) ListApiV1EtaBillOfLadingBookmarks(ctx context.Context) ApiListApiV1EtaBillOfLadingBookmarksRequest {
 	return ApiListApiV1EtaBillOfLadingBookmarksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListApiV1EtaBillOfLadingBookmarks200Response
+//
+//	@return ListApiV1EtaBillOfLadingBookmarks200Response
 func (a *GetTrackingDataForUploadedContainersAPIService) ListApiV1EtaBillOfLadingBookmarksExecute(r ApiListApiV1EtaBillOfLadingBookmarksRequest) (*ListApiV1EtaBillOfLadingBookmarks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListApiV1EtaBillOfLadingBookmarks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListApiV1EtaBillOfLadingBookmarks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GetTrackingDataForUploadedContainersAPIService.ListApiV1EtaBillOfLadingBookmarks")
@@ -500,16 +502,16 @@ func (a *GetTrackingDataForUploadedContainersAPIService) ListApiV1EtaBillOfLadin
 	localVarFormParams := url.Values{}
 
 	if r.carrierNo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "carrier_no", r.carrierNo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "carrier_no", r.carrierNo, "form", "")
 	}
 	if r.blNo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "bl_no", r.blNo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bl_no", r.blNo, "form", "")
 	}
 	if r.cntrNo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "cntr_no", r.cntrNo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cntr_no", r.cntrNo, "form", "")
 	}
 	if r.startAfter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "_start_after", r.startAfter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "_start_after", r.startAfter, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -529,7 +531,7 @@ func (a *GetTrackingDataForUploadedContainersAPIService) ListApiV1EtaBillOfLadin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.xCustomer != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "x-customer", r.xCustomer, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "x-customer", r.xCustomer, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.body
@@ -576,8 +578,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) ListApiV1EtaBillOfLadin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -587,8 +589,8 @@ func (a *GetTrackingDataForUploadedContainersAPIService) ListApiV1EtaBillOfLadin
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

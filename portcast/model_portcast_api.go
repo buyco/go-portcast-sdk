@@ -25,10 +25,10 @@ type PortcastAPI struct {
 	// Summary of the Bookmark ID Metadata
 	BillOfLadingBookmark *BillOfLadingBookmark `json:"bill_of_lading_bookmark,omitempty"`
 	// Container Events List for the tracked shipment
-	ContainerEventList []ContainerEvent `json:"container_event_list,omitempty"`
-	ContainerMetadata *ContainerMetadata `json:"container_metadata,omitempty"`
-	Co2Emissions *PortcastAPICo2Emissions `json:"co2_emissions,omitempty"`
-	DelayLists []DelayReasons `json:"delay_lists,omitempty"`
+	ContainerEventList []ContainerEvent         `json:"container_event_list,omitempty"`
+	ContainerMetadata  *ContainerMetadata       `json:"container_metadata,omitempty"`
+	Co2Emissions       *PortcastAPICo2Emissions `json:"co2_emissions,omitempty"`
+	DelayLists         []DelayReasons           `json:"delay_lists,omitempty"`
 	// Unique ID for the API response generated
 	ResponseId *string `json:"response_id,omitempty"`
 	// Tracking Status Message
@@ -36,8 +36,8 @@ type PortcastAPI struct {
 	// Customer Org (Flow) to which the bookmark ID is uploaded too
 	OrgId *string `json:"org_id,omitempty"`
 	// Detailed Tracking Information for each leg of the journey
-	SailingInfoTracking []SailingInfoTracking `json:"sailing_info_tracking,omitempty"`
-	StatusInfo *PortcastAPIStatusInfo `json:"status_info,omitempty"`
+	SailingInfoTracking []SailingInfoTracking  `json:"sailing_info_tracking,omitempty"`
+	StatusInfo          *PortcastAPIStatusInfo `json:"status_info,omitempty"`
 	// Tracking Status
 	Success *bool `json:"success,omitempty"`
 }
@@ -444,7 +444,7 @@ func (o *PortcastAPI) SetSuccess(v bool) {
 }
 
 func (o PortcastAPI) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,5 +527,3 @@ func (v *NullablePortcastAPI) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

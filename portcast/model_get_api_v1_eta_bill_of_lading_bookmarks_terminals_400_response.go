@@ -18,7 +18,7 @@ import (
 
 // GetApiV1EtaBillOfLadingBookmarksTerminals400Response struct for GetApiV1EtaBillOfLadingBookmarksTerminals400Response
 type GetApiV1EtaBillOfLadingBookmarksTerminals400Response struct {
-	GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf *GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf
+	GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf  *GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf
 	GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1 *GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1
 }
 
@@ -26,7 +26,7 @@ type GetApiV1EtaBillOfLadingBookmarksTerminals400Response struct {
 func (dst *GetApiV1EtaBillOfLadingBookmarksTerminals400Response) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf
-	err = json.Unmarshal(data, &dst.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf);
+	err = json.Unmarshal(data, &dst.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf)
 	if err == nil {
 		jsonGetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf, _ := json.Marshal(dst.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf)
 		if string(jsonGetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf) == "{}" { // empty struct
@@ -39,7 +39,7 @@ func (dst *GetApiV1EtaBillOfLadingBookmarksTerminals400Response) UnmarshalJSON(d
 	}
 
 	// try to unmarshal JSON data into GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1
-	err = json.Unmarshal(data, &dst.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1);
+	err = json.Unmarshal(data, &dst.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1)
 	if err == nil {
 		jsonGetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1, _ := json.Marshal(dst.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1)
 		if string(jsonGetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf1) == "{}" { // empty struct
@@ -55,7 +55,7 @@ func (dst *GetApiV1EtaBillOfLadingBookmarksTerminals400Response) UnmarshalJSON(d
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src *GetApiV1EtaBillOfLadingBookmarksTerminals400Response) MarshalJSON() ([]byte, error) {
+func (src GetApiV1EtaBillOfLadingBookmarksTerminals400Response) MarshalJSON() ([]byte, error) {
 	if src.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf != nil {
 		return json.Marshal(&src.GetApiV1EtaBillOfLadingBookmarksTerminals400ResponseAnyOf)
 	}
@@ -102,5 +102,3 @@ func (v *NullableGetApiV1EtaBillOfLadingBookmarksTerminals400Response) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

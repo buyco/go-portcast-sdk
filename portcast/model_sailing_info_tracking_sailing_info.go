@@ -91,7 +91,7 @@ type SailingInfoTrackingSailingInfo struct {
 	VesselLeg *int32 `json:"vessel_leg,omitempty"`
 	// Vessel Name for the Vessel associated with this specific journey leg
 	VesselName NullableString `json:"vessel_name,omitempty"`
-	// Voyage Number associated with this specific journey leg (From container track and trace data) [Most reliable] 
+	// Voyage Number associated with this specific journey leg (From container track and trace data) [Most reliable]
 	VoyageNo NullableString `json:"voyage_no,omitempty"`
 }
 
@@ -188,6 +188,7 @@ func (o *SailingInfoTrackingSailingInfo) HasCreated() bool {
 func (o *SailingInfoTrackingSailingInfo) SetCreated(v time.Time) {
 	o.Created.Set(&v)
 }
+
 // SetCreatedNil sets the value for Created to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetCreatedNil() {
 	o.Created.Set(nil)
@@ -262,6 +263,7 @@ func (o *SailingInfoTrackingSailingInfo) HasImo() bool {
 func (o *SailingInfoTrackingSailingInfo) SetImo(v string) {
 	o.Imo.Set(&v)
 }
+
 // SetImoNil sets the value for Imo to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetImoNil() {
 	o.Imo.Set(nil)
@@ -336,6 +338,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPod() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPod(v string) {
 	o.Pod.Set(&v)
 }
+
 // SetPodNil sets the value for Pod to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodNil() {
 	o.Pod.Set(nil)
@@ -378,6 +381,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodActualArrivalLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodActualArrivalLt(v string) {
 	o.PodActualArrivalLt.Set(&v)
 }
+
 // SetPodActualArrivalLtNil sets the value for PodActualArrivalLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodActualArrivalLtNil() {
 	o.PodActualArrivalLt.Set(nil)
@@ -420,6 +424,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodActualArrivalLtFromAis() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodActualArrivalLtFromAis(v string) {
 	o.PodActualArrivalLtFromAis.Set(&v)
 }
+
 // SetPodActualArrivalLtFromAisNil sets the value for PodActualArrivalLtFromAis to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodActualArrivalLtFromAisNil() {
 	o.PodActualArrivalLtFromAis.Set(nil)
@@ -462,6 +467,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodActualDepartureLtFromAis() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodActualDepartureLtFromAis(v string) {
 	o.PodActualDepartureLtFromAis.Set(&v)
 }
+
 // SetPodActualDepartureLtFromAisNil sets the value for PodActualDepartureLtFromAis to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodActualDepartureLtFromAisNil() {
 	o.PodActualDepartureLtFromAis.Set(nil)
@@ -504,6 +510,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodActualDischargeLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodActualDischargeLt(v string) {
 	o.PodActualDischargeLt.Set(&v)
 }
+
 // SetPodActualDischargeLtNil sets the value for PodActualDischargeLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodActualDischargeLtNil() {
 	o.PodActualDischargeLt.Set(nil)
@@ -546,6 +553,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodName() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodName(v string) {
 	o.PodName.Set(&v)
 }
+
 // SetPodNameNil sets the value for PodName to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodNameNil() {
 	o.PodName.Set(nil)
@@ -588,6 +596,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodPredictedArrivalLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodPredictedArrivalLt(v string) {
 	o.PodPredictedArrivalLt.Set(&v)
 }
+
 // SetPodPredictedArrivalLtNil sets the value for PodPredictedArrivalLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodPredictedArrivalLtNil() {
 	o.PodPredictedArrivalLt.Set(nil)
@@ -630,6 +639,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodPredictedDepartureLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodPredictedDepartureLt(v string) {
 	o.PodPredictedDepartureLt.Set(&v)
 }
+
 // SetPodPredictedDepartureLtNil sets the value for PodPredictedDepartureLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodPredictedDepartureLtNil() {
 	o.PodPredictedDepartureLt.Set(nil)
@@ -672,6 +682,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodScheduledArrivalLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledArrivalLt(v string) {
 	o.PodScheduledArrivalLt.Set(&v)
 }
+
 // SetPodScheduledArrivalLtNil sets the value for PodScheduledArrivalLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledArrivalLtNil() {
 	o.PodScheduledArrivalLt.Set(nil)
@@ -714,6 +725,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodScheduledArrivalLtFromSchedule() 
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledArrivalLtFromSchedule(v string) {
 	o.PodScheduledArrivalLtFromSchedule.Set(&v)
 }
+
 // SetPodScheduledArrivalLtFromScheduleNil sets the value for PodScheduledArrivalLtFromSchedule to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledArrivalLtFromScheduleNil() {
 	o.PodScheduledArrivalLtFromSchedule.Set(nil)
@@ -756,6 +768,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodScheduledDepartureLtFromSchedule(
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledDepartureLtFromSchedule(v string) {
 	o.PodScheduledDepartureLtFromSchedule.Set(&v)
 }
+
 // SetPodScheduledDepartureLtFromScheduleNil sets the value for PodScheduledDepartureLtFromSchedule to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledDepartureLtFromScheduleNil() {
 	o.PodScheduledDepartureLtFromSchedule.Set(nil)
@@ -798,6 +811,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodScheduledDischargeLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledDischargeLt(v string) {
 	o.PodScheduledDischargeLt.Set(&v)
 }
+
 // SetPodScheduledDischargeLtNil sets the value for PodScheduledDischargeLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodScheduledDischargeLtNil() {
 	o.PodScheduledDischargeLt.Set(nil)
@@ -840,6 +854,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPodTerminalName() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPodTerminalName(v string) {
 	o.PodTerminalName.Set(&v)
 }
+
 // SetPodTerminalNameNil sets the value for PodTerminalName to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPodTerminalNameNil() {
 	o.PodTerminalName.Set(nil)
@@ -882,6 +897,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPol() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPol(v string) {
 	o.Pol.Set(&v)
 }
+
 // SetPolNil sets the value for Pol to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolNil() {
 	o.Pol.Set(nil)
@@ -924,6 +940,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolActualArrivalLtFromAis() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolActualArrivalLtFromAis(v string) {
 	o.PolActualArrivalLtFromAis.Set(&v)
 }
+
 // SetPolActualArrivalLtFromAisNil sets the value for PolActualArrivalLtFromAis to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolActualArrivalLtFromAisNil() {
 	o.PolActualArrivalLtFromAis.Set(nil)
@@ -966,6 +983,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolActualDepartureLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolActualDepartureLt(v string) {
 	o.PolActualDepartureLt.Set(&v)
 }
+
 // SetPolActualDepartureLtNil sets the value for PolActualDepartureLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolActualDepartureLtNil() {
 	o.PolActualDepartureLt.Set(nil)
@@ -1008,6 +1026,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolActualDepartureLtFromAis() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolActualDepartureLtFromAis(v string) {
 	o.PolActualDepartureLtFromAis.Set(&v)
 }
+
 // SetPolActualDepartureLtFromAisNil sets the value for PolActualDepartureLtFromAis to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolActualDepartureLtFromAisNil() {
 	o.PolActualDepartureLtFromAis.Set(nil)
@@ -1050,6 +1069,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolActualLoadingLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolActualLoadingLt(v string) {
 	o.PolActualLoadingLt.Set(&v)
 }
+
 // SetPolActualLoadingLtNil sets the value for PolActualLoadingLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolActualLoadingLtNil() {
 	o.PolActualLoadingLt.Set(nil)
@@ -1092,6 +1112,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolName() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolName(v string) {
 	o.PolName.Set(&v)
 }
+
 // SetPolNameNil sets the value for PolName to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolNameNil() {
 	o.PolName.Set(nil)
@@ -1134,6 +1155,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolPredictedArrivalLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolPredictedArrivalLt(v string) {
 	o.PolPredictedArrivalLt.Set(&v)
 }
+
 // SetPolPredictedArrivalLtNil sets the value for PolPredictedArrivalLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolPredictedArrivalLtNil() {
 	o.PolPredictedArrivalLt.Set(nil)
@@ -1176,6 +1198,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolPredictedDepartureLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolPredictedDepartureLt(v string) {
 	o.PolPredictedDepartureLt.Set(&v)
 }
+
 // SetPolPredictedDepartureLtNil sets the value for PolPredictedDepartureLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolPredictedDepartureLtNil() {
 	o.PolPredictedDepartureLt.Set(nil)
@@ -1218,6 +1241,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolScheduledArrivalLtFromSchedule() 
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledArrivalLtFromSchedule(v string) {
 	o.PolScheduledArrivalLtFromSchedule.Set(&v)
 }
+
 // SetPolScheduledArrivalLtFromScheduleNil sets the value for PolScheduledArrivalLtFromSchedule to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledArrivalLtFromScheduleNil() {
 	o.PolScheduledArrivalLtFromSchedule.Set(nil)
@@ -1260,6 +1284,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolScheduledDepartureLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledDepartureLt(v string) {
 	o.PolScheduledDepartureLt.Set(&v)
 }
+
 // SetPolScheduledDepartureLtNil sets the value for PolScheduledDepartureLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledDepartureLtNil() {
 	o.PolScheduledDepartureLt.Set(nil)
@@ -1302,6 +1327,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolScheduledDepartureLtFromSchedule(
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledDepartureLtFromSchedule(v string) {
 	o.PolScheduledDepartureLtFromSchedule.Set(&v)
 }
+
 // SetPolScheduledDepartureLtFromScheduleNil sets the value for PolScheduledDepartureLtFromSchedule to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledDepartureLtFromScheduleNil() {
 	o.PolScheduledDepartureLtFromSchedule.Set(nil)
@@ -1344,6 +1370,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolScheduledLoadingLt() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledLoadingLt(v string) {
 	o.PolScheduledLoadingLt.Set(&v)
 }
+
 // SetPolScheduledLoadingLtNil sets the value for PolScheduledLoadingLt to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolScheduledLoadingLtNil() {
 	o.PolScheduledLoadingLt.Set(nil)
@@ -1386,6 +1413,7 @@ func (o *SailingInfoTrackingSailingInfo) HasPolTerminalName() bool {
 func (o *SailingInfoTrackingSailingInfo) SetPolTerminalName(v string) {
 	o.PolTerminalName.Set(&v)
 }
+
 // SetPolTerminalNameNil sets the value for PolTerminalName to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetPolTerminalNameNil() {
 	o.PolTerminalName.Set(nil)
@@ -1428,6 +1456,7 @@ func (o *SailingInfoTrackingSailingInfo) HasUpdated() bool {
 func (o *SailingInfoTrackingSailingInfo) SetUpdated(v time.Time) {
 	o.Updated.Set(&v)
 }
+
 // SetUpdatedNil sets the value for Updated to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetUpdatedNil() {
 	o.Updated.Set(nil)
@@ -1470,6 +1499,7 @@ func (o *SailingInfoTrackingSailingInfo) HasVesselFlag() bool {
 func (o *SailingInfoTrackingSailingInfo) SetVesselFlag(v string) {
 	o.VesselFlag.Set(&v)
 }
+
 // SetVesselFlagNil sets the value for VesselFlag to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetVesselFlagNil() {
 	o.VesselFlag.Set(nil)
@@ -1544,6 +1574,7 @@ func (o *SailingInfoTrackingSailingInfo) HasVesselName() bool {
 func (o *SailingInfoTrackingSailingInfo) SetVesselName(v string) {
 	o.VesselName.Set(&v)
 }
+
 // SetVesselNameNil sets the value for VesselName to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetVesselNameNil() {
 	o.VesselName.Set(nil)
@@ -1586,6 +1617,7 @@ func (o *SailingInfoTrackingSailingInfo) HasVoyageNo() bool {
 func (o *SailingInfoTrackingSailingInfo) SetVoyageNo(v string) {
 	o.VoyageNo.Set(&v)
 }
+
 // SetVoyageNoNil sets the value for VoyageNo to be an explicit nil
 func (o *SailingInfoTrackingSailingInfo) SetVoyageNoNil() {
 	o.VoyageNo.Set(nil)
@@ -1597,7 +1629,7 @@ func (o *SailingInfoTrackingSailingInfo) UnsetVoyageNo() {
 }
 
 func (o SailingInfoTrackingSailingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1752,5 +1784,3 @@ func (v *NullableSailingInfoTrackingSailingInfo) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

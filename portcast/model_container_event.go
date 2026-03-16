@@ -46,7 +46,7 @@ type ContainerEvent struct {
 	// Relates to the UNLOCODE for the location where the container event takes place, as standardized by Portcast
 	PortCode NullableString `json:"port_code,omitempty"`
 	// Relates to the location name where the container event takes place, as standardized by Portcast
-	PortName NullableString `json:"port_name,omitempty"`
+	PortName        NullableString                 `json:"port_name,omitempty"`
 	TerminalDetails *ContainerEventTerminalDetails `json:"terminal_details,omitempty"`
 	// Container Event Object Updated Date
 	Updated *time.Time `json:"updated,omitempty"`
@@ -169,6 +169,7 @@ func (o *ContainerEvent) HasEventTime() bool {
 func (o *ContainerEvent) SetEventTime(v string) {
 	o.EventTime.Set(&v)
 }
+
 // SetEventTimeNil sets the value for EventTime to be an explicit nil
 func (o *ContainerEvent) SetEventTimeNil() {
 	o.EventTime.Set(nil)
@@ -211,6 +212,7 @@ func (o *ContainerEvent) HasEventTimeEstimated() bool {
 func (o *ContainerEvent) SetEventTimeEstimated(v string) {
 	o.EventTimeEstimated.Set(&v)
 }
+
 // SetEventTimeEstimatedNil sets the value for EventTimeEstimated to be an explicit nil
 func (o *ContainerEvent) SetEventTimeEstimatedNil() {
 	o.EventTimeEstimated.Set(nil)
@@ -349,6 +351,7 @@ func (o *ContainerEvent) HasLocationRaw() bool {
 func (o *ContainerEvent) SetLocationRaw(v string) {
 	o.LocationRaw.Set(&v)
 }
+
 // SetLocationRawNil sets the value for LocationRaw to be an explicit nil
 func (o *ContainerEvent) SetLocationRawNil() {
 	o.LocationRaw.Set(nil)
@@ -455,6 +458,7 @@ func (o *ContainerEvent) HasModeOfTransport() bool {
 func (o *ContainerEvent) SetModeOfTransport(v string) {
 	o.ModeOfTransport.Set(&v)
 }
+
 // SetModeOfTransportNil sets the value for ModeOfTransport to be an explicit nil
 func (o *ContainerEvent) SetModeOfTransportNil() {
 	o.ModeOfTransport.Set(nil)
@@ -497,6 +501,7 @@ func (o *ContainerEvent) HasPortCode() bool {
 func (o *ContainerEvent) SetPortCode(v string) {
 	o.PortCode.Set(&v)
 }
+
 // SetPortCodeNil sets the value for PortCode to be an explicit nil
 func (o *ContainerEvent) SetPortCodeNil() {
 	o.PortCode.Set(nil)
@@ -539,6 +544,7 @@ func (o *ContainerEvent) HasPortName() bool {
 func (o *ContainerEvent) SetPortName(v string) {
 	o.PortName.Set(&v)
 }
+
 // SetPortNameNil sets the value for PortName to be an explicit nil
 func (o *ContainerEvent) SetPortNameNil() {
 	o.PortName.Set(nil)
@@ -645,6 +651,7 @@ func (o *ContainerEvent) HasVesselImo() bool {
 func (o *ContainerEvent) SetVesselImo(v float32) {
 	o.VesselImo.Set(&v)
 }
+
 // SetVesselImoNil sets the value for VesselImo to be an explicit nil
 func (o *ContainerEvent) SetVesselImoNil() {
 	o.VesselImo.Set(nil)
@@ -687,6 +694,7 @@ func (o *ContainerEvent) HasVesselName() bool {
 func (o *ContainerEvent) SetVesselName(v string) {
 	o.VesselName.Set(&v)
 }
+
 // SetVesselNameNil sets the value for VesselName to be an explicit nil
 func (o *ContainerEvent) SetVesselNameNil() {
 	o.VesselName.Set(nil)
@@ -698,7 +706,7 @@ func (o *ContainerEvent) UnsetVesselName() {
 }
 
 func (o ContainerEvent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -796,5 +804,3 @@ func (v *NullableContainerEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
