@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **SailingInfoTracking** | Pointer to [**[]SailingInfoTracking**](SailingInfoTracking.md) | Detailed Tracking Information for each leg of the journey | [optional] 
 **StatusInfo** | Pointer to [**PortcastAPIStatusInfo**](PortcastAPIStatusInfo.md) |  | [optional] 
 **Success** | Pointer to **bool** | Tracking Status | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
 
@@ -335,6 +336,31 @@ SetSuccess sets Success field to given value.
 `func (o *PortcastAPI) HasSuccess() bool`
 
 HasSuccess returns a boolean if a field has been set.
+
+### GetCustomFields
+
+`func (o *PortcastAPI) GetCustomFields() map[string]string`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *PortcastAPI) GetCustomFieldsOk() (*map[string]string, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *PortcastAPI) SetCustomFields(v map[string]string)`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *PortcastAPI) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
