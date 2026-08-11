@@ -1437,6 +1437,12 @@
                     "success": {
                         "type": "boolean",
                         "description": "Tracking Status"
+                    },
+                    "custom_fields": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
                     }
                 }
             },
