@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CntrNo** | **string** | Container Number (ISO6346) | 
 **CallbackUrl** | Pointer to **string** | A https endpoint for Portcast to push the json object whenever there are updates. | [optional] 
 **CustomFields** | Pointer to **map[string]string** |  | [optional] 
+**ReferenceDate** | Pointer to **string** | Optional. Only used for container-number-only uploads (no bl_no). An approximate reference date for the intended journey (~ the origin/POL departure) that helps Portcast confirm the correct journey before tracking begins. Must be within the last 5 days or up to 60 days in the future. ISO 8601 date (e.g. 2026-07-31). | [optional] 
 
 ## Methods
 
@@ -143,6 +144,31 @@ SetCustomFields sets CustomFields field to given value.
 `func (o *PostEtaBillOfLadingBookmarksRequest) HasCustomFields() bool`
 
 HasCustomFields returns a boolean if a field has been set.
+
+### GetReferenceDate
+
+`func (o *PostEtaBillOfLadingBookmarksRequest) GetReferenceDate() string`
+
+GetReferenceDate returns the ReferenceDate field if non-nil, zero value otherwise.
+
+### GetReferenceDateOk
+
+`func (o *PostEtaBillOfLadingBookmarksRequest) GetReferenceDateOk() (*string, bool)`
+
+GetReferenceDateOk returns a tuple with the ReferenceDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferenceDate
+
+`func (o *PostEtaBillOfLadingBookmarksRequest) SetReferenceDate(v string)`
+
+SetReferenceDate sets ReferenceDate field to given value.
+
+### HasReferenceDate
+
+`func (o *PostEtaBillOfLadingBookmarksRequest) HasReferenceDate() bool`
+
+HasReferenceDate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
