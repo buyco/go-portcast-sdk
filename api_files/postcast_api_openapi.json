@@ -362,6 +362,12 @@
                                         "additionalProperties": {
                                             "type": "string"
                                         }
+                                    },
+                                    "reference_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "Optional. Only used for container-number-only uploads (no bl_no). An approximate reference date for the intended journey (~ the origin/POL departure) that helps Portcast confirm the correct journey before tracking begins. Must be within the last 5 days or up to 60 days in the future. ISO 8601 date (e.g. 2026-07-31).",
+                                        "example": "2026-07-31"
                                     }
                                 },
                                 "required": [

@@ -31,6 +31,8 @@ type PostEtaBillOfLadingBookmarksRequest struct {
 	// A https endpoint for Portcast to push the json object whenever there are updates.
 	CallbackUrl  *string           `json:"callback_url,omitempty"`
 	CustomFields map[string]string `json:"custom_fields,omitempty"`
+	// Optional. Only used for container-number-only uploads (no bl_no). An approximate reference date for the intended journey (~ the origin/POL departure) that helps Portcast confirm the correct journey before tracking begins. Must be within the last 5 days or up to 60 days in the future. ISO 8601 date (e.g. 2026-07-31).
+	ReferenceDate *string `json:"reference_date,omitempty"`
 }
 
 type _PostEtaBillOfLadingBookmarksRequest PostEtaBillOfLadingBookmarksRequest
@@ -198,6 +200,38 @@ func (o *PostEtaBillOfLadingBookmarksRequest) SetCustomFields(v map[string]strin
 	o.CustomFields = v
 }
 
+// GetReferenceDate returns the ReferenceDate field value if set, zero value otherwise.
+func (o *PostEtaBillOfLadingBookmarksRequest) GetReferenceDate() string {
+	if o == nil || IsNil(o.ReferenceDate) {
+		var ret string
+		return ret
+	}
+	return *o.ReferenceDate
+}
+
+// GetReferenceDateOk returns a tuple with the ReferenceDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PostEtaBillOfLadingBookmarksRequest) GetReferenceDateOk() (*string, bool) {
+	if o == nil || IsNil(o.ReferenceDate) {
+		return nil, false
+	}
+	return o.ReferenceDate, true
+}
+
+// HasReferenceDate returns a boolean if a field has been set.
+func (o *PostEtaBillOfLadingBookmarksRequest) HasReferenceDate() bool {
+	if o != nil && !IsNil(o.ReferenceDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferenceDate gets a reference to the given string and assigns it to the ReferenceDate field.
+func (o *PostEtaBillOfLadingBookmarksRequest) SetReferenceDate(v string) {
+	o.ReferenceDate = &v
+}
+
 func (o PostEtaBillOfLadingBookmarksRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -218,6 +252,9 @@ func (o PostEtaBillOfLadingBookmarksRequest) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
+	}
+	if !IsNil(o.ReferenceDate) {
+		toSerialize["reference_date"] = o.ReferenceDate
 	}
 	return toSerialize, nil
 }
