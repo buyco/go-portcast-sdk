@@ -1446,9 +1446,7 @@
                     },
                     "custom_fields": {
                         "type": "object",
-                        "additionalProperties": {
-                            "type": "string"
-                        }
+                        "additionalProperties": {}
                     }
                 }
             },

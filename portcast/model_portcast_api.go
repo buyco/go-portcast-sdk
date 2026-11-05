@@ -39,8 +39,8 @@ type PortcastAPI struct {
 	SailingInfoTracking []SailingInfoTracking  `json:"sailing_info_tracking,omitempty"`
 	StatusInfo          *PortcastAPIStatusInfo `json:"status_info,omitempty"`
 	// Tracking Status
-	Success      *bool             `json:"success,omitempty"`
-	CustomFields map[string]string `json:"custom_fields,omitempty"`
+	Success      *bool                  `json:"success,omitempty"`
+	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 }
 
 // NewPortcastAPI instantiates a new PortcastAPI object
@@ -445,9 +445,9 @@ func (o *PortcastAPI) SetSuccess(v bool) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *PortcastAPI) GetCustomFields() map[string]string {
+func (o *PortcastAPI) GetCustomFields() map[string]interface{} {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]string
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.CustomFields
@@ -455,9 +455,9 @@ func (o *PortcastAPI) GetCustomFields() map[string]string {
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PortcastAPI) GetCustomFieldsOk() (map[string]string, bool) {
+func (o *PortcastAPI) GetCustomFieldsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]string{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.CustomFields, true
 }
@@ -471,8 +471,8 @@ func (o *PortcastAPI) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
-func (o *PortcastAPI) SetCustomFields(v map[string]string) {
+// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
+func (o *PortcastAPI) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
