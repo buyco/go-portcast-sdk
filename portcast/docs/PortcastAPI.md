@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **SailingInfoTracking** | Pointer to [**[]SailingInfoTracking**](SailingInfoTracking.md) | Detailed Tracking Information for each leg of the journey | [optional] 
 **StatusInfo** | Pointer to [**PortcastAPIStatusInfo**](PortcastAPIStatusInfo.md) |  | [optional] 
 **Success** | Pointer to **bool** | Tracking Status | [optional] 
-**CustomFields** | Pointer to **map[string]string** |  | [optional] 
+**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -339,20 +339,20 @@ HasSuccess returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *PortcastAPI) GetCustomFields() map[string]string`
+`func (o *PortcastAPI) GetCustomFields() map[string]interface{}`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *PortcastAPI) GetCustomFieldsOk() (*map[string]string, bool)`
+`func (o *PortcastAPI) GetCustomFieldsOk() (*map[string]interface{}, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *PortcastAPI) SetCustomFields(v map[string]string)`
+`func (o *PortcastAPI) SetCustomFields(v map[string]interface{})`
 
 SetCustomFields sets CustomFields field to given value.
 

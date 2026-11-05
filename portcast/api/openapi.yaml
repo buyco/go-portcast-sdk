@@ -942,7 +942,7 @@ components:
         container_metadata: ""
         response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
         custom_fields:
-          key: custom_fields
+          key: ""
         status_info:
           metadata:
           - LATEST_PREDICTIONS_WARNING
@@ -1289,8 +1289,7 @@ components:
           description: Tracking Status
           type: boolean
         custom_fields:
-          additionalProperties:
-            type: string
+          additionalProperties: {}
       title: Portcast API
       x-stoplight:
         id: 9afab104cb311
@@ -2462,7 +2461,7 @@ components:
           container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           custom_fields:
-            key: custom_fields
+            key: ""
           status_info:
             metadata:
             - LATEST_PREDICTIONS_WARNING
@@ -2800,7 +2799,7 @@ components:
           container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           custom_fields:
-            key: custom_fields
+            key: ""
           status_info:
             metadata:
             - LATEST_PREDICTIONS_WARNING
@@ -3138,7 +3137,7 @@ components:
           container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           custom_fields:
-            key: custom_fields
+            key: ""
           status_info:
             metadata:
             - LATEST_PREDICTIONS_WARNING
@@ -3476,7 +3475,7 @@ components:
           container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           custom_fields:
-            key: custom_fields
+            key: ""
           status_info:
             metadata:
             - LATEST_PREDICTIONS_WARNING
@@ -3814,7 +3813,7 @@ components:
           container_metadata: ""
           response_id: 8d328ae1-5151-4cc0-8d8e-b9adb6dbbc69
           custom_fields:
-            key: custom_fields
+            key: ""
           status_info:
             metadata:
             - LATEST_PREDICTIONS_WARNING
